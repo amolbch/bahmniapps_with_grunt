@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/concept-set/directives/formControls.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">common/concept-set/directives/formControls.js</span></h1>
+    <h2>
+        Statements: <span class="metric">70.21% <small>(33 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">45.45% <small>(10 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">60% <small>(6 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">70.21% <small>(33 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/concept-set/directives/</a> &#187; formControls.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.conceptSet')
+    .directive('formControls', ['formService', 'spinner', '$timeout', '$translate',
+        function (formService, spinner, $timeout, $translate) {
+            var loadedFormDetails = {};
+            var loadedFormTranslations = {};
+            var unMountReactContainer = function (formUuid) {
+                var reactContainerElement = angular.element(document.getElementById(formUuid));
+                reactContainerElement.on('$destroy', <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    unMountForm(document.getElementById(formUuid));</span>
+                });
+            };
+&nbsp;
+            var controller = function ($scope) {
+                var formUuid = $scope.form.formUuid;
+                var formVersion = $scope.form.formVersion;
+                var formName = $scope.form.formName;
+                var formObservations = $scope.form.observations;
+                var collapse = $scope.form.collapseInnerSections &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >$scope.form.collapseInnerSections.value;</span>
+                var validateForm = $scope.validateForm || false;
+                var locale = $translate.use();
+&nbsp;
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (!loadedFormDetails[formUuid]) {
+                    spinner.forPromise(formService.getFormDetail(formUuid, { v: "custom:(resources:(value))" })
+                        .then(function (response) {
+                            var formDetailsAsString = _.get(response, 'data.resources[0].value');
+                            if (formDetailsAsString) {
+                                var formDetails = JSON.parse(formDetailsAsString);
+                                formDetails.version = formVersion;
+                                loadedFormDetails[formUuid] = formDetails;
+                                var formParams = { formName: formName, formVersion: formVersion, locale: locale };
+                                spinner.forPromise(formService.getFormTranslations(formDetails.translationsUrl, formParams)
+                                    .then(function (response) {
+                                        var formTranslations = !_.isEmpty(response.data) ? <span class="branch-0 cbranch-no" title="branch not covered" >response.data[0] </span>: {};
+                                        loadedFormTranslations[formUuid] = formTranslations;
+                                        $scope.form.component = renderWithControls(formDetails, formObservations,
+                                            formUuid, collapse, $scope.patient, validateForm, locale, formTranslations);
+                                    }, <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                                        var formTranslations = {};</span>
+<span class="cstat-no" title="statement not covered" >                                        loadedFormTranslations[formUuid] = formTranslations;</span>
+<span class="cstat-no" title="statement not covered" >                                        $scope.form.component = renderWithControls(formDetails, formObservations,</span>
+                                            formUuid, collapse, $scope.patient, validateForm, locale, formTranslations);
+                                    })
+                                );
+                            }
+                            unMountReactContainer($scope.form.formUuid);
+                        })
+                    );
+                } else {
+<span class="cstat-no" title="statement not covered" >                    $timeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                        $scope.form.component = renderWithControls(loadedFormDetails[formUuid], formObservations,</span>
+                            formUuid, collapse, $scope.patient, validateForm, locale, loadedFormTranslations[formUuid]);
+<span class="cstat-no" title="statement not covered" >                        unMountReactContainer($scope.form.formUuid);</span>
+                    }, 0, false);
+                }
+&nbsp;
+                $scope.$watch('form.collapseInnerSections', function () {
+                    var collapse = $scope.form.collapseInnerSections &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >$scope.form.collapseInnerSections.value;</span>
+                    if (loadedFormDetails[formUuid]) {
+                        $scope.form.component = renderWithControls(loadedFormDetails[formUuid], formObservations,
+                            formUuid, collapse, $scope.patient, validateForm, locale, loadedFormTranslations[formUuid]);
+                    }
+                });
+&nbsp;
+                $scope.$on('$destroy', <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    if ($scope.$parent.consultation &amp;&amp; $scope.$parent.consultation.observationForms) {</span>
+<span class="cstat-no" title="statement not covered" >                        if ($scope.form.component) {</span>
+<span class="cstat-no" title="statement not covered" >                            var formObservations = $scope.form.component.getValue();</span>
+<span class="cstat-no" title="statement not covered" >                            $scope.form.observations = formObservations.observations;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                            var hasError = formObservations.errors;</span>
+<span class="cstat-no" title="statement not covered" >                            if (!_.isEmpty(hasError)) {</span>
+<span class="cstat-no" title="statement not covered" >                                $scope.form.isValid = false;</span>
+                            }
+                        }
+                    }
+                });
+            };
+&nbsp;
+            return {
+                restrict: 'E',
+                scope: {
+                    form: "=",
+                    patient: "=",
+                    validateForm: "="
+                },
+                controller: controller
+            };
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

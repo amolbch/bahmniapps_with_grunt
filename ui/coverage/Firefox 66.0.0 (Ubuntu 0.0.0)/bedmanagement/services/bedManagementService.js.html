@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for bedmanagement/services/bedManagementService.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">bedmanagement/services/bedManagementService.js</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(35 / 35)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(25 / 25)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(6 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(35 / 35)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">bedmanagement/services/</a> &#187; bedManagementService.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.ipd')
+    .service('bedManagementService', [function () {
+        var maxX = 1;
+        var maxY = 1;
+        var minX = 1;
+        var minY = 1;
+&nbsp;
+        this.createLayoutGrid = function (bedLayouts) {
+            self.layout = [];
+            findMaxYMaxX(bedLayouts);
+            var bedLayout;
+            var rowLayout = [];
+            for (var i = minX; i &lt;= maxX; i++) {
+                rowLayout = [];
+                for (var j = minY; j &lt;= maxY; j++) {
+                    bedLayout = getBedLayoutWithCoordinates(i, j, bedLayouts);
+                    rowLayout.push({
+                        empty: isEmpty(bedLayout),
+                        available: isAvailable(bedLayout),
+                        bed: {
+                            bedId: bedLayout !== null &amp;&amp; bedLayout.bedId,
+                            bedNumber: bedLayout !== null &amp;&amp; bedLayout.bedNumber,
+                            bedType: bedLayout !== null &amp;&amp; bedLayout.bedType !== null &amp;&amp; bedLayout.bedType.displayName,
+                            bedTagMaps: bedLayout !== null &amp;&amp; bedLayout.bedTagMaps,
+                            status: bedLayout !== null &amp;&amp; bedLayout.status,
+                            patient: bedLayout !== null &amp;&amp; bedLayout.patient
+                        }
+                    });
+                }
+                self.layout.push(rowLayout);
+            }
+            return self.layout;
+        };
+&nbsp;
+        var findMaxYMaxX = function (bedLayouts) {
+            for (var i = 0; i &lt; bedLayouts.length; i++) {
+                var bedLayout = bedLayouts[i];
+                if (bedLayout.rowNumber &gt; maxX) {
+                    maxX = bedLayout.rowNumber;
+                }
+                if (bedLayout.columnNumber &gt; maxY) {
+                    maxY = bedLayout.columnNumber;
+                }
+            }
+        };
+&nbsp;
+        var getBedLayoutWithCoordinates = function (rowNumber, columnNumber, bedLayouts) {
+            for (var i = 0, len = bedLayouts.length; i &lt; len; i++) {
+                if (bedLayouts[i].rowNumber === rowNumber &amp;&amp; bedLayouts[i].columnNumber === columnNumber) {
+                    return bedLayouts[i];
+                }
+            }
+            return null;
+        };
+&nbsp;
+        var isEmpty = function (bedLayout) {
+            return bedLayout === null || bedLayout.bedId === null;
+        };
+&nbsp;
+        var isAvailable = function (bedLayout) {
+            if (bedLayout === null) {
+                return false;
+            }
+            return bedLayout.status === "AVAILABLE";
+        };
+    }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

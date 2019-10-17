@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/app-framework/models/appDescriptor.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">common/app-framework/models/appDescriptor.js</span></h1>
+    <h2>
+        Statements: <span class="metric">72.44% <small>(92 / 127)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">54.74% <small>(52 / 95)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">68.75% <small>(22 / 32)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">72.44% <small>(92 / 127)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/app-framework/models/</a> &#187; appDescriptor.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">45</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">42</span>
+<span class="cline-any cline-yes">42</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">42</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">49</span>
+<span class="cline-any cline-yes">147</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">49</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Bahmni.Common.AppFramework.AppDescriptor = function (context, inheritContext, retrieveUserCallback, mergeService) {
+    this.id = null;
+    this.instanceOf = null;
+    this.description = null;
+    this.contextModel = null;
+&nbsp;
+    this.baseExtensionPoints = [];
+    this.customExtensionPoints = [];
+&nbsp;
+    this.baseExtensions = {};
+    this.customExtensions = {};
+&nbsp;
+    this.customConfigs = {};
+    this.baseConfigs = {};
+&nbsp;
+    this.extensionPath = context;
+    this.contextPath = inheritContext ? context.split("/")[0] : context;
+&nbsp;
+    var self = this;
+&nbsp;
+    var setExtensionPointsFromExtensions = function (currentExtensions, currentExtensionPoints) {
+        _.values(currentExtensions).forEach(function (extn) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (extn) {
+                var existing = self[currentExtensionPoints].filter(function (ep) {
+                    return ep.id === extn.extensionPointId;
+                });
+                if (existing.length === 0) {
+                    self[currentExtensionPoints].push({
+                        id: extn.extensionPointId,
+                        description: extn.description
+                    });
+                }
+            }
+        });
+    };
+&nbsp;
+    this.setExtensions = function (baseExtensions, customExtensions) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (customExtensions) {
+<span class="cstat-no" title="statement not covered" >            setExtensionPointsFromExtensions(customExtensions, "customExtensionPoints");</span>
+<span class="cstat-no" title="statement not covered" >            self.customExtensions = customExtensions;</span>
+        }
+        self.baseExtensions = baseExtensions;
+        setExtensionPointsFromExtensions(baseExtensions, "baseExtensionPoints");
+    };
+&nbsp;
+    this.setTemplate = <span class="fstat-no" title="function not covered" >function (template) {</span>
+<span class="cstat-no" title="statement not covered" >        self.instanceOf = template.id;</span>
+<span class="cstat-no" title="statement not covered" >        self.description = self.description || template.description;</span>
+<span class="cstat-no" title="statement not covered" >        self.contextModel = self.contextModel || template.contextModel;</span>
+<span class="cstat-no" title="statement not covered" >        if (template.configOptions) {</span>
+<span class="cstat-no" title="statement not covered" >            _.values(template.configOptions).forEach(<span class="fstat-no" title="function not covered" >function (opt) {</span></span>
+<span class="cstat-no" title="statement not covered" >                var existing = self.configs.filter(<span class="fstat-no" title="function not covered" >function (cfg) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return cfg.name === opt.name;</span>
+                });
+<span class="cstat-no" title="statement not covered" >                if (existing.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    existing[0].description = opt.description;</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    self.configs.push({</span>
+                        name: opt.name,
+                        description: opt.description,
+                        value: opt.defaultValue
+                    });
+                }
+            });
+        }
+    };
+&nbsp;
+    var setConfig = function (instance, currentConfig) {
+        for (var configName in instance.config) {
+            var existingConfig = getConfig(self[currentConfig], configName);
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (existingConfig) {
+<span class="cstat-no" title="statement not covered" >                existingConfig.value = instance.config[configName];</span>
+            } else {
+                self[currentConfig][configName] = { name: configName, value: instance.config[configName] };
+            }
+        }
+    };
+&nbsp;
+    var setDefinitionExtensionPoints = function (extensionPoints, currentExtensionPoints) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (extensionPoints) {
+<span class="cstat-no" title="statement not covered" >            extensionPoints.forEach(<span class="fstat-no" title="function not covered" >function (iep) {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (iep) {</span>
+<span class="cstat-no" title="statement not covered" >                    var existing = self[currentExtensionPoints].filter(<span class="fstat-no" title="function not covered" >function (ep) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        return ep.id === iep.id;</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                    if (existing.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                        self[currentExtensionPoints].push(iep);</span>
+                    }
+                }
+            });
+        }
+    };
+&nbsp;
+    this.setDefinition = function (baseInstance, customInstance) {
+        self.instanceOf = (customInstance &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >customInstance.instanceOf)</span> ? <span class="branch-0 cbranch-no" title="branch not covered" >customInstance.instanceOf </span>: baseInstance.instanceOf;
+        self.id = (customInstance &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >customInstance.id)</span> ? <span class="branch-0 cbranch-no" title="branch not covered" >customInstance.id </span>: baseInstance.id;
+        self.description = (customInstance &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >customInstance.description)</span> ? <span class="branch-0 cbranch-no" title="branch not covered" >customInstance.description </span>: baseInstance.description;
+        self.contextModel = (customInstance &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >customInstance.contextModel)</span> ? <span class="branch-0 cbranch-no" title="branch not covered" >customInstance.contextModel </span>: baseInstance.contextModel;
+&nbsp;
+        setDefinitionExtensionPoints(baseInstance.extensionPoints, "baseExtensionPoints");
+        setConfig(baseInstance, "baseConfigs");
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (customInstance) {
+<span class="cstat-no" title="statement not covered" >            setDefinitionExtensionPoints(customInstance.extensionPoints, "customExtensionPoints");</span>
+<span class="cstat-no" title="statement not covered" >            setConfig(customInstance, "customConfigs");</span>
+        }
+    };
+&nbsp;
+    var getExtensions = function (extPointId, type, extensions) {
+        var currentUser = retrieveUserCallback();
+        var currentExtensions = _.values(extensions);
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (currentUser &amp;&amp; currentExtensions) {
+            var extnType = type || <span class="branch-1 cbranch-no" title="branch not covered" >'all';</span>
+            var userPrivileges = currentUser.privileges.map(function (priv) {
+                return priv.retired ? <span class="branch-0 cbranch-no" title="branch not covered" >"" </span>: priv.name;
+            });
+            var appsExtns = currentExtensions.filter(function (extn) {
+                return ((extnType === 'all') || (extn.type === extnType)) &amp;&amp;
+                    (extn.extensionPointId === extPointId) &amp;&amp; (!extn.requiredPrivilege ||
+                    (userPrivileges.indexOf(extn.requiredPrivilege) &gt;= 0));
+            });
+            appsExtns.sort(function (extn1, extn2) {
+                return extn1.order - extn2.order;
+            });
+            return appsExtns;
+        }
+    };
+&nbsp;
+    this.getExtensions = function (extPointId, type, shouldMerge) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (shouldMerge || shouldMerge === undefined) {
+            var mergedExtensions = mergeService.merge(self.baseExtensions, self.customExtensions);
+            return getExtensions(extPointId, type, mergedExtensions);
+        }
+<span class="cstat-no" title="statement not covered" >        return [getExtensions(extPointId, type, self.baseExtensions), getExtensions(extPointId, type, self.customExtensions)];</span>
+    };
+&nbsp;
+    this.getExtensionById = <span class="fstat-no" title="function not covered" >function (id, shouldMerge) {</span>
+<span class="cstat-no" title="statement not covered" >        if (shouldMerge || shouldMerge === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >            var mergedExtensions = _.values(mergeService.merge(self.baseExtensions, self.customExtensions));</span>
+<span class="cstat-no" title="statement not covered" >            return mergedExtensions.filter(<span class="fstat-no" title="function not covered" >function (extn) {</span></span>
+<span class="cstat-no" title="statement not covered" >                return extn.id === id;</span>
+            })[0];
+        } else {
+<span class="cstat-no" title="statement not covered" >            return [self.baseExtensions.filter(<span class="fstat-no" title="function not covered" >function (extn) {</span></span>
+<span class="cstat-no" title="statement not covered" >                return extn.id === id;</span>
+            })[0], self.customExtensions.filter(<span class="fstat-no" title="function not covered" >function (extn) {</span>
+<span class="cstat-no" title="statement not covered" >                return extn.id === id;</span>
+            })[0]];
+        }
+    };
+&nbsp;
+    var getConfig = function (config, configName) {
+        var cfgList = _.values(config).filter(function (cfg) {
+            return cfg.name === configName;
+        });
+        return (cfgList.length &gt; 0) ? cfgList[0] : null;
+    };
+&nbsp;
+    this.getConfig = function (configName, shouldMerge) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (shouldMerge || shouldMerge === undefined) {
+            return getConfig(mergeService.merge(self.baseConfigs, self.customConfigs), configName);
+        } else {
+<span class="cstat-no" title="statement not covered" >            return [getConfig(self.baseConfigs, configName), getConfig(self.customConfigs, configName)];</span>
+        }
+    };
+&nbsp;
+    this.getConfigValue = function (configName, shouldMerge) {
+        var config = this.getConfig(configName, shouldMerge);
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (shouldMerge || shouldMerge === undefined) {
+            return config ? config.value : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return config;</span>
+    };
+&nbsp;
+    this.formatUrl = function (url, options, useQueryParams) {
+        var pattern = /{{([^}]*)}}/g,
+            matches = url.match(pattern),
+            replacedString = url,
+            checkQueryParams = useQueryParams || <span class="branch-1 cbranch-no" title="branch not covered" >false,</span>
+            queryParameters = this.parseQueryParams();
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (matches) {
+            matches.forEach(function (el) {
+                var key = el.replace("{{", '').replace("}}", '');
+                var value = options[key];
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (!value &amp;&amp; (<span class="branch-1 cbranch-no" title="branch not covered" >checkQueryParams === true)</span>) {
+<span class="cstat-no" title="statement not covered" >                    value = queryParameters[key] || null;</span>
+                }
+                replacedString = replacedString.replace(el, value);
+            });
+        }
+        return replacedString.trim();
+    };
+&nbsp;
+    this.parseQueryParams = function (locationSearchString) {
+        var urlParams;
+        var match,
+            pl = /\+/g,  // Regex for replacing addition symbol with a space
+            search = /([^&amp;=]+)=?([^&amp;]*)/g,
+            decode = <span class="fstat-no" title="function not covered" >function (s) {</span> <span class="cstat-no" title="statement not covered" >return decodeURIComponent(s.replace(pl, " ")); </span>},
+            queryString = locationSearchString || window.location.search.substring(1);
+&nbsp;
+        urlParams = {};
+        while (match = search.exec(queryString)) {  // eslint-disable-line no-cond-assign
+<span class="cstat-no" title="statement not covered" >            urlParams[decode(match[1])] = decode(match[2]);</span>
+        }
+        return urlParams;
+    };
+&nbsp;
+    this.addConfigForPage = function (pageName, baseConfig, customConfig) {
+        self.basePageConfigs = self.basePageConfigs || {};
+        self.basePageConfigs[pageName] = baseConfig;
+&nbsp;
+        self.customPageConfigs = self.customPageConfigs || {};
+        self.customPageConfigs[pageName] = customConfig;
+    };
+&nbsp;
+    this.getConfigForPage = function (pageName, shouldMerge) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (shouldMerge || shouldMerge === undefined) {
+            return mergeService.merge(self.basePageConfigs[pageName], self.customPageConfigs[pageName]);
+        }
+<span class="cstat-no" title="statement not covered" >        return [_.values(self.basePageConfigs[pageName]), _.values(self.customPageConfigs[pageName])];</span>
+    };
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for appointments/app.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">appointments/app.js</span></h1>
+    <h2>
+        Statements: <span class="metric">47.37% <small>(9 / 19)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(2 / 2)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">16.67% <small>(2 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">47.37% <small>(9 / 19)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">appointments/</a> &#187; app.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">336</span>
+<span class="cline-any cline-yes">336</span>
+<span class="cline-any cline-yes">336</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">336</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">336</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">336</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">336</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">336</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular
+    .module('bahmni.appointments')
+    .config(['$urlRouterProvider', '$stateProvider', '$httpProvider', '$bahmniTranslateProvider', '$compileProvider',
+        function ($urlRouterProvider, $stateProvider, $httpProvider, $bahmniTranslateProvider, $compileProvider) {
+            $httpProvider.defaults.headers.common['Disable-WWW-Authenticate'] = true;
+            $urlRouterProvider.otherwise('/home/manage/summary');
+            $urlRouterProvider.when('/home/manage', '/home/manage/summary');
+        // @if DEBUG='production'
+            $compileProvider.debugInfoEnabled(false);
+        // @endif
+&nbsp;
+        // @if DEBUG='development'
+            $compileProvider.debugInfoEnabled(true);
+        // @endif
+            $stateProvider
+            .state('home', {
+                url: '/home',
+                abstract: true,
+                views: {
+                    'additional-header': {
+                        templateUrl: 'views/appointmentsHeader.html',
+                        controller: 'AppointmentsHeaderController'
+                    },
+                    'mainContent': {
+                        template: '&lt;div class="opd-wrapper appointments-page-wrapper"&gt;' +
+                        '&lt;div ui-view="content" class="opd-content-wrapper appointments-content-wrapper"&gt;&lt;/div&gt;' +
+                        '&lt;/div&gt;'
+                    }
+                },
+                data: {
+                    backLinks: []
+                },
+                resolve: {
+                    initializeConfig: <span class="fstat-no" title="function not covered" >function (initialization, $stateParams) {</span>
+<span class="cstat-no" title="statement not covered" >                        return initialization($stateParams.appName);</span>
+                    }
+                }
+            }).state('home.manage', {
+                url: '/manage',
+                views: {
+                    'content': {
+                        templateUrl: 'views/manage/appointmentsManage.html',
+                        controller: 'AppointmentsManageController'
+                    }
+                }
+            }).state('home.manage.summary', {
+                url: '/summary',
+                tabName: 'summary',
+                params: {
+                    viewDate: null
+                },
+                views: {
+                    'content@manage': {
+                        templateUrl: 'views/manage/appointmentsSummary.html',
+                        controller: 'AppointmentsSummaryController'
+                    }
+                }
+            }).state('home.manage.appointments', {
+                url: '/appointments',
+                params: {
+                    filterParams: {},
+                    isFilterOpen: true,
+                    isSearchEnabled: false
+                },
+                views: {
+                    'filter': {
+                        templateUrl: 'views/manage/appointmentFilter.html',
+                        controller: 'AppointmentsFilterController'
+                    },
+                    'content@manage': {
+                        templateUrl: 'views/manage/allAppointments.html',
+                        controller: 'AllAppointmentsController'
+                    }
+&nbsp;
+                }
+            }).state('home.manage.appointments.calendar', {
+                url: '/calendar',
+                tabName: 'calendar',
+                params: {
+                    viewDate: null,
+                    doFetchAppointmentsData: true,
+                    appointmentsData: null
+                },
+                views: {
+                    'content@viewAppointments': {
+                        templateUrl: 'views/manage/calendar/calendarView.html',
+                        controller: 'AppointmentsCalendarViewController'
+                    }
+                }
+            }).state('home.manage.appointments.calendar.new', {
+                url: '/new',
+                params: {
+                    appointment: null
+                },
+                views: {
+                    'content@appointment': {
+                        templateUrl: 'views/manage/newAppointment.html',
+                        controller: 'AppointmentsCreateController'
+                    }
+                },
+                resolve: {
+                    appointmentContext: <span class="fstat-no" title="function not covered" >function (appointmentInitialization, $stateParams) {</span>
+<span class="cstat-no" title="statement not covered" >                        return appointmentInitialization($stateParams);</span>
+                    },
+                    appointmentCreateConfig: <span class="fstat-no" title="function not covered" >function (initializeConfig, appointmentConfigInitialization, appointmentContext) {</span>
+<span class="cstat-no" title="statement not covered" >                        return appointmentConfigInitialization(appointmentContext);</span>
+                    }
+                }
+            }).state('home.manage.appointments.calendar.edit', {
+                url: '/:uuid',
+                views: {
+                    'content@appointment': {
+                        templateUrl: 'views/manage/newAppointment.html',
+                        controller: 'AppointmentsCreateController'
+                    }
+                },
+                resolve: {
+                    appointmentContext: <span class="fstat-no" title="function not covered" >function (appointmentInitialization, $stateParams) {</span>
+<span class="cstat-no" title="statement not covered" >                        return appointmentInitialization($stateParams);</span>
+                    },
+                    appointmentCreateConfig: <span class="fstat-no" title="function not covered" >function (initializeConfig, appointmentConfigInitialization, appointmentContext) {</span>
+<span class="cstat-no" title="statement not covered" >                        return appointmentConfigInitialization(appointmentContext);</span>
+                    }
+                }
+            }).state('home.manage.appointments.list', {
+                url: '/list',
+                tabName: 'list',
+                params: {
+                    viewDate: null,
+                    patient: null,
+                    doFetchAppointmentsData: true,
+                    appointmentsData: null
+                },
+                views: {
+                    'content@viewAppointments': {
+                        templateUrl: 'views/manage/list/listView.html',
+                        controller: 'AppointmentsListViewController'
+                    }
+                }
+            }).state('home.manage.appointments.list.new', {
+                url: '/new',
+                views: {
+                    'content@appointment': {
+                        templateUrl: 'views/manage/newAppointment.html',
+                        controller: 'AppointmentsCreateController'
+                    }
+                },
+                resolve: {
+                    appointmentContext: <span class="fstat-no" title="function not covered" >function (appointmentInitialization, $stateParams) {</span>
+<span class="cstat-no" title="statement not covered" >                        return appointmentInitialization($stateParams);</span>
+                    },
+                    appointmentCreateConfig: <span class="fstat-no" title="function not covered" >function (initializeConfig, appointmentConfigInitialization, appointmentContext) {</span>
+<span class="cstat-no" title="statement not covered" >                        return appointmentConfigInitialization(appointmentContext);</span>
+                    }
+                }
+            }).state('home.manage.appointments.list.edit', {
+                url: '/:uuid',
+                views: {
+                    'content@appointment': {
+                        templateUrl: 'views/manage/newAppointment.html',
+                        controller: 'AppointmentsCreateController'
+                    }
+                },
+                resolve: {
+                    appointmentContext: <span class="fstat-no" title="function not covered" >function (appointmentInitialization, $stateParams) {</span>
+<span class="cstat-no" title="statement not covered" >                        return appointmentInitialization($stateParams);</span>
+                    },
+                    appointmentCreateConfig: <span class="fstat-no" title="function not covered" >function (initializeConfig, appointmentConfigInitialization, appointmentContext) {</span>
+<span class="cstat-no" title="statement not covered" >                        return appointmentConfigInitialization(appointmentContext);</span>
+                    }
+                }
+            }).state('home.admin', {
+                url: '/admin',
+                abstract: true,
+                views: {
+                    'content': {
+                        templateUrl: 'views/admin/appointmentsAdmin.html'
+                    }
+                }
+            }).state('home.admin.service', {
+                url: '/service',
+                views: {
+                    'content@admin': {
+                        templateUrl: 'views/admin/allAppointmentServices.html',
+                        controller: 'AllAppointmentServicesController'
+                    }
+                }
+            }).state('home.admin.service.edit', {
+                url: '/:uuid',
+                views: {
+                    'content@admin': {
+                        templateUrl: 'views/admin/appointmentService.html',
+                        controller: 'AppointmentServiceController'
+                    }
+                },
+                resolve: {
+                    appointmentServiceContext: <span class="fstat-no" title="function not covered" >function (appointmentServiceInitialization, $stateParams) {</span>
+<span class="cstat-no" title="statement not covered" >                        return appointmentServiceInitialization($stateParams.uuid);</span>
+                    }
+                }
+            });
+&nbsp;
+            $bahmniTranslateProvider.init({app: 'appointments', shouldMerge: true});
+        }]).run(['$window', function ($window) {
+            moment.locale($window.localStorage["NG_TRANSLATE_LANG_KEY"] || "en");
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ot/mappers/SurgicalBlockMapper.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">ot/mappers/SurgicalBlockMapper.js</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(50 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(29 / 29)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(18 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(50 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">ot/mappers/</a> &#187; SurgicalBlockMapper.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">139</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">139</span>
+<span class="cline-any cline-yes">88</span>
+<span class="cline-any cline-yes">88</span>
+<span class="cline-any cline-yes">238</span>
+<span class="cline-any cline-yes">238</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">88</span>
+<span class="cline-any cline-yes">88</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">88</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">139</span>
+<span class="cline-any cline-yes">88</span>
+<span class="cline-any cline-yes">88</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">139</span>
+<span class="cline-any cline-yes">48</span>
+<span class="cline-any cline-yes">88</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">139</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">139</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">139</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">139</span>
+<span class="cline-any cline-yes">327</span>
+<span class="cline-any cline-yes">1734</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">139</span>
+<span class="cline-any cline-yes">104</span>
+<span class="cline-any cline-yes">342</span>
+<span class="cline-any cline-yes">342</span>
+<span class="cline-any cline-yes">327</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">327</span>
+<span class="cline-any cline-yes">35</span>
+<span class="cline-any cline-yes">292</span>
+<span class="cline-any cline-yes">35</span>
+<span class="cline-any cline-yes">257</span>
+<span class="cline-any cline-yes">35</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">222</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">104</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Bahmni.OT.SurgicalBlockMapper = function () {
+    var mapSelectedOtherSurgeon = function (otherSurgeonAttribute, surgeonList) {
+        var selectedOtherSurgeon = _.filter(surgeonList, function (surgeon) {
+            return surgeon.id === parseInt(otherSurgeonAttribute.value);
+        });
+        otherSurgeonAttribute.value = _.isEmpty(selectedOtherSurgeon) ? null : selectedOtherSurgeon[0];
+    };
+&nbsp;
+    var mapOpenMrsSurgicalAppointmentAttributes = function (openMrsSurgicalAppointmentAttributes, surgeonsList) {
+        var mappedAttributes = {};
+        _.each(openMrsSurgicalAppointmentAttributes, function (attribute) {
+            var attributeName = attribute.surgicalAppointmentAttributeType.name;
+            mappedAttributes[attributeName] = {
+                id: attribute.id,
+                uuid: attribute.uuid,
+                value: attribute.value,
+                surgicalAppointmentAttributeType: {
+                    uuid: attribute.surgicalAppointmentAttributeType.uuid,
+                    name: attribute.surgicalAppointmentAttributeType.name
+                }
+            };
+        });
+        var otherSurgeonnAttribute = mappedAttributes['otherSurgeon'];
+        if (otherSurgeonnAttribute) {
+            mapSelectedOtherSurgeon(otherSurgeonnAttribute, surgeonsList);
+        }
+        return mappedAttributes;
+    };
+&nbsp;
+    var mapSurgicalAppointment = function (openMrsSurgicalAppointment, attributeTypes, surgeonsList) {
+        var surgicalAppointmentAttributes = mapOpenMrsSurgicalAppointmentAttributes(openMrsSurgicalAppointment.surgicalAppointmentAttributes, surgeonsList);
+        return {
+            id: openMrsSurgicalAppointment.id,
+            uuid: openMrsSurgicalAppointment.uuid,
+            voided: openMrsSurgicalAppointment.voided || false,
+            patient: openMrsSurgicalAppointment.patient,
+            sortWeight: openMrsSurgicalAppointment.sortWeight,
+            actualStartDatetime: Bahmni.Common.Util.DateUtil.parseServerDateToDate(openMrsSurgicalAppointment.actualStartDatetime),
+            actualEndDatetime: Bahmni.Common.Util.DateUtil.parseServerDateToDate(openMrsSurgicalAppointment.actualEndDatetime),
+            notes: openMrsSurgicalAppointment.notes,
+            status: openMrsSurgicalAppointment.status,
+            bedLocation: (openMrsSurgicalAppointment.bedLocation || ""),
+            bedNumber: (openMrsSurgicalAppointment.bedNumber || ""),
+            surgicalAppointmentAttributes: new Bahmni.OT.SurgicalBlockMapper().mapAttributes(surgicalAppointmentAttributes, attributeTypes)
+        };
+    };
+&nbsp;
+    this.map = function (openMrsSurgicalBlock, attributeTypes, surgeonsList) {
+        var surgicalAppointments = _.map(openMrsSurgicalBlock.surgicalAppointments, function (surgicalAppointment) {
+            return mapSurgicalAppointment(surgicalAppointment, attributeTypes, surgeonsList);
+        });
+        return {
+            id: openMrsSurgicalBlock.id,
+            uuid: openMrsSurgicalBlock.uuid,
+            voided: openMrsSurgicalBlock.voided || false,
+            startDatetime: Bahmni.Common.Util.DateUtil.parseServerDateToDate(openMrsSurgicalBlock.startDatetime),
+            endDatetime: Bahmni.Common.Util.DateUtil.parseServerDateToDate(openMrsSurgicalBlock.endDatetime),
+            provider: openMrsSurgicalBlock.provider,
+            location: openMrsSurgicalBlock.location,
+            surgicalAppointments: _.sortBy(surgicalAppointments, 'sortWeight')
+        };
+    };
+&nbsp;
+    var mapSurgicalAppointmentAttributesUIToDomain = function (appointmentAttributes) {
+        var attributes = _.cloneDeep(appointmentAttributes);
+        var otherSurgeon = attributes['otherSurgeon'];
+        otherSurgeon.value = otherSurgeon.value &amp;&amp; otherSurgeon.value.id;
+        return _.values(attributes).filter(function (attribute) {
+            return !_.isUndefined(attribute.value);
+        }).map(function (attribute) {
+            attribute.value = !_.isNull(attribute.value) &amp;&amp; attribute.value.toString() || "";
+            return attribute;
+        });
+    };
+&nbsp;
+    var mapSurgicalAppointmentUIToDomain = function (surgicalAppointmentUI) {
+        return {
+            id: surgicalAppointmentUI.id,
+            uuid: surgicalAppointmentUI.uuid,
+            voided: surgicalAppointmentUI.voided || false,
+            patient: {uuid: surgicalAppointmentUI.patient.uuid},
+            actualStartDatetime: surgicalAppointmentUI.actualStartDatetime,
+            actualEndDatetime: surgicalAppointmentUI.actualEndDatetime,
+            sortWeight: surgicalAppointmentUI.sortWeight,
+            notes: surgicalAppointmentUI.notes,
+            status: surgicalAppointmentUI.status,
+            surgicalAppointmentAttributes: mapSurgicalAppointmentAttributesUIToDomain(surgicalAppointmentUI.surgicalAppointmentAttributes)
+        };
+    };
+&nbsp;
+    this.mapSurgicalBlockUIToDomain = function (surgicalBlockUI) {
+        return {
+            id: surgicalBlockUI.id,
+            uuid: surgicalBlockUI.uuid,
+            voided: surgicalBlockUI.voided || false,
+            startDatetime: surgicalBlockUI.startDatetime,
+            endDatetime: surgicalBlockUI.endDatetime,
+            provider: {uuid: surgicalBlockUI.provider.uuid},
+            location: {uuid: surgicalBlockUI.location.uuid},
+            surgicalAppointments: _.map(surgicalBlockUI.surgicalAppointments, function (surgicalAppointment) {
+                return mapSurgicalAppointmentUIToDomain(surgicalAppointment);
+            })
+        };
+    };
+&nbsp;
+    var getAttributeTypeByName = function (attributeTypes, name) {
+        return _.find(attributeTypes, function (attributeType) {
+            return attributeType.name === name;
+        });
+    };
+&nbsp;
+    this.mapAttributes = function (attributes, attributeTypes) {
+        _.each(attributeTypes, function (attributeType) {
+            var existingAttribute = attributes[attributeType.name];
+            if (!existingAttribute) {
+                attributes[attributeType.name] = {
+                    surgicalAppointmentAttributeType: getAttributeTypeByName(attributeTypes, attributeType.name)
+                };
+                if (attributeType.name === "cleaningTime") {
+                    attributes[attributeType.name].value = 15;
+                } else if (attributeType.name === "estTimeMinutes") {
+                    attributes[attributeType.name].value = 0;
+                } else if (attributeType.name === "estTimeHours") {
+                    attributes[attributeType.name].value = 0;
+                } else {
+                    attributes[attributeType.name].value = "";
+                }
+            }
+        });
+        return attributes;
+    };
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

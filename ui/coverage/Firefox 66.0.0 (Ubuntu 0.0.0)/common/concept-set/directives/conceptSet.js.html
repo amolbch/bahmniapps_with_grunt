@@ -1,0 +1,1347 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/concept-set/directives/conceptSet.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">common/concept-set/directives/conceptSet.js</span></h1>
+    <h2>
+        Statements: <span class="metric">53.64% <small>(140 / 261)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">39.71% <small>(81 / 204)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">55.17% <small>(32 / 58)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">53.64% <small>(140 / 261)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/concept-set/directives/</a> &#187; conceptSet.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">40</span>
+<span class="cline-any cline-yes">40</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">40</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">120</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">96</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">40</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">40</span>
+<span class="cline-any cline-yes">40</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.conceptSet')
+    .directive('conceptSet', ['contextChangeHandler', 'appService', 'observationsService', 'messagingService', 'conceptSetService', 'conceptSetUiConfigService', 'spinner',
+        function (contextChangeHandler, appService, observationsService, messagingService, conceptSetService, conceptSetUiConfigService, spinner) {
+            var controller = function ($scope) {
+                var conceptSetName = $scope.conceptSetName;
+                var ObservationUtil = Bahmni.Common.Obs.ObservationUtil;
+                var conceptSetUIConfig = conceptSetUiConfigService.getConfig();
+                var observationMapper = new Bahmni.ConceptSet.ObservationMapper();
+                var validationHandler = $scope.validationHandler() || contextChangeHandler;
+                var id = "#" + $scope.sectionId;
+&nbsp;
+                $scope.atLeastOneValueIsSet = $scope.atLeastOneValueIsSet || false;
+                $scope.conceptSetRequired = false;
+                $scope.showTitleValue = $scope.showTitle();
+                $scope.numberOfVisits = conceptSetUIConfig[conceptSetName] &amp;&amp; conceptSetUIConfig[conceptSetName].numberOfVisits ? conceptSetUIConfig[conceptSetName].numberOfVisits : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+                $scope.hideAbnormalButton = conceptSetUIConfig[conceptSetName] &amp;&amp; conceptSetUIConfig[conceptSetName].hideAbnormalButton;
+&nbsp;
+                var focusFirstObs = function () {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if ($scope.conceptSetFocused &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >$scope.rootObservation.groupMembers </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >$scope.rootObservation.groupMembers.length &gt; 0)</span> {
+<span class="cstat-no" title="statement not covered" >                        var firstObs = _.find($scope.rootObservation.groupMembers, <span class="fstat-no" title="function not covered" >function (obs) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            return obs.isFormElement &amp;&amp; obs.isFormElement();</span>
+                        });
+<span class="cstat-no" title="statement not covered" >                        if (firstObs) {</span>
+<span class="cstat-no" title="statement not covered" >                            firstObs.isFocused = true;</span>
+                        }
+                    }
+                };
+&nbsp;
+                var updateObservationsOnRootScope = function () {
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if ($scope.rootObservation) {
+                        for (var i = 0; i &lt; $scope.observations.length; i++) {
+                            <span class="missing-if-branch" title="else path not taken" >E</span>if ($scope.observations[i].concept.uuid === $scope.rootObservation.concept.uuid) {
+                                $scope.observations[i] = $scope.rootObservation;
+                                return;
+                            }
+                        }
+<span class="cstat-no" title="statement not covered" >                        $scope.observations.push($scope.rootObservation);</span>
+                    }
+                };
+&nbsp;
+                var getObservationsOfCurrentTemplate = function () {
+                    return _.filter($scope.observations, function (observation) {
+                        return _.toLower(observation.conceptSetName) === _.toLower($scope.rootObservation.concept.name);
+                    });
+                };
+&nbsp;
+                var getDefaults = function () {
+                    var conceptSetUI = appService.getAppDescriptor().getConfigValue("conceptSetUI");
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (!conceptSetUI || !conceptSetUI.defaults) {
+<span class="cstat-no" title="statement not covered" >                        return;</span>
+                    }
+                    return conceptSetUI.defaults || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+                };
+&nbsp;
+                var getCodedAnswerWithDefaultAnswerString = <span class="fstat-no" title="function not covered" >function (defaults, groupMember) {</span>
+<span class="cstat-no" title="statement not covered" >                    var possibleAnswers = groupMember.possibleAnswers;</span>
+<span class="cstat-no" title="statement not covered" >                    var defaultAnswer = defaults[groupMember.concept.name];</span>
+<span class="cstat-no" title="statement not covered" >                    var defaultCodedAnswer;</span>
+<span class="cstat-no" title="statement not covered" >                    if (defaultAnswer instanceof Array) {</span>
+<span class="cstat-no" title="statement not covered" >                        defaultCodedAnswer = [];</span>
+<span class="cstat-no" title="statement not covered" >                        _.each(defaultAnswer, <span class="fstat-no" title="function not covered" >function (answer) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            defaultCodedAnswer.push(_.find(possibleAnswers, {displayString: answer}));</span>
+                        });
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        defaultCodedAnswer = _.find(possibleAnswers, {displayString: defaultAnswer});</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    return defaultCodedAnswer;</span>
+                };
+&nbsp;
+                var setDefaultsForGroupMembers = function (groupMembers, defaults) {
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (defaults) {
+                        _.each(groupMembers, function (groupMember) {
+                            var conceptFullName = groupMember.concept.name;
+                            var present = _.includes(_.keys(defaults), conceptFullName);
+                            if (present &amp;&amp; groupMember.value == undefined) {
+                                <span class="missing-if-branch" title="if path not taken" >I</span>if (groupMember.concept.dataType == "Coded") {
+<span class="cstat-no" title="statement not covered" >                                    setDefaultsForCodedObservations(groupMember, defaults);</span>
+                                } else {
+                                    groupMember.value = defaults[conceptFullName];
+                                }
+                            }
+                            <span class="missing-if-branch" title="if path not taken" >I</span>if (groupMember.groupMembers &amp;&amp; groupMember.groupMembers.length &gt; 0) {
+<span class="cstat-no" title="statement not covered" >                                setDefaultsForGroupMembers(groupMember.groupMembers, defaults);</span>
+<span class="cstat-no" title="statement not covered" >                                if (groupMember instanceof Bahmni.ConceptSet.ObservationNode &amp;&amp; defaults[groupMember.label] &amp;&amp; groupMember.abnormalObs &amp;&amp; groupMember.abnormalObs.value == undefined) {</span>
+<span class="cstat-no" title="statement not covered" >                                    groupMember.onValueChanged(groupMember.value);</span>
+                                }
+                            }
+                        });
+                    }
+                };
+&nbsp;
+                var setDefaultsForCodedObservations = <span class="fstat-no" title="function not covered" >function (observation, defaults) {</span>
+<span class="cstat-no" title="statement not covered" >                    var defaultCodedAnswer = getCodedAnswerWithDefaultAnswerString(defaults, observation);</span>
+<span class="cstat-no" title="statement not covered" >                    if (observation.isMultiSelect) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (!observation.hasValue()) {</span>
+<span class="cstat-no" title="statement not covered" >                            _.each(defaultCodedAnswer, <span class="fstat-no" title="function not covered" >function (answer) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                observation.selectAnswer(answer);</span>
+                            });
+                        }
+                    } else <span class="cstat-no" title="statement not covered" >if (!(defaultCodedAnswer instanceof Array)) {</span>
+<span class="cstat-no" title="statement not covered" >                        observation.value = defaultCodedAnswer;</span>
+                    }
+                };
+&nbsp;
+                var getFlattenedObsValues = function (flattenedObs) {
+                    return _.reduce(flattenedObs, function (flattenedObsValues, obs) {
+                        <span class="missing-if-branch" title="else path not taken" >E</span>if (flattenedObsValues[obs.concept.name + '|' + obs.uniqueId] == undefined) {
+                            <span class="missing-if-branch" title="if path not taken" >I</span>if (obs.isMultiSelect) {
+<span class="cstat-no" title="statement not covered" >                                var selectedObsConceptNames = [];</span>
+<span class="cstat-no" title="statement not covered" >                                _.each(obs.selectedObs, <span class="fstat-no" title="function not covered" >function (observation) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                    if (!observation.voided) {</span>
+<span class="cstat-no" title="statement not covered" >                                        selectedObsConceptNames.push(observation.value.name);</span>
+                                    }
+<span class="cstat-no" title="statement not covered" >                                    if (!observation.voided) {</span>
+<span class="cstat-no" title="statement not covered" >                                        selectedObsConceptNames.push(observation.value.name);</span>
+                                    }
+                                });
+<span class="cstat-no" title="statement not covered" >                                flattenedObsValues[obs.concept.name + '|' + obs.uniqueId] = selectedObsConceptNames;</span>
+                            } else <span class="missing-if-branch" title="if path not taken" >I</span>if (obs.conceptUIConfig.multiSelect) {
+<span class="cstat-no" title="statement not covered" >                                var alreadyProcessedMultiSelect = [];</span>
+<span class="cstat-no" title="statement not covered" >                                _.each(_.keys(flattenedObsValues), <span class="fstat-no" title="function not covered" >function (eachObsKey) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                    eachObsKey.split('|')[0] == obs.concept.name &amp;&amp; alreadyProcessedMultiSelect.push(eachObsKey);</span>
+                                });
+<span class="cstat-no" title="statement not covered" >                                if (alreadyProcessedMultiSelect.length &lt; 2) {</span>
+<span class="cstat-no" title="statement not covered" >                                    flattenedObsValues[obs.concept.name + '|' + obs.uniqueId] = flattenedObsValues[obs.concept.name + '|' + undefined];</span>
+                                    // Set the individual Observation of Multi Select to be the MultiSelect Obs
+                                }
+                            } else <span class="missing-if-branch" title="if path not taken" >I</span>if (obs.value instanceof Object) {
+<span class="cstat-no" title="statement not covered" >                                flattenedObsValues[obs.concept.name + '|' + obs.uniqueId] = (obs.value.name instanceof Object) ? obs.value.name.name : obs.value.name;</span>
+                            } else {
+                                flattenedObsValues[obs.concept.name + '|' + obs.uniqueId] = obs.value;
+                            }
+                        }
+                        return flattenedObsValues;
+                    }, {});
+                };
+&nbsp;
+                var clearFieldValuesOnDisabling = function (obs) {
+                    obs.comment = undefined;
+                    if (obs.value || obs.isBoolean) {
+                        obs.value = undefined;
+                    } else <span class="missing-if-branch" title="if path not taken" >I</span>if (obs.isMultiSelect) {
+<span class="cstat-no" title="statement not covered" >                        for (var key in obs.selectedObs) {</span>
+<span class="cstat-no" title="statement not covered" >                            if (!obs.selectedObs[key].voided) {</span>
+<span class="cstat-no" title="statement not covered" >                                obs.toggleSelection(obs.selectedObs[key].value);</span>
+                            }
+                        }
+                    }
+                };
+&nbsp;
+                var setObservationState = function (obsArray, disable, error, hide) {
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (!_.isEmpty(obsArray)) {
+                        _.each(obsArray, function (obs) {
+                            obs.disabled = disable || hide;
+                            obs.error = error;
+                            obs.hide = hide;
+                            if (hide || obs.disabled) {
+                                clearFieldValuesOnDisabling(obs);
+                            }
+                            <span class="missing-if-branch" title="else path not taken" >E</span>if (obs.groupMembers) {
+                                _.each(obs.groupMembers, <span class="fstat-no" title="function not covered" >function (groupMember) {</span>
+                                    // TODO : Hack to fix issue with formconditions on multiselect - Swathi
+<span class="cstat-no" title="statement not covered" >                                    groupMember &amp;&amp; setObservationState([groupMember], disable, error, hide);</span>
+                                });
+                            }
+                        });
+                    }
+                };
+&nbsp;
+                var processConditions = function (flattenedObs, fields, disable, error, hide) {
+                    _.each(fields, function (field) {
+                        var matchingObsArray = [];
+                        var clonedObsInSameGroup;
+                        flattenedObs.forEach(function (obs) {
+                            if (clonedObsInSameGroup != false &amp;&amp; obs.concept.name == field) {
+                                matchingObsArray.push(obs);
+                                clonedObsInSameGroup = true;
+                            } else if (clonedObsInSameGroup &amp;&amp; obs.concept.name != field) {
+                                clonedObsInSameGroup = false;
+                            }
+                        });
+&nbsp;
+                        <span class="missing-if-branch" title="else path not taken" >E</span>if (!_.isEmpty(matchingObsArray)) {
+                            setObservationState(matchingObsArray, disable, error, hide);
+                        } else {
+<span class="cstat-no" title="statement not covered" >                            messagingService.showMessage("error", "No element found with name : " + field);</span>
+                        }
+                    });
+                };
+&nbsp;
+                var runFormConditionForObs = function (enableCase, formName, formCondition, conceptName, flattenedObs) {
+                    var conceptSetObsValues = getFlattenedObsValues(flattenedObs);
+                    _.each(_.keys(conceptSetObsValues), function (eachObsKey) {
+                        if (eachObsKey.split('|')[0] == conceptName &amp;&amp; eachObsKey.split('|')[1] != 'undefined') {
+                            var valueMap = _.reduce(conceptSetObsValues, function (conceptSetValueMap, obsValue, conceptName) {
+                                conceptSetValueMap[conceptName.split('|')[0]] = obsValue;
+                                return conceptSetValueMap;
+                            }, {});
+                            var conditions = formCondition(formName, valueMap, $scope.patient);
+                            <span class="missing-if-branch" title="else path not taken" >E</span>if (!_.isUndefined(conditions)) {
+                                <span class="missing-if-branch" title="if path not taken" >I</span>if (conditions.error &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!_.isEmpty(conditions.error))</span> {
+<span class="cstat-no" title="statement not covered" >                                    messagingService.showMessage('error', conditions.error);</span>
+<span class="cstat-no" title="statement not covered" >                                    processConditions(flattenedObs, [conceptName], false, true, false);</span>
+                                } else {
+                                    enableCase &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >processConditions(flattenedObs, [conceptName], false, false, false);</span>
+                                }
+                                processConditions(flattenedObs, conditions.disable, true);
+                                processConditions(flattenedObs, conditions.enable, false);
+                                processConditions(flattenedObs, conditions.show, false, undefined, false);
+                                processConditions(flattenedObs, conditions.hide, false, undefined, true);
+                                _.each(conditions.enable, <span class="fstat-no" title="function not covered" >function (subConditionConceptName) {</span>
+<span class="cstat-no" title="statement not covered" >                                    var conditionFn = Bahmni.ConceptSet.FormConditions.rules &amp;&amp; Bahmni.ConceptSet.FormConditions.rules[subConditionConceptName];</span>
+<span class="cstat-no" title="statement not covered" >                                    if (conditionFn != null) {</span>
+<span class="cstat-no" title="statement not covered" >                                        runFormConditionForObs(true, formName, conditionFn, subConditionConceptName, flattenedObs);</span>
+                                    }
+                                });
+                                _.each(conditions.disable, function (subConditionConceptName) {
+                                    var conditionFn = Bahmni.ConceptSet.FormConditions.rules &amp;&amp; Bahmni.ConceptSet.FormConditions.rules[subConditionConceptName];
+                                    <span class="missing-if-branch" title="if path not taken" >I</span>if (conditionFn != null) {
+<span class="cstat-no" title="statement not covered" >                                        _.each(flattenedObs, <span class="fstat-no" title="function not covered" >function (obs) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                            if (obs.concept.name == subConditionConceptName) {</span>
+<span class="cstat-no" title="statement not covered" >                                                runFormConditionForObs(false, formName, conditionFn, subConditionConceptName, flattenedObs);</span>
+                                            }
+                                        });
+                                    }
+                                });
+                                _.each(conditions.show, function (subConditionConceptName) {
+                                    var conditionFn = Bahmni.ConceptSet.FormConditions.rules &amp;&amp; Bahmni.ConceptSet.FormConditions.rules[subConditionConceptName];
+                                    <span class="missing-if-branch" title="if path not taken" >I</span>if (conditionFn) {
+<span class="cstat-no" title="statement not covered" >                                        runFormConditionForObs(true, formName, conditionFn, subConditionConceptName, flattenedObs);</span>
+                                    }
+                                });
+                                _.each(conditions.hide, function (subConditionConceptName) {
+                                    var conditionFn = Bahmni.ConceptSet.FormConditions.rules &amp;&amp; Bahmni.ConceptSet.FormConditions.rules[subConditionConceptName];
+                                    <span class="missing-if-branch" title="if path not taken" >I</span>if (conditionFn) {
+<span class="cstat-no" title="statement not covered" >                                        _.each(flattenedObs, <span class="fstat-no" title="function not covered" >function (obs) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                            if (obs.concept.name == subConditionConceptName) {</span>
+<span class="cstat-no" title="statement not covered" >                                                runFormConditionForObs(false, formName, conditionFn, subConditionConceptName, flattenedObs);</span>
+                                            }
+                                        });
+                                    }
+                                });
+                            }
+                        }
+                    });
+                };
+&nbsp;
+                var updateFormConditions = function (observationsOfCurrentTemplate, rootObservation) {
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (Bahmni.ConceptSet.FormConditions.rules) {
+                        runFormConditionForAllObsRecursively(rootObservation.concept.name, rootObservation);
+                    }
+                };
+&nbsp;
+                var runFormConditionForAllObsRecursively = function (formName, rootObservation) {
+                    _.each(rootObservation.groupMembers, function (observation) {
+                        var conditionFn = Bahmni.ConceptSet.FormConditions.rules &amp;&amp; Bahmni.ConceptSet.FormConditions.rules[observation.concept.name];
+                        if (conditionFn != null) {
+                            var flattenedObs = ObservationUtil.flattenObsToArray([rootObservation]);
+                            runFormConditionForObs(false, formName, conditionFn, observation.concept.name, flattenedObs);
+                        }
+                        <span class="missing-if-branch" title="if path not taken" >I</span>if (observation.groupMembers &amp;&amp; observation.groupMembers.length &gt; 0) {
+<span class="cstat-no" title="statement not covered" >                            runFormConditionForAllObsRecursively(formName, observation);</span>
+                        }
+                    });
+                };
+                var addDummyImage = function () {
+                    _.each($scope.rootObservation.groupMembers, function (observation) {
+                        addDummyImageObservationForSavedObs(observation, $scope.rootObservation);
+                    });
+                };
+                var addDummyImageObservationForSavedObs = function (observation, rootObservation) {
+                    _.each(observation.groupMembers, <span class="fstat-no" title="function not covered" >function (childObservation) {</span>
+<span class="cstat-no" title="statement not covered" >                        addDummyImageObservationForSavedObs(childObservation, observation);</span>
+                    });
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (observation.getControlType() === 'image' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >observation.value </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >rootObservation.groupMembers.indexOf(observation) === rootObservation.groupMembers.length - 1)</span> {
+<span class="cstat-no" title="statement not covered" >                        rootObservation.groupMembers.push(observation.cloneNew());</span>
+<span class="cstat-no" title="statement not covered" >                        return;</span>
+                    }
+                };
+                var init = function () {
+                    return conceptSetService.getConcept({
+                        name: conceptSetName,
+                        v: "bahmni"
+                    }).then(function (response) {
+                        $scope.conceptSet = response.data.results[0];
+                        $scope.rootObservation = $scope.conceptSet ? observationMapper.map($scope.observations, $scope.conceptSet, conceptSetUIConfig) : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+                        <span class="missing-if-branch" title="else path not taken" >E</span>if ($scope.rootObservation) {
+                            $scope.rootObservation.conceptSetName = $scope.conceptSetName;
+                            focusFirstObs();
+                            updateObservationsOnRootScope();
+                            var groupMembers = getObservationsOfCurrentTemplate()[0].groupMembers;
+                            var defaults = getDefaults();
+                            addDummyImage();
+                            setDefaultsForGroupMembers(groupMembers, defaults);
+                            var observationsOfCurrentTemplate = getObservationsOfCurrentTemplate();
+                            updateFormConditions(observationsOfCurrentTemplate, $scope.rootObservation);
+                        } else {
+<span class="cstat-no" title="statement not covered" >                            $scope.showEmptyConceptSetMessage = true;</span>
+                        }
+                    }).catch(function (error) {
+                        messagingService.showMessage('error', error.message);
+                    });
+                };
+                spinner.forPromise(init(), id);
+&nbsp;
+                var validateObservationTree = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    if (typeof $scope.rootObservation === "undefined" || $scope.rootObservation === null) {</span>
+<span class="cstat-no" title="statement not covered" >                        return {allow: true, errorMessage: null };</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    $scope.atLeastOneValueIsSet = $scope.rootObservation &amp;&amp; $scope.rootObservation.atLeastOneValueSet();</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.conceptSetRequired = $scope.required ? $scope.required : true;</span>
+<span class="cstat-no" title="statement not covered" >                    var nodes = $scope.rootObservation &amp;&amp; findInvalidNodes($scope.rootObservation.groupMembers, $scope.rootObservation);</span>
+<span class="cstat-no" title="statement not covered" >                    return {allow: !nodes.status, errorMessage: nodes.message};</span>
+                }; // TODO: Write unit test for this function
+&nbsp;
+                var findInvalidNodes = <span class="fstat-no" title="function not covered" >function (members, parentNode) {</span>
+<span class="cstat-no" title="statement not covered" >                    var errorMessage = null;</span>
+<span class="cstat-no" title="statement not covered" >                    var status = members.some(<span class="fstat-no" title="function not covered" >function (childNode) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        if (childNode.voided) {</span>
+<span class="cstat-no" title="statement not covered" >                            return false;</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        var groupMembers = childNode.groupMembers || [];</span>
+<span class="cstat-no" title="statement not covered" >                        for (var index in groupMembers) {</span>
+<span class="cstat-no" title="statement not covered" >                            var information = groupMembers[index].groupMembers &amp;&amp; groupMembers[index].groupMembers.length ? findInvalidNodes(groupMembers[index].groupMembers, groupMembers[index]) : validateChildNode(groupMembers[index], childNode);</span>
+<span class="cstat-no" title="statement not covered" >                            if (information.status) {</span>
+<span class="cstat-no" title="statement not covered" >                                errorMessage = information.message;</span>
+<span class="cstat-no" title="statement not covered" >                                return true;</span>
+                            }
+                        }
+<span class="cstat-no" title="statement not covered" >                        information = validateChildNode(childNode, parentNode);</span>
+<span class="cstat-no" title="statement not covered" >                        if (information.status) {</span>
+<span class="cstat-no" title="statement not covered" >                            errorMessage = information.message;</span>
+<span class="cstat-no" title="statement not covered" >                            return true;</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        return !childNode.isValid($scope.atLeastOneValueIsSet, $scope.conceptSetRequired);</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                    return {message: errorMessage, status: status};</span>
+                };
+                var validateChildNode = <span class="fstat-no" title="function not covered" >function (childNode, parentNode) {</span>
+<span class="cstat-no" title="statement not covered" >                    var errorMessage;</span>
+<span class="cstat-no" title="statement not covered" >                    if (childNode.possibleAnswers &amp;&amp; !childNode.possibleAnswers.length) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (typeof childNode.isValueInAbsoluteRange == 'function' &amp;&amp; !childNode.isValueInAbsoluteRange()) {</span>
+<span class="cstat-no" title="statement not covered" >                            errorMessage = "The value you entered (red field) is outside the range of allowable values for that record. Please check the value.";</span>
+<span class="cstat-no" title="statement not covered" >                            return {message: errorMessage, status: true};</span>
+                        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        if (childNode.isNumeric()) {</span>
+<span class="cstat-no" title="statement not covered" >                            if (!childNode.isValidNumeric()) {</span>
+<span class="cstat-no" title="statement not covered" >                                errorMessage = "Please enter Integer value, decimal value is not allowed";</span>
+<span class="cstat-no" title="statement not covered" >                                return {message: errorMessage, status: true};</span>
+                            }
+<span class="cstat-no" title="statement not covered" >                            if (parentNode) {</span>
+<span class="cstat-no" title="statement not covered" >                                if (!childNode.isValidNumericValue() || !parentNode.isValidNumericValue()) {</span>
+<span class="cstat-no" title="statement not covered" >                                    errorMessage = "Please enter Numeric values";</span>
+<span class="cstat-no" title="statement not covered" >                                    return {message: errorMessage, status: true};</span>
+                                }
+                            } else {
+<span class="cstat-no" title="statement not covered" >                                if (!childNode.isValidNumericValue()) {</span>
+<span class="cstat-no" title="statement not covered" >                                    errorMessage = "Please enter Numeric values";</span>
+<span class="cstat-no" title="statement not covered" >                                    return {message: errorMessage, status: true};</span>
+                                }
+                            }
+                        }
+                    }
+<span class="cstat-no" title="statement not covered" >                    return {status: false};</span>
+                };
+&nbsp;
+                validationHandler.add(validateObservationTree);
+&nbsp;
+                var cleanUpListenerShowPrevious = $scope.$on('event:showPrevious' + conceptSetName, <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    return spinner.forPromise(observationsService.fetch($scope.patient.uuid, $scope.conceptSetName, null, $scope.numberOfVisits, null, true), id).then(<span class="fstat-no" title="function not covered" >function (response) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        var recentObservations = ObservationUtil.flattenObsToArray(response.data);</span>
+<span class="cstat-no" title="statement not covered" >                        var conceptSetObservation = $scope.observations.filter(<span class="fstat-no" title="function not covered" >function (observation) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            return observation.conceptSetName === $scope.conceptSetName;</span>
+                        });
+<span class="cstat-no" title="statement not covered" >                        ObservationUtil.flattenObsToArray(conceptSetObservation).forEach(<span class="fstat-no" title="function not covered" >function (obs) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            var correspondingRecentObs = _.filter(recentObservations, <span class="fstat-no" title="function not covered" >function (recentObs) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                return obs.concept.uuid === recentObs.concept.uuid;</span>
+                            });
+<span class="cstat-no" title="statement not covered" >                            if (correspondingRecentObs != null &amp;&amp; correspondingRecentObs.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                                correspondingRecentObs.sort(<span class="fstat-no" title="function not covered" >function (obs1, obs2) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                    return new Date(obs2.encounterDateTime) - new Date(obs1.encounterDateTime);</span>
+                                });
+<span class="cstat-no" title="statement not covered" >                                obs.previous = correspondingRecentObs.map(<span class="fstat-no" title="function not covered" >function (previousObs) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                    return {</span>
+                                        value: Bahmni.Common.Domain.ObservationValueMapper.map(previousObs),
+                                        date: previousObs.observationDateTime
+                                    };
+                                });
+                            }
+                        });
+                    });
+                });
+&nbsp;
+                var deregisterAddMore = $scope.$root.$on("event:addMore", <span class="fstat-no" title="function not covered" >function (event, observation) {</span>
+<span class="cstat-no" title="statement not covered" >                    updateFormConditions([observation], observation);</span>
+                });
+&nbsp;
+                var deregisterObservationUpdated = $scope.$root.$on("event:observationUpdated-" + conceptSetName, <span class="fstat-no" title="function not covered" >function (event, conceptName, rootObservation) {</span>
+<span class="cstat-no" title="statement not covered" >                    var formName = rootObservation.concept.name;</span>
+<span class="cstat-no" title="statement not covered" >                    var formCondition = Bahmni.ConceptSet.FormConditions.rules &amp;&amp; Bahmni.ConceptSet.FormConditions.rules[conceptName];</span>
+<span class="cstat-no" title="statement not covered" >                    if (formCondition) {</span>
+<span class="cstat-no" title="statement not covered" >                        var flattenedObs = ObservationUtil.flattenObsToArray([rootObservation]);</span>
+<span class="cstat-no" title="statement not covered" >                        runFormConditionForObs(true, formName, formCondition, conceptName, flattenedObs);</span>
+                    }
+                });
+&nbsp;
+                $scope.$on('$destroy', <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    deregisterObservationUpdated();</span>
+<span class="cstat-no" title="statement not covered" >                    deregisterAddMore();</span>
+<span class="cstat-no" title="statement not covered" >                    cleanUpListenerShowPrevious();</span>
+                });
+            };
+&nbsp;
+            return {
+                restrict: 'E',
+                scope: {
+                    conceptSetName: "=",
+                    observations: "=?",
+                    required: "=?",
+                    showTitle: "&amp;",
+                    validationHandler: "&amp;",
+                    patient: "=",
+                    conceptSetFocused: "=?",
+                    collapseInnerSections: "=?",
+                    atLeastOneValueIsSet: "=?",
+                    sectionId: "="
+                },
+                templateUrl: '../common/concept-set/views/conceptSet.html',
+                controller: controller
+            };
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/displaycontrols/patientprofile/directives/patientProfile.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">common/displaycontrols/patientprofile/directives/patientProfile.js</span></h1>
+    <h2>
+        Statements: <span class="metric">98.39% <small>(61 / 62)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">80% <small>(16 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(20 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">98.39% <small>(61 / 62)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">common/displaycontrols/patientprofile/directives/</a> &#187; patientProfile.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+(function () {
+    var getAddress = function ($scope) {
+        var patient = $scope.patient;
+        var address = [];
+        if ($scope.config.addressFields != undefined &amp;&amp; $scope.config.addressFields.length != 0) {
+            $scope.config.addressFields.forEach(function (addressField) {
+                if (patient.address[addressField]) {
+                    address.push(patient.address[addressField]);
+                }
+            });
+        } else <span class="missing-if-branch" title="else path not taken" >E</span>if (!_.includes($scope.config, "cityVillage")) {
+            address.push(patient.address["cityVillage"]);
+        }
+        return address.join(", ");
+    };
+    var getPatientAttributeTypes = function ($scope) {
+        var patient = $scope.patient;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if ($scope.config.hasOwnProperty("ageLimit") &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >patient.age &gt;= $scope.config.ageLimit)</span> {
+<span class="cstat-no" title="statement not covered" >            patient.ageText = patient.age.toString() + " &lt;span&gt; years &lt;/span&gt;";</span>
+        }
+        var patientAttributeTypes = [patient.genderText, patient.ageText];
+        if (patient.bloodGroupText) {
+            patientAttributeTypes.push(patient.bloodGroupText);
+        }
+        return patientAttributeTypes.join(", ");
+    };
+    var isAdmitted = function (admissionStatus) {
+        return _.get(admissionStatus, 'value') === "Admitted";
+    };
+    angular.module('bahmni.common.displaycontrol.patientprofile')
+        .directive('patientProfile', ['patientService', 'spinner', '$sce', '$rootScope', '$stateParams', '$window', '$translate',
+            'configurations', '$q', 'visitService',
+            function (patientService, spinner, $sce, $rootScope, $stateParams, $window, $translate, configurations, $q, visitService) {
+                var controller = function ($scope) {
+                    $scope.isProviderRelationship = function (relationship) {
+                        return _.includes($rootScope.relationshipTypeMap.provider, relationship.relationshipType.aIsToB);
+                    };
+                    $scope.openPatientDashboard = function (patientUuid) {
+                        var configName = $stateParams.configName || <span class="branch-1 cbranch-no" title="branch not covered" >Bahmni.Common.Constants.defaultExtensionName;</span>
+                        $window.open("../clinical/#/" + configName + "/patient/" + patientUuid + "/dashboard");
+                    };
+                    var assignPatientDetails = function () {
+                        var patientMapper = new Bahmni.PatientMapper(configurations.patientConfig(), $rootScope, $translate);
+                        return patientService.getPatient($scope.patientUuid).then(function (response) {
+                            var openMrsPatient = response.data;
+                            $scope.patient = patientMapper.map(openMrsPatient);
+                        });
+                    };
+                    var assignRelationshipDetails = function () {
+                        return patientService.getRelationships($scope.patientUuid).then(function (response) {
+                            $scope.relationships = response.data.results;
+                        });
+                    };
+                    var assignAdmissionDetails = function () {
+                        var REP = "custom:(attributes:(value,attributeType:(display,name)))";
+                        var ADMISSION_STATUS_ATTRIBUTE = "Admission Status";
+                        return visitService.getVisit($scope.visitUuid, REP).then(function (response) {
+                            var attributes = response.data.attributes;
+                            var admissionStatus = _.find(attributes, {attributeType: {name: ADMISSION_STATUS_ATTRIBUTE}});
+                            $scope.hasBeenAdmitted = isAdmitted(admissionStatus);
+                        });
+                    };
+                    var setHasBeenAdmittedOnVisitUuidChange = function () {
+                        $scope.$watch('visitUuid', function (visitUuid) {
+                            if (!_.isEmpty(visitUuid)) {
+                                assignAdmissionDetails();
+                            }
+                        });
+                    };
+                    var setDirectiveAsReady = function () {
+                        $scope.isDirectiveReady = true;
+                    };
+                    var onDirectiveReady = function () {
+                        $scope.addressLine = getAddress($scope);
+                        $scope.patientAttributeTypes = $sce.trustAsHtml(getPatientAttributeTypes($scope));
+                        $scope.showBirthDate = $scope.config.showDOB !== false;
+                        $scope.showBirthDate = $scope.showBirthDate &amp;&amp; !!$scope.patient.birthdate;
+                    };
+                    var initPromise = $q.all([assignPatientDetails(), assignRelationshipDetails()]);
+                    initPromise.then(onDirectiveReady);
+                    initPromise.then(setHasBeenAdmittedOnVisitUuidChange);
+                    initPromise.then(setDirectiveAsReady);
+                    $scope.initialization = initPromise;
+                };
+&nbsp;
+                var link = function ($scope, element) {
+                    spinner.forPromise($scope.initialization, element);
+                };
+&nbsp;
+                return {
+                    restrict: 'E',
+                    controller: controller,
+                    link: link,
+                    scope: {
+                        patientUuid: "@",
+                        visitUuid: "@",
+                        config: "="
+                    },
+                    templateUrl: "../common/displaycontrols/patientprofile/views/patientProfile.html"
+                };
+            }]);
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

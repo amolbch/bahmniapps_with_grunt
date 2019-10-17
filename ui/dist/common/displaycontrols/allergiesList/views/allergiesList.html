@@ -1,0 +1,49 @@
+<div ng-class="{'template-container':hideTitle}">
+    <div class="allergies-display-contorl-overflow">
+        <div class="block hierarchy dashboard-section">
+            <h2 ng-click="openSummaryDialog()" class="section-title" ng-class="{'has-link':!hideTitle}">
+                <span class="title-link"> {{'ALLERGIES_LIST_DISPLAY_CONTROL_TITLE' | translate}} </span>
+                <i class="fa fa-external-link" ng-if="!hideTitle"></i>
+            </h2>
+            <div ng-if="allergies.length == 0">
+                <p class="placeholder-text">{{'ALLERGIES_LIST_NO_ALLERGIES' | translate}}</p>
+            </div>
+            <div ng-if="allergies.length > 0">
+                <ul class="form-field">
+                    <li ng-repeat="status in statuses">
+                        <span class="tree-list-item">{{'ALLERGIES_LIST_ALLERGIES_' + status|translate}}</span>
+                        <ul>
+                            <li ng-if="(allergies | filter:{status:status}:true).length == 0">
+                                <p class="placeholder-text">{{'ALLERGIES_LIST_NO_ALLERGIES' | translate}}</p>
+                            </li>
+                            <li class="table-body" ng-repeat="allergy in allergies | filter:{status:status}:true">
+                                <div class="tree-list-item clearfix">
+                                    <span class="testUnderPanel left"><label>{{ allergy.displayString() }}</label></span>
+                                    <div class="activeSince">
+
+                                    <span class="value-text-only" ng-if="allergy.activeSince">
+                                        {{'ALLERGIES_LIST_ACTIVE_SINCE'|translate}} {{allergy.activeSince | bahmniDate}}
+                                    </span>
+                                        <button class="toggle fr" ng-if="::!allergy.additionalDetail" ng-class="{'has-notes': allergy.additionalDetail}" toggle="allergy.showAdditionalDetail">
+                                            <i class="fa fa-angle-down"></i>
+                                            <i class="fa fa-angle-up"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="notes inline-comments" ng-if="allergy.showAdditionalDetail || allergy.additionalDetail">
+                                    <i class="fa fa-comments left" ng-if="allergy.additionalDetail"></i>
+                                    <pre class="left">{{allergy.additionalDetail}}</pre>
+                                    <div class="footer-note fr">
+                                        <span class="provider">
+                                            {{'ALLERGIES_LIST_CREATED_BY'|translate}} {{allergy.creator}}
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

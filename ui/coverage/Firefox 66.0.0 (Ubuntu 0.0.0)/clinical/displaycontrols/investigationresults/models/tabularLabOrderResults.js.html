@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/displaycontrols/investigationresults/models/tabularLabOrderResults.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">clinical/displaycontrols/investigationresults/models/tabularLabOrderResults.js</span></h1>
+    <h2>
+        Statements: <span class="metric">88.37% <small>(38 / 43)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">57.89% <small>(11 / 19)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">76.47% <small>(13 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">88.37% <small>(38 / 43)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">clinical/displaycontrols/investigationresults/models/</a> &#187; tabularLabOrderResults.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Bahmni.Clinical.TabularLabOrderResults = (function () {
+    var TabularLabOrderResults = function (tabularResult, accessionConfig) {
+        var self = this;
+        this.tabularResult = tabularResult;
+&nbsp;
+        var filterData = function (list, filteredOn) {
+            var indices = _.uniq(_.map(self.tabularResult.values, filteredOn));
+            return _.filter(list, function (element) {
+                return _.includes(indices, element.index);
+            });
+        };
+&nbsp;
+        var init = function () {
+            if (accessionConfig &amp;&amp; (accessionConfig.initialAccessionCount || accessionConfig.latestAccessionCount)) {
+                var tabularValues = _.groupBy(self.tabularResult.values, function (value) {
+                    return new Date(value.accessionDateTime);
+                });
+&nbsp;
+                tabularValues = _.sortBy(tabularValues, function (value) {
+                    return value[0].accessionDateTime;
+                });
+&nbsp;
+                var initial = _.first(tabularValues, accessionConfig.initialAccessionCount || <span class="branch-1 cbranch-no" title="branch not covered" >0)</span>;
+                var latest = _.last(tabularValues, accessionConfig.latestAccessionCount || <span class="branch-1 cbranch-no" title="branch not covered" >0)</span>;
+&nbsp;
+                self.tabularResult.values = _.flatten(_.union(initial, latest));
+                self.tabularResult.dates = filterData(self.tabularResult.dates, 'dateIndex');
+                self.tabularResult.orders = filterData(self.tabularResult.orders, 'testOrderIndex');
+            }
+        };
+&nbsp;
+        init();
+&nbsp;
+        this.getDateLabels = function () {
+            return this.tabularResult.dates.map(function (date) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (moment(date.date, "DD-MMM-YYYY", true).isValid()) {
+                    date.date = moment(date.date, "DD-MMM-YYYY").toDate();
+                }
+                return date;
+            });
+        };
+&nbsp;
+        this.getTestOrderLabels = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return this.tabularResult.orders;</span>
+        };
+&nbsp;
+        this.hasRange = <span class="fstat-no" title="function not covered" >function (testOrderLabel) {</span>
+<span class="cstat-no" title="statement not covered" >            return testOrderLabel.minNormal &amp;&amp; testOrderLabel.maxNormal;</span>
+        };
+&nbsp;
+        this.hasUnits = <span class="fstat-no" title="function not covered" >function (testOrderLabel) {</span>
+<span class="cstat-no" title="statement not covered" >            return testOrderLabel.testUnitOfMeasurement != undefined &amp;&amp; testOrderLabel.testUnitOfMeasurement != null;</span>
+        };
+&nbsp;
+        this.hasOrders = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return this.tabularResult.orders.length &gt; 0;</span>
+        };
+&nbsp;
+        this.getResult = function (dateLabel, testOrderLabel) {
+            var filteredResultValue = this.tabularResult.values.filter(function (value) {
+                return value.dateIndex === dateLabel.index &amp;&amp; value.testOrderIndex === testOrderLabel.index;
+            });
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (filteredResultValue.length === 0) {
+<span class="cstat-no" title="statement not covered" >                filteredResultValue = [{"result": " "}];</span>
+            }
+            return filteredResultValue;
+        };
+&nbsp;
+        this.hasUploadedFiles = function (dateLabel, testOrderLabel) {
+            return this.getResult(dateLabel, testOrderLabel).some(function (res) {
+                return res.uploadedFileName;
+            });
+        };
+    };
+    return TabularLabOrderResults;
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

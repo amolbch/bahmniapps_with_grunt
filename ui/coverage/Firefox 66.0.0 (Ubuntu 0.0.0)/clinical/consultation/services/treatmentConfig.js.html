@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/consultation/services/treatmentConfig.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">clinical/consultation/services/treatmentConfig.js</span></h1>
+    <h2>
+        Statements: <span class="metric">72.88% <small>(43 / 59)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">69.23% <small>(18 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">58.62% <small>(17 / 29)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">72.88% <small>(43 / 59)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">clinical/consultation/services/</a> &#187; treatmentConfig.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.clinical').factory('treatmentConfig',
+    ['treatmentService', 'spinner', 'configurationService', 'appService', '$q', '$translate',
+        function (treatmentService, spinner, configurationService, appService, $q, $translate) {
+            var getConfigFromServer = function (baseTreatmentConfig) {
+                return treatmentService.getConfig().then(function (result) {
+                    var config = angular.extend(baseTreatmentConfig, result.data);
+                    config.durationUnits = [
+                        {name: "Day(s)", factor: 1},
+                        {name: "Week(s)", factor: 7},
+                        {name: "Month(s)", factor: 30}
+                    ];
+                    config.frequencies = _(config.frequencies)
+                        .reverse()
+                        .sortBy({'name': 'Immediately'})
+                        .sortBy({'name': 'SOS'})
+                        .reverse()
+                        .value();
+                    return config;
+                });
+            };
+&nbsp;
+            var setNonCodedDrugConcept = function (config) {
+                return treatmentService.getNonCodedDrugConcept().then(function (data) {
+                    config.nonCodedDrugconcept = {
+                        uuid: data
+                    };
+                    return config;
+                });
+            };
+&nbsp;
+            var setStoppedOrderReasonConcepts = function (config) {
+                return configurationService.getConfigurations(['stoppedOrderReasonConfig']).then(function (response) {
+                    var stoppedOrderReasonConfig = response.stoppedOrderReasonConfig.results[0] || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+                    config.stoppedOrderReasonConcepts = stoppedOrderReasonConfig.answers;
+                    return config;
+                });
+            };
+&nbsp;
+            return function (tabConfigName) {
+                var drugOrderOptions;
+                var baseTreatmentConfig = {
+                    allowNonCodedDrugs: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        return drugOrderOptions.allowNonCodedDrugs;</span>
+                    },
+                    getDoseUnits: function () {
+                        return drugOrderOptions.doseUnits;
+                    },
+                    getRoutes: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        return drugOrderOptions.routes;</span>
+                    },
+                    getDurationUnits: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        return drugOrderOptions.durationUnits;</span>
+                    },
+                    getDosingInstructions: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        return drugOrderOptions.dosingInstructions;</span>
+                    },
+                    getDispensingUnits: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        return drugOrderOptions.dispensingUnits;</span>
+                    },
+                    getFrequencies: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        return drugOrderOptions.frequencies;</span>
+                    },
+                    getDosePlaceHolder: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        return drugOrderOptions.dosePlaceHolder;</span>
+                    },
+                    getDoseFractions: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        return drugOrderOptions.doseFractions;</span>
+                    },
+                    isHiddenField: function (fieldName) {
+                        return _.includes(drugOrderOptions.hiddenFields, fieldName);
+                    },
+                    isDropDown: function () {
+                        return drugOrderOptions.isDropDown &amp;&amp; drugOrderOptions.drugConceptSet;
+                    },
+                    isAutoComplete: function () {
+                        return !this.isDropDown();
+                    },
+                    getDrugConceptSet: function () {
+                        return drugOrderOptions.drugConceptSet;
+                    },
+                    isDropDownForGivenConceptSet: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        return this.isDropDown() &amp;&amp; this.getDrugConceptSet();</span>
+                    },
+                    isAutoCompleteForGivenConceptSet: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        return this.isAutoComplete() &amp;&amp; this.getDrugConceptSet();</span>
+                    },
+                    isAutoCompleteForAllConcepts: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        return !(this.getDrugConceptSet());</span>
+                    },
+                    showAdditionalInformation: function () {
+                        var additionalInformationFields = ["sos", "additionalInstructions", "dosingInstructions"];
+                        var hiddenAdditionalInformationFields = _.intersection(additionalInformationFields, drugOrderOptions.hiddenFields);
+                        return hiddenAdditionalInformationFields.length &lt; additionalInformationFields.length;
+                    },
+                    translate: <span class="fstat-no" title="function not covered" >function (field, defaultKey) {</span>
+<span class="cstat-no" title="statement not covered" >                        var labelKey = drugOrderOptions.labels[field];</span>
+<span class="cstat-no" title="statement not covered" >                        var labelValue = $translate.instant(labelKey);</span>
+<span class="cstat-no" title="statement not covered" >                        if (labelValue === labelKey) {</span>
+<span class="cstat-no" title="statement not covered" >                            labelValue = $translate.instant(defaultKey);</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        return labelValue;</span>
+                    },
+                    showBulkChangeDuration: function () {
+                        return !this.hideBulkChangeDurationButton;
+                    }
+                };
+&nbsp;
+                var setDrugOrderOptions = function (medicationTabConfig, tabConfigName) {
+                    var medicationJson = appService.getAppDescriptor().getConfigForPage('medication') || {};
+                    var commonConfig = medicationJson.commonConfig || {};
+                    var allTabConfigs = medicationJson.tabConfig || {};
+                    var tabConfig = allTabConfigs[tabConfigName] || {};
+                    tabConfig.inputOptionsConfig = tabConfig.inputOptionsConfig || {};
+                    tabConfig.orderSet = tabConfig.orderSet || {};
+                    var showDoseFractions = tabConfig.inputOptionsConfig.showDoseFractions;
+                    tabConfig.inputOptionsConfig.showDoseFractions = showDoseFractions ? <span class="branch-0 cbranch-no" title="branch not covered" >showDoseFractions </span>: false;
+                    tabConfig.drugOrderHistoryConfig = tabConfig.drugOrderHistoryConfig || {};
+                    angular.extend(medicationTabConfig, commonConfig, tabConfig);
+                    drugOrderOptions = new Bahmni.Clinical.DrugOrderOptions(medicationTabConfig.inputOptionsConfig, medicationTabConfig);
+                    return medicationTabConfig;
+                };
+&nbsp;
+                return getConfigFromServer(baseTreatmentConfig)
+                    .then(function (config) {
+                        return setDrugOrderOptions(config, tabConfigName);
+                    })
+                    .then(setStoppedOrderReasonConcepts)
+                    .then(setNonCodedDrugConcept);
+            };
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

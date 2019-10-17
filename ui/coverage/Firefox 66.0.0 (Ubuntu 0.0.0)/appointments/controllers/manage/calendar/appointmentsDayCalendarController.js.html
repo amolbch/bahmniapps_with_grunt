@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for appointments/controllers/manage/calendar/appointmentsDayCalendarController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">appointments/controllers/manage/calendar/appointmentsDayCalendarController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">72.34% <small>(34 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">70.83% <small>(17 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">56.25% <small>(9 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">72.34% <small>(34 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">appointments/controllers/manage/calendar/</a> &#187; appointmentsDayCalendarController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.appointments')
+    .controller('AppointmentsDayCalendarController', ['$scope', '$rootScope', '$state', 'uiCalendarConfig', 'appService', 'calendarViewPopUp', 'checkinPopUp',
+        function ($scope, $rootScope, $state, uiCalendarConfig, appService, calendarViewPopUp, checkinPopUp) {
+            $scope.eventSources = [];
+            var init = function () {
+                $scope.events = $scope.appointments.events;
+                $scope.alertOnEventClick = function (event, jsEvent, view) {
+                    var checkinAppointment = <span class="fstat-no" title="function not covered" >function (patient, patientAppointment) {</span>
+<span class="cstat-no" title="statement not covered" >                        checkinPopUp({</span>
+                            scope: {
+                                patientAppointment: patientAppointment
+                            },
+                            className: "ngdialog-theme-default app-dialog-container"
+                        });
+                    };
+                    calendarViewPopUp({
+                        scope: {
+                            appointments: event.appointments,
+                            checkinAppointment: checkinAppointment,
+                            enableCreateAppointment: isSelectable()
+                        },
+                        className: "ngdialog-theme-default delete-program-popup app-dialog-container"
+                    });
+                };
+&nbsp;
+                $scope.alertOnDrop = <span class="fstat-no" title="function not covered" >function (event, delta, revertFunc, jsEvent, ui, view) {</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.alertMessage = ('Event Dropped to make dayDelta ' + delta);</span>
+                };
+&nbsp;
+                $scope.alertOnResize = <span class="fstat-no" title="function not covered" >function (event, delta, revertFunc, jsEvent, ui, view) {</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.alertMessage = ('Event Resized to make dayDelta ' + delta);</span>
+                };
+&nbsp;
+                $scope.addRemoveEventSource = <span class="fstat-no" title="function not covered" >function (sources, source) {</span>
+<span class="cstat-no" title="statement not covered" >                    var canAdd = 0;</span>
+<span class="cstat-no" title="statement not covered" >                    angular.forEach(sources, <span class="fstat-no" title="function not covered" >function (value, key) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        if (sources[key] === source) {</span>
+<span class="cstat-no" title="statement not covered" >                            sources.splice(key, 1);</span>
+<span class="cstat-no" title="statement not covered" >                            canAdd = 1;</span>
+                        }
+                    });
+<span class="cstat-no" title="statement not covered" >                    if (canAdd === 0) {</span>
+<span class="cstat-no" title="statement not covered" >                        sources.push(source);</span>
+                    }
+                };
+&nbsp;
+                $scope.remove = <span class="fstat-no" title="function not covered" >function (index) {</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.events.splice(index, 1);</span>
+                };
+&nbsp;
+                $scope.changeView = <span class="fstat-no" title="function not covered" >function (view, calendar) {</span>
+<span class="cstat-no" title="statement not covered" >                    uiCalendarConfig.calendars[calendar].fullCalendar('changeView', view);</span>
+                };
+&nbsp;
+                var isUserPrivilegedToCreateAppointment = function () {
+                    return _.find($rootScope.currentUser.privileges, function (privilege) {
+                        return privilege.name === Bahmni.Appointments.Constants.privilegeManageAppointments;
+                    });
+                };
+&nbsp;
+                $scope.createAppointment = function (start, end, jsEvent, view, resource) {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (!isUserPrivilegedToCreateAppointment()) {
+<span class="cstat-no" title="statement not covered" >                        return;</span>
+                    }
+                    var params = $state.params;
+                    params.appointment = {startDateTime: start,
+                        endDateTime: end,
+                        appointmentKind: 'Scheduled',
+                        provider: resource &amp;&amp; resource.provider
+                    };
+                    $state.go('home.manage.appointments.calendar.new', params, {reload: false});
+                };
+&nbsp;
+                var isSelectable = function () {
+                    return !(Bahmni.Common.Util.DateUtil.isBeforeDate($scope.date, moment().startOf('day')));
+                };
+&nbsp;
+                $scope.uiConfig = {
+                    calendar: {
+                        height: document.getElementsByClassName('app-calendar-container')[0].clientHeight,
+                        editable: false,
+                        defaultDate: $scope.date,
+                        header: false,
+                        timezone: 'local',
+                        defaultView: 'agendaDay',
+                        resources: $scope.appointments.resources,
+                        businessHours: {
+                            start: appService.getAppDescriptor().getConfigValue('startOfDay') || Bahmni.Appointments.Constants.defaultCalendarStartTime,
+                            end: appService.getAppDescriptor().getConfigValue('endOfDay') || Bahmni.Appointments.Constants.defaultCalendarEndTime
+                        },
+                        scrollTime: appService.getAppDescriptor().getConfigValue('startOfDay') || Bahmni.Appointments.Constants.defaultCalendarStartTime,
+                        groupByResource: true,
+                        selectable: isSelectable(),
+                        select: $scope.createAppointment,
+                        slotLabelInterval: appService.getAppDescriptor().getConfigValue('calendarSlotLabelInterval') || Bahmni.Appointments.Constants.defaultCalendarSlotLabelInterval,
+                        slotDuration: appService.getAppDescriptor().getConfigValue('calendarSlotDuration') || Bahmni.Appointments.Constants.defaultCalendarSlotDuration,
+                        eventLimit: true,
+                        allDaySlot: false,
+                        allDayDefault: false,
+                        eventClick: $scope.alertOnEventClick,
+                        eventDrop: $scope.alertOnDrop,
+                        eventResize: $scope.alertOnResize,
+                        eventRender: $scope.eventRender,
+                        schedulerLicenseKey: 'GPL-My-Project-Is-Open-Source'
+                    }
+                };
+&nbsp;
+                $scope.eventSources = [$scope.events];
+            };
+&nbsp;
+            var resetEvents = function () {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (!_.isEmpty($scope.eventSources)) {
+                    $scope.eventSources.splice(0, $scope.eventSources.length);
+                }
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (!_.isEmpty($scope.appointments.events)) {
+                    $scope.eventSources.push($scope.appointments.events);
+                }
+                $scope.uiConfig.calendar.resources = $scope.appointments.resources;
+            };
+&nbsp;
+            $scope.$watch("appointments", function (newValue, oldValue) {
+                if (newValue !== oldValue) {
+                    resetEvents();
+                }
+            });
+            init();
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

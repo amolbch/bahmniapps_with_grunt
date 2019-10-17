@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for admin/controllers/orderSetController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">admin/controllers/orderSetController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">42.99% <small>(46 / 107)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">29.63% <small>(8 / 27)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">32.26% <small>(10 / 31)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">43.4% <small>(46 / 106)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">admin/controllers/</a> &#187; orderSetController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+(function () {
+    var mapResponse = <span class="fstat-no" title="function not covered" >function (concept) {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            concept: {uuid: concept.uuid, name: concept.name.name},
+            value: concept.name.name
+        };
+    };
+    var updateOrderSetMemberConcept = <span class="fstat-no" title="function not covered" >function (newOrderSetMember, oldOrderSetMember) {</span>
+<span class="cstat-no" title="statement not covered" >        oldOrderSetMember.concept.display = newOrderSetMember.concept.display;</span>
+<span class="cstat-no" title="statement not covered" >        oldOrderSetMember.concept.uuid = newOrderSetMember.concept.uuid;</span>
+    };
+    var moveUp = <span class="fstat-no" title="function not covered" >function (array, element) {</span>
+<span class="cstat-no" title="statement not covered" >        var index = _.indexOf(array, element);</span>
+<span class="cstat-no" title="statement not covered" >        var firstIndex = 0;</span>
+<span class="cstat-no" title="statement not covered" >        if (index === firstIndex) {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        array.splice(index, 1);</span>
+<span class="cstat-no" title="statement not covered" >        array.splice(index - 1, 0, element);</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+    };
+    var moveDown = <span class="fstat-no" title="function not covered" >function (array, element) {</span>
+<span class="cstat-no" title="statement not covered" >        var index = _.indexOf(array, element);</span>
+<span class="cstat-no" title="statement not covered" >        var lastIndex = array.length - 1;</span>
+<span class="cstat-no" title="statement not covered" >        if (index === lastIndex) {</span>
+<span class="cstat-no" title="statement not covered" >            return false;</span>
+        }
+<span class="cstat-no" title="statement not covered" >        array.splice(index, 1);</span>
+<span class="cstat-no" title="statement not covered" >        array.splice(index + 1, 0, element);</span>
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+    };
+&nbsp;
+    angular.module('bahmni.common.domain')
+        .controller('OrderSetController', ['$scope', '$state', 'spinner', '$http', '$q', 'adminOrderSetService', 'messagingService', 'orderTypeService', '$window',
+            function ($scope, $state, spinner, $http, $q, adminOrderSetService, messagingService, orderTypeService, $window) {
+                $scope.operators = ['ALL', 'ANY', 'ONE'];
+                $scope.conceptNameInvalid = false;
+&nbsp;
+                $scope.addOrderSetMembers = function () {
+                    $scope.orderSet.orderSetMembers.push(buildOrderSetMember());
+                };
+&nbsp;
+                var isOrderSetHavingMinimumOrders = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    return _.filter($scope.orderSet.orderSetMembers, <span class="fstat-no" title="function not covered" >function (setMember) {</span> <span class="cstat-no" title="statement not covered" >return !setMember.retired; </span>}).length &gt;= 2;</span>
+                };
+&nbsp;
+                $scope.remove = function (orderSetMember) {
+                    if (orderSetMember.retired == false) {
+                        orderSetMember.retired = true;
+                    } else {
+                        _.remove($scope.orderSet.orderSetMembers, orderSetMember);
+                    }
+                };
+&nbsp;
+                $scope.moveUp = <span class="fstat-no" title="function not covered" >function (orderSetMember) {</span>
+<span class="cstat-no" title="statement not covered" >                    return moveUp($scope.orderSet.orderSetMembers, orderSetMember);</span>
+                };
+&nbsp;
+                $scope.moveDown = <span class="fstat-no" title="function not covered" >function (orderSetMember) {</span>
+<span class="cstat-no" title="statement not covered" >                    return moveDown($scope.orderSet.orderSetMembers, orderSetMember);</span>
+                };
+&nbsp;
+                var getConcepts = <span class="fstat-no" title="function not covered" >function (request, isOrderTypeMatching) {</span>
+<span class="cstat-no" title="statement not covered" >                    return $http.get(Bahmni.Common.Constants.conceptUrl, {</span>
+                        params: {
+                            q: request.term,
+                            v: "custom:(uuid,name:(uuid,name),conceptClass:(uuid,name,display))"
+                        }
+                    }).then(<span class="fstat-no" title="function not covered" >function (response) {</span>
+<span class="cstat-no" title="statement not covered" >                        var results = _.get(response, 'data.results');</span>
+<span class="cstat-no" title="statement not covered" >                        var resultsMatched = _.filter(results, isOrderTypeMatching);</span>
+<span class="cstat-no" title="statement not covered" >                        return _.map(resultsMatched, mapResponse);</span>
+                    });
+                };
+&nbsp;
+                $scope.getConcepts = <span class="fstat-no" title="function not covered" >function (orderSetMember) {</span>
+<span class="cstat-no" title="statement not covered" >                    var selectedOrderType = orderSetMember.orderType;</span>
+<span class="cstat-no" title="statement not covered" >                    var orderType = _.find($scope.orderTypes, {uuid: selectedOrderType.uuid});</span>
+<span class="cstat-no" title="statement not covered" >                    var orderTypeNames = _.map(orderType.conceptClasses, 'name');</span>
+<span class="cstat-no" title="statement not covered" >                    var isOrderTypeMatching = <span class="fstat-no" title="function not covered" >function (concept) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        return _.includes(orderTypeNames, concept.conceptClass.name);</span>
+                    };
+<span class="cstat-no" title="statement not covered" >                    return _.partial(getConcepts, _, isOrderTypeMatching);</span>
+                };
+&nbsp;
+                (function () {
+                    var newOrderSetMember;
+                    $scope.onSelect = function (oldOrderSetMember) {
+                        newOrderSetMember = oldOrderSetMember;
+                        var currentOrderSetMember = _.find($scope.orderSet.orderSetMembers, function (orderSetMember) {
+                            return orderSetMember.concept &amp;&amp; (orderSetMember.concept.display === oldOrderSetMember.value &amp;&amp; !orderSetMember.concept.uuid);
+                        });
+                        if (!_.isUndefined(currentOrderSetMember)) {
+                            currentOrderSetMember.concept.uuid = oldOrderSetMember.concept.uuid;
+                            newOrderSetMember = null;
+                        }
+                    };
+&nbsp;
+                    $scope.onChange = <span class="fstat-no" title="function not covered" >function (oldOrderSetMember) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (newOrderSetMember) {</span>
+<span class="cstat-no" title="statement not covered" >                            updateOrderSetMemberConcept(newOrderSetMember, oldOrderSetMember);</span>
+<span class="cstat-no" title="statement not covered" >                            newOrderSetMember = null;</span>
+<span class="cstat-no" title="statement not covered" >                            return;</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        oldOrderSetMember.orderTemplate = {};</span>
+<span class="cstat-no" title="statement not covered" >                        delete oldOrderSetMember.concept.uuid;</span>
+                    };
+                })();
+&nbsp;
+                $scope.clearConceptName = <span class="fstat-no" title="function not covered" >function (orderSetMember) {</span>
+<span class="cstat-no" title="statement not covered" >                    orderSetMember.concept = {};</span>
+<span class="cstat-no" title="statement not covered" >                    orderSetMember.orderTemplate = {};</span>
+                };
+&nbsp;
+                $scope.save = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    if (validationSuccess()) {</span>
+<span class="cstat-no" title="statement not covered" >                        getValidOrderSetMembers();</span>
+<span class="cstat-no" title="statement not covered" >                        return spinner.forPromise(adminOrderSetService.createOrUpdateOrderSet($scope.orderSet).then(<span class="fstat-no" title="function not covered" >function (response) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            $state.params.orderSetUuid = response.data.uuid;</span>
+<span class="cstat-no" title="statement not covered" >                            return $state.transitionTo($state.current, $state.params, {</span>
+                                reload: true,
+                                inherit: false,
+                                notify: true
+                            }).then(<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                                messagingService.showMessage('info', 'Saved');</span>
+                            });
+                        }));
+                    }
+<span class="cstat-no" title="statement not covered" >                    return $q.when({});</span>
+                };
+&nbsp;
+                var getValidOrderSetMembers = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.orderSet.orderSetMembers = _.filter($scope.orderSet.orderSetMembers, 'concept');</span>
+                };
+&nbsp;
+                var validationSuccess = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    if (!validateForm()) {</span>
+<span class="cstat-no" title="statement not covered" >                        return false;</span>
+                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if (!$scope.orderSet.orderSetMembers || !isOrderSetHavingMinimumOrders()) {</span>
+<span class="cstat-no" title="statement not covered" >                        messagingService.showMessage('error', 'An orderSet should have a minimum of two orderSetMembers');</span>
+<span class="cstat-no" title="statement not covered" >                        return false;</span>
+                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    return true;</span>
+                };
+&nbsp;
+                var buildOrderSetMember = function () {
+                    return {
+                        orderType: {uuid: $scope.orderTypes[0].uuid}
+                    };
+                };
+&nbsp;
+                var validateForm = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    var requiredFields = angular.element($("[required]"));</span>
+<span class="cstat-no" title="statement not covered" >                    for (var i = 0; i &lt; requiredFields.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (!requiredFields[i].disabled &amp;&amp; !requiredFields[i].value) {</span>
+<span class="cstat-no" title="statement not covered" >                            messagingService.showMessage('error', 'Please fill all mandatory fields');</span>
+<span class="cstat-no" title="statement not covered" >                            return false;</span>
+                        }
+                    }
+<span class="cstat-no" title="statement not covered" >                    return true;</span>
+                };
+&nbsp;
+                var init = function () {
+                    var init = $q.all([
+                        orderTypeService.loadAll(),
+                        adminOrderSetService.getDrugConfig()
+                    ]).then(function (results) {
+                        $scope.orderTypes = results[0];
+                        $scope.treatmentConfig = results[1];
+                        <span class="missing-if-branch" title="if path not taken" >I</span>if ($state.params.orderSetUuid !== "new") {
+<span class="cstat-no" title="statement not covered" >                            spinner.forPromise(adminOrderSetService.getOrderSet($state.params.orderSetUuid).then(<span class="fstat-no" title="function not covered" >function (response) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                $scope.orderSet = Bahmni.Common.OrderSet.create(response.data);</span>
+                            }));
+                        } else {
+                            $scope.orderSet = Bahmni.Common.OrderSet.create();
+                            $scope.orderSet.operator = $scope.operators[0];
+                            $scope.orderSet.orderSetMembers.push(
+                                Bahmni.Common.OrderSet.createOrderSetMember(buildOrderSetMember()),
+                                Bahmni.Common.OrderSet.createOrderSetMember(buildOrderSetMember())
+                            );
+                        }
+                    });
+                    spinner.forPromise(init);
+                };
+                init();
+            }]);
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

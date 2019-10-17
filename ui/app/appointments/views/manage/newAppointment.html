@@ -1,0 +1,118 @@
+<div class="create-new-app-wrapper">
+    <div class="create-new-app-container">
+        <span ng-click="navigateToPreviousState()">
+            <a>
+                <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            </a>
+        </span>
+
+        <h2 ng-hide="isEditMode()">{{ ::'ADD_NEW_APPOINTMENT' | translate}}</h2>
+        <h2 ng-show="isEditMode()">{{ ::'EDIT_APPOINTMENT_KEY' | translate}}</h2>
+        <form id="create-appointment-form" name="createAppointmentForm" novalidate>
+
+            <section id="addNewAppointment">
+                <p>
+                    <label>{{'APPOINTMENT_CREATE_PATIENT_NAME' | translate}}<sup class="asterick">*</sup></label>
+
+                    <input type="text"
+                           id="patientID"
+                           min-length="minCharLengthToTriggerPatientSearch"
+                           bahmni-autocomplete
+                           ng-model="appointment.patient.label"
+                           source="search"
+                           response-map="responseMap"
+                           on-select="onSelectPatient"
+                           strict-select="true"
+                           is-invalid="invalidField"
+                           ng-class="{'illegalValue': invalidField}"
+                           placeholder="{{'PLACEHOLDER_APPOINTMENT_CREATE_SEARCH_PATIENT' | translate }}"
+                           non-blank
+                           ng-disabled="isEditMode()"
+                           required
+                    />
+                    <i class="fa fa-search search-icon-app" aria-hidden="true"></i>
+                </p>
+
+                <p ng-show="enableSpecialities">
+                    <label for="speciality">
+                        {{'APPOINTMENT_SERVICE_SPECIALITY_KEY' | translate}}
+                    </label>
+                    <select id="speciality" ng-model="appointment.speciality"
+                            ng-options="speciality.name for speciality in appointmentCreateConfig.specialities | orderBy:'name'"
+                            ng-change="onSpecialityChange()"
+                            ng-disabled="isEditMode() && (!isEditAllowed() || !enableEditService)">
+                        <option value="">{{ ::'PLACEHOLDER_SERVICE_SPECIALITY' | translate}}
+                        </option>
+                    </select>
+                </p>
+                <p>
+                    <label for="service">
+                        {{'APPOINTMENT_SERVICE' | translate}}<sup class="asterick">*</sup>
+                    </label>
+                    <select id="service" ng-model="appointment.service" ng-change="onServiceChange()"
+                            ng-options="service.name for service in appointmentCreateConfig.services | filter: {speciality:{uuid:appointment.speciality.uuid}}:true"
+                            ng-disabled="isEditMode() && (!isEditAllowed() || !enableEditService)"
+                            required>
+                        <option disabled value="">{{ ::'PLACEHOLDER_SERVICE' | translate}}
+                        </option>
+                    </select>
+                </p>
+
+                <p ng-show="enableServiceTypes">
+                    <label for="serviceType">
+                        {{'APPOINTMENT_SERVICE_TYPE' | translate}}
+                    </label>
+                    <select ng-disabled="!(selectedService.serviceTypes.length > 0) || (isEditMode() && !isEditAllowed())" id="serviceType"
+                            ng-model="appointment.serviceType" ng-change="onServiceTypeChange()"
+                            ng-options="serviceType.name + '   [' + serviceType.duration + ' min]'  for serviceType in selectedService.serviceTypes | orderBy:'name'">
+                        <option value="">{{ ::'PLACEHOLDER_SERVICE_TYPE' | translate}}
+                        </option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="date">
+                        {{'APPOINTMENT_DATE' | translate}}<sup class="asterick">*</sup>
+                    </label>
+                    <input  id="date" type="date" name="date" ng-min="isEditMode() && !isEditAllowed()" min="{{today}}" required
+                            ng-model="appointment.date" ng-change="onDateChange()"
+                            placeholder="Pick appointment date"
+                            ng-disabled="isEditMode() && !isEditAllowed()"/>
+                    <span class="slots-remaining"></span>
+                </p>
+                <p class="warning-message" ng-if="warning.appointmentDate">
+                    <i class="fa fa-exclamation-triangle"></i>
+                    <span> {{'APPOINTMENT_CREATION_DATE_WARNING' | translate}} </span>
+                </p>
+                <p>
+                    <label for="startTimeID">
+                        {{'APPOINTMENT_SELECT_BLOCK_KEY' | translate}}<sup class="asterick">*</sup>
+                    </label>
+                    <select id="appointmentBlock" ng-change="setBlockTimes()" ng-model="selectedAppointmentBlock"
+                            ng-options="appointmentBlock.name | translate for appointmentBlock in appointmentBlocks track by appointmentBlock.name">
+                        <option disabled value="">{{ ::'APPOINTMENT_SELECT_AN_BLOCK' | translate}}
+                    </select>
+                </p>
+                <p class="ng-hide walk-in-app">
+                    <input type="checkbox" ng-model="appointment.appointmentKind" ng-true-value="'WalkIn'"
+                           ng-false-value="'Scheduled'" ng-disabled="isEditMode() && !isEditAllowed()">
+                    <span class="walk-in-text">{{'APPOINTMENT_CREATE_WALK_IN' | translate}}</span>
+                </p>
+                <p>
+                    <label for="notes">
+                        {{'APPOINTMENT_CREATE_NOTES' | translate}}
+                    </label>
+                    <textarea placeholder="{{ ::'PLACEHOLDER_CREATE_NOTES' | translate }}" id="notes"
+                              ng-model="appointment.comments"></textarea>
+                </p>
+            </section>
+            <a class="create-appointment-action-btn" ui-sref="^">{{::'APPOINTMENT_CREATE_CANCEL' | translate }}</a>
+
+            <button type="submit" ng-click="save()" disabled ng-if="!canSave" class="service-save-btn create-appointment-action-btn">{{::'APPOINTMENT_CREATE_SAVE' | translate }}</button>
+            <button type="submit" ng-click="save()" ng-if="canSave" class="service-save-btn create-appointment-action-btn">{{::'APPOINTMENT_CREATE_SAVE' | translate }}</button>
+            <button type="submit" ng-click="saveContinue();" disabled ng-if="!canSave" class="service-save-btn create-appointment-action-btn">{{::'APPOINTMENT_CREATE_SAVE_ADD_NEW' | translate }}</button>
+            <button type="submit" ng-click="saveContinue();" ng-if="canSave" class="service-save-btn create-appointment-action-btn">{{::'APPOINTMENT_CREATE_SAVE_ADD_NEW' | translate }}</button>
+        </form>
+
+    </div>
+</div>

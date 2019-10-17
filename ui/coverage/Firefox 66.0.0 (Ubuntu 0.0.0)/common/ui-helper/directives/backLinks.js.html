@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/ui-helper/directives/backLinks.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">common/ui-helper/directives/backLinks.js</span></h1>
+    <h2>
+        Statements: <span class="metric">11.11% <small>(1 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">11.11% <small>(1 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/ui-helper/directives/</a> &#187; backLinks.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.uiHelper')
+ .directive('bmBackLinks', <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >     return {</span>
+         template: '&lt;ul&gt;' +
+                        '&lt;li ng-repeat="backLink in backLinks"&gt;' +
+                            '&lt;a class="back-btn" ng-if="backLink.action" accesskey="{{backLink.accessKey}}" ng-click="closeAllDialogs();backLink.action()" id="{{backLink.id}}"&gt; &lt;span ng-bind-html="backLink.label"&gt;&lt;/span&gt; &lt;/a&gt;' +
+                            '&lt;a class="back-btn" ng-class="{\'dashboard-link\':backLink.image}" ng-if="backLink.url" accesskey="{{backLink.accessKey}}" ng-href="{{backLink.url}}" ng-click="closeAllDialogs()" id="{{backLink.id}}"  title="{{backLink.title}}"&gt; ' +
+                                '&lt;img ng-if="backLink.image" ng-src="{{backLink.image}}" onerror="this.onerror=null; this.src=\'../images/blank-user.gif\'"/&gt;' +
+                                '&lt;i ng-if="backLink.icon &amp;&amp; !backLink.image" class="fa {{backLink.icon}}"&gt;&lt;/i&gt;&lt;/a&gt;' +
+                            '&lt;a class="back-btn" ng-if="backLink.state &amp;&amp; !backLink.text" accesskey="{{backLink.accessKey}}" ui-sref="{{backLink.state}}" ng-click="closeAllDialogs()" id="{{backLink.id}}"&gt;' +
+                                '&lt;i ng-if="backLink.icon" class="fa {{backLink.icon}}"&gt;&lt;/i&gt;&lt;/a&gt;' +
+         '&lt;a ng-if="backLink.text &amp;&amp; backLink.requiredPrivilege" show-if-privilege="{{backLink.requiredPrivilege}}" accesskey="{{backLink.accessKey}}" ui-sref="{{backLink.state}}" id="{{backLink.id}}" class="back-btn-noIcon" ui-sref-active="active"&gt;' +
+         '&lt;span&gt;{{backLink.text | translate}}&lt;/span&gt;' +
+         '        &lt;/a&gt;' +
+                '&lt;a ng-if="backLink.text &amp;&amp; !backLink.requiredPrivilege" accesskey="{{backLink.accessKey}}" ui-sref="{{backLink.state}}" id="{{backLink.id}}" class="back-btn-noIcon" ui-sref-active="active"&gt;' +
+                 '&lt;span&gt;{{backLink.text | translate}}&lt;/span&gt;' +
+        '        &lt;/a&gt;' +
+                        '&lt;/li&gt;' +
+                    '&lt;/ul&gt;',
+         controller: <span class="fstat-no" title="function not covered" >function ($scope, backlinkService) {</span>
+<span class="cstat-no" title="statement not covered" >             $scope.backLinks = backlinkService.getAllUrls();</span>
+<span class="cstat-no" title="statement not covered" >             $scope.$on('$stateChangeSuccess', <span class="fstat-no" title="function not covered" >function (event, state) {</span></span>
+<span class="cstat-no" title="statement not covered" >                 if (state.data &amp;&amp; state.data.backLinks) {</span>
+<span class="cstat-no" title="statement not covered" >                     backlinkService.setUrls(state.data.backLinks);</span>
+<span class="cstat-no" title="statement not covered" >                     $scope.backLinks = backlinkService.getAllUrls();</span>
+                 }
+             });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >             $scope.$on("$destroy", <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                 window.onbeforeunload = undefined;</span>
+             });
+         },
+         restrict: 'E'
+     };
+ });
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

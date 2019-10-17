@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/uicontrols/programmanagement/directive/programAttributes.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">common/uicontrols/programmanagement/directive/programAttributes.js</span></h1>
+    <h2>
+        Statements: <span class="metric">94.12% <small>(32 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">77.27% <small>(17 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">81.82% <small>(9 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">94.12% <small>(32 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">common/uicontrols/programmanagement/directive/</a> &#187; programAttributes.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.uicontrols.programmanagment')
+    .controller('ProgramAttributesController', ['$scope', function ($scope) {
+        var program = $scope.patientProgram.program;
+        $scope.getProgramAttributesMap = function () {
+            var programAttributesMap = {};
+            var programAttributes = $scope.patientProgram.attributes;
+            _.forEach($scope.programAttributeTypes, function (programAttributeType) {
+                var programAttribute = getProgramAttributeByType(programAttributes, programAttributeType);
+&nbsp;
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (programAttribute != undefined &amp;&amp; !programAttribute.voided) {
+                    programAttributesMap[programAttributeType.name] = programAttribute.value;
+                    if (isCodedConceptFormat(programAttributeType.format)) {
+                        programAttributesMap[programAttributeType.name] = programAttribute.value &amp;&amp; programAttribute.value.uuid;
+                    } else if (isDateFormat(programAttributeType.format)) {
+                        programAttributesMap[programAttributeType.name] = Bahmni.Common.Util.DateUtil.parseServerDateToDate(programAttributesMap[programAttributeType.name]);
+                    }
+                }
+            });
+            return programAttributesMap;
+        };
+&nbsp;
+        $scope.getValueForAttributeType = function (attributeType) {
+            var programAttributesMap = $scope.patientProgram.patientProgramAttributes;
+&nbsp;
+            if (isDateFormat(attributeType.format)) {
+                return programAttributesMap[attributeType.name] ? Bahmni.Common.Util.DateUtil.formatDateWithoutTime(programAttributesMap[attributeType.name]) : <span class="branch-1 cbranch-no" title="branch not covered" >"";</span>
+            } else if (isCodedConceptFormat(attributeType.format)) {
+                var mrsAnswer = _.find(attributeType.answers, function (answer) {
+                    return answer.conceptId == programAttributesMap[attributeType.name];
+                });
+                return mrsAnswer ? mrsAnswer.description : <span class="branch-1 cbranch-no" title="branch not covered" >"";</span>
+            } else {
+                return programAttributesMap[attributeType.name];
+            }
+        };
+&nbsp;
+        $scope.isIncluded = <span class="fstat-no" title="function not covered" >function (attribute) {</span>
+<span class="cstat-no" title="statement not covered" >            return !(program &amp;&amp; _.includes(attribute.excludeFrom, program.name));</span>
+        };
+&nbsp;
+        var getProgramAttributeByType = function (programAttributes, attributeType) {
+            return _.find(programAttributes, function (programAttribute) {
+                return programAttribute.attributeType.uuid == attributeType.uuid;
+            });
+        };
+&nbsp;
+        var isDateFormat = function (format) {
+            return format == "org.openmrs.util.AttributableDate" || format == "org.openmrs.customdatatype.datatype.DateDatatype";
+        };
+&nbsp;
+        var isCodedConceptFormat = function (format) {
+            return format == "org.bahmni.module.bahmnicore.customdatatype.datatype.CodedConceptDatatype";
+        };
+&nbsp;
+        $scope.patientProgram.patientProgramAttributes = $scope.getProgramAttributesMap();
+    }])
+    .directive('programAttributes', <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            controller: 'ProgramAttributesController',
+            templateUrl: "../common/uicontrols/programmanagement/views/programAttributes.html",
+            scope: {
+                patientProgram: "=",
+                programAttributeTypes: "="
+            }
+        };
+    });
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

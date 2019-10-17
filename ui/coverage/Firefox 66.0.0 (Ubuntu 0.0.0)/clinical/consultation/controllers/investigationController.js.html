@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/consultation/controllers/investigationController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">clinical/consultation/controllers/investigationController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">3.13% <small>(1 / 32)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">3.13% <small>(1 / 32)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">clinical/consultation/controllers/</a> &#187; investigationController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.clinical')
+.controller('InvestigationController', ['$scope', 'labTestsProvider', 'otherTestsProvider',
+<span class="fstat-no" title="function not covered" >    function ($scope, labTestsProvider, otherTestsProvider) {</span>
+<span class="cstat-no" title="statement not covered" >        $scope.tabs = [</span>
+        {name: 'Laboratory', testsProvider: labTestsProvider, filterColumn: "sample", filterHeader: "Sample", categoryColumn: "department"},
+        {name: 'Other', testsProvider: otherTestsProvider, filterColumn: "type", filterHeader: "Investigation", categoryColumn: "category"}
+        ];
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        $scope.activateTab = <span class="fstat-no" title="function not covered" >function (tab) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if ($scope.activeTab) {</span>
+<span class="cstat-no" title="statement not covered" >                ($scope.activeTab.klass = "");</span>
+            }
+<span class="cstat-no" title="statement not covered" >            $scope.activeTab = tab;</span>
+<span class="cstat-no" title="statement not covered" >            $scope.activeTab.klass = "active";</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var findVoidedInvestigations = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            var filteredInvestigation = $scope.consultation.investigations.filter(<span class="fstat-no" title="function not covered" >function (investigation) {</span></span>
+<span class="cstat-no" title="statement not covered" >                return investigation.voided;</span>
+            });
+<span class="cstat-no" title="statement not covered" >            return filteredInvestigation.length === $scope.consultation.investigations.length;</span>
+        };
+<span class="cstat-no" title="statement not covered" >        $scope.isValidInvestigation = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (!$scope.consultation.investigations.length &gt; 0 || findVoidedInvestigations()) {</span>
+<span class="cstat-no" title="statement not covered" >                $scope.noteState = false;</span>
+<span class="cstat-no" title="statement not covered" >                if ($scope.consultation.labOrderNote.uuid) {</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.consultation.labOrderNote.voided = true;</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    if ($scope.consultation.labOrderNote.value) {</span>
+<span class="cstat-no" title="statement not covered" >                        $scope.consultation.labOrderNote.value = null;</span>
+                    }
+                }
+<span class="cstat-no" title="statement not covered" >                return false;</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                if ($scope.consultation.labOrderNote.uuid) {</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.noteState = true;</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.consultation.labOrderNote.voided = false;</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return true;</span>
+            }
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        $scope.activateTab($scope.tabs[0]);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        $scope.toggleNote = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            $scope.noteState = $scope.noteState ? false : true;</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var init = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            $scope.noteState = $scope.consultation.labOrderNote &amp;&amp; $scope.consultation.labOrderNote.value ? true : false;</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        $scope.onNoteChanged = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            if ($scope.consultation.labOrderNote) {</span>
+//        TODO: Mihir, D3 : Hacky fix to update the datetime to current datetime on the server side. Ideal would be void the previous observation and create a new one.
+<span class="cstat-no" title="statement not covered" >                $scope.consultation.labOrderNote.observationDateTime = null;</span>
+            }
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        init();</span>
+    }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

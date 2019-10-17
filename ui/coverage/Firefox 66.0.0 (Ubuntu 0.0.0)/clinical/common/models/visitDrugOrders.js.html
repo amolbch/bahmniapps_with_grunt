@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/common/models/visitDrugOrders.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">clinical/common/models/visitDrugOrders.js</span></h1>
+    <h2>
+        Statements: <span class="metric">22.22% <small>(6 / 27)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">9.09% <small>(1 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">22.22% <small>(6 / 27)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">clinical/common/models/</a> &#187; visitDrugOrders.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Bahmni.Clinical.VisitDrugOrder = (function () {
+    var VisitDrugOrder = <span class="fstat-no" title="function not covered" >function (orders, ipdOrders, orderGroup) {</span>
+<span class="cstat-no" title="statement not covered" >        this.orders = orders;</span>
+<span class="cstat-no" title="statement not covered" >        this.ipdDrugSchedule = ipdOrders;</span>
+<span class="cstat-no" title="statement not covered" >        this.orderGroup = orderGroup;</span>
+    };
+&nbsp;
+    VisitDrugOrder.prototype = {
+        hasIPDDrugSchedule: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return this.ipdDrugSchedule &amp;&amp; this.ipdDrugSchedule.hasDrugOrders();</span>
+        },
+        getDrugOrderGroups: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return this.orderGroup;</span>
+        },
+        getIPDDrugs: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            return this.ipdDrugSchedule.drugs;</span>
+        }
+    };
+&nbsp;
+    VisitDrugOrder.create = <span class="fstat-no" title="function not covered" >function (encounterTransactions, admissionDate, dischargeDate) {</span>
+<span class="cstat-no" title="statement not covered" >        var nameToSort = <span class="fstat-no" title="function not covered" >function (drugOrder) {</span></span>
+<span class="cstat-no" title="statement not covered" >            return drugOrder.drugNonCoded ? drugOrder.drugNonCoded : drugOrder.drug.name;</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var drugOrders = new Bahmni.Clinical.OrdersMapper(nameToSort).map(encounterTransactions, 'drugOrders');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var prescribedDrugOrders = _.map(drugOrders, Bahmni.Clinical.DrugOrderViewModel.createFromContract);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return this.createFromDrugOrders(prescribedDrugOrders, admissionDate, dischargeDate);</span>
+    };
+&nbsp;
+    VisitDrugOrder.createFromDrugOrders = <span class="fstat-no" title="function not covered" >function (drugOrders, admissionDate, dischargeDate) {</span>
+<span class="cstat-no" title="statement not covered" >        drugOrders = _.filter(drugOrders, <span class="fstat-no" title="function not covered" >function (drugOrder) {</span></span>
+<span class="cstat-no" title="statement not covered" >            return !drugOrder.voided &amp;&amp; drugOrder.action !== Bahmni.Clinical.Constants.orderActions.discontinue;</span>
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        drugOrders = _.filter(drugOrders, <span class="fstat-no" title="function not covered" >function (drugOrder) {</span></span>
+<span class="cstat-no" title="statement not covered" >            return !_.some(drugOrders, <span class="fstat-no" title="function not covered" >function (otherDrugOrder) {</span></span>
+<span class="cstat-no" title="statement not covered" >                return otherDrugOrder.action === Bahmni.Clinical.Constants.orderActions.revise &amp;&amp; otherDrugOrder.encounterUuid === drugOrder.encounterUuid &amp;&amp; otherDrugOrder.previousOrderUuid === drugOrder.uuid;</span>
+            });
+        });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var ipdOrders = null;</span>
+<span class="cstat-no" title="statement not covered" >        if (admissionDate) {</span>
+<span class="cstat-no" title="statement not covered" >            ipdOrders = Bahmni.Clinical.DrugSchedule.create(admissionDate, dischargeDate, drugOrders);</span>
+        }
+<span class="cstat-no" title="statement not covered" >        var orderGroup = new Bahmni.Clinical.OrdersMapper().group(drugOrders, 'date');</span>
+<span class="cstat-no" title="statement not covered" >        return new this(drugOrders, ipdOrders, orderGroup);</span>
+    };
+&nbsp;
+    return VisitDrugOrder;
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

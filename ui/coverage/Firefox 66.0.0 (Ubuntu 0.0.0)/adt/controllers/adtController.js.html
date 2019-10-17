@@ -1,0 +1,954 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for adt/controllers/adtController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">adt/controllers/adtController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">75% <small>(129 / 172)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">62.32% <small>(43 / 69)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">63.64% <small>(28 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">75% <small>(129 / 172)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">adt/controllers/</a> &#187; adtController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+&nbsp;
+angular.module('bahmni.adt')
+    .controller('AdtController', ['$scope', '$q', '$rootScope', 'spinner', 'dispositionService',
+        'encounterService', 'bedService', 'appService', 'visitService', '$location', '$window', 'sessionService',
+        'messagingService', '$anchorScroll', '$stateParams', 'ngDialog', '$filter', 'auditLogService',
+        function ($scope, $q, $rootScope, spinner, dispositionService, encounterService, bedService,
+                  appService, visitService, $location, $window, sessionService, messagingService, $anchorScroll,
+                  $stateParams, ngDialog, $filter, auditLogService) {
+            var actionConfigs = {};
+            var encounterConfig = $rootScope.encounterConfig;
+            var locationUuid = sessionService.getLoginLocationUuid();
+            var visitTypes = encounterConfig.getVisitTypes();
+            $scope.defaultVisitTypeName = appService.getAppDescriptor().getConfigValue('defaultVisitType');
+            $scope.adtObservations = [];
+            $scope.dashboardConfig = appService.getAppDescriptor().getConfigValue('dashboard');
+            $scope.getAdtConceptConfig = $scope.dashboardConfig.conceptName;
+&nbsp;
+            var getVisitTypeUuid = function (visitTypeName) {
+                var visitType = _.find(visitTypes, {name: visitTypeName});
+                return visitType &amp;&amp; visitType.uuid || null;
+            };
+&nbsp;
+            var defaultVisitTypeUuid = getVisitTypeUuid($scope.defaultVisitTypeName);
+&nbsp;
+            var getCurrentVisitTypeUuid = function () {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if ($scope.visitSummary &amp;&amp; $scope.visitSummary.dateCompleted === null) {
+<span class="cstat-no" title="statement not covered" >                    return getVisitTypeUuid($scope.visitSummary.visitType);</span>
+                }
+                return defaultVisitTypeUuid;
+            };
+&nbsp;
+            var getActionCode = <span class="fstat-no" title="function not covered" >function (concept) {</span>
+<span class="cstat-no" title="statement not covered" >                var mappingCode = "";</span>
+<span class="cstat-no" title="statement not covered" >                if (concept.mappings) {</span>
+<span class="cstat-no" title="statement not covered" >                    concept.mappings.forEach(<span class="fstat-no" title="function not covered" >function (mapping) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        var mappingSource = mapping.display.split(":")[0];</span>
+<span class="cstat-no" title="statement not covered" >                        if (mappingSource === Bahmni.Common.Constants.emrapiConceptMappingSource) {</span>
+<span class="cstat-no" title="statement not covered" >                            mappingCode = $.trim(mapping.display.split(":")[1]);</span>
+                        }
+                    });
+                }
+<span class="cstat-no" title="statement not covered" >                return mappingCode;</span>
+            };
+&nbsp;
+            var initializeActionConfig = function () {
+                var admitActions = appService.getAppDescriptor().getExtensions("org.bahmni.adt.admit.action", "config");
+                var transferActions = appService.getAppDescriptor().getExtensions("org.bahmni.adt.transfer.action", "config");
+                var dischargeActions = appService.getAppDescriptor().getExtensions("org.bahmni.adt.discharge.action", "config");
+                var undoDischargeActions = appService.getAppDescriptor().getExtensions("org.bahmni.adt.undo.discharge.action", "config");
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (encounterConfig) {
+                    var Constants = Bahmni.Common.Constants;
+                    actionConfigs[Constants.admissionCode] = {
+                        encounterTypeUuid: encounterConfig.getAdmissionEncounterTypeUuid(),
+                        allowedActions: admitActions
+                    };
+                    actionConfigs[Constants.dischargeCode] = {
+                        encounterTypeUuid: encounterConfig.getDischargeEncounterTypeUuid(),
+                        allowedActions: dischargeActions
+                    };
+                    actionConfigs[Constants.transferCode] = {
+                        encounterTypeUuid: encounterConfig.getTransferEncounterTypeUuid(),
+                        allowedActions: transferActions
+                    };
+                    actionConfigs[Constants.undoDischargeCode] = {
+                        encounterTypeUuid: encounterConfig.getDischargeEncounterTypeUuid(),
+                        allowedActions: undoDischargeActions
+                    };
+                }
+            };
+&nbsp;
+            var filterAction = function (actions, actionTypes) {
+                return _.filter(actions, function (action) {
+                    return actionTypes.indexOf(action.name.name) &gt;= 0;
+                });
+            };
+&nbsp;
+            var getDispositionActions = function (actions) {
+                var visitSummary = $scope.visitSummary;
+                var stopDate = visitSummary &amp;&amp; visitSummary.stopDateTime;
+                var isVisitOpen = (stopDate === null);
+                if (visitSummary &amp;&amp; visitSummary.isDischarged() &amp;&amp; isVisitOpen) {
+                    return filterAction(actions, ["Undo Discharge"]);
+                } else if (visitSummary &amp;&amp; visitSummary.isAdmitted() &amp;&amp; isVisitOpen) {
+                    return filterAction(actions, ["Transfer Patient", "Discharge Patient"]);
+                } else {
+                    return filterAction(actions, ["Admit Patient"]);
+                }
+            };
+&nbsp;
+            var getVisit = function () {
+                var visitUuid = $stateParams.visitUuid;
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (visitUuid !== 'undefined' &amp;&amp; visitUuid !== 'null' &amp;&amp; visitUuid !== '') {
+                    return visitService.getVisitSummary(visitUuid).then(function (response) {
+                        $scope.visitSummary = new Bahmni.Common.VisitSummary(response.data);
+                    });
+                } else {
+<span class="cstat-no" title="statement not covered" >                    $scope.visitSummary = null;</span>
+<span class="cstat-no" title="statement not covered" >                    return $q.when({id: 1, status: "Returned from service.", promiseComplete: true});</span>
+                }
+            };
+&nbsp;
+            var init = function () {
+                initializeActionConfig();
+                var defaultVisitType = appService.getAppDescriptor().getConfigValue('defaultVisitType');
+                var visitTypes = encounterConfig.getVisitTypes();
+                $scope.visitControl = new Bahmni.Common.VisitControl(visitTypes, defaultVisitType, visitService);
+                $scope.dashboard = Bahmni.Common.DisplayControl.Dashboard.create($scope.dashboardConfig || <span class="branch-1 cbranch-no" title="branch not covered" >{},</span> $filter);
+                $scope.sectionGroups = $scope.dashboard.getSections($scope.diseaseTemplates);
+&nbsp;
+                return getVisit().then(dispositionService.getDispositionActions).then(function (response) {
+                    if (response.data &amp;&amp; response.data.results &amp;&amp; response.data.results.length) {
+                        $scope.dispositionActions = getDispositionActions(response.data.results[0].answers);
+                        <span class="missing-if-branch" title="else path not taken" >E</span>if ($scope.visitSummary) {
+                            $scope.currentVisitType = $scope.visitSummary.visitType;
+                        }
+                    }
+                });
+            };
+&nbsp;
+            $scope.$watch('dispositionAction', <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                var dispositionCode;</span>
+<span class="cstat-no" title="statement not covered" >                if ($scope.dispositionAction) {</span>
+<span class="cstat-no" title="statement not covered" >                    dispositionCode = getActionCode($scope.dispositionAction);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                $scope.actions = dispositionCode ? actionConfigs[dispositionCode].allowedActions : [];</span>
+            });
+&nbsp;
+            $scope.getDisplayForContinuingVisit = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return "Admit";</span>
+            };
+&nbsp;
+            $scope.getDisplay = <span class="fstat-no" title="function not covered" >function (displayFunction, display) {</span>
+<span class="cstat-no" title="statement not covered" >                if (displayFunction) {</span>
+<span class="cstat-no" title="statement not covered" >                    return $scope.call(displayFunction);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return display;</span>
+            };
+&nbsp;
+            $scope.startNewVisit = <span class="fstat-no" title="function not covered" >function (visitTypeUuid) {</span>
+<span class="cstat-no" title="statement not covered" >                if ($scope.visitSummary) {</span>
+<span class="cstat-no" title="statement not covered" >                    visitService.endVisit($scope.visitSummary.uuid).then(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                        $scope.admit(visitTypeUuid);</span>
+                    });
+                } else {
+<span class="cstat-no" title="statement not covered" >                    $scope.admit(visitTypeUuid);</span>
+                }
+            };
+&nbsp;
+            $scope.cancel = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                $location.url(Bahmni.ADT.Constants.patientsListUrl);</span>
+<span class="cstat-no" title="statement not covered" >                return $q.when({});</span>
+            };
+&nbsp;
+            $scope.call = <span class="fstat-no" title="function not covered" >function (functionName) {</span>
+<span class="cstat-no" title="statement not covered" >                if (functionName) {</span>
+<span class="cstat-no" title="statement not covered" >                    return $scope[functionName]();</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    return $q.when({});</span>
+                }
+            };
+&nbsp;
+            $scope.visitExists = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return $scope.visitSummary ? true : false;</span>
+            };
+&nbsp;
+            var getEncounterData = function (encounterTypeUuid, visitTypeUuid) {
+                var encounterData = {};
+                encounterData.patientUuid = $scope.patient.uuid;
+                encounterData.encounterTypeUuid = encounterTypeUuid;
+                encounterData.visitTypeUuid = visitTypeUuid;
+                encounterData.observations = $scope.adtObservations;
+                encounterData.observations = _.filter(encounterData.observations, <span class="fstat-no" title="function not covered" >function (observation) {</span>
+<span class="cstat-no" title="statement not covered" >                    return !_.isEmpty(observation.value);</span>
+                });
+                encounterData.locationUuid = locationUuid;
+                return encounterData;
+            };
+&nbsp;
+            var forwardUrl = function (response, option) {
+                var appDescriptor = appService.getAppDescriptor();
+                var forwardLink = appDescriptor.getConfig(option);
+                forwardLink = forwardLink &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >forwardLink.value;</span>
+&nbsp;
+                var options = {
+                    'patientUuid': $scope.patient.uuid,
+                    'encounterUuid': response.encounterUuid,
+                    'visitUuid': response.visitUuid
+                };
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (forwardLink) {
+<span class="cstat-no" title="statement not covered" >                    $window.location = appDescriptor.formatUrl(forwardLink, options);</span>
+                }
+            };
+&nbsp;
+            var createEncounterAndContinue = function () {
+                var currentVisitTypeUuid = getCurrentVisitTypeUuid();
+                if (currentVisitTypeUuid !== null) {
+                    var encounterData = getEncounterData($scope.encounterConfig.getAdmissionEncounterTypeUuid(), currentVisitTypeUuid);
+                    return encounterService.create(encounterData).success(function (response) {
+                        logEncounter(response.patientUuid, response.encounterUuid, response.encounterType);
+                        <span class="missing-if-branch" title="if path not taken" >I</span>if ($scope.visitSummary === null) {
+<span class="cstat-no" title="statement not covered" >                            visitService.getVisitSummary(response.visitUuid).then(<span class="fstat-no" title="function not covered" >function (response) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                $scope.visitSummary = new Bahmni.Common.VisitSummary(response.data);</span>
+                            });
+                        }
+                        forwardUrl(response, "onAdmissionForwardTo");
+                    });
+                } else <span class="missing-if-branch" title="if path not taken" >I</span>if ($scope.defaultVisitTypeName === null) {
+<span class="cstat-no" title="statement not covered" >                    messagingService.showMessage("error", "MESSAGE_DEFAULT_VISIT_TYPE_NOT_FOUND_KEY");</span>
+                } else {
+                    messagingService.showMessage("error", "MESSAGE_DEFAULT_VISIT_TYPE_INVALID_KEY");
+                }
+                return $q.when({});
+            };
+&nbsp;
+            $scope.admit = function () {
+                if ($scope.visitSummary &amp;&amp; $scope.visitSummary.visitType !== $scope.defaultVisitTypeName) {
+                    ngDialog.openConfirm({
+                        template: 'views/visitChangeConfirmation.html',
+                        scope: $scope,
+                        closeByEscape: true
+                    });
+                } else {
+                    return createEncounterAndContinue();
+                }
+                return $q.when({});
+            };
+&nbsp;
+            $scope.cancelConfirmationDialog = function () {
+                ngDialog.close();
+            };
+&nbsp;
+            var logVisit = function (patientUuid, eventType) {
+                var messageParams = {visitUuid: $scope.visitSummary.uuid, visitType: $scope.visitSummary.visitType};
+                return auditLogService.log(patientUuid, eventType, messageParams, 'MODULE_LABEL_INPATIENT_KEY');
+            };
+&nbsp;
+            var logEncounter = function (patientUuid, encounterUuid, encounterType) {
+                var messageParams = {encounterUuid: encounterUuid, encounterType: encounterType};
+                return auditLogService.log(patientUuid, 'EDIT_ENCOUNTER', messageParams, 'MODULE_LABEL_INPATIENT_KEY');
+            };
+&nbsp;
+            $scope.closeCurrentVisitAndStartNewVisit = function () {
+                if (defaultVisitTypeUuid !== null) {
+                    var encounter = getEncounterData($scope.encounterConfig.getAdmissionEncounterTypeUuid(), defaultVisitTypeUuid);
+                    visitService.endVisitAndCreateEncounter($scope.visitSummary.uuid, encounterService.buildEncounter(encounter)).success(function (response) {
+                        logVisit(encounter.patientUuid, "CLOSE_VISIT").then(function () {
+                            return visitService.getVisitSummary(response.visitUuid).then(function (response) {
+                                $scope.visitSummary = new Bahmni.Common.VisitSummary(response.data);
+                                return logVisit(encounter.patientUuid, "OPEN_VISIT");
+                            }).then(function () {
+                                return logEncounter(response.patientUuid, response.encounterUuid, response.encounterType);
+                            });
+                        }).then(function () {
+                            forwardUrl(response, "onAdmissionForwardTo");
+                        });
+                    });
+                } else <span class="missing-if-branch" title="if path not taken" >I</span>if ($scope.defaultVisitTypeName === null) {
+<span class="cstat-no" title="statement not covered" >                    messagingService.showMessage("error", "MESSAGE_DEFAULT_VISIT_TYPE_NOT_FOUND_KEY");</span>
+                } else {
+                    messagingService.showMessage("error", "MESSAGE_DEFAULT_VISIT_TYPE_INVALID_KEY");
+                }
+                ngDialog.close();
+                return $q.when({});
+            };
+&nbsp;
+            $scope.continueWithCurrentVisit = function () {
+                createEncounterAndContinue();
+                ngDialog.close();
+            };
+&nbsp;
+            $scope.transfer = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                var encounterData = getEncounterData($scope.encounterConfig.getTransferEncounterTypeUuid(), getCurrentVisitTypeUuid());</span>
+<span class="cstat-no" title="statement not covered" >                return encounterService.create(encounterData).then(<span class="fstat-no" title="function not covered" >function (response) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    logEncounter(response.data.patientUuid, response.data.encounterUuid, response.data.encounterType);</span>
+<span class="cstat-no" title="statement not covered" >                    forwardUrl(response.data, "onTransferForwardTo");</span>
+                });
+            };
+&nbsp;
+            $scope.discharge = function () {
+                var encounterData = getEncounterData($scope.encounterConfig.getDischargeEncounterTypeUuid());
+                return spinner.forPromise(encounterService.discharge(encounterData).then(function (response) {
+                    logEncounter(response.data.patientUuid, response.data.encounterUuid, response.data.encounterType);
+                    forwardUrl(response.data, "onDischargeForwardTo");
+                }));
+            };
+&nbsp;
+            $scope.undoDischarge = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return spinner.forPromise(encounterService.delete($scope.visitSummary.getDischargeEncounterUuid(), "Undo Discharge")).then(<span class="fstat-no" title="function not covered" >function (response) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var params = {</span>
+                        'encounterUuid': $scope.visitSummary.getAdmissionEncounterUuid(),
+                        'visitUuid': $scope.visitSummary.uuid
+                    };
+<span class="cstat-no" title="statement not covered" >                    var admissionEncounterType = $scope.encounterConfig.getEncounterTypeByUuid($scope.encounterConfig.getAdmissionEncounterTypeUuid());</span>
+<span class="cstat-no" title="statement not covered" >                    logEncounter($scope.patient.uuid, params.encounterUuid, admissionEncounterType['name']);</span>
+<span class="cstat-no" title="statement not covered" >                    forwardUrl(params, "onAdmissionForwardTo");</span>
+                });
+            };
+&nbsp;
+            spinner.forPromise(init());
+            $anchorScroll();
+        }
+    ]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

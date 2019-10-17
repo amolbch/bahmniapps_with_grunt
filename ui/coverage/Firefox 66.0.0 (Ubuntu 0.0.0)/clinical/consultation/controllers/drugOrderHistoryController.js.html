@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/consultation/controllers/drugOrderHistoryController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">clinical/consultation/controllers/drugOrderHistoryController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">67.72% <small>(86 / 127)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">41.82% <small>(23 / 55)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">51.35% <small>(19 / 37)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">67.72% <small>(86 / 127)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">clinical/consultation/controllers/</a> &#187; drugOrderHistoryController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">25</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">25</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">37</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">37</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">25</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.clinical')
+    .controller('DrugOrderHistoryController', ['$scope', '$filter', '$stateParams', 'activeDrugOrders',
+        'treatmentConfig', 'treatmentService', 'spinner', 'drugOrderHistoryHelper', 'visitHistory', '$translate', '$rootScope',
+        function ($scope, $filter, $stateParams, activeDrugOrders, treatmentConfig, treatmentService, spinner,
+                   drugOrderHistoryHelper, visitHistory, $translate, $rootScope) {
+            var DrugOrderViewModel = Bahmni.Clinical.DrugOrderViewModel;
+            var DateUtil = Bahmni.Common.Util.DateUtil;
+            var currentVisit = visitHistory.activeVisit;
+            var activeDrugOrdersList = [];
+            var prescribedDrugOrders = [];
+            $scope.dispensePrivilege = Bahmni.Clinical.Constants.dispensePrivilege;
+            $scope.scheduledDate = DateUtil.getDateWithoutTime(DateUtil.addDays(DateUtil.now(), 1));
+&nbsp;
+            var createPrescriptionGroups = function (activeAndScheduledDrugOrders) {
+                $scope.consultation.drugOrderGroups = [];
+                createPrescribedDrugOrderGroups();
+                createRecentDrugOrderGroup(activeAndScheduledDrugOrders);
+            };
+&nbsp;
+            var getPreviousVisitDrugOrders = function () {
+                var currentVisitIndex = _.findIndex($scope.consultation.drugOrderGroups, function (group) {
+                    return group.isCurrentVisit;
+                });
+&nbsp;
+                <span class="missing-if-branch" title="else path not taken" >E</span>if ($scope.consultation.drugOrderGroups[currentVisitIndex + 1]) {
+                    return $scope.consultation.drugOrderGroups[currentVisitIndex + 1].drugOrders;
+                }
+<span class="cstat-no" title="statement not covered" >                return [];</span>
+            };
+&nbsp;
+            var sortOrderSetDrugsFollowedByDrugOrders = function (drugOrders, showOnlyActive) {
+                var orderSetOrdersAndDrugOrders = _.groupBy(drugOrders, function (drugOrder) {
+                    if (drugOrder.orderGroupUuid) {
+                        return 'orderSetOrders';
+                    }
+                    return 'drugOrders';
+                });
+                var refillableDrugOrders = drugOrderHistoryHelper.getRefillableDrugOrders(orderSetOrdersAndDrugOrders.drugOrders, getPreviousVisitDrugOrders(), showOnlyActive);
+                return _(orderSetOrdersAndDrugOrders.orderSetOrders)
+                    .concat(refillableDrugOrders)
+                    .uniqBy('uuid')
+                    .value();
+            };
+&nbsp;
+            var createRecentDrugOrderGroup = function (activeAndScheduledDrugOrders) {
+                var showOnlyActive = treatmentConfig.drugOrderHistoryConfig.showOnlyActive;
+                var refillableGroup = {
+                    label: $translate.instant("MEDICATION_RECENT_TAB"),
+                    selected: true,
+                    drugOrders: sortOrderSetDrugsFollowedByDrugOrders(activeAndScheduledDrugOrders, showOnlyActive)
+                };
+                $scope.consultation.drugOrderGroups.unshift(refillableGroup);
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (treatmentConfig.drugOrderHistoryConfig.numberOfVisits !== undefined &amp;&amp; treatmentConfig.drugOrderHistoryConfig.numberOfVisits !== null &amp;&amp; treatmentConfig.drugOrderHistoryConfig.numberOfVisits === 0) {
+<span class="cstat-no" title="statement not covered" >                    $scope.consultation.drugOrderGroups = [$scope.consultation.drugOrderGroups[0]];</span>
+                }
+            };
+&nbsp;
+            var createPrescribedDrugOrderGroups = function () {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (prescribedDrugOrders.length === 0) {
+<span class="cstat-no" title="statement not covered" >                    return [];</span>
+                }
+                var drugOrderGroupedByDate = _.groupBy(prescribedDrugOrders, function (drugOrder) {
+                    return DateUtil.parse(drugOrder.visit.startDateTime);
+                });
+&nbsp;
+                var createDrugOrder = function (drugOrder) {
+                    return DrugOrderViewModel.createFromContract(drugOrder, treatmentConfig);
+                };
+&nbsp;
+                var drugOrderGroups = _.map(drugOrderGroupedByDate, function (drugOrders, visitStartDate) {
+                    return {
+                        label: $filter("bahmniDate")(visitStartDate),
+                        visitStartDate: DateUtil.parse(visitStartDate),
+                        drugOrders: drugOrders.map(createDrugOrder),
+                        isCurrentVisit: currentVisit &amp;&amp; DateUtil.isSameDateTime(visitStartDate, currentVisit.startDatetime)
+                    };
+                });
+                $scope.consultation.drugOrderGroups = $scope.consultation.drugOrderGroups.concat(drugOrderGroups);
+                $scope.consultation.drugOrderGroups = _.sortBy($scope.consultation.drugOrderGroups, 'visitStartDate').reverse();
+            };
+&nbsp;
+            $scope.stoppedOrderReasons = treatmentConfig.stoppedOrderReasonConcepts;
+&nbsp;
+            var init = function () {
+                var numberOfVisits = treatmentConfig.drugOrderHistoryConfig.numberOfVisits ? treatmentConfig.drugOrderHistoryConfig.numberOfVisits : <span class="branch-1 cbranch-no" title="branch not covered" >3;</span>
+                spinner.forPromise(treatmentService.getPrescribedDrugOrders(
+                    $stateParams.patientUuid, true, numberOfVisits, $stateParams.dateEnrolled, $stateParams.dateCompleted).then(function (data) {
+                        prescribedDrugOrders = data;
+                        createPrescriptionGroups($scope.consultation.activeAndScheduledDrugOrders);
+                    }));
+            };
+            $scope.getOrderReasonConcept = <span class="fstat-no" title="function not covered" >function (drugOrder) {</span>
+<span class="cstat-no" title="statement not covered" >                if (drugOrder.orderReasonConcept) {</span>
+<span class="cstat-no" title="statement not covered" >                    return drugOrder.orderReasonConcept.display || drugOrder.orderReasonConcept.name;</span>
+                }
+            };
+&nbsp;
+            $scope.toggleShowAdditionalInstructions = <span class="fstat-no" title="function not covered" >function (line) {</span>
+<span class="cstat-no" title="statement not covered" >                line.showAdditionalInstructions = !line.showAdditionalInstructions;</span>
+            };
+&nbsp;
+            $scope.drugOrderGroupsEmpty = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return _.isEmpty($scope.consultation.drugOrderGroups);</span>
+            };
+&nbsp;
+            $scope.isDrugOrderGroupEmpty = <span class="fstat-no" title="function not covered" >function (drugOrders) {</span>
+<span class="cstat-no" title="statement not covered" >                return _.isEmpty(drugOrders);</span>
+            };
+&nbsp;
+            $scope.showEffectiveFromDate = <span class="fstat-no" title="function not covered" >function (visitStartDate, effectiveStartDate) {</span>
+<span class="cstat-no" title="statement not covered" >                return $filter("bahmniDate")(effectiveStartDate) !== $filter("bahmniDate")(visitStartDate);</span>
+            };
+&nbsp;
+            $scope.refill = function (drugOrder) {
+                $rootScope.$broadcast("event:refillDrugOrder", drugOrder);
+            };
+&nbsp;
+            $scope.refillAll = <span class="fstat-no" title="function not covered" >function (drugOrders) {</span>
+<span class="cstat-no" title="statement not covered" >                $rootScope.$broadcast("event:refillDrugOrders", drugOrders);</span>
+            };
+&nbsp;
+            $scope.revise = function (drugOrder, drugOrders) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if ($scope.consultation.drugOrdersWithUpdatedOrderAttributes[drugOrder.uuid]) {
+<span class="cstat-no" title="statement not covered" >                    delete $scope.consultation.drugOrdersWithUpdatedOrderAttributes[drugOrder.uuid];</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.toggleDrugOrderAttribute(drugOrder.orderAttributes[0]);</span>
+                }
+&nbsp;
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (drugOrder.isEditAllowed) {
+                    $rootScope.$broadcast("event:reviseDrugOrder", drugOrder, drugOrders);
+                }
+            };
+&nbsp;
+            $scope.updateFormConditions = function (drugOrder) {
+                var formCondition = Bahmni.ConceptSet.FormConditions.rules ? Bahmni.ConceptSet.FormConditions.rules["Medication Stop Reason"] : undefined;
+                if (formCondition) {
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (drugOrder.orderReasonConcept) {
+                        if (!formCondition(drugOrder, drugOrder.orderReasonConcept.name.name)) {
+                            disableAndClearReasonText(drugOrder);
+                        }
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        disableAndClearReasonText(drugOrder);</span>
+                    }
+                } else {
+                    drugOrder.orderReasonNotesEnabled = true;
+                }
+            };
+&nbsp;
+            var disableAndClearReasonText = function (drugOrder) {
+                drugOrder.orderReasonText = null;
+                drugOrder.orderReasonNotesEnabled = false;
+            };
+&nbsp;
+            $scope.discontinue = function (drugOrder) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (drugOrder.isDiscontinuedAllowed) {
+                    $rootScope.$broadcast("event:discontinueDrugOrder", drugOrder);
+                    $scope.updateFormConditions(drugOrder);
+                }
+            };
+&nbsp;
+            $scope.undoDiscontinue = <span class="fstat-no" title="function not covered" >function (drugOrder) {</span>
+<span class="cstat-no" title="statement not covered" >                $rootScope.$broadcast("event:undoDiscontinueDrugOrder", drugOrder);</span>
+            };
+&nbsp;
+            $scope.shouldBeDisabled = <span class="fstat-no" title="function not covered" >function (drugOrder, orderAttribute) {</span>
+<span class="cstat-no" title="statement not covered" >                if (drugOrder.isBeingEdited) {</span>
+<span class="cstat-no" title="statement not covered" >                    return true;</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return !drugOrder.isActive() || orderAttribute.obsUuid;</span>
+            };
+&nbsp;
+            $scope.updateOrderAttribute = <span class="fstat-no" title="function not covered" >function (drugOrder, orderAttribute, valueToSet) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!$scope.shouldBeDisabled(drugOrder, orderAttribute)) {</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.toggleDrugOrderAttribute(orderAttribute, valueToSet);</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.consultation.drugOrdersWithUpdatedOrderAttributes[drugOrder.uuid] = drugOrder;</span>
+                }
+            };
+&nbsp;
+            $scope.toggleDrugOrderAttribute = <span class="fstat-no" title="function not covered" >function (orderAttribute, valueToSet) {</span>
+<span class="cstat-no" title="statement not covered" >                orderAttribute.value = valueToSet !== undefined ? valueToSet : !orderAttribute.value;</span>
+            };
+&nbsp;
+            $scope.getOrderAttributes = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return treatmentConfig.orderAttributes;</span>
+            };
+&nbsp;
+            $scope.updateAllOrderAttributesByName = <span class="fstat-no" title="function not covered" >function (orderAttribute, drugOrderGroup) {</span>
+<span class="cstat-no" title="statement not covered" >                drugOrderGroup[orderAttribute.name] = drugOrderGroup[orderAttribute.name] || {};</span>
+<span class="cstat-no" title="statement not covered" >                drugOrderGroup[orderAttribute.name].selected = drugOrderGroup[orderAttribute.name].selected ? false : true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                drugOrderGroup.drugOrders.forEach(<span class="fstat-no" title="function not covered" >function (drugOrder) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var selectedOrderAttribute = getAttribute(drugOrder, orderAttribute.name);</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.updateOrderAttribute(drugOrder, selectedOrderAttribute, drugOrderGroup[orderAttribute.name].selected);</span>
+                });
+            };
+&nbsp;
+            $scope.allOrderAttributesOfNameSet = <span class="fstat-no" title="function not covered" >function (drugOrderGroup, orderAttributeName) {</span>
+<span class="cstat-no" title="statement not covered" >                var allAttributesSelected = true;</span>
+<span class="cstat-no" title="statement not covered" >                drugOrderGroup.drugOrders.forEach(<span class="fstat-no" title="function not covered" >function (drugOrder) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var orderAttributeOfName = getAttribute(drugOrder, orderAttributeName);</span>
+<span class="cstat-no" title="statement not covered" >                    if (!$scope.shouldBeDisabled(drugOrder, orderAttributeOfName) &amp;&amp; !orderAttributeOfName.value) {</span>
+<span class="cstat-no" title="statement not covered" >                        allAttributesSelected = false;</span>
+                    }
+                });
+<span class="cstat-no" title="statement not covered" >                drugOrderGroup[orderAttributeName] = drugOrderGroup[orderAttributeName] || {};</span>
+<span class="cstat-no" title="statement not covered" >                drugOrderGroup[orderAttributeName].selected = allAttributesSelected;</span>
+            };
+&nbsp;
+            $scope.canUpdateAtLeastOneOrderAttributeOfName = <span class="fstat-no" title="function not covered" >function (drugOrderGroup, orderAttributeName) {</span>
+<span class="cstat-no" title="statement not covered" >                var canBeUpdated = false;</span>
+<span class="cstat-no" title="statement not covered" >                drugOrderGroup.drugOrders.forEach(<span class="fstat-no" title="function not covered" >function (drugOrder) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var orderAttributeOfName = getAttribute(drugOrder, orderAttributeName);</span>
+<span class="cstat-no" title="statement not covered" >                    if (!$scope.shouldBeDisabled(drugOrder, orderAttributeOfName)) {</span>
+<span class="cstat-no" title="statement not covered" >                        canBeUpdated = true;</span>
+                    }
+                });
+<span class="cstat-no" title="statement not covered" >                return canBeUpdated;</span>
+            };
+&nbsp;
+            $scope.getMinDateForDiscontinue = function (drugOrder) {
+                var minDate = DateUtil.today();
+                if (DateUtil.isBeforeDate(drugOrder.effectiveStartDate, minDate)) {
+                    minDate = drugOrder.effectiveStartDate;
+                }
+                return DateUtil.getDateWithoutTime(minDate);
+            };
+&nbsp;
+            var getAttribute = <span class="fstat-no" title="function not covered" >function (drugOrder, attributeName) {</span>
+<span class="cstat-no" title="statement not covered" >                return _.find(drugOrder.orderAttributes, {name: attributeName});</span>
+            };
+&nbsp;
+            init();
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

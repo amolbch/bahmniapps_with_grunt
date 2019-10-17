@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/patient/mappers/patientMapper.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">common/patient/mappers/patientMapper.js</span></h1>
+    <h2>
+        Statements: <span class="metric">68.49% <small>(50 / 73)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">42.11% <small>(16 / 38)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">50% <small>(7 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">68.49% <small>(50 / 73)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/patient/mappers/</a> &#187; patientMapper.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Bahmni.PatientMapper = function (patientConfig, $rootScope, $translate) {
+    this.patientConfig = patientConfig;
+&nbsp;
+    this.map = <span class="fstat-no" title="function not covered" >function (openmrsPatient) {</span>
+<span class="cstat-no" title="statement not covered" >        var patient = this.mapBasic(openmrsPatient);</span>
+<span class="cstat-no" title="statement not covered" >        this.mapAttributes(patient, openmrsPatient.person.attributes);</span>
+<span class="cstat-no" title="statement not covered" >        return patient;</span>
+    };
+&nbsp;
+    this.mapBasic = function (openmrsPatient) {
+        var patient = {};
+        patient.uuid = openmrsPatient.uuid;
+        patient.givenName = openmrsPatient.person.preferredName.givenName;
+        patient.familyName = openmrsPatient.person.preferredName.familyName === null ? <span class="branch-0 cbranch-no" title="branch not covered" >'' </span>: openmrsPatient.person.preferredName.familyName;
+        patient.name = patient.givenName + ' ' + patient.familyName;
+        patient.age = openmrsPatient.person.age;
+        patient.ageText = calculateAge(Bahmni.Common.Util.DateUtil.parseServerDateToDate(openmrsPatient.person.birthdate));
+        patient.gender = openmrsPatient.person.gender;
+        patient.genderText = mapGenderText(patient.gender);
+        patient.address = mapAddress(openmrsPatient.person.preferredAddress);
+        patient.birthdateEstimated = openmrsPatient.person.birthdateEstimated;
+        patient.birthtime = Bahmni.Common.Util.DateUtil.parseServerDateToDate(openmrsPatient.person.birthtime);
+        patient.bloodGroupText = getPatientBloodGroupText(openmrsPatient);
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (openmrsPatient.identifiers) {
+            var primaryIdentifier = openmrsPatient.identifiers[0].primaryIdentifier;
+            patient.identifier = primaryIdentifier ? primaryIdentifier : openmrsPatient.identifiers[0].identifier;
+        }
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (openmrsPatient.person.birthdate) {
+            patient.birthdate = parseDate(openmrsPatient.person.birthdate);
+        }
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (openmrsPatient.person.personDateCreated) {
+<span class="cstat-no" title="statement not covered" >            patient.registrationDate = parseDate(openmrsPatient.person.personDateCreated);</span>
+        }
+&nbsp;
+        patient.image = Bahmni.Common.Constants.patientImageUrlByPatientUuid + openmrsPatient.uuid;
+        return patient;
+    };
+&nbsp;
+    this.getPatientConfigByUuid = <span class="fstat-no" title="function not covered" >function (patientConfig, attributeUuid) {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.patientConfig.personAttributeTypes) {</span>
+<span class="cstat-no" title="statement not covered" >            return patientConfig.personAttributeTypes.filter(<span class="fstat-no" title="function not covered" >function (item) {</span></span>
+<span class="cstat-no" title="statement not covered" >                return item.uuid === attributeUuid;</span>
+            })[0];
+        }
+<span class="cstat-no" title="statement not covered" >        return {};</span>
+    };
+&nbsp;
+    this.mapAttributes = <span class="fstat-no" title="function not covered" >function (patient, attributes) {</span>
+<span class="cstat-no" title="statement not covered" >        var self = this;</span>
+<span class="cstat-no" title="statement not covered" >        if (this.patientConfig) {</span>
+<span class="cstat-no" title="statement not covered" >            attributes.forEach(<span class="fstat-no" title="function not covered" >function (attribute) {</span></span>
+<span class="cstat-no" title="statement not covered" >                var x = self.getPatientConfigByUuid(patientConfig, attribute.attributeType.uuid);</span>
+<span class="cstat-no" title="statement not covered" >                patient[x.name] = {label: x.description, value: attribute.value, isDateField: checkIfDateField(x) };</span>
+            });
+        }
+    };
+&nbsp;
+    var calculateAge = function (birthDate) {
+        var DateUtil = Bahmni.Common.Util.DateUtil;
+        var age = DateUtil.diffInYearsMonthsDays(birthDate, DateUtil.now());
+        var ageInString = "";
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (age.years) {
+            ageInString += age.years + " &lt;span&gt; " + $translate.instant("CLINICAL_YEARS_TRANSLATION_KEY") + " &lt;/span&gt;";
+        }
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (age.months) {
+            ageInString += age.months + "&lt;span&gt;  " + $translate.instant("CLINICAL_MONTHS_TRANSLATION_KEY") + " &lt;/span&gt;";
+        }
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (age.days) {
+            ageInString += age.days + "&lt;span&gt;  " + $translate.instant("CLINICAL_DAYS_TRANSLATION_KEY") + " &lt;/span&gt;";
+        }
+        return ageInString;
+    };
+&nbsp;
+    var mapAddress = function (preferredAddress) {
+        return preferredAddress ? {
+            "address1": preferredAddress.address1,
+            "address2": preferredAddress.address2,
+            "address3": preferredAddress.address3,
+            "cityVillage": preferredAddress.cityVillage,
+            "countyDistrict": preferredAddress.countyDistrict === null ? <span class="branch-0 cbranch-no" title="branch not covered" >'' </span>: preferredAddress.countyDistrict,
+            "stateProvince": preferredAddress.stateProvince
+        } : <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+    };
+&nbsp;
+    var parseDate = function (dateStr) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (dateStr) {
+            return Bahmni.Common.Util.DateUtil.parse(dateStr.substr(0, 10));
+        }
+<span class="cstat-no" title="statement not covered" >        return dateStr;</span>
+    };
+&nbsp;
+    var mapGenderText = function (genderChar) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (genderChar == null) {
+<span class="cstat-no" title="statement not covered" >            return null;</span>
+        }
+        return "&lt;span&gt;" + $rootScope.genderMap[angular.uppercase(genderChar)] + "&lt;/span&gt;";
+    };
+&nbsp;
+    var getPatientBloodGroupText = function (openmrsPatient) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (openmrsPatient.person.bloodGroup) {
+<span class="cstat-no" title="statement not covered" >            return "&lt;span&gt;" + openmrsPatient.person.bloodGroup + "&lt;/span&gt;";</span>
+        }
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (openmrsPatient.person.attributes &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >openmrsPatient.person.attributes.length &gt; 0)</span> {
+<span class="cstat-no" title="statement not covered" >            var bloodGroup;</span>
+<span class="cstat-no" title="statement not covered" >            _.forEach(openmrsPatient.person.attributes, <span class="fstat-no" title="function not covered" >function (attribute) {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (attribute.attributeType.display == "bloodGroup") {</span>
+<span class="cstat-no" title="statement not covered" >                    bloodGroup = attribute.display;</span>
+                }
+            });
+<span class="cstat-no" title="statement not covered" >            if (bloodGroup) {</span>
+<span class="cstat-no" title="statement not covered" >                return "&lt;span&gt;" + bloodGroup + "&lt;/span&gt;";</span>
+            }
+        }
+    };
+&nbsp;
+    var checkIfDateField = <span class="fstat-no" title="function not covered" >function (x) {</span>
+<span class="cstat-no" title="statement not covered" >        return x.format === Bahmni.Common.Constants.patientAttributeDateFieldFormat;</span>
+    };
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

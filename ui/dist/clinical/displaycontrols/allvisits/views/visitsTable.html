@@ -1,0 +1,28 @@
+<section class="block patientInformation">
+    <h2 class="section-title" ng-hide="::params.translationKey" ng-if="::params.title">
+        {{::params.title}}
+    </h2>
+    <h2 class="section-title" ng-show="::params.translationKey">
+        {{::params.translationKey|translate}}
+    </h2>
+
+    <div ng-repeat="(key, visit) in ::visits | limitTo:3">
+        <p class="placeholder-text" ng-if="!hasVisits()">{{::noVisitsMessage}}</p>
+        <table class="visits dashboard-table" id="visitDisplayTable" ng-if="::hasVisits()">
+            <tbody>
+                <td class="name" width="30%">
+                    <a class="visit" ng-click="openVisit(key)">
+                        <span>{{::visit.startDatetime | bahmniDate}}</span>
+                        <span ng-if="::!visit.isActive()">- {{::visit.stopDatetime | bahmniDate }}</span>
+                        <i class="fa fa-star current-visit-icon" id="currentVisitIcon" ng-if="::visit.isActive()" title="Current Visit"></i>
+                    </a>
+                </td>
+                <td class="value" id="visitStatus" style="font-weight: bold">{{::visit.visitStatus | translate}}</td>
+            <tr id="eachVisit" ng-repeat="encounter in visit.encounters" ng-if="encounter.actualEncounterType">
+                <td></td>
+                <td class="value" id="encounterType">{{::encounter.actualEncounterType | translate}}</td> 
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

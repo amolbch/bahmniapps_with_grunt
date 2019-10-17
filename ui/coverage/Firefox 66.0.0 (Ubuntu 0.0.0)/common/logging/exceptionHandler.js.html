@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/logging/exceptionHandler.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">common/logging/exceptionHandler.js</span></h1>
+    <h2>
+        Statements: <span class="metric">30% <small>(6 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 4)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">60% <small>(3 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">30% <small>(6 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">common/logging/</a> &#187; exceptionHandler.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1334</span>
+<span class="cline-any cline-yes">1279</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1279</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1279</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.logging')
+.config(['$provide', function ($provide) {
+    $provide.decorator("$exceptionHandler", function ($delegate, $injector, $window, $log) {
+        var logError = <span class="fstat-no" title="function not covered" >function (exception, cause) {</span>
+<span class="cstat-no" title="statement not covered" >            try {</span>
+<span class="cstat-no" title="statement not covered" >                var messagingService = $injector.get('messagingService');</span>
+<span class="cstat-no" title="statement not covered" >                var loggingService = $injector.get('loggingService');</span>
+<span class="cstat-no" title="statement not covered" >                var errorMessage = exception.toString();</span>
+<span class="cstat-no" title="statement not covered" >                var stackTrace = printStackTrace({ e: exception });</span>
+<span class="cstat-no" title="statement not covered" >                var errorDetails = {</span>
+                    timestamp: new Date(),
+                    browser: $window.navigator.userAgent,
+                    errorUrl: $window.location.href,
+                    errorMessage: errorMessage,
+                    stackTrace: stackTrace,
+                    cause: (cause || "")
+                };
+<span class="cstat-no" title="statement not covered" >                loggingService.log(errorDetails);</span>
+<span class="cstat-no" title="statement not covered" >                messagingService.showMessage('error', errorMessage);</span>
+<span class="cstat-no" title="statement not covered" >                exposeException(errorDetails);</span>
+            } catch (loggingError) {
+<span class="cstat-no" title="statement not covered" >                $log.warn("Error logging failed");</span>
+<span class="cstat-no" title="statement not covered" >                $log.log(loggingError);</span>
+            }
+        };
+&nbsp;
+        var exposeException = <span class="fstat-no" title="function not covered" >function (exceptionDetails) {</span>
+<span class="cstat-no" title="statement not covered" >            window.angular_exception = window.angular_exception || [];</span>
+<span class="cstat-no" title="statement not covered" >            window.angular_exception.push(exceptionDetails);</span>
+        };
+&nbsp;
+        return function (exception, cause) {
+            $delegate(exception, cause);
+<span class="cstat-no" title="statement not covered" >            logError(exception, cause);</span>
+        };
+    });
+}]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

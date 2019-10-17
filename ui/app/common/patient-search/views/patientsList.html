@@ -1,0 +1,127 @@
+<div class="patient-search-wrapper">
+    <div class="tabs">
+        <button ng-if="search.searchType.showPrint" class="dialog-button-group fr" ng-click="printPage()"
+                accesskey="{{'CLINICAL_PRINT_ACCESS_KEY'| translate}}" ng-bind-html="'CLINICAL_PRINT_TRANSLATION_KEY'|translate">
+            <i class="fa fa-print"></i>
+        </button>
+        <ul>
+            <li class="tab-item" ng-repeat="searchType in search.searchTypes"
+                ng-class="{'tab-selected': search.isSelectedSearch(searchType)}">
+                <a href="" ng-click="search.switchSearchType(searchType)">
+                    <span>{{::searchType | titleTranslate}} </span>
+                    <span ng-if="search.showPatientCountOnSearchParameter(searchType)">({{search.searchResults.length}})</span>
+                    <span ng-if="(searchType.handler && !search.showPatientCountOnSearchParameter(searchType))" scheduler
+                          watch-on="search.searchParameter" refresh-time="searchType.refreshTime">({{searchType.patientCount}})</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content" ng-if="::search.searchTypes.length">
+        <span ng-if="search.isCurrentSearchLookUp()">
+            <form name="filterPatients" ng-submit="filterPatientsAndSubmit()">
+                <div class="search-wrapper">
+                    <input type="text" id="patientIdentifier" ng-model="::search.searchParameter"
+                           focus-on="search.startPatientSearch"
+                           ng-change="search.filterPatients()"/>
+                </div>
+            </form>
+        </span>
+        <span ng-if="search.searchType && !search.isCurrentSearchLookUp()">
+            <form name="searchPatientForm" ng-submit="searchPatients()" class="overflow-hidden">
+                <div class="search-patient-id left">
+                    <input type="text" id="patientIdentifier" ng-model="::search.searchParameter"
+                           focus-on="search.startPatientSearch" placeholder="{{'SEARCH_NAME_PLACEHOLDER_KEY' | translate: {primaryIdentifier : primaryIdentifier} }}"/>
+                </div>
+                <div class="reg-srch-btn left">
+                    <button type="submit" ng-disabled="!search.searchParameter">
+                        <i class="fa fa-search"></i>
+                        {{'SEARCH_KEY' | translate }}
+                    </button>
+                </div>
+            </form>
+        </span>
+        <resize ng-if="search.searchType.name == 'All'" search-results="search.searchResults"
+                visible-results="search.visiblePatients" class="active-visits">
+            <div>
+                <table class="table" style="font-size: 0.7rem">
+                    <thead>
+                    <tr>
+                        <th><strong>{{ ::'CLINICAL_LIST_PATIENT_NID' | translate}}</strong></th>
+                        <th><strong>{{ ::'CLINICAL_LIST_PATIENT_FIRST_NAME' | translate}}</strong></th>
+                        <th><strong>{{ ::'CLINICAL_LIST_PATIENT_LAST_NAME' | translate}}</strong></th>
+                        <th><strong>{{ ::'CLINICAL_LIST_PATIENT_NICK_NAME' | translate}}</strong></th>
+                        <th><strong>{{ ::'CLINICAL_LIST_PATIENT_SEX' | translate}}</strong></th>
+                        <th><strong>{{ ::'CLINICAL_LIST_PATIENT_AGE' | translate}}</strong></th>
+                        <th><strong>{{ ::'CLINICAL_LIST_PATIENT_DOB' | translate}}</strong></th>
+                        <th><strong>{{ ::'CLINICAL_LIST_PATIENT_MAIN_CONTACT' | translate}}</strong></th>
+                        <th><strong>{{ ::'CLINICAL_LIST_PATIENT_STATUS' | translate}}</strong></th>
+                        <th><strong>{{ ::'CLINICAL_LIST_PATIENT_REGISTRATION_DATE' | translate}}</strong></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="patient in search.visiblePatients">
+                        <td><a ng-click="forwardPatient(patient)">{{::patient.identifier}}</a></td>
+                        <td>{{::patient.givenName}}</td>
+                        <td>{{::patient.familyName}}</td>
+                        <td ng-repeat = "field in ::personSearchResultsConfig track by $index" ng-if="field=='NICK_NAME'">{{::patient.customAttribute[field] || "" | bahmniDateInStrictMode}}</td>
+                        <td>{{::patient.gender}}</td>
+                        <td>{{::patient.age}}</td>
+                        <td ng-if="!patient.birthdateEstimated">{{::patient.birthDate | date:'dd-MM-y'}}</td>
+                        <td ng-if="patient.birthdateEstimated">{{::patient.birthDate | date:'dd-MM-y'}}&nbsp;&nbsp;&nbsp;({{::'BIRTHDATE_ESTIMATED' | translate}})</td>
+                        <td ng-repeat = "field in ::personSearchResultsConfig track by $index" ng-if="field=='PRIMARY_CONTACT_NUMBER_1'">{{::patient.customAttribute[field] || "" | bahmniDateInStrictMode}}</td>
+                        <td ng-if="patient.patientState === 'ACTIVE'">{{::patient.patientState | translate}}  {{::patient.patientStatus |translate}}</td>
+                        <td ng-if="patient.patientState !== 'ACTIVE'">{{::patient.patientState | translate}} ({{::patient.patientStatus |translate}})</td>
+                        <td>{{::patient.dateCreated | date:'dd-MM-y'}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </resize>
+        <resize ng-if="search.searchType.name != 'All'" search-results="search.searchResults"
+                visible-results="search.visiblePatients" class="active-visits">
+            <div>
+                <table class="table" style="font-size: 0.7rem">
+                    <thead>
+                        <tr>
+                            <th><strong>{{ ::'CLINICAL_LIST_PATIENT_NID' | translate}}</strong></th>
+                            <th><strong>{{ ::'CLINICAL_LIST_PATIENT_FIRST_NAME' | translate}}</strong></th>
+                            <th><strong>{{ ::'CLINICAL_LIST_PATIENT_LAST_NAME' | translate}}</strong></th>
+                            <th><strong>{{ ::'CLINICAL_LIST_PATIENT_NICK_NAME' | translate}}</strong></th>
+                            <th><strong>{{ ::'CLINICAL_LIST_PATIENT_SEX' | translate}}</strong></th>
+                            <th><strong>{{ ::'CLINICAL_LIST_PATIENT_AGE' | translate}}</strong></th>
+                            <th><strong>{{ ::'CLINICAL_LIST_PATIENT_DOB' | translate}}</strong></th>
+                            <th><strong>{{ ::'CLINICAL_LIST_PATIENT_MAIN_CONTACT' | translate}}</strong></th>
+                            <th><strong>{{ ::'CLINICAL_LIST_PATIENT_STATUS' | translate}}</strong></th>
+                            <th><strong>{{ ::'CLINICAL_LIST_PATIENT_REGISTRATION_DATE' | translate}}</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    <tr ng-repeat="patient in search.visiblePatients">
+                        <td><a ng-click="forwardPatient(patient)">{{::patient.identifier}}</a></td>
+                        <td>{{::patient.firstName}}</td>
+                        <td>{{::patient.lastName}}</td>
+                        <td>{{::patient.nickName}}</td>
+                        <td>{{::patient.gender}}</td>
+                        <td>{{::patient.age}}</td>
+                        <td ng-if="!patient.birthdateEstimated">{{::patient.birthDate | date:'dd-MM-y'}}</td>
+                        <td ng-if="patient.birthdateEstimated">{{::patient.birthDate | date:'dd-MM-y'}}&nbsp;&nbsp;&nbsp;({{::'BIRTHDATE_ESTIMATED' | translate}})</td>
+                        <td>{{::patient.mainContact}}</td>
+                        <td ng-if="patient.patientState === 'ACTIVE'">{{::patient.patientState | translate}}  {{::patient.patientStatus |translate}}</td>
+                        <td ng-if="patient.patientState !== 'ACTIVE'">{{::patient.patientState | translate}} ({{::patient.patientStatus |translate}})</td>
+                        <td>{{::patient.registrationDate | date:'dd-MM-y'}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </resize>
+        <div class="note-container" ng-if="search.noResultsMessage">
+            <div class="note warning">
+                <div class="text">
+                    <p class="ng-binding">{{::search.noResultsMessage | translate}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for registration/directives/patientRelationship.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">registration/directives/patientRelationship.js</span></h1>
+    <h2>
+        Statements: <span class="metric">87.16% <small>(129 / 148)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">86.11% <small>(62 / 72)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">87.76% <small>(43 / 49)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">87.16% <small>(129 / 148)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">registration/directives/</a> &#187; patientRelationship.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.registration')
+    .directive('patientRelationship', <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            restrict: 'AE',
+            templateUrl: 'views/patientRelationships.html',
+            controller: 'PatientRelationshipController',
+            scope: {
+                patient: "="
+            }
+        };
+    })
+    .controller('PatientRelationshipController', ['$window', '$scope', '$rootScope', 'spinner', 'patientService', 'providerService', 'appService', '$q',
+        function ($window, $scope, $rootScope, spinner, patientService, providerService, appService, $q) {
+            $scope.addPlaceholderRelationship = function () {
+                $scope.patient.newlyAddedRelationships.push({});
+            };
+&nbsp;
+            $scope.removeRelationship = function (relationship, index) {
+                if (relationship.uuid) {
+                    relationship.voided = true;
+                    $scope.patient.deletedRelationships.push(relationship);
+                } else {
+                    $scope.patient.newlyAddedRelationships.splice(index, 1);
+                }
+            };
+&nbsp;
+            $scope.isPatientRelationship = function (relationship) {
+                var relationshipType = getRelationshipType(relationship);
+                return relationshipType &amp;&amp; (_.isUndefined(relationshipType.searchType) || relationshipType.searchType === "patient");
+            };
+&nbsp;
+            var getRelationshipType = function (relationship) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (angular.isUndefined(relationship['relationshipType'])) {
+<span class="cstat-no" title="statement not covered" >                    return false;</span>
+                }
+                return $scope.getRelationshipType(relationship.relationshipType.uuid);
+            };
+&nbsp;
+            $scope.getChosenRelationshipType = function (relation) {
+                if ($scope.isPatientRelationship(relation)) {
+                    return "patient";
+                } else if ($scope.isProviderRelationship(relation)) {
+                    return "provider";
+                }
+            };
+&nbsp;
+            $scope.isProviderRelationship = function (relationship) {
+                var relationshipType = getRelationshipType(relationship);
+                return relationshipType &amp;&amp; relationshipType.searchType === "provider";
+            };
+&nbsp;
+            $scope.getRelationshipType = function (uuid) {
+                return _.find($scope.relationshipTypes, {uuid: uuid});
+            };
+&nbsp;
+            $scope.getRelationshipTypeForDisplay = function (relationship) {
+                var personUuid = $scope.patient.uuid;
+                var relationshipType = $scope.getRelationshipType(relationship.relationshipType.uuid);
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (!relationship.personA) {
+<span class="cstat-no" title="statement not covered" >                    return "";</span>
+                }
+                if (relationship.personA.uuid === personUuid) {
+                    return relationshipType.aIsToB;
+                } else {
+                    return relationshipType.bIsToA;
+                }
+            };
+&nbsp;
+            $scope.getRelatedToPersonForDisplay = function (relationship) {
+                var personRelatedTo = getPersonRelatedTo(relationship);
+                return personRelatedTo ? personRelatedTo.display : <span class="branch-1 cbranch-no" title="branch not covered" >"";</span>
+            };
+&nbsp;
+            var getName = function (patient) {
+                return patient.givenName + (patient.middleName ? " " + patient.middleName : "") +
+                    (patient.familyName ? " " + patient.familyName : "");
+            };
+&nbsp;
+            var getPersonB = function (personName, personUuid) {
+                return {'display': personName, 'uuid': personUuid};
+            };
+            $scope.searchByPatientIdentifier = function (relationship) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (!relationship.patientIdentifier) {
+<span class="cstat-no" title="statement not covered" >                    relationship.personB = null;</span>
+<span class="cstat-no" title="statement not covered" >                    relationship.content = null;</span>
+<span class="cstat-no" title="statement not covered" >                    return;</span>
+                }
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (relationship.hasOwnProperty('personB')) {
+                    relationship.personB = null;
+                }
+                return patientService.searchByIdentifier(relationship.patientIdentifier).then(function (response) {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (angular.isUndefined(response)) {
+<span class="cstat-no" title="statement not covered" >                        return;</span>
+                    }
+&nbsp;
+                    var patients = response.data.pageOfResults;
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (patients.length === 0) {
+<span class="cstat-no" title="statement not covered" >                        return;</span>
+                    }
+                    relationship.content = getPatientGenderAndAge(patients[0]);
+<span class="cstat-no" title="statement not covered" >                    var personUuid = patients[0]['uuid'];</span>
+<span class="cstat-no" title="statement not covered" >                    var personName = getName(patients[0]);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    relationship.personB = getPersonB(personName, personUuid);</span>
+                });
+            };
+&nbsp;
+            $scope.showPersonNotFound = function (relationship) {
+                return (relationship.patientIdentifier &amp;&amp; !relationship.personB) &amp;&amp;
+                    $scope.getChosenRelationshipType(relationship) !== 'patient';
+            };
+&nbsp;
+            $scope.isInvalidRelation = function (relation) {
+                return _.isEmpty(_.get(relation, "personB.uuid")) || $scope.duplicateRelationship(relation);
+            };
+&nbsp;
+            $scope.duplicateRelationship = function (relationship) {
+                if (_.isEmpty(relationship.relationshipType) || _.isEmpty(relationship.personB)) {
+                    return false;
+                }
+                var existingRelatives = getAlreadyAddedRelationshipPersonUuid($scope.patient, relationship.relationshipType.uuid);
+                return _.get(_.countBy(existingRelatives, _.identity), relationship.personB.uuid, 0) &gt; 1;
+            };
+&nbsp;
+            var getPersonRelatedTo = function (relationship) {
+                return relationship.personA &amp;&amp; relationship.personA.uuid === $scope.patient.uuid ? relationship.personB : <span class="branch-1 cbranch-no" title="branch not covered" >relationship.personA;</span>
+            };
+&nbsp;
+            $scope.openPatientDashboardInNewTab = <span class="fstat-no" title="function not covered" >function (relationship) {</span>
+<span class="cstat-no" title="statement not covered" >                var personRelatedTo = getPersonRelatedTo(relationship);</span>
+<span class="cstat-no" title="statement not covered" >                $window.open(getPatientRegistrationUrl(personRelatedTo.uuid), '_blank');</span>
+            };
+&nbsp;
+            var getPatientRegistrationUrl = <span class="fstat-no" title="function not covered" >function (patientUuid) {</span>
+<span class="cstat-no" title="statement not covered" >                return '#/patient/' + patientUuid;</span>
+            };
+&nbsp;
+            $scope.getProviderList = function () {
+                return function (searchAttrs) {
+                    return providerService.search(searchAttrs.term);
+                };
+            };
+&nbsp;
+            $scope.providerSelected = <span class="fstat-no" title="function not covered" >function (relationship) {</span>
+<span class="cstat-no" title="statement not covered" >                return <span class="fstat-no" title="function not covered" >function (providerData) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    relationship.providerName = providerData.identifier;</span>
+<span class="cstat-no" title="statement not covered" >                    relationship.personB = getPersonB(providerData.identifier, providerData.uuid);</span>
+                };
+            };
+&nbsp;
+            var clearPersonB = function (relationship, fieldName) {
+                if (!relationship[fieldName]) {
+                    delete relationship.personB;
+                }
+            };
+&nbsp;
+            var getDeletedRelationshipUuids = function (patient, relationTypeUuid) {
+                return getPersonUuidsForRelationship(patient.deletedRelationships, relationTypeUuid);
+            };
+&nbsp;
+            var getNewlyAddedRelationshipPersonUuid = function (patient, relationTypeUuid) {
+                return getPersonUuidsForRelationship(patient.newlyAddedRelationships, relationTypeUuid);
+            };
+&nbsp;
+            var getPersonUuidsForRelationship = function (relationships, relationshipTypeUuid) {
+                var uuids = [];
+                _.each(relationships, function (relationship) {
+                    if (relationship.personB &amp;&amp; relationship.relationshipType.uuid === relationshipTypeUuid) {
+                        uuids.push(relationship.personB.uuid);
+                    }
+                });
+&nbsp;
+                return uuids;
+            };
+&nbsp;
+            var getAlreadyAddedRelationshipPersonUuid = function (patient, relationTypeUuid) {
+                var personUuids = _.concat(getPersonUuidsForRelationship(patient.relationships, relationTypeUuid),
+                    getNewlyAddedRelationshipPersonUuid(patient, relationTypeUuid));
+&nbsp;
+                return _.difference(personUuids, getDeletedRelationshipUuids(patient, relationTypeUuid));
+            };
+&nbsp;
+            $scope.clearProvider = <span class="fstat-no" title="function not covered" >function (relationship) {</span>
+<span class="cstat-no" title="statement not covered" >                clearPersonB(relationship, 'providerName');</span>
+            };
+&nbsp;
+            var getLimit = function (configName, defaultValue) {
+                return appService.getAppDescriptor().getConfigValue(configName) || defaultValue;
+            };
+&nbsp;
+            $scope.searchByPatientIdentifierOrName = function (searchAttrs) {
+                var term = searchAttrs.term;
+                if (term &amp;&amp; term.length &gt;= getLimit("minCharRequireToSearch", 1)) {
+                    return patientService.searchByNameOrIdentifier(term, getLimit("possibleRelativeSearchLimit", Bahmni.Common.Constants.defaultPossibleRelativeSearchLimit));
+                }
+                return $q.when();
+            };
+&nbsp;
+            $scope.clearPatient = function (relationship) {
+                clearPersonB(relationship, 'patientIdentifier');
+            };
+&nbsp;
+            $scope.patientSelected = function (relationship) {
+                return function (patientData) {
+                    relationship.patientIdentifier = patientData.identifier;
+                    relationship.personB = getPersonB(patientData.value, patientData.uuid);
+                };
+            };
+&nbsp;
+            $scope.getPatientList = function (response) {
+                if (angular.isUndefined(response)) {
+                    return;
+                }
+                return response.data.pageOfResults.map(function (patient) {
+                    return {
+                        value: getName(patient) + " - " + patient.identifier,
+                        uuid: patient.uuid,
+                        identifier: patient.identifier
+                    };
+                });
+            };
+&nbsp;
+            $scope.getProviderDataResults = function (data) {
+                return data.data.results.filter(function (provider) {
+                    return provider.person;
+                })
+                    .map(function (providerDetails) {
+                        return {
+                            'value': providerDetails.display || providerDetails.person.display,
+                            'uuid': providerDetails.person.uuid,
+                            'identifier': providerDetails.identifier || <span class="branch-1 cbranch-no" title="branch not covered" >providerDetails.person.display</span>
+                        };
+                    });
+            };
+&nbsp;
+            $scope.onEdit = function (relationship) {
+                return function () {
+                    delete relationship.personB;
+                };
+            };
+&nbsp;
+            $scope.clearRelationshipRow = function (relationship, index) {
+                delete relationship.personB;
+                delete relationship.patientIdentifier;
+                delete relationship.providerName;
+                delete relationship.endDate;
+                delete relationship.content;
+                managePlaceholderRelationshipRows(index);
+            };
+&nbsp;
+            var managePlaceholderRelationshipRows = function (index) {
+                var iter;
+                for (iter = 0; iter &lt; $scope.patient.newlyAddedRelationships.length; iter++) {
+                    if ($scope.isEmpty($scope.patient.newlyAddedRelationships[iter]) &amp;&amp; iter !== index) {
+                        $scope.patient.newlyAddedRelationships.splice(iter, 1);
+                    }
+                }
+&nbsp;
+                var emptyRows = _.filter($scope.patient.newlyAddedRelationships, $scope.isEmpty);
+                if (emptyRows.length === 0) {
+                    $scope.addPlaceholderRelationship();
+                }
+            };
+&nbsp;
+            $scope.isEmpty = function (relationship) {
+                return !relationship.relationshipType || !relationship.relationshipType.uuid;
+            };
+&nbsp;
+            var getPatientGenderAndAge = function (patient) {
+                var patientGenderAndAge = [patient.givenName, patient.age, $rootScope.genderMap[angular.uppercase(patient.gender)]];
+<span class="cstat-no" title="statement not covered" >                return patientGenderAndAge.join(", ");</span>
+            };
+&nbsp;
+            var init = function () {
+                $scope.relationshipTypes = $rootScope.relationshipTypes;
+                $scope.patient.relationships = $scope.patient.relationships || <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
+            };
+&nbsp;
+            init();
+        }
+    ]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/consultation/models/Specimen.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">clinical/consultation/models/Specimen.js</span></h1>
+    <h2>
+        Statements: <span class="metric">98% <small>(49 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">95.24% <small>(60 / 63)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">93.33% <small>(14 / 15)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">98% <small>(49 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">clinical/consultation/models/</a> &#187; Specimen.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Bahmni.Clinical.Specimen = function (specimen, allSamples) {
+    var self = this;
+    self.uuid = specimen &amp;&amp; specimen.uuid;
+    self.dateCollected = specimen &amp;&amp; Bahmni.Common.Util.DateUtil.getDateWithoutTime(specimen.dateCollected);
+    self.type = specimen &amp;&amp; specimen.type;
+    self.typeFreeText = specimen &amp;&amp; specimen.typeFreeText;
+    self.identifier = specimen &amp;&amp; specimen.identifier;
+    self.sample = specimen &amp;&amp; specimen.sample &amp;&amp; specimen.sample.additionalAttributes ? specimen.sample : {additionalAttributes: []};
+    self.report = specimen &amp;&amp; specimen.report &amp;&amp; specimen.report.results ? specimen.report : {results: []};
+    self.existingObs = specimen &amp;&amp; specimen.existingObs;
+    self.typeObservation = new Bahmni.ConceptSet.SpecimenTypeObservation(self, allSamples);
+&nbsp;
+    var isDirtyRuleForFreeText = function () {
+        return (self.type &amp;&amp; self.type.name === "Other" &amp;&amp; !self.typeFreeText);
+    };
+&nbsp;
+    var clearObservations = function (obs) {
+        angular.forEach(obs, function (ob) {
+            ob.value = undefined;
+            clearObservations(ob.groupMembers);
+        });
+    };
+&nbsp;
+    self.isDirty = function () {
+        return (self.dateCollected &amp;&amp; !self.type) ||
+        (!self.dateCollected &amp;&amp; !self.type &amp;&amp; self.isAdditionalAttriburtesFilled()) ||
+        (!self.dateCollected &amp;&amp; self.type) ||
+        (!self.dateCollected &amp;&amp; !self.type &amp;&amp; self.identifier) || isDirtyRuleForFreeText() ? true : false;
+    };
+&nbsp;
+    self.isEmpty = function () {
+        return !self.dateCollected &amp;&amp; !self.identifier &amp;&amp; !self.type &amp;&amp; !self.typeFreeText;
+    };
+&nbsp;
+    function hasResults () {
+        return self &amp;&amp; self.report &amp;&amp; self.report.results &amp;&amp; self.report.results.length &gt; 0;
+    }
+&nbsp;
+    self.atLeastOneResult = function () {
+        return hasResults() &amp;&amp; !!self.report.results[0].value;
+    };
+&nbsp;
+    self.isDateCollectedDirty = function () {
+        return !self.dateCollected &amp;&amp; self.hasIllegalDateCollected;
+    };
+&nbsp;
+    self.isTypeDirty = function () {
+        return !self.type &amp;&amp; self.hasIllegalType;
+    };
+&nbsp;
+    self.isTypeFreeTextDirty = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        return !self.typeFreeText &amp;&amp; self.hasIllegalTypeFreeText;</span>
+    };
+&nbsp;
+    self.isAdditionalAttriburtesFilled = function () {
+        var additionalAttributes = self.sample &amp;&amp; self.sample.additionalAttributes[0] &amp;&amp; self.sample.additionalAttributes[0].groupMembers;
+        for (var i in additionalAttributes) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (additionalAttributes[i].value) {
+                return true;
+            }
+        }
+        return false;
+    };
+&nbsp;
+    self.isExistingSpecimen = function () {
+        return self.uuid;
+    };
+&nbsp;
+    self.voidIfEmpty = function () {
+        if (self.isEmpty() &amp;&amp; self.isExistingSpecimen()) {
+            self.setMandatoryFieldsBeforeSavingVoidedSpecimen();
+            return true;
+        }
+        return false;
+    };
+&nbsp;
+    self.setMandatoryFieldsBeforeSavingVoidedSpecimen = function () {
+        self.voided = true;
+        self.dateCollected = self.typeObservation.dateCollected;
+        self.type = self.typeObservation.type;
+        clearObservations(self.sample.additionalAttributes);
+        clearObservations(self.report.results);
+    };
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

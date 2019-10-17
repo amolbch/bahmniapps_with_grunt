@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/concept-set/mappers/observationMapper.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">common/concept-set/mappers/observationMapper.js</span></h1>
+    <h2>
+        Statements: <span class="metric">90.08% <small>(109 / 121)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">80.77% <small>(63 / 78)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">92.86% <small>(26 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">90.08% <small>(109 / 121)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/concept-set/mappers/</a> &#187; observationMapper.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-yes">60</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">602</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">263</span>
+<span class="cline-any cline-yes">263</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">263</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">263</span>
+<span class="cline-any cline-yes">37</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">226</span>
+<span class="cline-any cline-yes">226</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">263</span>
+<span class="cline-any cline-yes">263</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">263</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">263</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">62</span>
+<span class="cline-any cline-yes">62</span>
+<span class="cline-any cline-yes">62</span>
+<span class="cline-any cline-yes">198</span>
+<span class="cline-any cline-yes">198</span>
+<span class="cline-any cline-yes">198</span>
+<span class="cline-any cline-yes">198</span>
+<span class="cline-any cline-yes">153</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">198</span>
+<span class="cline-any cline-yes">50</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">62</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">231</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">208</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">231</span>
+<span class="cline-any cline-yes">231</span>
+<span class="cline-any cline-yes">231</span>
+<span class="cline-any cline-yes">72</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">231</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">37</span>
+<span class="cline-any cline-yes">37</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">268</span>
+<span class="cline-any cline-yes">268</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">278</span>
+<span class="cline-any cline-yes">278</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Bahmni.ConceptSet.ObservationMapper = function () {
+    var conceptMapper = new Bahmni.Common.Domain.ConceptMapper();
+    var self = this;
+    // TODO : Shouldn't this be in clinical module. Don't see a reason for this to be in concept-set code - Shruthi
+    this.getObservationsForView = function (observations, conceptSetConfig) {
+        return internalMapForDisplay(observations, conceptSetConfig);
+    };
+&nbsp;
+    var internalMapForDisplay = function (observations, conceptSetConfig) {
+        var observationsForDisplay = [];
+        _.forEach(observations, function (savedObs) {
+            if (savedObs.concept.conceptClass &amp;&amp; (savedObs.concept.conceptClass === Bahmni.Common.Constants.conceptDetailsClassName || savedObs.concept.conceptClass.name === Bahmni.Common.Constants.conceptDetailsClassName)) {
+                var observationNode = new Bahmni.ConceptSet.ObservationNode(savedObs, savedObs, [], savedObs.concept);
+                var obsToDisplay = createObservationForDisplay(observationNode, observationNode.primaryObs.concept);
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (obsToDisplay) {
+                    observationsForDisplay.push(obsToDisplay);
+                }
+            } else {
+                if (savedObs.concept.set) {
+                    if (conceptSetConfig[savedObs.concept.name] &amp;&amp; conceptSetConfig[savedObs.concept.name].grid) {
+                        savedObs.value = self.getGridObservationDisplayValue(savedObs);
+                        observationsForDisplay = observationsForDisplay.concat(createObservationForDisplay(savedObs, savedObs.concept));
+                    } else {
+                        var groupMemberObservationsForDisplay = internalMapForDisplay(savedObs.groupMembers, conceptSetConfig);
+                        observationsForDisplay = observationsForDisplay.concat(groupMemberObservationsForDisplay);
+                    }
+                } else {
+                    var obsToDisplay = null;
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (savedObs.isMultiSelect) {
+<span class="cstat-no" title="statement not covered" >                        obsToDisplay = savedObs;</span>
+                    } else <span class="missing-if-branch" title="else path not taken" >E</span>if (!savedObs.hidden) {
+                        var observation = newObservation(savedObs.concept, savedObs, []);
+                        obsToDisplay = createObservationForDisplay(observation, observation.concept);
+                    }
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (obsToDisplay) {
+                        observationsForDisplay.push(obsToDisplay);
+                    }
+                }
+            }
+        });
+        return observationsForDisplay;
+    };
+&nbsp;
+    this.map = function (observations, rootConcept, conceptSetConfig) {
+        var savedObs = findInSavedObservation(rootConcept, observations)[0];
+        return mapObservation(rootConcept, savedObs, conceptSetConfig || {});
+    };
+&nbsp;
+    var findInSavedObservation = function (concept, observations) {
+        return _.filter(observations, function (obs) {
+            return obs &amp;&amp; obs.concept &amp;&amp; concept.uuid === obs.concept.uuid;
+        });
+    };
+&nbsp;
+    var mapObservation = function (concept, savedObs, conceptSetConfig) {
+        var obs = null;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (savedObs &amp;&amp; (savedObs.isObservation || savedObs.isObservationNode)) {
+<span class="cstat-no" title="statement not covered" >            return savedObs;</span>
+        }
+        var mappedGroupMembers = concept &amp;&amp; concept.set ? mapObservationGroupMembers(savedObs ? savedObs.groupMembers : [], concept, conceptSetConfig) : [];
+&nbsp;
+        if (concept.conceptClass.name === Bahmni.Common.Constants.conceptDetailsClassName) {
+            obs = newObservationNode(concept, savedObs, conceptSetConfig, mappedGroupMembers);
+        } else {
+            obs = newObservation(concept, savedObs, conceptSetConfig, mappedGroupMembers);
+            new Bahmni.ConceptSet.MultiSelectObservations(conceptSetConfig).map(mappedGroupMembers);
+        }
+&nbsp;
+        mapTabularObs(mappedGroupMembers, concept, obs, conceptSetConfig);
+        return obs;
+    };
+&nbsp;
+    function mapTabularObs (mappedGroupMembers, concept, obs, conceptSetConfig) {
+        var tabularObsGroups = _.filter(mappedGroupMembers, function (member) {
+            return conceptSetConfig[member.concept.name] &amp;&amp; conceptSetConfig[member.concept.name]['isTabular'];
+        });
+&nbsp;
+        if (tabularObsGroups.length &gt; 0) {
+            var array = _.map(concept.setMembers, function (member) {
+                return member.name.name;
+            });
+            tabularObsGroups.forEach(function (group) {
+                group.hidden = true;
+            });
+&nbsp;
+            var groupedObsGroups = _.groupBy(tabularObsGroups, function (group) {
+                return group.concept.name;
+            });
+&nbsp;
+            _.values(groupedObsGroups).forEach(function (groups) {
+                var tabularObservations = new Bahmni.ConceptSet.TabularObservations(groups, obs, conceptSetConfig);
+                obs.groupMembers.push(tabularObservations);
+            });
+            var sortedGroupMembers = _.sortBy(obs.groupMembers, function (observation) {
+                return array.indexOf(observation.concept.name);
+            });
+            obs.groupMembers.length = 0;
+            obs.groupMembers.push.apply(obs.groupMembers, sortedGroupMembers);
+        }
+    }
+&nbsp;
+    var mapObservationGroupMembers = function (observations, parentConcept, conceptSetConfig) {
+        var observationGroupMembers = [];
+        var conceptSetMembers = parentConcept.setMembers;
+        conceptSetMembers.forEach(function (memberConcept) {
+            var savedObservations = findInSavedObservation(memberConcept, observations);
+            var configForConcept = conceptSetConfig[memberConcept.name.name] || {};
+            var numberOfNodes = configForConcept.multiple || 1;
+            for (var i = savedObservations.length - 1; i &gt;= 0; i--) {
+                observationGroupMembers.push(mapObservation(memberConcept, savedObservations[i], conceptSetConfig));
+            }
+            for (var i = 0; i &lt; numberOfNodes - savedObservations.length; i++) {
+                observationGroupMembers.push(mapObservation(memberConcept, null, conceptSetConfig));
+            }
+        });
+        return observationGroupMembers;
+    };
+&nbsp;
+    var getDatatype = function (concept) {
+        if (concept.dataType) {
+            return concept.dataType;
+        }
+        return concept.datatype &amp;&amp; concept.datatype.name;
+    };
+&nbsp;
+    // tODO : remove conceptUIConfig
+    var newObservation = function (concept, savedObs, conceptSetConfig, mappedGroupMembers) {
+        var observation = buildObservation(concept, savedObs, mappedGroupMembers);
+        var obs = new Bahmni.ConceptSet.Observation(observation, savedObs, conceptSetConfig, mappedGroupMembers);
+        if (getDatatype(concept) == "Boolean") {
+            obs = new Bahmni.ConceptSet.BooleanObservation(obs, conceptSetConfig);
+        }
+        return obs;
+    };
+&nbsp;
+    // TODO : remove conceptUIConfig
+    var newObservationNode = function (concept, savedObsNode, conceptSetConfig, mappedGroupMembers) {
+        var observation = buildObservation(concept, savedObsNode, mappedGroupMembers);
+        return new Bahmni.ConceptSet.ObservationNode(observation, savedObsNode, conceptSetConfig, concept);
+    };
+&nbsp;
+    var showAddMoreButton = <span class="fstat-no" title="function not covered" >function (rootObservation) {</span>
+<span class="cstat-no" title="statement not covered" >        var observation = this;</span>
+<span class="cstat-no" title="statement not covered" >        var lastObservationByLabel = _.findLast(rootObservation.groupMembers, {label: observation.label});</span>
+<span class="cstat-no" title="statement not covered" >        return lastObservationByLabel.uuid === observation.uuid;</span>
+    };
+&nbsp;
+    function buildObservation (concept, savedObs, mappedGroupMembers) {
+        var comment = savedObs ? savedObs.comment : null;
+        return {
+            concept: conceptMapper.map(concept),
+            units: concept.units,
+            label: getLabel(concept),
+            possibleAnswers: concept.answers,
+            groupMembers: mappedGroupMembers,
+            comment: comment,
+            showAddMoreButton: showAddMoreButton
+        };
+    }
+&nbsp;
+    var createObservationForDisplay = function (observation, concept) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (observation.value == null) {
+<span class="cstat-no" title="statement not covered" >            return;</span>
+        }
+        var observationValue = getObservationDisplayValue(observation);
+        observationValue = observation.durationObs ? <span class="branch-0 cbranch-no" title="branch not covered" >observationValue + " " + getDurationDisplayValue(observation.durationObs) </span>: observationValue;
+        return {
+            "value": observationValue, "abnormalObs": observation.abnormalObs, "duration": observation.durationObs,
+            "provider": observation.provider, "label": getLabel(observation.concept),
+            "observationDateTime": observation.observationDateTime, "concept": concept,
+            "comment": observation.comment, "uuid": observation.uuid
+        };
+    };
+&nbsp;
+    var getObservationDisplayValue = function (observation) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (observation.isBoolean || observation.type === "Boolean") {
+<span class="cstat-no" title="statement not covered" >            return observation.value === true ? "Yes" : "No";</span>
+        }
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!observation.value) {
+<span class="cstat-no" title="statement not covered" >            return "";</span>
+        }
+        if (typeof observation.value.name === 'object') {
+            var valueConcept = conceptMapper.map(observation.value);
+            return valueConcept.shortName || valueConcept.name;
+        }
+        return observation.value.shortName || observation.value.name || observation.value;
+    };
+&nbsp;
+    var getDurationDisplayValue = <span class="fstat-no" title="function not covered" >function (duration) {</span>
+<span class="cstat-no" title="statement not covered" >        var durationForDisplay = Bahmni.Common.Util.DateUtil.convertToUnits(duration.value);</span>
+<span class="cstat-no" title="statement not covered" >        if (durationForDisplay["value"] &amp;&amp; durationForDisplay["unitName"]) {</span>
+<span class="cstat-no" title="statement not covered" >            return "since " + durationForDisplay["value"] + " " + durationForDisplay["unitName"];</span>
+        }
+<span class="cstat-no" title="statement not covered" >        return "";</span>
+    };
+&nbsp;
+    this.getGridObservationDisplayValue = function (observation) {
+        var memberValues = _.compact(_.map(observation.groupMembers, function (member) {
+            return getObservationDisplayValue(member);
+        }));
+        return memberValues.join(', ');
+    };
+&nbsp;
+    var getLabel = function (concept) {
+        var mappedConcept = conceptMapper.map(concept);
+        return mappedConcept.shortName || mappedConcept.name;
+    };
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/consultation/controllers/consultationSummaryController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">clinical/consultation/controllers/consultationSummaryController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">96.3% <small>(26 / 27)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">95.45% <small>(21 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(8 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">96.3% <small>(26 / 27)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">clinical/consultation/controllers/</a> &#187; consultationSummaryController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.clinical')
+    .controller('ConsultationSummaryController', ['$scope', 'conceptSetUiConfigService', function ($scope, conceptSetUiConfigService) {
+        var geEditedDiagnosesFromPastEncounters = function () {
+            var editedDiagnosesFromPastEncounters = [];
+            $scope.consultation.pastDiagnoses.forEach(function (pastDiagnosis) {
+                if (pastDiagnosis.isDirty &amp;&amp; pastDiagnosis.encounterUuid !== $scope.consultation.encounterUuid) {
+                    editedDiagnosesFromPastEncounters.push(pastDiagnosis);
+                }
+            });
+            return editedDiagnosesFromPastEncounters;
+        };
+        $scope.editedDiagnosesFromPastEncounters = geEditedDiagnosesFromPastEncounters();
+&nbsp;
+        $scope.onNoteChanged = function () {
+//        TODO: Mihir, D3 : Hacky fix to update the datetime to current datetime on the server side. Ideal would be void the previous observation and create a new one.
+            $scope.consultation.consultationNote.observationDateTime = null;
+        };
+&nbsp;
+        var groupObservations = function () {
+            var allObservations = $scope.consultation.observations;
+            allObservations = _.filter(allObservations, function (obs) {
+                if (obs.concept.name === 'Dispensed') {
+                    return false;
+                }
+                <span class="missing-if-branch" title="else path not taken" >E</span>if ($scope.followUpConditionConcept &amp;&amp; obs.concept.uuid === $scope.followUpConditionConcept.uuid) {
+                    return false;
+                }
+<span class="cstat-no" title="statement not covered" >                return true;</span>
+            });
+            return new Bahmni.Clinical.ObsGroupingHelper(conceptSetUiConfigService).groupObservations(allObservations);
+        };
+&nbsp;
+        $scope.groupedObservations = groupObservations();
+        $scope.disposition = $scope.consultation.disposition;
+        $scope.toggle = function (item) {
+            item.show = !item.show;
+        };
+&nbsp;
+        $scope.isConsultationTabEmpty = function () {
+            if (_.isEmpty($scope.consultation.newlyAddedDiagnoses) &amp;&amp; _.isEmpty($scope.groupedObservations) &amp;&amp;
+                _.isEmpty($scope.consultation.newlyAddedSpecimens) &amp;&amp; _.isEmpty($scope.consultation.consultationNote.value) &amp;&amp;
+                _.isEmpty($scope.consultation.investigations) &amp;&amp; _.isEmpty($scope.consultation.disposition) &amp;&amp;
+                _.isEmpty($scope.consultation.treatmentDrugs) &amp;&amp; _.isEmpty($scope.consultation.newlyAddedTreatments) &amp;&amp;
+                _.isEmpty($scope.consultation.discontinuedDrugs) &amp;&amp; _.isEmpty($scope.consultation.savedDiagnosesFromCurrentEncounter)) {
+                return true;
+            }
+            return false;
+        };
+    }]);
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

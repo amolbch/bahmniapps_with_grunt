@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for admin/controllers/auditLogController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">admin/controllers/auditLogController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(58 / 58)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(18 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(17 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(58 / 58)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">admin/controllers/</a> &#187; auditLogController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">54</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">31</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.admin')
+    .controller('auditLogController', ['$scope', 'spinner', 'auditLogService', 'messagingService', '$translate',
+        function ($scope, spinner, auditLogService, messagingService, $translate) {
+            var DateUtil = Bahmni.Common.Util.DateUtil;
+            var defaultMessage = "";
+&nbsp;
+            var getTranslatedMessage = function (key) {
+                return $translate.instant(key);
+            };
+&nbsp;
+            var isNotEmpty = function (value) {
+                return value !== undefined &amp;&amp; value !== "";
+            };
+&nbsp;
+            var mapParamsForRequest = function (params) {
+                return _.pickBy(params, isNotEmpty);
+            };
+&nbsp;
+            var updateIndex = function (logs, defaultFirstIndex, defaultLastIndex) {
+                $scope.firstIndex = logs.length ? _.first(logs).auditLogId : defaultFirstIndex;
+                $scope.lastIndex = logs.length ? _.last(logs).auditLogId : defaultLastIndex;
+            };
+&nbsp;
+            var setMessage = function (logsLength, message) {
+                $scope.errorMessage = logsLength ? defaultMessage : message;
+            };
+&nbsp;
+            var updatePage = function (logs, defaultFirstIndex, defaultLastIndex, message) {
+                if (logs.length) {
+                    $scope.logs = logs;
+                }
+                setMessage(logs.length, message);
+                updateIndex(logs, defaultFirstIndex, defaultLastIndex);
+            };
+&nbsp;
+            var getDate = function () {
+                var date = $scope.startDate || $scope.today;
+                $scope.startDate = date;
+                return date;
+            };
+&nbsp;
+            var defaultView = function (params, message) {
+                return auditLogService.getLogs(params).then(function (logs) {
+                    logs.reverse();
+                    updatePage(logs, 0, 0, message);
+                });
+            };
+&nbsp;
+            $scope.next = function () {
+                var params = {
+                    lastAuditLogId: $scope.lastIndex,
+                    username: $scope.username,
+                    patientId: $scope.patientId,
+                    startFrom: $scope.startDate
+                };
+                var promise = auditLogService.getLogs(mapParamsForRequest(params)).then(function (logs) {
+                    updatePage(logs, $scope.firstIndex, $scope.lastIndex, getTranslatedMessage("NO_MORE_EVENTS_FOUND"));
+                });
+                spinner.forPromise(promise);
+            };
+&nbsp;
+            $scope.prev = function () {
+                var message = getTranslatedMessage("NO_MORE_EVENTS_FOUND");
+                var promise;
+                if (!$scope.firstIndex &amp;&amp; !$scope.lastIndex) {
+                    promise = defaultView(mapParamsForRequest({
+                        defaultView: true,
+                        startFrom: $scope.startDate
+                    }), message);
+                } else {
+                    var params = {
+                        lastAuditLogId: $scope.firstIndex,
+                        username: $scope.username,
+                        patientId: $scope.patientId,
+                        prev: true,
+                        startFrom: $scope.startDate
+                    };
+                    promise = auditLogService.getLogs(mapParamsForRequest(params)).then(function (logs) {
+                        updatePage(logs, $scope.firstIndex, $scope.lastIndex, message);
+                    });
+                }
+                spinner.forPromise(promise);
+            };
+&nbsp;
+            $scope.today = DateUtil.today();
+            $scope.maxDate = DateUtil.getDateWithoutTime($scope.today);
+            $scope.runReport = function () {
+                if ($("#startDate").hasClass("ng-invalid-max")) {
+                    messagingService.showMessage("error", getTranslatedMessage("INVALID_DATE"));
+                    return;
+                }
+                var params = {
+                    username: $scope.username, patientId: $scope.patientId,
+                    startFrom: $scope.startDate
+                };
+                var promise = auditLogService.getLogs(mapParamsForRequest(params)).then(function (logs) {
+                    $scope.logs = logs;
+                    setMessage(logs.length, getTranslatedMessage("MATCHING_EVENTS_NOT_FOUND"));
+                    updateIndex(logs, 0, 0);
+                });
+                spinner.forPromise(promise);
+            };
+&nbsp;
+            var init = function () {
+                $scope.logs = [];
+                var promise = defaultView({startFrom: getDate(), defaultView: true}, getTranslatedMessage("NO_EVENTS_FOUND"));
+                spinner.forPromise(promise);
+            };
+&nbsp;
+            init();
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

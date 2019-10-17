@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/common/controllers/patientListHeaderController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">clinical/common/controllers/patientListHeaderController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">59.09% <small>(39 / 66)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">16.67% <small>(3 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">40.91% <small>(9 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">59.09% <small>(39 / 66)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">clinical/common/controllers/</a> &#187; patientListHeaderController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.clinical')
+    .controller('PatientListHeaderController', ['$scope', '$rootScope', '$bahmniCookieStore', 'providerService', 'spinner', 'locationService', '$window', 'ngDialog', 'retrospectiveEntryService', '$translate',
+        function ($scope, $rootScope, $bahmniCookieStore, providerService, spinner, locationService, $window, ngDialog, retrospectiveEntryService, $translate) {
+            var DateUtil = Bahmni.Common.Util.DateUtil;
+            $scope.maxStartDate = DateUtil.getDateWithoutTime(DateUtil.today());
+            var selectedProvider = {};
+            $scope.retrospectivePrivilege = Bahmni.Common.Constants.retrospectivePrivilege;
+            $scope.locationPickerPrivilege = Bahmni.Common.Constants.locationPickerPrivilege;
+            $scope.onBehalfOfPrivilege = Bahmni.Common.Constants.onBehalfOfPrivilege;
+            $scope.selectedLocationUuid = {};
+            $scope.getProviderList = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return <span class="fstat-no" title="function not covered" >function (searchAttrs) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return providerService.search(searchAttrs.term);</span>
+                };
+            };
+&nbsp;
+            $scope.getProviderDataResults = function (data) {
+                return data.data.results.map(function (providerDetails) {
+                    return {
+                        'value': providerDetails.person ? providerDetails.person.display : <span class="branch-1 cbranch-no" title="branch not covered" >providerDetails.display,</span>
+                        'uuid': providerDetails.uuid
+                    };
+                });
+            };
+&nbsp;
+            $scope.providerSelected = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return <span class="fstat-no" title="function not covered" >function (providerData) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    selectedProvider = providerData;</span>
+                };
+            };
+&nbsp;
+            $scope.clearProvider = <span class="fstat-no" title="function not covered" >function (data) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!_.isEmpty(selectedProvider) &amp;&amp; data !== selectedProvider.value) {</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.encounterProvider = '';</span>
+<span class="cstat-no" title="statement not covered" >                    selectedProvider = {};</span>
+                }
+            };
+&nbsp;
+            $scope.windowReload = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                changeCookieData();</span>
+<span class="cstat-no" title="statement not covered" >                $window.location.reload(false);</span>
+            };
+&nbsp;
+            $scope.isCurrentLocation = <span class="fstat-no" title="function not covered" >function (location) {</span>
+<span class="cstat-no" title="statement not covered" >                return getCurrentCookieLocation().uuid === location.uuid;</span>
+            };
+&nbsp;
+            $scope.popUpHandler = function () {
+                $scope.dialog = ngDialog.open({ template: 'consultation/views/defaultDataPopUp.html', className: 'test ngdialog-theme-default',
+                    controller: 'PatientListHeaderController'});
+                $('body').addClass('show-controller-back');
+            };
+&nbsp;
+            $scope.$on('ngDialog.closed', <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                $('body').removeClass('show-controller-back');</span>
+            });
+&nbsp;
+            $scope.closePopUp = function () {
+                ngDialog.close();
+            };
+&nbsp;
+            $scope.getTitle = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                var title = [];</span>
+<span class="cstat-no" title="statement not covered" >                if (getCurrentCookieLocation()) {</span>
+<span class="cstat-no" title="statement not covered" >                    title.push($translate.instant(getCurrentCookieLocation().name));</span>
+                }
+<span class="cstat-no" title="statement not covered" >                if (getCurrentProvider() &amp;&amp; getCurrentProvider().value) {</span>
+<span class="cstat-no" title="statement not covered" >                    title.push(getCurrentProvider().value);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                if (retrospectiveEntryService.getRetrospectiveDate()) {</span>
+<span class="cstat-no" title="statement not covered" >                    title.push(DateUtil.formatDateWithoutTime(retrospectiveEntryService.getRetrospectiveDate()));</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return title.join(',');</span>
+            };
+&nbsp;
+            $scope.sync = <span class="fstat-no" title="function not covered" >function () {</span>
+            };
+&nbsp;
+            var getCurrentCookieLocation = function () {
+                return $bahmniCookieStore.get(Bahmni.Common.Constants.locationCookieName) ? $bahmniCookieStore.get(Bahmni.Common.Constants.locationCookieName) : <span class="branch-1 cbranch-no" title="branch not covered" >null;</span>
+            };
+&nbsp;
+            var getCurrentProvider = function () {
+                return $bahmniCookieStore.get(Bahmni.Common.Constants.grantProviderAccessDataCookieName);
+            };
+&nbsp;
+            var getLocationFor = <span class="fstat-no" title="function not covered" >function (uuid) {</span>
+<span class="cstat-no" title="statement not covered" >                return _.find($scope.locations, <span class="fstat-no" title="function not covered" >function (location) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return location.uuid === uuid;</span>
+                });
+            };
+&nbsp;
+            var changeCookieData = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                retrospectiveEntryService.resetRetrospectiveEntry($scope.date);</span>
+<span class="cstat-no" title="statement not covered" >                $bahmniCookieStore.remove(Bahmni.Common.Constants.grantProviderAccessDataCookieName);</span>
+<span class="cstat-no" title="statement not covered" >                $bahmniCookieStore.put(Bahmni.Common.Constants.grantProviderAccessDataCookieName, selectedProvider, {path: '/', expires: 1});</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var selectedLocation = getLocationFor($scope.selectedLocationUuid);</span>
+<span class="cstat-no" title="statement not covered" >                $bahmniCookieStore.remove(Bahmni.Common.Constants.locationCookieName);</span>
+<span class="cstat-no" title="statement not covered" >                $bahmniCookieStore.put(Bahmni.Common.Constants.locationCookieName, {name: selectedLocation.display, uuid: selectedLocation.uuid}, {path: '/', expires: 7});</span>
+            };
+&nbsp;
+            var init = function () {
+                var retrospectiveDate = retrospectiveEntryService.getRetrospectiveDate();
+                $scope.date = retrospectiveDate ? new Date(retrospectiveDate) : <span class="branch-1 cbranch-no" title="branch not covered" >new Date($scope.maxStartDate);</span>
+                $scope.encounterProvider = getCurrentProvider();
+                selectedProvider = getCurrentProvider();
+&nbsp;
+                return locationService.getAllByTag("Login Location").then(function (response) {
+                    $scope.locations = response.data.results;
+                    $scope.selectedLocationUuid = getCurrentCookieLocation().uuid;
+                }
+                );
+            };
+&nbsp;
+            return init();
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<div ng-class="{'disable-allergies-in-retro-mode':isRetrospectiveMode()}">
+    <div class="infoMsgRetrospectiveModeEnabled" ng-if="isRetrospectiveMode()">
+        <i class="fa fa-info-circle"></i>
+        <span ng-bind-html="'ALLERGIES_LIST_NO_RETRO_MODE' | translate"></span>
+    </div>
+
+    <div class="table new-diagnosis primary-section-grid">
+        <div class="row table-header">
+            <div class="col col1"><span>{{'ALLERGIES_LIST_CONDITION'|translate}}</span></div>
+            <div class="col col2"><span>{{'ALLERGIES_LIST_STATUS'|translate}}</span></div>
+            <div class="col col3"><span>         </span></div>
+            <div class="col col4"><span>{{'CLINICAL_ACTION'|translate}}</span></div>
+        </div>
+        <div class="row">
+            <div class="col col1">
+                <input ng-model="consultation.allergy.concept.name" type="text" name="name" id="allergy"
+                       bahmni-autocomplete source="getAllergyDiagnosis"
+                       on-select="getAddAllergyMethod()"
+                       ng-change="consultation.allergy.clearConcept(); checkInvalidAllergies()"
+                       ng-class="{illegalValue: !(consultation.allergy.concept.name || consultation.allergy.isEmpty())}">
+            </div>
+            <div class="col col2">
+                <buttons-radio class="btn-group" model='consultation.allergy.status'
+                               options='allergiesStatuses'
+                               ng-class="{'illegalValue': !(consultation.allergy.status || consultation.allergy.isEmpty())}"/>
+            </div>
+
+            <div class="col col3">
+               
+                <button type="button" toggle="consultation.allergy.showNotes" class="comment-toggle fr"
+                        ng-class="{'has-notes': consultation.allergy.additionalDetail}">
+                    <i class="fa fa-file-o" ng-hide="consultation.allergy.additionalDetail">
+                        <i class="fa fa-plus-circle" ng-hide="consultation.allergy.showNotes"></i>
+                        <i class="fa fa-minus-circle" ng-show="consultation.allergy.showNotes"></i>
+                    </i>
+                    <i class="fa fa-file-text-o" ng-show="consultation.allergy.additionalDetail"></i>
+                </button>
+            </div>
+            
+            <div class="col col4">
+                <button ng-click="addAllergy(consultation.allergy)"
+                        ng-disabled="!consultation.allergy.isValid()" class="btn--add">
+                    <i class="fa fa-plus"></i>
+                    <span>{{'ALLERGIES_LIST_ADD'|translate}}</span>
+                </button>
+            </div>
+            <div class="" ng-show="consultation.allergy.showNotes">
+                                <textarea class="comment-section" maxlength="255"
+                                          ng-model="consultation.allergy.additionalDetail">
+                          </textarea>
+            </div>
+        </div>
+
+    </div>
+
+    <div ng-if="consultation.allergies.length > 0" class="">
+        <div class="table new-diagnosis primary-section-grid">
+            <h2 class="section-title">
+                <span class="condition-header">{{'ALLERGIES_LIST_ALLERGIES_ACTIVE'|translate}}</span>
+                <span>{{'ALLERGIES_LIST_NOTES'|translate}}</span>
+            </h2>
+            <div class="row" ng-if="filterAllergies('ACTIVE').length == 0">
+                <div class="col col1">
+                    <div class="diagnosis-name">
+                        {{'ALLERGIES_LIST_NO_ALLERGIES' | translate}}
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="allergy in filterAllergies('ACTIVE')" class="table-body">
+                <ng-include src="'consultation/views/allergiesRow.html'"/>
+            </div>
+        </div>
+    </div>
+ 
+</div>

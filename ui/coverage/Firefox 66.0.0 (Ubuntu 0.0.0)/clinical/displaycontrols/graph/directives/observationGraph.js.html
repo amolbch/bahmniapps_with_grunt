@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/displaycontrols/graph/directives/observationGraph.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">clinical/displaycontrols/graph/directives/observationGraph.js</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(50 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(19 / 19)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(5 / 5)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(50 / 50)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">clinical/displaycontrols/graph/directives/</a> &#187; observationGraph.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+&nbsp;
+angular.module('bahmni.clinical').directive('observationGraph', ['appService', 'observationsService', 'patientService', 'conceptSetService', '$q', 'spinner', '$translate',
+    function (appService, observationsService, patientService, conceptSetService, $q, spinner, $translate) {
+        var generateGraph = function ($scope, element, config, observationGraphModel) {
+            var bindToElement = document.getElementById($scope.graphId);
+            var graphWidth = $(element).parent().width();
+            var chart = Bahmni.Graph.c3Chart.create();
+            chart.render(bindToElement, graphWidth, config, observationGraphModel);
+        };
+&nbsp;
+        var link = function ($scope, element) {
+            $scope.graphId = 'graph' + $scope.$id;
+&nbsp;
+            if (!$scope.params) {
+                return;
+            }
+&nbsp;
+            var config = new Bahmni.Clinical.ObservationGraphConfig($scope.params.config);
+&nbsp;
+            config.validate($scope.params.title);
+&nbsp;
+            var promises = [];
+&nbsp;
+            var numberOfLevels = 1;
+            var fields = ['uuid', 'name', 'names', 'hiNormal', 'lowNormal', 'units', 'datatype'];
+            var customRepresentation = Bahmni.ConceptSet.CustomRepresentationBuilder.build(fields, 'setMembers', numberOfLevels);
+            var conceptValue = conceptSetService.getConcept({
+                name: config.getAllConcepts(),
+                v: "custom:" + customRepresentation
+            });
+            promises.push(conceptValue);
+&nbsp;
+            var observationsPromise = observationsService.fetch($scope.patientUuid, config.getAllConcepts(), null, config.numberOfVisits, $scope.visitUuid, null, false);
+            promises.push(observationsPromise);
+&nbsp;
+            if (config.displayForAge()) {
+                promises.push(patientService.getPatient($scope.patientUuid));
+            }
+&nbsp;
+            if (config.shouldDrawReferenceLines()) {
+                promises.push(appService.loadCsvFileFromConfig(config.getReferenceDataFileName()));
+            }
+&nbsp;
+            var checkWhetherYAxisIsNumericDataType = function (yAxisConceptDetails) {
+                if (yAxisConceptDetails.datatype.name !== "Numeric") {
+                    var errorMsg = $translate.instant(Bahmni.Clinical.Constants.errorMessages.conceptNotNumeric)
+                        .replace(":conceptName", yAxisConceptDetails.name.name)
+                        .replace(":placeErrorAccurred", $scope.params.title + " config in growthChartReference.csv");
+                    throw new Error(errorMsg);
+                }
+            };
+            spinner.forPromise($q.all(promises).then(function (results) {
+                var yAxisConceptDetails = results[0].data &amp;&amp; results[0].data.results &amp;&amp; results[0].data.results[0];
+                var observations = results[1].data;
+                var patient = results[2] &amp;&amp; results[2].data.person;
+                var referenceLines;
+&nbsp;
+                if (config.shouldDrawReferenceLines()) {
+                    checkWhetherYAxisIsNumericDataType(yAxisConceptDetails);
+                    var referenceData = results[3].data;
+                    var ageInMonths = Bahmni.Common.Util.AgeUtil.differenceInMonths(patient.birthdate);
+                    var yAxisUnit = yAxisConceptDetails.units;
+                    var observationGraphReferenceModel = new Bahmni.Clinical.ObservationGraphReference(referenceData, config, patient.gender, ageInMonths, yAxisUnit);
+                    observationGraphReferenceModel.validate();
+                    referenceLines = observationGraphReferenceModel.createObservationGraphReferenceLines();
+                }
+                if (observations.length === 0) {
+                    $scope.$emit("no-data-present-event");
+                    return;
+                }
+&nbsp;
+                if (yAxisConceptDetails !== undefined) {
+                    config.lowNormal = yAxisConceptDetails.lowNormal;
+                    config.hiNormal = yAxisConceptDetails.hiNormal;
+                }
+                var model = Bahmni.Clinical.ObservationGraph.create(observations, patient, config, referenceLines);
+                generateGraph($scope, element, config, model);
+            }), element);
+        };
+&nbsp;
+        return {
+            restrict: 'E',
+            templateUrl: "displaycontrols/graph/views/observationGraph.html",
+            scope: {
+                params: "=",
+                visitUuid: "=",
+                patientUuid: "="
+            },
+            link: link
+        };
+    }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

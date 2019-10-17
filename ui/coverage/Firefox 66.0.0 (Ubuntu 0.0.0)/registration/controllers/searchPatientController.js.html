@@ -1,0 +1,1233 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for registration/controllers/searchPatientController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">registration/controllers/searchPatientController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">64.58% <small>(155 / 240)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">60.84% <small>(87 / 143)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">54.55% <small>(30 / 55)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">65.25% <small>(154 / 236)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">registration/controllers/</a> &#187; searchPatientController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.registration')
+    .controller('SearchPatientController', ['$rootScope', '$scope', '$location', '$window', 'spinner', 'patientService', 'appService',
+        'messagingService', '$translate', '$filter',
+        function ($rootScope, $scope, $location, $window, spinner, patientService, appService, messagingService, $translate, $filter) {
+            $scope.results = [];
+            $scope.orderByField = 'givenName';
+            $scope.reverseSort = false;
+            $scope.isExtraIdentifier = false;
+            $scope.idColumns = 'NID';
+            var extraIdentifiersToDisplay = appService.getAppDescriptor().getConfigValue("extraIdentifiersToDisplay") || [];
+            $scope.extraIdentifierTypes = _.filter($rootScope.patientConfiguration.identifierTypes, <span class="fstat-no" title="function not covered" >function (identifierType, index) {</span>
+<span class="cstat-no" title="statement not covered" >                return extraIdentifiersToDisplay.indexOf(identifierType.name) !== -1;</span>
+            });
+            var searching = false;
+            var maxAttributesFromConfig = 5;
+            var allSearchConfigs = appService.getAppDescriptor().getConfigValue("patientSearch") || {};
+            var patientSearchResultConfigs = appService.getAppDescriptor().getConfigValue("patientSearchResults") || {};
+            maxAttributesFromConfig = !_.isEmpty(allSearchConfigs.programAttributes) ? <span class="branch-0 cbranch-no" title="branch not covered" >maxAttributesFromConfig - 1 </span>: maxAttributesFromConfig;
+&nbsp;
+            $scope.getAddressColumnName = function (column) {
+                var columnName = "";
+                var columnCamelCase = column.replace(/([-_][a-z])/g, <span class="fstat-no" title="function not covered" >function ($1) {</span>
+<span class="cstat-no" title="statement not covered" >                    return $1.toUpperCase().replace(/[-_]/, '');</span>
+                });
+                _.each($scope.addressLevels, function (addressLevel) {
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (addressLevel.addressField === columnCamelCase) { columnName = addressLevel.name; }
+                });
+                return columnName;
+            };
+&nbsp;
+            var hasSearchParameters = function () {
+                return $scope.searchParameters.name.trim().length &gt; 0 ||
+                    $scope.searchParameters.addressFieldValue.trim().length &gt; 0 ||
+                    $scope.searchParameters.customAttribute.trim().length &gt; 0 ||
+                    $scope.searchParameters.programAttributeFieldValue.trim().length &gt; 0;
+            };
+&nbsp;
+            var searchBasedOnQueryParameters = function (offset) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (!isUserPrivilegedForSearch()) {
+<span class="cstat-no" title="statement not covered" >                    showInsufficientPrivMessage();</span>
+<span class="cstat-no" title="statement not covered" >                    return;</span>
+                }
+                var searchParameters = $location.search();
+                $scope.searchParameters.addressFieldValue = searchParameters.addressFieldValue || '';
+                $scope.searchParameters.name = searchParameters.name || '';
+                $scope.searchParameters.customAttribute = searchParameters.customAttribute || '';
+                $scope.searchParameters.programAttributeFieldValue = searchParameters.programAttributeFieldValue || '';
+                $scope.searchParameters.addressSearchResultsConfig = searchParameters.addressSearchResultsConfig || '';
+                $scope.searchParameters.personSearchResultsConfig = searchParameters.personSearchResultsConfig || '';
+&nbsp;
+                $scope.searchParameters.registrationNumber = searchParameters.registrationNumber || "";
+                if (hasSearchParameters()) {
+                    searching = true;
+                    var searchPromise = patientService.search(
+                        $scope.searchParameters.name,
+                        undefined,
+                        $scope.addressSearchConfig.field,
+                        $scope.searchParameters.addressFieldValue,
+                        $scope.searchParameters.customAttribute,
+                        offset,
+                        $scope.customAttributesSearchConfig.fields,
+                        $scope.programAttributesSearchConfig.field,
+                        $scope.searchParameters.programAttributeFieldValue,
+                        $scope.addressSearchResultsConfig.fields,
+                        $scope.personSearchResultsConfig.fields
+                    ).then(<span class="fstat-no" title="function not covered" >function (response) {</span>
+<span class="cstat-no" title="statement not covered" >                        mapExtraIdentifiers(response);</span>
+<span class="cstat-no" title="statement not covered" >                        mapCustomAttributesSearchResults(response);</span>
+<span class="cstat-no" title="statement not covered" >                        mapAddressAttributesSearchResults(response);</span>
+<span class="cstat-no" title="statement not covered" >                        mapProgramAttributesSearchResults(response);</span>
+<span class="cstat-no" title="statement not covered" >                        return response;</span>
+                    });
+                    searchPromise['finally'](<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        searching = false;</span>
+                    });
+                    return searchPromise;
+                }
+            };
+            $scope.convertToTableHeader = <span class="fstat-no" title="function not covered" >function (camelCasedText) {</span>
+<span class="cstat-no" title="statement not covered" >                return camelCasedText.replace(/[A-Z]|^[a-z]/g, <span class="fstat-no" title="function not covered" >function (str) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return " " + str.toUpperCase() + "";</span>
+                }).trim();
+            };
+&nbsp;
+            $scope.getProgramAttributeValues = function (result) {
+                var attributeValues = result &amp;&amp; result.patientProgramAttributeValue &amp;&amp; result.patientProgramAttributeValue[$scope.programAttributesSearchConfig.field];
+                var commaSeparatedAttributeValues = "";
+                _.each(attributeValues, function (attr) {
+                    commaSeparatedAttributeValues = commaSeparatedAttributeValues + attr + ", ";
+                });
+                return commaSeparatedAttributeValues.substring(0, commaSeparatedAttributeValues.length - 2);
+            };
+&nbsp;
+            var mapExtraIdentifiers = function (data) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (data !== "Searching") {
+                    _.each(data.pageOfResults, function (result) {
+                        result.extraIdentifiers = result.extraIdentifiers &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >JSON.parse(result.extraIdentifiers);</span>
+                    });
+                }
+            };
+&nbsp;
+            var mapCustomAttributesSearchResults = function (data) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (($scope.personSearchResultsConfig.fields) &amp;&amp; data !== "Searching") {
+                    _.map(data.pageOfResults, function (result) {
+                        result.customAttribute = result.customAttribute &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >JSON.parse(result.customAttribute);</span>
+                    });
+                }
+            };
+&nbsp;
+            var mapAddressAttributesSearchResults = function (data) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (($scope.addressSearchResultsConfig.fields) &amp;&amp; data !== "Searching") {
+                    _.map(data.pageOfResults, function (result) {
+                        try {
+                            result.addressFieldValue = JSON.parse(result.addressFieldValue);
+                        } catch (e) {
+                        }
+                    });
+                }
+            };
+&nbsp;
+            var mapProgramAttributesSearchResults = function (data) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (($scope.programAttributesSearchConfig.field) &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >data !== "Searching")</span> {
+<span class="cstat-no" title="statement not covered" >                    _.map(data.pageOfResults, <span class="fstat-no" title="function not covered" >function (result) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        var programAttributesObj = {};</span>
+<span class="cstat-no" title="statement not covered" >                        var arrayOfStringOfKeysValue = result.patientProgramAttributeValue &amp;&amp; result.patientProgramAttributeValue.substring(2, result.patientProgramAttributeValue.length - 2).split('","');</span>
+<span class="cstat-no" title="statement not covered" >                        _.each(arrayOfStringOfKeysValue, <span class="fstat-no" title="function not covered" >function (keyValueString) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            var keyValueArray = keyValueString.split('":"');</span>
+<span class="cstat-no" title="statement not covered" >                            var key = keyValueArray[0];</span>
+<span class="cstat-no" title="statement not covered" >                            var value = keyValueArray[1];</span>
+<span class="cstat-no" title="statement not covered" >                            if (!_.includes(_.keys(programAttributesObj), key)) {</span>
+<span class="cstat-no" title="statement not covered" >                                programAttributesObj[key] = [];</span>
+<span class="cstat-no" title="statement not covered" >                                programAttributesObj[key].push(value);</span>
+                            } else {
+<span class="cstat-no" title="statement not covered" >                                programAttributesObj[key].push(value);</span>
+                            }
+                        });
+<span class="cstat-no" title="statement not covered" >                        result.patientProgramAttributeValue = programAttributesObj;</span>
+                    });
+                }
+            };
+&nbsp;
+            var showSearchResults = function (searchPromise) {
+                $scope.noMoreResultsPresent = false;
+                if (searchPromise) {
+                    searchPromise.then(function (data) {
+                        $scope.results = data.pageOfResults;
+                        $scope.noResultsMessage = $scope.results.length === 0 ? 'REGISTRATION_NO_RESULTS_FOUND' : null;
+                    });
+                }
+            };
+&nbsp;
+            var setPatientIdentifierSearchConfig = function () {
+                $scope.patientIdentifierSearchConfig = {};
+                $scope.patientIdentifierSearchConfig.show = allSearchConfigs.searchByPatientIdentifier === undefined ? true : <span class="branch-1 cbranch-no" title="branch not covered" >allSearchConfigs.searchByPatientIdentifier;</span>
+            };
+&nbsp;
+            var setAddressSearchConfig = function () {
+                $scope.addressSearchConfig = allSearchConfigs.address || {};
+                $scope.addressSearchConfig.show = !_.isEmpty($scope.addressSearchConfig) &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!_.isEmpty($scope.addressSearchConfig.field);</span>
+                <span class="missing-if-branch" title="if path not taken" >I</span>if ($scope.addressSearchConfig.label &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!$scope.addressSearchConfig.label)</span> {
+<span class="cstat-no" title="statement not covered" >                    throw new Error("Search Config label is not present!");</span>
+                }
+                <span class="missing-if-branch" title="if path not taken" >I</span>if ($scope.addressSearchConfig.field &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!$scope.addressSearchConfig.field)</span> {
+<span class="cstat-no" title="statement not covered" >                    throw new Error("Search Config field is not present!");</span>
+                }
+            };
+&nbsp;
+            var setCustomAttributesSearchConfig = function () {
+                var customAttributesSearchConfig = allSearchConfigs.customAttributes;
+                $scope.customAttributesSearchConfig = customAttributesSearchConfig || {};
+                $scope.customAttributesSearchConfig.show = !_.isEmpty(customAttributesSearchConfig) &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!_.isEmpty(customAttributesSearchConfig.fields);</span>
+            };
+&nbsp;
+            var setProgramAttributesSearchConfig = function () {
+                $scope.programAttributesSearchConfig = allSearchConfigs.programAttributes || {};
+                $scope.programAttributesSearchConfig.show = !_.isEmpty($scope.programAttributesSearchConfig.field);
+            };
+&nbsp;
+            var sliceExtraColumns = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                var orderedColumns = Object.keys(patientSearchResultConfigs);</span>
+<span class="cstat-no" title="statement not covered" >                _.each(orderedColumns, <span class="fstat-no" title="function not covered" >function (column) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (patientSearchResultConfigs[column].fields &amp;&amp; !_.isEmpty(patientSearchResultConfigs[column].fields)) {</span>
+<span class="cstat-no" title="statement not covered" >                        patientSearchResultConfigs[column].fields = patientSearchResultConfigs[column].fields.slice(patientSearchResultConfigs[column].fields, maxAttributesFromConfig);</span>
+<span class="cstat-no" title="statement not covered" >                        maxAttributesFromConfig -= patientSearchResultConfigs[column].fields.length;</span>
+                    }
+                });
+            };
+&nbsp;
+            var setSearchResultsConfig = function () {
+                var resultsConfigNotFound = false;
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (_.isEmpty(patientSearchResultConfigs)) {
+                    resultsConfigNotFound = true;
+                    patientSearchResultConfigs.address = {"fields": allSearchConfigs.address ? <span class="branch-0 cbranch-no" title="branch not covered" >[allSearchConfigs.address.field] </span>: {}};
+                    patientSearchResultConfigs.personAttributes
+                        = {fields: allSearchConfigs.customAttributes ? <span class="branch-0 cbranch-no" title="branch not covered" >allSearchConfigs.customAttributes.fields </span>: {}};
+                } else {
+<span class="cstat-no" title="statement not covered" >                    if (!patientSearchResultConfigs.address) <span class="cstat-no" title="statement not covered" >patientSearchResultConfigs.address = {};</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (!patientSearchResultConfigs.personAttributes) <span class="cstat-no" title="statement not covered" >patientSearchResultConfigs.personAttributes = {};</span></span>
+                }
+&nbsp;
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (patientSearchResultConfigs.address.fields &amp;&amp; !_.isEmpty(patientSearchResultConfigs.address.fields)) {
+<span class="cstat-no" title="statement not covered" >                    patientSearchResultConfigs.address.fields =</span>
+                        patientSearchResultConfigs.address.fields.filter(<span class="fstat-no" title="function not covered" >function (item) {</span>
+<span class="cstat-no" title="statement not covered" >                            return !_.isEmpty($scope.getAddressColumnName(item));</span>
+                        });
+                }
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (!resultsConfigNotFound) <span class="cstat-no" title="statement not covered" >sliceExtraColumns();</span>
+                $scope.personSearchResultsConfig = patientSearchResultConfigs.personAttributes;
+                $scope.addressSearchResultsConfig = patientSearchResultConfigs.address;
+            };
+&nbsp;
+            var initialize = function () {
+                $scope.searchParameters = {};
+                $scope.searchActions = appService.getAppDescriptor().getExtensions("org.bahmni.registration.patient.search.result.action");
+                setPatientIdentifierSearchConfig();
+                setAddressSearchConfig();
+                setCustomAttributesSearchConfig();
+                setProgramAttributesSearchConfig();
+                setSearchResultsConfig();
+            };
+&nbsp;
+            var identifyParams = <span class="fstat-no" title="function not covered" >function (querystring) {</span>
+<span class="cstat-no" title="statement not covered" >                querystring = querystring.substring(querystring.indexOf('?') + 1).split('&amp;');</span>
+<span class="cstat-no" title="statement not covered" >                var params = {}, pair, d = decodeURIComponent;</span>
+<span class="cstat-no" title="statement not covered" >                for (var i = querystring.length - 1; i &gt;= 0; i--) {</span>
+<span class="cstat-no" title="statement not covered" >                    pair = querystring[i].split('=');</span>
+<span class="cstat-no" title="statement not covered" >                    params[d(pair[0])] = d(pair[1]);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return params;</span>
+            };
+&nbsp;
+            initialize();
+&nbsp;
+            $scope.disableSearchButton = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return !$scope.searchParameters.name &amp;&amp; !$scope.searchParameters.addressFieldValue &amp;&amp; !$scope.searchParameters.customAttribute &amp;&amp; !$scope.searchParameters.programAttributeFieldValue;</span>
+            };
+&nbsp;
+            $scope.$watch(<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return $location.search();</span>
+            }, function () {
+                showSearchResults(searchBasedOnQueryParameters(0));
+            });
+&nbsp;
+            $scope.searchById = function () {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (!isUserPrivilegedForSearch()) {
+<span class="cstat-no" title="statement not covered" >                    showInsufficientPrivMessage();</span>
+<span class="cstat-no" title="statement not covered" >                    return;</span>
+                }
+                if (!$scope.searchParameters.registrationNumber) {
+                    return;
+                }
+                $scope.results = [];
+&nbsp;
+                var patientIdentifier = $scope.searchParameters.registrationNumber;
+&nbsp;
+                $location.search({
+                    registrationNumber: $scope.searchParameters.registrationNumber,
+                    programAttributeFieldName: $scope.programAttributesSearchConfig.field,
+                    patientAttributes: $scope.customAttributesSearchConfig.fields,
+                    programAttributeFieldValue: $scope.searchParameters.programAttributeFieldValue,
+                    addressSearchResultsConfig: $scope.addressSearchResultsConfig.fields,
+                    personSearchResultsConfig: $scope.personSearchResultsConfig.fields
+                });
+&nbsp;
+                var searchPromise = patientService.search(undefined, patientIdentifier, $scope.addressSearchConfig.field,
+                    undefined, undefined, undefined, $scope.customAttributesSearchConfig.fields,
+                    $scope.programAttributesSearchConfig.field, $scope.searchParameters.programAttributeFieldValue,
+                    $scope.addressSearchResultsConfig.fields, $scope.personSearchResultsConfig.fields,
+                    $scope.isExtraIdentifierConfigured())
+                    .then(function (data) {
+                        mapExtraIdentifiers(data);
+                        mapCustomAttributesSearchResults(data);
+                        mapAddressAttributesSearchResults(data);
+                        mapProgramAttributesSearchResults(data);
+                        if (data.pageOfResults.length === 1) {
+                            var patient = data.pageOfResults[0];
+                            var forwardUrl = appService.getAppDescriptor().getConfigValue("searchByIdForwardUrl") || <span class="branch-1 cbranch-no" title="branch not covered" >"/patient/{{patientUuid}}";</span>
+                            $location.url(appService.getAppDescriptor().formatUrl(forwardUrl, {'patientUuid': patient.uuid}));
+                        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (data.pageOfResults.length &gt; 1) {
+<span class="cstat-no" title="statement not covered" >                            $scope.results = data.pageOfResults;</span>
+<span class="cstat-no" title="statement not covered" >                            $scope.noResultsMessage = null;</span>
+                        } else {
+                            $scope.patientIdentifier = {'patientIdentifier': patientIdentifier};
+                            $scope.noResultsMessage = 'REGISTRATION_LABEL_COULD_NOT_FIND_PATIENT';
+                        }
+                    });
+                spinner.forPromise(searchPromise);
+            };
+            var isUserPrivilegedForSearch = function () {
+                var applicablePrivs = [Bahmni.Common.Constants.viewPatientsPrivilege, Bahmni.Common.Constants.editPatientsPrivilege,
+                    Bahmni.Common.Constants.addVisitsPrivilege, Bahmni.Common.Constants.deleteVisitsPrivilege];
+                var userPrivs = _.map($rootScope.currentUser.privileges, function (privilege) {
+                    return privilege.name;
+                });
+                var result = _.some(userPrivs, function (privName) {
+                    return _.includes(applicablePrivs, privName);
+                });
+                return result;
+            };
+&nbsp;
+            var showInsufficientPrivMessage = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                var message = $translate.instant("REGISTRATION_INSUFFICIENT_PRIVILEGE");</span>
+<span class="cstat-no" title="statement not covered" >                messagingService.showMessage('error', message);</span>
+            };
+&nbsp;
+            $scope.loadingMoreResults = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return searching &amp;&amp; !$scope.noMoreResultsPresent;</span>
+            };
+&nbsp;
+            $scope.searchPatients = function () {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (!isUserPrivilegedForSearch()) {
+<span class="cstat-no" title="statement not covered" >                    showInsufficientPrivMessage();</span>
+<span class="cstat-no" title="statement not covered" >                    return;</span>
+                }
+                var queryParams = {};
+                $scope.results = [];
+                if ($scope.searchParameters.name) {
+                    queryParams.name = $scope.searchParameters.name;
+                }
+                if ($scope.searchParameters.addressFieldValue) {
+                    queryParams.addressFieldValue = $scope.searchParameters.addressFieldValue;
+                }
+                if ($scope.searchParameters.customAttribute &amp;&amp; $scope.customAttributesSearchConfig.show) {
+                    queryParams.customAttribute = $scope.searchParameters.customAttribute;
+                }
+                if ($scope.searchParameters.programAttributeFieldValue &amp;&amp; $scope.programAttributesSearchConfig.show) {
+                    queryParams.programAttributeFieldName = $scope.programAttributesSearchConfig.field;
+                    queryParams.programAttributeFieldValue = $scope.searchParameters.programAttributeFieldValue;
+                }
+                $location.search(queryParams);
+            };
+&nbsp;
+            $scope.resultsPresent = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return angular.isDefined($scope.results) &amp;&amp; $scope.results.length &gt; 0;</span>
+            };
+&nbsp;
+            $scope.editPatientUrl = <span class="fstat-no" title="function not covered" >function (url, options) {</span>
+<span class="cstat-no" title="statement not covered" >                var temp = url;</span>
+<span class="cstat-no" title="statement not covered" >                for (var key in options) {</span>
+<span class="cstat-no" title="statement not covered" >                    temp = temp.replace("{{" + key + "}}", options[key]);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return temp;</span>
+            };
+&nbsp;
+            $scope.nextPage = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                if ($scope.nextPageLoading) {</span>
+<span class="cstat-no" title="statement not covered" >                    return;</span>
+                }
+<span class="cstat-no" title="statement not covered" >                $scope.nextPageLoading = true;</span>
+<span class="cstat-no" title="statement not covered" >                var promise = searchBasedOnQueryParameters($scope.results.length);</span>
+<span class="cstat-no" title="statement not covered" >                if (promise) {</span>
+<span class="cstat-no" title="statement not covered" >                    promise.then(<span class="fstat-no" title="function not covered" >function (data) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        angular.forEach(data.pageOfResults, <span class="fstat-no" title="function not covered" >function (result) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            $scope.results.push(result);</span>
+                        });
+<span class="cstat-no" title="statement not covered" >                        $scope.noMoreResultsPresent = (data.pageOfResults.length === 0);</span>
+<span class="cstat-no" title="statement not covered" >                        $scope.nextPageLoading = false;</span>
+                    }, <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        $scope.nextPageLoading = false;</span>
+                    });
+                }
+            };
+&nbsp;
+            $scope.forPatient = <span class="fstat-no" title="function not covered" >function (patient) {</span>
+<span class="cstat-no" title="statement not covered" >                $scope.selectedPatient = patient;</span>
+<span class="cstat-no" title="statement not covered" >                return $scope;</span>
+            };
+&nbsp;
+            $scope.doExtensionAction = <span class="fstat-no" title="function not covered" >function (extension) {</span>
+<span class="cstat-no" title="statement not covered" >                var forwardTo = appService.getAppDescriptor().formatUrl(extension.url, { 'patientUuid': $scope.selectedPatient.uuid });</span>
+<span class="cstat-no" title="statement not covered" >                if (extension.label === 'Print') {</span>
+<span class="cstat-no" title="statement not covered" >                    var params = identifyParams(forwardTo);</span>
+<span class="cstat-no" title="statement not covered" >                    if (params.launch === 'dialog') {</span>
+<span class="cstat-no" title="statement not covered" >                        var firstChar = forwardTo.charAt(0);</span>
+<span class="cstat-no" title="statement not covered" >                        var prefix = firstChar === "/" ? "#" : "#/";</span>
+<span class="cstat-no" title="statement not covered" >                        var hiddenFrame = $("#printPatientFrame")[0];</span>
+<span class="cstat-no" title="statement not covered" >                        hiddenFrame.src = prefix + forwardTo;</span>
+<span class="cstat-no" title="statement not covered" >                        hiddenFrame.contentWindow.print();</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        $location.url(forwardTo);</span>
+                    }
+                } else {
+<span class="cstat-no" title="statement not covered" >                    $location.url(forwardTo);</span>
+                }
+            };
+&nbsp;
+            $scope.extensionActionText = <span class="fstat-no" title="function not covered" >function (extension) {</span>
+<span class="cstat-no" title="statement not covered" >                return $filter('titleTranslate')(extension);</span>
+            };
+&nbsp;
+            $scope.isExtraIdentifierConfigured = function () {
+                return !_.isEmpty($scope.extraIdentifierTypes);
+            };
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

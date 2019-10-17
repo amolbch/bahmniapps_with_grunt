@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/util/httpErrorInterceptor.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">common/util/httpErrorInterceptor.js</span></h1>
+    <h2>
+        Statements: <span class="metric">47.83% <small>(22 / 46)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">15.56% <small>(7 / 45)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">44.44% <small>(4 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">47.83% <small>(22 / 46)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">common/util/</a> &#187; httpErrorInterceptor.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">387</span>
+<span class="cline-any cline-yes">353</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">353</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">217</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">353</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">387</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('httpErrorInterceptor', [])
+    .config(['$httpProvider', function ($httpProvider) {
+        var interceptor = ['$rootScope', '$q', function ($rootScope, $q) {
+            var serverErrorMessages = Bahmni.Common.Constants.serverErrorMessages;
+&nbsp;
+            var showError = <span class="fstat-no" title="function not covered" >function (errorMessage) {</span>
+<span class="cstat-no" title="statement not covered" >                var result = _.find(serverErrorMessages, <span class="fstat-no" title="function not covered" >function (listItem) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return listItem.serverMessage === errorMessage;</span>
+                });
+<span class="cstat-no" title="statement not covered" >                if (_.isEmpty(result)) {</span>
+<span class="cstat-no" title="statement not covered" >                    $rootScope.$broadcast('event:serverError', errorMessage);</span>
+                }
+            };
+&nbsp;
+<span class="fstat-no" title="function not covered" >            function stringAfter (value, searchString) {</span>
+<span class="cstat-no" title="statement not covered" >                var indexOfFirstColon = value.indexOf(searchString);</span>
+<span class="cstat-no" title="statement not covered" >                return value.substr(indexOfFirstColon + 1).trim();</span>
+            }
+&nbsp;
+<span class="fstat-no" title="function not covered" >            function getServerError (message) {</span>
+<span class="cstat-no" title="statement not covered" >                return stringAfter(message, ':');</span>
+            }
+&nbsp;
+            function success (response) {
+                return response;
+            }
+&nbsp;
+<span class="fstat-no" title="function not covered" >            function shouldRedirectToLogin (response) {</span>
+<span class="cstat-no" title="statement not covered" >                var errorMessage = response.data.error ? response.data.error.message : response.data;</span>
+<span class="cstat-no" title="statement not covered" >                if (errorMessage.search("HTTP Status 403 - Session timed out") &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                    return true;</span>
+                }
+            }
+&nbsp;
+            function error (response) {
+                var data = response.data;
+                var unexpectedError = "There was an unexpected issue on the server. Please try again";
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (response.status === 500) {
+<span class="cstat-no" title="statement not covered" >                    var errorMessage = data.error &amp;&amp; data.error.message ? getServerError(data.error.message) : unexpectedError;</span>
+<span class="cstat-no" title="statement not covered" >                    showError(errorMessage);</span>
+                } else <span class="missing-if-branch" title="if path not taken" >I</span>if (response.status === 409) {
+<span class="cstat-no" title="statement not covered" >                    var errorMessage = data.error &amp;&amp; data.error.message ? getServerError(data.error.message) : "Duplicate entry error";</span>
+<span class="cstat-no" title="statement not covered" >                    showError(errorMessage);</span>
+                } else <span class="missing-if-branch" title="if path not taken" >I</span>if (response.status === 0) {
+<span class="cstat-no" title="statement not covered" >                    showError("Could not connect to the server. Please check your connection and try again");</span>
+                } else <span class="missing-if-branch" title="if path not taken" >I</span>if (response.status === 405) {
+<span class="cstat-no" title="statement not covered" >                    showError(unexpectedError);</span>
+                } else <span class="missing-if-branch" title="if path not taken" >I</span>if (response.status === 400) {
+<span class="cstat-no" title="statement not covered" >                    var errorMessage = data.error &amp;&amp; data.error.message ? data.error.message : (data.localizedMessage || "Could not connect to the server. Please check your connection and try again");</span>
+<span class="cstat-no" title="statement not covered" >                    showError(errorMessage);</span>
+                } else <span class="missing-if-branch" title="if path not taken" >I</span>if (response.status === 403) {
+<span class="cstat-no" title="statement not covered" >                    var errorMessage = data.error &amp;&amp; data.error.message ? data.error.message : unexpectedError;</span>
+<span class="cstat-no" title="statement not covered" >                    if (shouldRedirectToLogin(response)) {</span>
+<span class="cstat-no" title="statement not covered" >                        $rootScope.$broadcast('event:auth-loginRequired');</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        showError(errorMessage);</span>
+                    }
+                } else <span class="missing-if-branch" title="if path not taken" >I</span>if (response.status === 404) {
+<span class="cstat-no" title="statement not covered" >                    if (!_.includes(response.config.url, "implementation_config") &amp;&amp; !_.includes(response.config.url, "locale_")</span>
+                        &amp;&amp; !_.includes(response.config.url, "offlineMetadata")) {
+<span class="cstat-no" title="statement not covered" >                        showError("The requested information does not exist");</span>
+                    }
+                }
+                return $q.reject(response);
+            }
+&nbsp;
+            return {
+                response: success,
+                responseError: error
+            };
+        }];
+        $httpProvider.interceptors.push(interceptor);
+    }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

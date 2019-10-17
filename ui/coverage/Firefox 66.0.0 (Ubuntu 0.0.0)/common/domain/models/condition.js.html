@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/domain/models/condition.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">common/domain/models/condition.js</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(44 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(23 / 23)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(13 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(44 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/domain/models/</a> &#187; condition.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+(function () {
+    var DateUtil = Bahmni.Common.Util.DateUtil;
+    var Conditions = Bahmni.Common.Domain.Conditions = {};
+    var Condition = Bahmni.Common.Domain.Condition = function (data) {
+        data = data || {};
+        this.uuid = data.uuid;
+        this.concept = {
+            uuid: _.get(data, 'concept.uuid'),
+            shortName: _.get(data, 'concept.shortName'),
+            name: _.get(data, 'concept.name')
+        };
+        this.status = data.status;
+        this.onSetDate = data.onSetDate;
+        this.conditionNonCoded = data.conditionNonCoded;
+        this.voided = data.voided;
+        this.additionalDetail = data.additionalDetail;
+        this.isNonCoded = data.isNonCoded;
+        this.creator = data.creator;
+        this.previousConditionUuid = data.previousConditionUuid;
+        this.activeSince = data.onSetDate;
+    };
+    Condition.prototype = {};
+    Condition.prototype.toggleNonCoded = function () {
+        this.isNonCoded = !this.isNonCoded;
+    };
+    Condition.prototype.clearConcept = function () {
+        this.concept.uuid = undefined;
+    };
+    Condition.prototype.isValidConcept = function () {
+        return !(this.concept.name &amp;&amp; !this.concept.uuid &amp;&amp; !this.isNonCoded);
+    };
+    Condition.prototype.isValid = function () {
+        return this.status &amp;&amp; ((this.concept.name &amp;&amp; this.isNonCoded) || this.concept.uuid);
+    };
+    Condition.prototype.isActive = function () {
+        return this.status == 'ACTIVE';
+    };
+    Condition.prototype.displayString = function () {
+        return this.conditionNonCoded || this.concept.shortName || this.concept.name;
+    };
+    Condition.prototype.isEmpty = function () {
+        return !this.status &amp;&amp; !this.concept.name &amp;&amp; !(this.isNonCoded || this.concept.uuid)
+            &amp;&amp; !this.onSetDate &amp;&amp; !this.additionalDetail;
+    };
+&nbsp;
+    Condition.createFromDiagnosis = function (diagnosis) {
+        return new Condition({
+            concept: {
+                uuid: diagnosis.codedAnswer.uuid,
+                shortName: diagnosis.codedAnswer.shortName,
+                name: diagnosis.codedAnswer.name
+            },
+            status: 'ACTIVE',
+            onSetDate: DateUtil.today(),
+            conditionNonCoded: diagnosis.freeTextAnswer,
+            additionalDetail: diagnosis.comments,
+            voided: false
+        });
+    };
+&nbsp;
+    Conditions.fromConditionHistories = function (conditionsHistories) {
+        return _.map(conditionsHistories, function (conditionsHistory) {
+            var conditions = conditionsHistory.conditions;
+            return new Condition(_.last(_.sortBy(_.reject(conditions, 'endDate'), 'onSetDate')));
+        });
+    };
+&nbsp;
+    Conditions.getPreviousActiveCondition = function (condition, allConditions) {
+        if (condition.status == 'ACTIVE') {
+            return condition;
+        }
+        var previousCondition = _.find(allConditions, {uuid: condition.previousConditionUuid});
+        if (!previousCondition) {
+            return condition;
+        }
+        return Conditions.getPreviousActiveCondition(previousCondition, allConditions);
+    };
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

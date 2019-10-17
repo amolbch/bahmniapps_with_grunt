@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for registration/directives/topDownAddressFields.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">registration/directives/topDownAddressFields.js</span></h1>
+    <h2>
+        Statements: <span class="metric">95.79% <small>(91 / 95)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">80% <small>(32 / 40)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">95.45% <small>(21 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">95.79% <small>(91 / 95)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">registration/directives/</a> &#187; topDownAddressFields.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">78</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">78</span>
+<span class="cline-any cline-yes">78</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.registration')
+    .directive('topDownAddressFields', <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            restrict: 'AE',
+            templateUrl: 'views/topDownAddressFields.html',
+            controller: 'TopDownAddressFieldsDirectiveController',
+            scope: {
+                address: '=',
+                addressLevels: '=',
+                fieldValidation: '=',
+                strictAutocompleteFromLevel: '='
+            }
+        };
+    })
+    .controller('TopDownAddressFieldsDirectiveController', ['$scope', 'addressHierarchyService', function ($scope, addressHierarchyService) {
+        $scope.addressFieldInvalid = false;
+        var selectedAddressUuids = {};
+        var selectedUserGeneratedIds = {};
+&nbsp;
+        var addressLevelsCloneInDescendingOrder = $scope.addressLevels.slice(0).reverse();
+        var addressLevelUIOrderBasedOnConfig = $scope.addressLevels;
+        $scope.addressLevelsChunks = Bahmni.Common.Util.ArrayUtil.chunk(addressLevelUIOrderBasedOnConfig, 2);
+        var addressLevelsNamesInDescendingOrder = addressLevelsCloneInDescendingOrder.map(function (addressLevel) {
+            return addressLevel.addressField;
+        });
+&nbsp;
+        var populateSelectedAddressUuids = function (levelIndex, parentUuid) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if ($scope.addressLevels.length === 0 || !$scope.addressLevels[levelIndex]) {
+<span class="cstat-no" title="statement not covered" >                return;</span>
+            }
+&nbsp;
+            var fieldName = $scope.addressLevels[levelIndex].addressField;
+            var addressValue = $scope.address[fieldName];
+            if (addressValue) {
+                addressHierarchyService.search(fieldName, addressValue, parentUuid).then(function (response) {
+                    var address = response &amp;&amp; response.data &amp;&amp; response.data[0];
+                    if (address) {
+                        selectedAddressUuids[fieldName] = address.uuid;
+                        selectedUserGeneratedIds[fieldName] = address.userGeneratedId;
+                        populateSelectedAddressUuids(levelIndex + 1, address.uuid);
+                    }
+                });
+            }
+        };
+&nbsp;
+        $scope.addressFieldSelected = function (fieldName) {
+            return function (addressFieldItem) {
+                selectedAddressUuids[fieldName] = addressFieldItem.addressField.uuid;
+                selectedUserGeneratedIds[fieldName] = addressFieldItem.addressField.userGeneratedId;
+                $scope.selectedValue[fieldName] = addressFieldItem.addressField.name;
+                var parentFields = addressLevelsNamesInDescendingOrder.slice(addressLevelsNamesInDescendingOrder.indexOf(fieldName) + 1);
+                var parent = addressFieldItem.addressField.parent;
+                parentFields.forEach(function (parentField) {
+                    if (!parent) {
+                        return;
+                    }
+                    $scope.address[parentField] = parent.name;
+                    $scope.selectedValue[parentField] = parent.name;
+                    parent = parent.parent;
+                });
+            };
+        };
+&nbsp;
+        $scope.findParentField = function (fieldName) {
+            var found = _.find($scope.addressLevels, {addressField: fieldName});
+            var index = _.findIndex($scope.addressLevels, found);
+            var parentFieldName;
+            var topLevel = 0;
+            if (index !== topLevel) {
+                var parent = $scope.addressLevels[index - 1];
+                parentFieldName = parent.addressField;
+            }
+            return parentFieldName;
+        };
+&nbsp;
+        $scope.isReadOnly = function (addressLevel) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (!$scope.address) {
+<span class="cstat-no" title="statement not covered" >                return false;</span>
+            }
+            if (!addressLevel.isStrictEntry) {
+                return false;
+            }
+            var fieldName = addressLevel.addressField;
+            var parentFieldName = $scope.findParentField(fieldName);
+            var parentValue = $scope.address[parentFieldName];
+            var parentValueInvalid = isParentValueInvalid(parentFieldName);
+            if (!parentFieldName) {
+                return false;
+            }
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (parentFieldName &amp;&amp; !parentValue) {
+                return true;
+            }
+<span class="cstat-no" title="statement not covered" >            return parentFieldName &amp;&amp; parentValue &amp;&amp; parentValueInvalid;</span>
+        };
+&nbsp;
+        var isParentValueInvalid = function (parentId) {
+            return angular.element($("#" + parentId)).hasClass('illegalValue');
+        };
+&nbsp;
+        var parentUuid = function (field) {
+            return selectedAddressUuids[$scope.findParentField(field)];
+        };
+&nbsp;
+        $scope.getAddressEntryList = function (field) {
+            return function (searchAttrs) {
+                return addressHierarchyService.search(field, searchAttrs.term, parentUuid(field));
+            };
+        };
+&nbsp;
+        $scope.getAddressDataResults = addressHierarchyService.getAddressDataResults;
+&nbsp;
+        $scope.clearFields = function (fieldName) {
+            var childFields = addressLevelsNamesInDescendingOrder.slice(0, addressLevelsNamesInDescendingOrder.indexOf(fieldName));
+            childFields.forEach(function (childField) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if ($scope.selectedValue[childField] !== null) {
+                    $scope.address[childField] = null;
+                    $scope.selectedValue[childField] = null;
+                    selectedAddressUuids[childField] = null;
+                    selectedUserGeneratedIds[childField] = null;
+                }
+            });
+&nbsp;
+            if (_.isEmpty($scope.address[fieldName])) {
+                $scope.address[fieldName] = null;
+                selectedUserGeneratedIds[fieldName] = null;
+            }
+        };
+&nbsp;
+        $scope.removeAutoCompleteEntry = function (fieldName) {
+            return function () {
+                $scope.selectedValue[fieldName] = null;
+            };
+        };
+&nbsp;
+        var init = function () {
+            $scope.addressLevels.reverse();
+            var isStrictEntry = false;
+            _.each($scope.addressLevels, function (addressLevel) {
+                addressLevel.isStrictEntry = $scope.strictAutocompleteFromLevel == addressLevel.addressField || isStrictEntry;
+                isStrictEntry = addressLevel.isStrictEntry;
+            });
+            $scope.addressLevels.reverse();
+&nbsp;
+            // wait for address to be resolved in edit patient scenario
+            var deregisterAddressWatch = $scope.$watch('address', function (newValue) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (newValue !== undefined) {
+                    populateSelectedAddressUuids(0);
+                    $scope.selectedValue = _.mapValues($scope.address, function (value, key) {
+                        var addressLevel = _.find($scope.addressLevels, {addressField: key});
+                        return addressLevel &amp;&amp; addressLevel.isStrictEntry ? value : null;
+                    });
+                    deregisterAddressWatch();
+                }
+            });
+        };
+        init();
+    }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

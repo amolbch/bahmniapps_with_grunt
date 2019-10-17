@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/obs/util/observationUtil.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">common/obs/util/observationUtil.js</span></h1>
+    <h2>
+        Statements: <span class="metric">97.92% <small>(47 / 48)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">91.67% <small>(33 / 36)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(9 / 9)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">97.92% <small>(47 / 48)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/obs/util/</a> &#187; observationUtil.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">26</span>
+<span class="cline-any cline-yes">26</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">49</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Bahmni.Common.Obs.ObservationUtil = (function () {
+    var sortSameConceptsWithObsDateTime = function (observation) {
+        var sortedObservations = [];
+        for (var i = 0; i &lt; observation.length; i++) {
+            if (i !== observation.length - 1) {
+                if (observation[i].conceptUuid !== observation[i + 1].conceptUuid) {
+                    sortedObservations.push(observation[i]);
+                } else {
+                    var sameConceptsSubArray = [];
+                    var j = i + 1;
+                    sameConceptsSubArray.push(observation[i]);
+                    while (j &lt; observation.length &amp;&amp; observation[i].conceptUuid === observation[j].conceptUuid) {
+                        sameConceptsSubArray.push(observation[j++]);
+                    }
+                    sameConceptsSubArray = _.sortBy(sameConceptsSubArray, 'observationDateTime');
+                    sortedObservations.push(sameConceptsSubArray);
+                    i = j - 1;
+                }
+            } else {
+                sortedObservations.push(observation[i]);
+            }
+        }
+        return _.flatten(sortedObservations);
+    };
+&nbsp;
+    var getValue = function (observation) {
+        if (observation.selectedObs) {
+            return observation.getValues();
+        }
+        var obsValue;
+        if (observation.value &amp;&amp; observation.value.name &amp;&amp; observation.value.name.name) {
+            obsValue = observation.value.name.name;
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (observation.value &amp;&amp; observation.value.name &amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >!observation.value.name.name)</span> {
+<span class="cstat-no" title="statement not covered" >            obsValue = observation.value.name;</span>
+        } else {
+            obsValue = observation.value;
+        }
+&nbsp;
+        return (obsValue === undefined || obsValue === null) ? obsValue : (obsValue.displayString || obsValue);
+    };
+&nbsp;
+    var collect = function (flattenedObservations, key, value) {
+        if (value != undefined) {
+            flattenedObservations[key] = flattenedObservations[key] ? _.uniq(_.flatten(_.union([flattenedObservations[key]], [value]))) : value;
+        }
+    };
+&nbsp;
+    var findLeafObservations = function (flattenedObservations, observation) {
+        if (!_.isEmpty(observation.groupMembers)) {
+            _.each(observation.groupMembers, function (member) {
+                findLeafObservations(flattenedObservations, member);
+            });
+        } else {
+            collect(flattenedObservations, observation.concept.name, getValue(observation));
+        }
+    };
+&nbsp;
+    var flatten = function (observation) {
+        var flattenedObservation = {};
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!_.isEmpty(observation)) {
+            findLeafObservations(flattenedObservation, observation);
+        }
+        return flattenedObservation;
+    };
+&nbsp;
+    var flattenObsToArray = function (observations) {
+        var flattened = [];
+        flattened.push.apply(flattened, observations);
+        observations.forEach(function (obs) {
+            if (obs.groupMembers &amp;&amp; obs.groupMembers.length &gt; 0) {
+                flattened.push.apply(flattened, flattenObsToArray(obs.groupMembers));
+            }
+        });
+        return flattened;
+    };
+&nbsp;
+    return {
+        sortSameConceptsWithObsDateTime: sortSameConceptsWithObsDateTime,
+        flatten: flatten,
+        flattenObsToArray: flattenObsToArray
+    };
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

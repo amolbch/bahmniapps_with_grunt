@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for document-upload/models/visit.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">document-upload/models/visit.js</span></h1>
+    <h2>
+        Statements: <span class="metric">91.76% <small>(78 / 85)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">65.71% <small>(23 / 35)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">92.59% <small>(25 / 27)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">91.67% <small>(77 / 84)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">document-upload/models/</a> &#187; visit.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">29</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">34</span>
+<span class="cline-any cline-yes">34</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">34</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">34</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">91</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Bahmni.DocumentUpload.Visit = function () {
+    var DocumentImage = Bahmni.Common.DocumentImage;
+    this.startDatetime = "";
+    this.stopDatetime = "";
+    this.visitType = null;
+    this.uuid = null;
+    this.changed = false;
+    this.files = [];
+    var androidDateFormat = "YYYY-MM-DD hh:mm:ss";
+&nbsp;
+    this._sortSavedFiles = function (savedFiles) {
+        savedFiles.sort(function (file1, file2) {
+            return file1.id - file2.id;
+        });
+        return savedFiles;
+    };
+&nbsp;
+    this.initSavedFiles = function (encounters) {
+        this.files = [];
+        var providerMapper = new Bahmni.Common.Domain.ProviderMapper();
+&nbsp;
+        var savedFiles = this.files;
+        encounters.forEach(function (encounter) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (encounter.obs) {
+                encounter.obs.forEach(function (observation) {
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (observation.groupMembers) {
+                        observation.groupMembers.forEach(function (member) {
+                            var conceptName = observation.concept.name.name;
+                            savedFiles.push(new DocumentImage({
+                                id: member.id,
+                                encodedValue: Bahmni.Common.Constants.documentsPath + '/' + member.value,
+                                obsUuid: observation.uuid,
+                                obsDatetime: member.obsDatetime,
+                                visitUuid: encounter.visit.uuid,
+                                encounterUuid: encounter.uuid,
+                                provider: providerMapper.map(encounter.provider),
+                                concept: {uuid: observation.concept.uuid, editableName: conceptName, name: conceptName},
+                                comment: member.comment
+                            }));
+                        });
+                    }
+                });
+            }
+        });
+        this.files = this._sortSavedFiles(savedFiles);
+        this.assignImageIndex();
+    };
+&nbsp;
+    this.assignImageIndex = function () {
+        var imageIndex = this.getNoOfImages() - 1;
+        this.files.map(function (file) {
+            if (!(file.encodedValue.indexOf(".pdf") &gt; 0)) {
+                file.imageIndex = imageIndex;
+                imageIndex--;
+            }
+            return file;
+        });
+    };
+&nbsp;
+    this.getNoOfImages = function () {
+        var imageFiles = _.filter(this.files, function (file) {
+            return !(file.encodedValue.indexOf(".pdf") &gt; 0);
+        });
+        return imageFiles.length;
+    };
+&nbsp;
+    this.isNew = function () {
+        return this.uuid === null;
+    };
+&nbsp;
+    this.hasFiles = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        return this.files.length &gt; 0;</span>
+    };
+&nbsp;
+    this.startDate = function () {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.isNew()) {
+            return moment(this.startDatetime).toDate();
+        }
+<span class="cstat-no" title="statement not covered" >        return this.parseDate(this.startDatetime);</span>
+    };
+&nbsp;
+    this.endDate = function () {
+        return this.stopDatetime ? this.parseDate(this.stopDatetime) : <span class="branch-1 cbranch-no" title="branch not covered" >undefined;</span>
+    };
+&nbsp;
+    this.parseDate = function (date) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (date instanceof Date) {
+            return date;
+        }
+<span class="cstat-no" title="statement not covered" >        var dateFormat = (date &amp;&amp; date.indexOf('-') !== -1) ? androidDateFormat : Bahmni.Common.Constants.dateFormat;</span>
+<span class="cstat-no" title="statement not covered" >        return moment(date, dateFormat).toDate();</span>
+    };
+&nbsp;
+    this.addFile = function (file) {
+        var savedImage = null;
+        var alreadyPresent = this.files.filter(function (img) {
+            return img.encodedValue === file;
+        });
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (alreadyPresent.length === 0) {
+            savedImage = new DocumentImage({"encodedValue": file, "new": true});
+            this.files.push(savedImage);
+        }
+        this.assignImageIndex();
+        this.markAsUpdated();
+        return savedImage;
+    };
+&nbsp;
+    this.markAsUpdated = function () {
+        this.changed = this.files.some(function (file) { return file.changed || !file.obsUuid || <span class="branch-2 cbranch-no" title="branch not covered" >file.voided;</span> });
+    };
+&nbsp;
+    this.isSaved = function (file) {
+        return file.obsUuid ? true : false;
+    };
+&nbsp;
+    this.removeFile = function (file) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (this.isSaved(file)) {
+<span class="cstat-no" title="statement not covered" >            this.toggleVoidingOfFile(file);</span>
+        } else {
+            this.removeNewAddedFile(file);
+        }
+    };
+&nbsp;
+    this.removeNewAddedFile = function (file) {
+        var i = this.files.indexOf(file);
+        this.files.splice(i, 1);
+        this.assignImageIndex();
+        this.markAsUpdated();
+    };
+&nbsp;
+    this.toggleVoidingOfFile = <span class="fstat-no" title="function not covered" >function (file) {</span>
+<span class="cstat-no" title="statement not covered" >        file.voided = !file.voided;</span>
+<span class="cstat-no" title="statement not covered" >        this.markAsUpdated();</span>
+    };
+&nbsp;
+    this.hasErrors = function () {
+        var imageHasError = _.find(this.files, function (file) {
+            return !file.voided &amp;&amp; (!file.concept || !file.concept.editableName || !file.concept.uuid);
+        });
+&nbsp;
+        return imageHasError ? true : false;
+    };
+&nbsp;
+    this.hasVisitType = function () {
+        return this.visitType &amp;&amp; this.visitType.uuid ? true : false;
+    };
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

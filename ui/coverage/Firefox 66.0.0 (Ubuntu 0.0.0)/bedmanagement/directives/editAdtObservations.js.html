@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for bedmanagement/directives/editAdtObservations.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">bedmanagement/directives/editAdtObservations.js</span></h1>
+    <h2>
+        Statements: <span class="metric">97.44% <small>(76 / 78)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">85% <small>(17 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">96.15% <small>(25 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">97.44% <small>(76 / 78)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">bedmanagement/directives/</a> &#187; editAdtObservations.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.ipd')
+    .directive('editAdtObservations', ['$rootScope', '$state', 'spinner', 'encounterService', 'observationsService', 'sessionService', 'conceptSetService', 'conceptSetUiConfigService', 'messagingService',
+        function ($rootScope, $state, spinner, encounterService, observationsService, sessionService, conceptSetService, conceptSetUiConfigService, messagingService) {
+            var controller = function ($scope) {
+                $scope.assignBedsPrivilege = Bahmni.IPD.Constants.assignBedsPrivilege;
+&nbsp;
+                var getEncounterDataFor = function (obs, encounterTypeUuid, visitTypeUuid) {
+                    var encounterData = {};
+                    encounterData.patientUuid = $scope.patient.uuid;
+                    encounterData.encounterTypeUuid = encounterTypeUuid;
+                    encounterData.visitTypeUuid = visitTypeUuid;
+                    encounterData.observations = angular.copy(obs);
+                    encounterData.locationUuid = sessionService.getLoginLocationUuid();
+                    return encounterData;
+                };
+&nbsp;
+                var toggleDisabledObservation = function (editMode) {
+                    $scope.editMode = editMode;
+                    _.each($scope.observations[0].groupMembers, function (member) {
+                        member.disabled = !editMode;
+                    });
+                };
+&nbsp;
+                var getNonEmptyObservations = function () {
+                    var observations = angular.copy($scope.observations[0]);
+                    observations.groupMembers = _.filter(observations.groupMembers, function (member) {
+                        return !_.isEmpty(member.value);
+                    });
+                    if (_.isEmpty(observations.groupMembers)) {
+                        messagingService.showMessage("error", "Date of Discharge and Reason for discharge cannot be empty.");
+                        setValuesForObservations($scope.savedObservations);
+                        return [];
+                    }
+                    return [observations];
+                };
+&nbsp;
+                $scope.edit = function () {
+                    $scope.savedObservations = angular.copy($scope.observations[0]);
+                    toggleDisabledObservation(true);
+                };
+&nbsp;
+                $scope.save = function () {
+                    toggleDisabledObservation(false);
+                    var observations = getNonEmptyObservations();
+                    if ($scope.visitTypeUuid !== null &amp;&amp; !_.isEmpty(observations)) {
+                        var encounterData = getEncounterDataFor(observations, $rootScope.encounterConfig.getConsultationEncounterTypeUuid(), $scope.visitTypeUuid);
+                        return encounterService.create(encounterData).then(<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                            toggleDisabledObservation(false);</span>
+                        });
+                    }
+                };
+&nbsp;
+                $scope.cancel = function () {
+                    setValuesForObservations($scope.savedObservations);
+                    toggleDisabledObservation(false);
+                };
+&nbsp;
+                var resetObservationValues = function () {
+                    _.each($scope.observations[0].groupMembers, function (member) {
+                        member.value = undefined;
+                    });
+                };
+&nbsp;
+                var fetchLatestObsFor = function (conceptNames) {
+                    return observationsService.fetch($scope.patient.uuid, conceptNames, "latest", null, null, null, null, null).then(function (response) {
+                        resetObservationValues();
+                        toggleDisabledObservation(false);
+                        <span class="missing-if-branch" title="if path not taken" >I</span>if (response.data.length) {
+<span class="cstat-no" title="statement not covered" >                            setValuesForObservations(response.data[0]);</span>
+                        }
+                    });
+                };
+&nbsp;
+                $scope.$watch("patient", function (oldValue, newValue) {
+                    if (oldValue !== newValue) {
+                        return fetchLatestObsFor($scope.conceptSetName);
+                    }
+                });
+&nbsp;
+                var getConceptSetByConceptName = function (conceptSetName) {
+                    return conceptSetService.getConcept({name: conceptSetName, v: "bahmni"}).then(function (response) {
+                        return response.data.results[0];
+                    });
+                };
+&nbsp;
+                var constructObservationTemplate = function (conceptSetName) {
+                    return getConceptSetByConceptName(conceptSetName).then(function (conceptSet) {
+                        var observationMapper = new Bahmni.ConceptSet.ObservationMapper();
+                        return observationMapper.map([], conceptSet, conceptSetUiConfigService.getConfig());
+                    });
+                };
+&nbsp;
+                var setValuesForObservations = function (obsGroup) {
+                    $scope.observations[0].value = obsGroup.value;
+                    _.each(obsGroup.groupMembers, function (obsGroupMember) {
+                        _.each($scope.observations[0].groupMembers, function (member) {
+                            <span class="missing-if-branch" title="else path not taken" >E</span>if (member.concept.uuid === obsGroupMember.concept.uuid) {
+                                member.value = obsGroupMember.value;
+                                member.disabled = true;
+                            }
+                        });
+                    });
+                };
+&nbsp;
+                var init = function () {
+                    $scope.promiseResolved = false;
+                    $scope.observations = [];
+                    $scope.editMode = false;
+                    $scope.onBedManagement = ($state.current &amp;&amp; $state.current.name === "bedManagement.bed");
+                    return constructObservationTemplate($scope.conceptSetName).then(function (observation) {
+                        $scope.observations[0] = observation;
+                        toggleDisabledObservation(false);
+                        $scope.promiseResolved = true;
+                        <span class="missing-if-branch" title="else path not taken" >E</span>if ($rootScope.patient &amp;&amp; $rootScope.bedDetails) {
+                            return observationsService.fetch($scope.patient.uuid, [$scope.conceptSetName], "latest", 1, null, null, null, null).then(function (response) {
+                                if (response.data.length) {
+                                    setValuesForObservations(response.data[0]);
+                                }
+                            });
+                        }
+                    });
+                };
+&nbsp;
+                spinner.forPromise(init());
+            };
+&nbsp;
+            return {
+                restrict: 'E',
+                scope: {
+                    patient: "=",
+                    conceptSetName: "=",
+                    editMode: "=",
+                    visitTypeUuid: "="
+                },
+                controller: controller,
+                templateUrl: "views/editAdtObservations.html"
+            };
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

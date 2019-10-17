@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ot/controller/newSurgicalAppointmentController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">ot/controller/newSurgicalAppointmentController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">98.48% <small>(65 / 66)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">91.23% <small>(52 / 57)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(17 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">98.48% <small>(65 / 66)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">ot/controller/</a> &#187; newSurgicalAppointmentController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.ot')
+    .controller('NewSurgicalAppointmentController', ['$scope', '$q', '$window', 'patientService', 'surgicalAppointmentService', 'messagingService', 'programService', 'appService', 'ngDialog', 'spinner', 'queryService', 'programHelper',
+        function ($scope, $q, $window, patientService, surgicalAppointmentService, messagingService, programService, appService, ngDialog, spinner, queryService, programHelper) {
+            var init = function () {
+                $scope.selectedPatient = $scope.ngDialogData &amp;&amp; $scope.ngDialogData.patient;
+                $scope.patient = $scope.ngDialogData &amp;&amp; $scope.ngDialogData.patient &amp;&amp; ($scope.ngDialogData.patient.value || $scope.ngDialogData.patient.display);
+                $scope.otherSurgeons = _.cloneDeep($scope.surgeons);
+                return $q.all([surgicalAppointmentService.getSurgicalAppointmentAttributeTypes()]).then(function (response) {
+                    $scope.attributeTypes = response[0].data.results;
+                    var attributes = {};
+                    var mapAttributes = new Bahmni.OT.SurgicalBlockMapper().mapAttributes(attributes, $scope.attributeTypes);
+                    $scope.attributes = $scope.ngDialogData &amp;&amp; $scope.ngDialogData.surgicalAppointmentAttributes || mapAttributes;
+                    if ($scope.isEditMode()) {
+                        programService.getEnrollmentInfoFor($scope.ngDialogData.patient.uuid, "custom:(uuid,dateEnrolled,dateCompleted,program:(uuid),patient:(uuid))").then(function (response) {
+                            var groupedPrograms = programHelper.groupPrograms(response);
+                            $scope.enrollmentInfo = groupedPrograms &amp;&amp; groupedPrograms.activePrograms[0];
+                        });
+                    }
+                });
+            };
+&nbsp;
+            $scope.isEditMode = function () {
+                return $scope.patient &amp;&amp; $scope.ngDialogData &amp;&amp; $scope.ngDialogData.id;
+            };
+&nbsp;
+            $scope.search = function () {
+                return patientService.search($scope.patient).then(function (response) {
+                    return response.data.pageOfResults;
+                });
+            };
+&nbsp;
+            $scope.onSelectPatient = function (data) {
+                $scope.selectedPatient = data;
+                var sqlGlobalProperty = appService.getAppDescriptor().getConfigValue('procedureSQLGlobalProperty');
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (!sqlGlobalProperty) {
+<span class="cstat-no" title="statement not covered" >                    return;</span>
+                }
+                var params = {
+                    patientUuid: data.uuid,
+                    q: sqlGlobalProperty,
+                    v: "full"
+                };
+                spinner.forPromise(queryService.getResponseFromQuery(params).then(function (response) {
+                    if (response.data.length) {
+                        $scope.attributes.procedure.value = response.data[0]['all_procedures'];
+                        var estHrs = response.data[0]['esthrs'];
+                        var estMins = response.data[0]['estmins'];
+                        $scope.attributes.estTimeHours.value = estHrs ? Math.floor(parseInt(estHrs) + estMins / 60) : <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
+                        $scope.attributes.estTimeMinutes.value = estMins ? parseInt(estMins) % 60 : <span class="branch-1 cbranch-no" title="branch not covered" >0;</span>
+                    } else {
+                        $scope.attributes.procedure.value = "";
+                        $scope.attributes.estTimeHours.value = 0;
+                        $scope.attributes.estTimeMinutes.value = 0;
+                    }
+                }));
+            };
+&nbsp;
+            $scope.responseMap = function (data) {
+                return _.map(data, function (patientInfo) {
+                    patientInfo.label = patientInfo.givenName + " " + patientInfo.familyName + " " + "( " + patientInfo.identifier + " )";
+                    return patientInfo;
+                });
+            };
+&nbsp;
+            $scope.createAppointmentAndAdd = function () {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if ($scope.surgicalAppointmentForm.$valid) {
+                    var appointment = {
+                        id: $scope.ngDialogData &amp;&amp; $scope.ngDialogData.id,
+                        patient: $scope.selectedPatient,
+                        sortWeight: $scope.ngDialogData &amp;&amp; $scope.ngDialogData.sortWeight,
+                        actualStartDatetime: $scope.ngDialogData &amp;&amp; $scope.ngDialogData.actualStartDatetime,
+                        actualEndDatetime: $scope.ngDialogData &amp;&amp; $scope.ngDialogData.actualEndDatetime,
+                        status: $scope.ngDialogData &amp;&amp; $scope.ngDialogData.status || Bahmni.OT.Constants.scheduled,
+                        notes: $scope.ngDialogData &amp;&amp; $scope.ngDialogData.notes,
+                        uuid: $scope.ngDialogData &amp;&amp; $scope.ngDialogData.uuid,
+                        voided: $scope.ngDialogData &amp;&amp; $scope.ngDialogData.voided,
+                        surgicalAppointmentAttributes: $scope.attributes
+                    };
+                    $scope.addSurgicalAppointment(appointment);
+                }
+                return $q.when({});
+            };
+&nbsp;
+            $scope.close = function () {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if ($scope.ngDialogData) {
+                    var appointment = _.find($scope.surgicalForm.surgicalAppointments, function (surgicalAppointment) {
+                        return surgicalAppointment.isBeingEdited;
+                    });
+&nbsp;
+                    delete $scope.surgicalForm.surgicalAppointments[appointment.sortWeight].isBeingEdited;
+                    delete $scope.ngDialogData.isBeingEdited;
+                }
+                ngDialog.close();
+            };
+&nbsp;
+            $scope.goToForwardUrl = function () {
+                var forwardUrl = appService.getAppDescriptor().getConfigValue('patientDashboardUrl');
+                if (isProgramDashboardUrlConfigured(forwardUrl) &amp;&amp; !$scope.enrollmentInfo) {
+                    messagingService.showMessage('error', forwardUrl.errorMessage);
+                    return;
+                }
+                var params = getDashboardParams(forwardUrl);
+                var formattedUrl = appService.getAppDescriptor().formatUrl(forwardUrl.link, params);
+                $window.open(formattedUrl);
+            };
+&nbsp;
+            var isProgramDashboardUrlConfigured = function (forwardUrl) {
+                return forwardUrl &amp;&amp; forwardUrl.link &amp;&amp; forwardUrl.link.includes('programs');
+            };
+&nbsp;
+            var getDashboardParams = function (forwardUrl) {
+                if (forwardUrl &amp;&amp; forwardUrl.link &amp;&amp; forwardUrl.link.includes('programs')) {
+                    return {
+                        patientUuid: $scope.enrollmentInfo.patient.uuid,
+                        dateEnrolled: $scope.enrollmentInfo.dateEnrolled,
+                        programUuid: $scope.enrollmentInfo.program.uuid,
+                        enrollment: $scope.enrollmentInfo.uuid
+                    };
+                }
+                return {
+                    patientUuid: $scope.selectedPatient.uuid
+                };
+            };
+&nbsp;
+            spinner.forPromise(init());
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

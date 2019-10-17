@@ -1,0 +1,180 @@
+
+<style type="text/css">
+
+@media all {
+    .page-break { display: none; }
+}
+
+@media print {
+    .page-break { display: block; page-break-before: always; }
+}
+
+</style>
+<div ng-controller="TransferController">
+    <div ng-if="data">
+        <img ng-if="data.hospitalLogo" height="80px" width="80px" src="{{ data.hospitalLogo }}"
+            style="padding-left:300px;" class="prescribe-report-logo">
+        <h3 align=center>REPÚBLICA DE MOÇAMBIQUE<br>MINISTÉRIO DA SAÚDEGUIA<br>GUIA DE TRANSFERÊNCIA</h3>
+        <br><br>
+        <p>
+            <b>{{ 'TRANSFER_FROM' | translate }}</b>&nbsp:&nbsp{{ data.hospitalName }}&nbsp&nbsp&nbsp&nbsp
+            <b> {{ 'PROGRAM_MANAGEMENT_TO_KEY' | translate }}</b>&nbsp:&nbsp{{ data.dest }}&nbsp&nbsp&nbsp&nbsp
+            <b>{{ 'ALLERGIES_LIST_DATE' | translate }}</b>&nbsp:&nbsp{{ data.Transfer | date:'dd/MM/yyyy'}}</p>
+        <br>
+        <fieldset style="border: 2px solid black;">
+            <legend><b>{{ 'PATIENT_IDENTIFICATION' | translate }}</b></legend>
+            <br>
+
+            <b> {{ 'PRESCRIPTION_REPORT_PATIENT_NAME' | translate }}</b>&nbsp:&nbsp
+            {{ data.patientInfo.firstName }}&nbsp&nbsp{{ data.patientInfo.lastName }}
+            <span style="margin-left: 12%;"><b> {{ 'PRESCRIPTION_REPORT_PATIENT_ID' | translate }}</b>&nbsp:&nbsp
+                {{data.patientInfo.patientId}}</span><br><br>
+            <b>{{ 'CLINICAL_LIST_PATIENT_SEX' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.sex }}
+            <span style="margin-left: 1.2%;">
+                <b>{{ 'CLINICAL_LIST_PATIENT_DOB' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.birth_date | date:'dd/MM/yyyy'}}</span>
+            <span
+                style="margin-left: 1.2%;"><b>{{ 'PRESCRIPTION_REPORT_PATIENT_AGE_AND_SEX' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.age }}</span>
+            <span
+                style="margin-left: 1.2%;"><b>{{ 'CLINICAL_LIST_PATIENT_MAIN_CONTACT' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.mainContact }}</span><br><br>
+            <b>{{ 'PRESCRIPTION_REPORT_PATIENT_ADDRESS' | translate }}</b><br>
+            <table style="margin-left: 5%;" border=0>
+                <tr height="35">
+                    <td height="20"><b>{{ 'PROVINCE' | translate }}</b>&nbsp:&nbsp{{ data.province }} </td>
+                    <td height="20"> <b>{{ 'DISTRICT_CITY' | translate }}</b>&nbsp:&nbsp{{ data.District }}</td>
+                </tr>
+                <tr height="35">
+                    <td height="20" style="width:278px">
+                        <b>{{ 'TOWN' | translate }}</b>&nbsp:&nbsp{{ data.address1 }}</td>
+                    <td height="20"> <b>{{ 'CELL_BLOCK' | translate }}</b>&nbsp:&nbsp{{ data.address3 }}</td>
+                </tr>
+                <tr height="35">
+                    <td><b>{{ 'STREET_HOUSE' | translate }}</b>&nbsp:&nbsp{{ data.address4}}</td>
+                    <td> <b>{{ 'CLOSE_OF' | translate }}</b>&nbsp:&nbsp{{ data.address2}}</td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset style="border: 2px solid black; margin-top: 100px">
+            <legend><b>{{ 'PROPHILAXIS' | translate }}</b></legend>
+            <br>
+            <b>{{ 'DATE_OF_DIAGNOSIS' | translate }}</b>&nbsp:&nbsp{{data.patientInfo.hivDate | date:'dd/MM/yyyy'}}<br><br>
+
+            <div ng-repeat="s in data.patientInfo.patientStatus">
+                <b> {{ 'TREATMENT_STATUS' | translate }}</b>
+                <span> <input type="checkbox"
+                        ng-checked="s === 'TARV' " />TARV&nbsp&nbsp
+                    <input type="checkbox" ng-checked="s !== 'TARV' " />Pre TARV&nbsp&nbsp
+                    (<b>{{ 'REGISTRATION_DATE' | translate }}</b>&nbsp:&nbsp{{data.patientInfo.regDate | date:'dd/MM/yyyy'}})
+                </span>
+            </div>
+
+            <p style="margin-top: 20px"><b> {{ 'ART_REGIME' | translate }}</b>&nbsp:&nbsp{{data.patientInfo.currRegARV}}</p>
+            <b>{{ 'REGIME_CHANGE_TO' | translate }}</b>&nbsp:&nbsp{{data.patientInfo.secLast}}
+            &nbsp<b>{{ 'MEDICATION_DUE_TO' | translate }}</b>&nbsp:&nbsp<input type=text size=10>
+            &nbsp<b>{{ 'ALLERGIES_LIST_DATE' | translate }}</b>&nbsp:&nbsp{{data.patientInfo.secLastDate | date:'dd/MM/yyyy'}}<br><br>
+            <b> {{ 'REGIME_CHANGE_TO' | translate }}</b>&nbsp:&nbsp {{data.patientInfo.thirdLast | date:'dd/MM/yyyy'}}
+            &nbsp <b>{{ 'MEDICATION_DUE_TO' | translate }}</b>&nbsp:&nbsp<input type=text size=10>
+            &nbsp&nbsp<b>{{ 'ALLERGIES_LIST_DATE' | translate }}</b>&nbsp:&nbsp{{data.patientInfo.thirdLastDate | date:'dd/MM/yyyy'}}<br>
+            <table border=0>
+                <tr>
+                    <td height="40"><b>INH
+                            –{{ 'START_DATE' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.INH_start | date:'dd/MM/yyyy'}}
+                    </td>
+                    <td></td>
+                    <td><b>{{ 'END_DATE' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.INH_end | date:'dd/MM/yyyy'}}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><b> CTZ
+                            –{{ 'START_DATE' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.CTZ_start | date:'dd/MM/yyyy'}}
+                    </td>
+                    <td></td>
+                    <td><b>{{ 'END_DATE' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.CTZ_end | date:'dd/MM/yyyy'}}
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <div class="page-break"></div>
+
+        <fieldset style="border: 2px solid black; padding-top:20px;">
+            <legend><b>{{ 'CLINICAL_SITUATION' | translate }}</b></legend>
+            <br>
+            <b>{{ 'WEIGHT' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.weight }}
+            <span style="padding-left: 20px;">
+                <b>{{ 'HEIGHT' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.height }}
+                <span
+                    style="padding-left: 20px;"><b>{{ 'BMI' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.BMI }}
+                    <span style="padding-left: 20px;"></span>
+                    <b>{{ 'CLINICAL_STAGE' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.whoStaging }} <br><br>
+                    <b>
+                        {{ 'CONDITION_NAME' | translate }}</span></b>&nbsp:&nbsp{{ data.patientInfo.condName }}<br><br>
+                <b>{{ 'TB_BACKGROUND' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.Tb_back }}
+                <b> ({{ 'TREATMENT_START' | translate }}</b>&nbsp&nbsp{{ data.patientInfo.Tb_start | date:'dd/MM/yyyy'}} &nbsp&nbsp
+                <b>{{ 'TREATMENT_END' | translate }}</b>{{ data.patientInfo.Tb_end | date:'dd/MM/yyyy' }})<br><br>
+                <b> {{ 'CURRENT_DIAGNOSIS' | translate }}</b>&nbsp:&nbsp
+
+                <span ng-repeat="c in data.patientInfo.diagnosisName">
+                    <span style="margin-left: 10px"> {{c}} <br><span style="margin-left: 149px"></span></span>
+                </span> 
+
+                <span>{{ data.patientInfo.diagnosisPastName }}</span><br><br>
+
+                <b> {{ 'ON_GOING_TREATMENT' | translate }}</b>&nbsp:&nbsp<span
+                    ng-repeat="b in data.patientInfo.notARV">
+                    <span style="margin-left: 7px;"> {{b}}<br><span style="margin-left: 162px"></span></span>
+                </span><br><br>
+                <b> {{ 'PREGNANCY' | translate }}</b>&nbsp:&nbsp {{ data.patientInfo.pregStatus }}
+                &nbsp&nbsp &nbsp&nbsp <b>
+                    {{ 'BREASTFEEDING_STATUS' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.breastFeedingStatus | translate }}<br><br>
+                <b> {{ 'MDS_STATUS' | translate }}</b>&nbsp:&nbsp{{data.patientInfo.mdsYes | translate}}
+
+                <BR><BR>
+                <div style="clear: both;">
+                    <div style="width: 25%;float: left;">
+                        <b>{{ 'MODEL_TYPE' | translate }}</b>
+                    </div>
+                    <div style="width: 70%;float: right;" ng-repeat="a in data.patientInfo.modelTypes track by $index">
+                        <span style="margin-left: 5%;">{{a}}</span>
+                    </div>
+                </div>
+                <div style="clear: both;">(<b>{{ 'REGISTRATION_DATE' | translate }}</b>&nbsp:&nbsp{{data.patientInfo.modelDate | date:'dd/MM/yyyy'}})</div>
+        </fieldset>
+
+        <fieldset style="border: 2px solid black; margin-top: 100px">
+            <legend><b>{{ 'LABORATORY_SITUATION' | translate }}</b></legend>
+            <br>
+            <b>{{ 'LATEST_ANAYSIS' | translate }}</b><br><br>
+            <div>
+                <div style="width: 50%; float: left;">
+                <span><b>{{'LO_CD4' | translate}}</b> <span>{{data.labOrderResult.LO_CD4.testResult}} %</span> <span style="margin-left: 10%;"><b>{{'LO_DATE' | translate}}</b> {{data.labOrderResult.LO_CD4.testDate | date:'dd/MM/yyyy'}}</span></span>
+                </div>
+
+                <div style="width: 50%; float: left;">
+                <span><b>{{'LO_ViralLoad' | translate}}</b> <span>{{data.labOrderResult.LO_ViralLoad.testResult}}</span> <span style="margin-left: 10%;">
+                <b>{{'LO_DATE' | translate}}</b> {{data.labOrderResult.LO_ViralLoad.testDate | date:'dd/MM/yyyy'}}</span></span>
+                </div>
+
+                <div style="width: 50%; float: left;margin-top: 7px">
+                <span><b>{{'LO_HB' | translate}}</b> <span>{{data.labOrderResult.LO_HB.testResult}}</span> <span style="margin-left: 10%;"><b>{{'LO_DATE' | translate}}</b> {{data.labOrderResult.LO_HB.testDate | date:'dd/MM/yyyy'}}</span></span>
+                </div>
+
+                <div style="width: 50%; float: left;margin-top: 7px">
+                <span><b>{{'LO_ALT' | translate}}</b> <span>{{data.labOrderResult.LO_ALT.testResult}}</span></span>
+
+                <span><b>{{'LO_AST' | translate}}</b> <span>{{data.labOrderResult.LO_AST.testResult}}</span> <span style="margin-left: 10%;"><b>{{'LO_DATE' | translate}}</b> {{data.labOrderResult.LO_AST.testDate | date:'dd/MM/yyyy'}}</span></span>
+                </div>
+
+                <div style="width: 50%; float: left;margin-top: 7px">
+                <span><b>{{'LO_Other' | translate}}</b> <span>{{data.labOrderResult['LO_Other:'].testResult}}</span> <span style="margin-left: 10%;"><b>{{'LO_DATE' | translate}}</b> {{data.labOrderResult['LO_Other:'].testDate | date:'dd/MM/yyyy'}}</span></span>
+                </div>
+            </div>
+        </fieldset>
+        <br><br>
+        <p><b>{{ 'NAME_OF_PROVIDER' | translate }}</b>&nbsp:&nbsp{{ data.patientInfo.username }}
+            <span style="padding-left: 200px;"> <b> {{ 'CONTACT' | translate }}</b>&nbsp:&nbsp<input type=text
+                    size=10><br><br>
+                <b> {{ 'PRESCRIPTION_REPORT_SIGNATURE' | translate }}</b> &nbsp:&nbsp<input type=text size=30></p>
+        <h4 align=center>{{ 'INFO' | translate }}</h4>
+    </div>
+</div>

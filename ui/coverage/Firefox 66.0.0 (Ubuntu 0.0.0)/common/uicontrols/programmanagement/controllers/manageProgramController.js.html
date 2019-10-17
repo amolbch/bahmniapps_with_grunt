@@ -1,0 +1,936 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/uicontrols/programmanagement/controllers/manageProgramController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">common/uicontrols/programmanagement/controllers/manageProgramController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">86.47% <small>(147 / 170)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">67.69% <small>(44 / 65)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">75% <small>(33 / 44)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">86.47% <small>(147 / 170)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">common/uicontrols/programmanagement/controllers/</a> &#187; manageProgramController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-yes">27</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">37</span>
+<span class="cline-any cline-yes">67</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.uicontrols.programmanagment')
+    .controller('ManageProgramController', ['$scope', 'retrospectiveEntryService', '$window', 'programService',
+        'spinner', 'messagingService', '$stateParams', '$q', 'confirmBox',
+        function ($scope, retrospectiveEntryService, $window, programService,
+                  spinner, messagingService, $stateParams, $q, confirmBox) {
+            var DateUtil = Bahmni.Common.Util.DateUtil;
+            $scope.programSelected = {};
+            $scope.workflowStateSelected = {};
+            $scope.allPrograms = [];
+            $scope.programWorkflowStates = [];
+            $scope.workflowStatesWithoutCurrentState = [];
+            $scope.outComesForProgram = [];
+            $scope.configName = $stateParams.configName;
+            $scope.today = DateUtil.getDateWithoutTime(DateUtil.now());
+            var id = "#programEnrollmentContainer";
+&nbsp;
+            var updateActiveProgramsList = function () {
+                spinner.forPromise(programService.getPatientPrograms($scope.patient.uuid).then(function (programs) {
+                    $scope.activePrograms = programs.activePrograms;
+                    _.each($scope.activePrograms, function (patientProgram) {
+                        populateDefaultSelectedState(patientProgram);
+                    });
+                    $scope.activePrograms.showProgramSection = true;
+&nbsp;
+                    $scope.endedPrograms = programs.endedPrograms;
+                    $scope.endedPrograms.showProgramSection = true;
+                }).then(function () {
+                    formatProgramDates();
+                }), id);
+            };
+&nbsp;
+            var populateDefaultSelectedState = function (patientProgram) {
+                var activePatientProgramState = getActivePatientProgramState(patientProgram.states);
+                patientProgram.selectedState = activePatientProgramState ? activePatientProgramState.state : null;
+            };
+&nbsp;
+            var formatProgramDates = function () {
+                _.each($scope.activePrograms, function (activeProgram) {
+                    activeProgram.fromDate = Bahmni.Common.Util.DateUtil.parseLongDateToServerFormat(activeProgram.dateEnrolled);
+                    activeProgram.toDate = Bahmni.Common.Util.DateUtil.parseLongDateToServerFormat(activeProgram.dateCompleted);
+                });
+                _.each($scope.endedPrograms, function (endedProgram) {
+                    endedProgram.fromDate = Bahmni.Common.Util.DateUtil.parseLongDateToServerFormat(endedProgram.dateEnrolled);
+                    endedProgram.toDate = Bahmni.Common.Util.DateUtil.parseLongDateToServerFormat(endedProgram.dateCompleted);
+                });
+            };
+&nbsp;
+            var getCurrentDate = function () {
+                var retrospectiveDate = retrospectiveEntryService.getRetrospectiveDate();
+                return DateUtil.parseLongDateToServerFormat(retrospectiveDate);
+            };
+&nbsp;
+            var init = function () {
+                spinner.forPromise(programService.getAllPrograms().then(function (programs) {
+                    $scope.allPrograms = programs;
+                    $scope.allPrograms.showProgramSection = true;
+                }), id);
+                spinner.forPromise(programService.getProgramAttributeTypes().then(function (programAttributeTypes) {
+                    $scope.programAttributeTypes = programAttributeTypes;
+                }), id);
+                $scope.programSelected = null;
+                $scope.patientProgramAttributes = {};
+                $scope.programEnrollmentDate = null;
+&nbsp;
+                updateActiveProgramsList();
+            };
+&nbsp;
+            var successCallback = function () {
+                messagingService.showMessage("info", "CLINICAL_SAVE_SUCCESS_MESSAGE_KEY");
+                $scope.programSelected = null;
+                $scope.workflowStateSelected = null;
+                $scope.patientProgramAttributes = {};
+                $scope.programEnrollmentDate = null;
+                updateActiveProgramsList();
+                if ($scope.patientProgram) {
+                    $scope.patientProgram.editing = false;
+                }
+            };
+&nbsp;
+            var failureCallback = function (error) {
+                var fieldErrorMsg = findFieldErrorIfAny(error);
+                var errorMsg = _.isUndefined(fieldErrorMsg) ? "Failed to Save" : <span class="branch-1 cbranch-no" title="branch not covered" >fieldErrorMsg;</span>
+                messagingService.showMessage("error", errorMsg);
+            };
+&nbsp;
+            var findFieldErrorIfAny = function (error) {
+                var stateFieldError = objectDeepFind(error, "data.error.fieldErrors.states");
+                var errorField = stateFieldError &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >stateFieldError[0];</span>
+                return errorField &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >errorField.message;</span>
+            };
+&nbsp;
+            var objectDeepFind = function (obj, path) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (_.isUndefined(obj)) {
+<span class="cstat-no" title="statement not covered" >                    return undefined;</span>
+                }
+                var paths = path.split('.'), current = obj, i;
+                for (i = 0; i &lt; paths.length; ++i) {
+                    if (current[paths[i]] == undefined) {
+                        return undefined;
+                    } else {
+                        current = current[paths[i]];
+                    }
+                }
+                return current;
+            };
+&nbsp;
+            var isThePatientAlreadyEnrolled = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return _.map($scope.activePrograms, <span class="fstat-no" title="function not covered" >function (program) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return program.program.uuid;</span>
+                }).indexOf($scope.programSelected.uuid) &gt; -1;
+            };
+&nbsp;
+            var isProgramSelected = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return $scope.programSelected &amp;&amp; $scope.programSelected.uuid;</span>
+            };
+&nbsp;
+            $scope.hasPatientEnrolledToSomePrograms = function () {
+                return !_.isEmpty($scope.activePrograms);
+            };
+&nbsp;
+            $scope.hasPatientAnyPastPrograms = function () {
+                return !_.isEmpty($scope.endedPrograms);
+            };
+&nbsp;
+            $scope.enrollPatient = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                if (!isProgramSelected()) {</span>
+<span class="cstat-no" title="statement not covered" >                    messagingService.showMessage("error", "PROGRAM_MANAGEMENT_SELECT_PROGRAM_MESSAGE_KEY");</span>
+<span class="cstat-no" title="statement not covered" >                    return $q.when({});</span>
+                }
+<span class="cstat-no" title="statement not covered" >                if (isThePatientAlreadyEnrolled()) {</span>
+<span class="cstat-no" title="statement not covered" >                    messagingService.showMessage("error", "PROGRAM_MANAGEMENT_ALREADY_ENROLLED_PROGRAM_MESSAGE_KEY");</span>
+<span class="cstat-no" title="statement not covered" >                    return $q.when({});</span>
+                }
+<span class="cstat-no" title="statement not covered" >                var stateUuid = $scope.workflowStateSelected &amp;&amp; $scope.workflowStateSelected.uuid ? $scope.workflowStateSelected.uuid : null;</span>
+<span class="cstat-no" title="statement not covered" >                return spinner.forPromise(</span>
+                    programService.enrollPatientToAProgram($scope.patient.uuid, $scope.programSelected.uuid, $scope.programEnrollmentDate, stateUuid, $scope.patientProgramAttributes, $scope.programAttributeTypes)
+                        .then(successCallback, failureCallback)
+                );
+            };
+&nbsp;
+            var isProgramStateChanged = function (patientProgram, activePatientProgramState) {
+                if (_.isEmpty(activePatientProgramState) &amp;&amp; patientProgram.selectedState != undefined) {
+                    return true;
+                }
+                return patientProgram.selectedState
+                    &amp;&amp; (patientProgram.selectedState.uuid != activePatientProgramState.state.uuid);
+            };
+&nbsp;
+            var isOutcomeSelected = function (patientProgram) {
+                return !_.isEmpty(objectDeepFind(patientProgram, 'outcomeData.uuid'));
+            };
+&nbsp;
+            var getActivePatientProgramState = function (states) {
+                return _.find(states, function (state) {
+                    return state.endDate == null &amp;&amp; !state.voided;
+                });
+            };
+&nbsp;
+            $scope.updatePatientProgram = function (patientProgram) {
+                $scope.patientProgram = patientProgram;
+                var activePatientProgramState = getActivePatientProgramState(patientProgram.states);
+                var activeStateDate = activePatientProgramState ? DateUtil.parse(activePatientProgramState.startDate) : null;
+                var dateCompleted = null;
+&nbsp;
+                if (isProgramStateChanged(patientProgram, activePatientProgramState)) {
+                    var startDate = getCurrentDate();
+                    if (activePatientProgramState &amp;&amp; DateUtil.isBeforeDate(startDate, activeStateDate)) {
+                        messagingService.showMessage("error", "PROGRAM_MANAGEMENT_STATE_CANT_START_BEFORE_KEY"
+                            + " (" + DateUtil.formatDateWithoutTime(activeStateDate) + ")");
+                        return;
+                    }
+                    patientProgram.states.push({
+                        state: {
+                            uuid: patientProgram.selectedState.uuid
+                        },
+                        startDate: startDate
+                    });
+                }
+                if (isOutcomeSelected(patientProgram)) {
+                    dateCompleted = DateUtil.getDateWithoutTime(getCurrentDate());
+                    if (activePatientProgramState &amp;&amp; DateUtil.isBeforeDate(dateCompleted, activeStateDate)) {
+                        messagingService.showMessage("error", "PROGRAM_MANAGEMENT_PROGRAM_CANT_END_BEFORE_KEY" + " (" + DateUtil.formatDateWithoutTime(activeStateDate) + ")");
+                        return;
+                    }
+                }
+                spinner.forPromise(
+                    programService.updatePatientProgram(patientProgram, $scope.programAttributeTypes, dateCompleted)
+                        .then(successCallback, failureCallback)
+                );
+            };
+&nbsp;
+            var voidPatientProgram = function (patientProgram, closeConfirmBox) {
+                patientProgram.voided = true;
+                var promise = programService.updatePatientProgram(patientProgram, $scope.programAttributeTypes)
+                    .then(successCallback, failureCallback)
+                    .then(closeConfirmBox);
+                spinner.forPromise(promise);
+            };
+&nbsp;
+            var unVoidPatientProgram = function (patientProgram, closeConfirmBox) {
+                delete patientProgram.voidReason;
+                delete patientProgram.voided;
+                patientProgram.deleting = false;
+                closeConfirmBox();
+            };
+&nbsp;
+            $scope.confirmDeletion = function (patientProgram) {
+                var scope = {};
+                scope.message = 'Are you sure, you want to delete ' + patientProgram.display + '?';
+                scope.cancel = _.partial(unVoidPatientProgram, patientProgram, _);
+                scope.delete = _.partial(voidPatientProgram, patientProgram, _);
+                confirmBox({
+                    scope: scope,
+                    actions: [{name: 'cancel', display: 'cancel'}, {name: 'delete', display: 'delete'}],
+                    className: "ngdialog-theme-default delete-program-popup"
+                });
+            };
+&nbsp;
+            $scope.toggleDelete = <span class="fstat-no" title="function not covered" >function (program) {</span>
+<span class="cstat-no" title="statement not covered" >                program.deleting = !program.deleting;</span>
+            };
+&nbsp;
+            $scope.toggleEdit = <span class="fstat-no" title="function not covered" >function (program) {</span>
+<span class="cstat-no" title="statement not covered" >                $scope.tempProgram = angular.copy(program);</span>
+<span class="cstat-no" title="statement not covered" >                program.editing = !program.editing;</span>
+            };
+&nbsp;
+            $scope.cancelChange = <span class="fstat-no" title="function not covered" >function (program) {</span>
+<span class="cstat-no" title="statement not covered" >                populateDefaultSelectedState(program);</span>
+<span class="cstat-no" title="statement not covered" >                program.patientProgramAttributes = $scope.tempProgram.patientProgramAttributes;</span>
+<span class="cstat-no" title="statement not covered" >                program.editing = !program.editing;</span>
+            };
+&nbsp;
+            $scope.setWorkflowStates = function (program) {
+                $scope.patientProgramAttributes = {};
+                $scope.programWorkflowStates = $scope.getStates(program);
+            };
+&nbsp;
+            $scope.getStates = function (program) {
+                var states = [];
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (program &amp;&amp; program.allWorkflows &amp;&amp; program.allWorkflows.length &amp;&amp; program.allWorkflows[0].states.length) {
+                    states = program.allWorkflows[0].states;
+                }
+                return states;
+            };
+&nbsp;
+            $scope.canRemovePatientState = function (state) {
+                return state.endDate == null;
+            };
+&nbsp;
+            $scope.removePatientState = function (patientProgram) {
+                var currProgramState = getActivePatientProgramState(patientProgram.states);
+                var currProgramStateUuid = objectDeepFind(currProgramState, 'uuid');
+                spinner.forPromise(
+                    programService.deletePatientState(patientProgram.uuid, currProgramStateUuid)
+                        .then(successCallback, failureCallback)
+                );
+            };
+&nbsp;
+            $scope.hasStates = <span class="fstat-no" title="function not covered" >function (program) {</span>
+<span class="cstat-no" title="statement not covered" >                return program &amp;&amp; !_.isEmpty(program.allWorkflows) &amp;&amp; !_.isEmpty($scope.programWorkflowStates);</span>
+            };
+&nbsp;
+            $scope.hasProgramWorkflowStates = <span class="fstat-no" title="function not covered" >function (patientProgram) {</span>
+<span class="cstat-no" title="statement not covered" >                return !_.isEmpty($scope.getStates(patientProgram.program));</span>
+            };
+&nbsp;
+            $scope.hasOutcomes = <span class="fstat-no" title="function not covered" >function (program) {</span>
+<span class="cstat-no" title="statement not covered" >                return program.outcomesConcept &amp;&amp; !_.isEmpty(program.outcomesConcept.setMembers);</span>
+            };
+&nbsp;
+            $scope.getCurrentStateDisplayName = <span class="fstat-no" title="function not covered" >function (program) {</span>
+<span class="cstat-no" title="statement not covered" >                var currentState = getActivePatientProgramState(program.states);</span>
+<span class="cstat-no" title="statement not covered" >                return _.get(currentState, 'state.concept.display');</span>
+            };
+&nbsp;
+            $scope.getMaxAllowedDate = function (states) {
+                var minStartDate = DateUtil.getDateWithoutTime(new Date());
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (states &amp;&amp; angular.isArray(states)) {
+                    for (var stateIndex = 0; stateIndex &lt; states.length; stateIndex++) {
+                        if (states[stateIndex].startDate &lt; minStartDate) {
+                            minStartDate = states[stateIndex].startDate;
+                        }
+                    }
+                }
+                return minStartDate;
+            };
+&nbsp;
+            $scope.isIncluded = function (attribute) {
+                return !($scope.programSelected &amp;&amp; _.includes(attribute.excludeFrom, $scope.programSelected.name));
+            };
+&nbsp;
+            init();
+        }
+    ]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

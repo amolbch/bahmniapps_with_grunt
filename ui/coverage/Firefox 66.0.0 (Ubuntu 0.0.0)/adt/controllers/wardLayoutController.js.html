@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for adt/controllers/wardLayoutController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">adt/controllers/wardLayoutController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">76.79% <small>(43 / 56)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">40.91% <small>(9 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">72.22% <small>(13 / 18)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">76.79% <small>(43 / 56)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">adt/controllers/</a> &#187; wardLayoutController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.adt')
+    .controller('WardLayoutController', ['$scope', '$rootScope', '$window', 'spinner', 'wardService', 'bedManagementService', 'bedService', 'messagingService', 'appService', '$document', '$element',
+        function ($scope, $rootScope, $window, spinner, wardService, bedManagementService, bedService, messagingService, appService, $document, $element) {
+            $scope.selectedBed = null;
+            var maxPatientsConfig = appService.getAppDescriptor().getConfig("maxPatientsPerBed");
+            var maxPatientsPerBed = maxPatientsConfig ? maxPatientsConfig.value : <span class="branch-1 cbranch-no" title="branch not covered" >3;</span>
+&nbsp;
+            var init = function () {
+                $element.find('.bed-info').hide();
+                spinner.forPromise(getBeds());
+&nbsp;
+                $document.bind('click', function () {
+                    $scope.hideBedInfoPopUp();
+                });
+            };
+&nbsp;
+            var getBeds = function () {
+                return wardService.bedsForWard($scope.ward.ward.uuid).success(<span class="fstat-no" title="function not covered" >function (result) {</span>
+<span class="cstat-no" title="statement not covered" >                    var groupedLayoutsByLocation = _.groupBy(result.bedLayouts, 'location');</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.ward.layouts = [];</span>
+<span class="cstat-no" title="statement not covered" >                    _.map(groupedLayoutsByLocation, <span class="fstat-no" title="function not covered" >function (value, key) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        var layout = {</span>
+                            name: key,
+                            beds: bedManagementService.createLayoutGrid(value)
+                        };
+<span class="cstat-no" title="statement not covered" >                        $scope.ward.layouts.push(layout);</span>
+                    });
+                });
+            };
+&nbsp;
+            $scope.assignBed = function (bed) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (bed.patientInfo &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >bed.patientInfo.length &gt;= maxPatientsPerBed)</span> {
+<span class="cstat-no" title="statement not covered" >                    alert("A max of " + maxPatientsPerBed + " patients are allowed per bed. Please select other bed.");</span>
+<span class="cstat-no" title="statement not covered" >                    return;</span>
+                }
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (shouldTransfer(bed)) {
+                    clearAssignmentError();
+                    assignBedToPatient(bed, $scope.encounterUuid);
+                }
+            };
+&nbsp;
+            var shouldTransfer = function (bed) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (bed.patientInfo) {
+<span class="cstat-no" title="statement not covered" >                    return confirm("This bed is already occupied. Do you want to assign another patient to the same bed?");</span>
+                }
+                return true;
+            };
+&nbsp;
+            var clearAssignmentError = function () {
+                $element.find('.bed-info').hide();
+            };
+&nbsp;
+            var assignBedToPatient = function (bed, encUuid) {
+                spinner.forPromise(bedService.assignBed(bed.bed.bedId, $scope.patientUuid, encUuid).success(function () {
+                    $rootScope.bed = bed.bed;
+                    bedService.setBedDetailsForPatientOnRootScope($scope.patientUuid);
+                    messagingService.showMessage('info', "Bed " + bed.bed.bedNumber + " is assigned successfully");
+                    $element.find('.bed-info').hide();
+                }));
+            };
+&nbsp;
+            $scope.getCurrentBed = function () {
+                return $rootScope.bedDetails;
+            };
+&nbsp;
+            $scope.fetchBedInfo = <span class="fstat-no" title="function not covered" >function (cell) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!cell.available &amp;&amp; !cell.empty &amp;&amp; !cell.patientInfo) {</span>
+<span class="cstat-no" title="statement not covered" >                    spinner.forPromise(bedService.getBedInfo(cell.bed.bedId).success(<span class="fstat-no" title="function not covered" >function (data) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        cell.patientInfo = [];</span>
+<span class="cstat-no" title="statement not covered" >                        _.each(data.patients, <span class="fstat-no" title="function not covered" >function (patient) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            cell.patientInfo.push({</span>
+                                "name": patient.person.personName.givenName + " " + (patient.person.personName.familyName === null ? "" : patient.person.personName.familyName),
+                                "identifier": patient.identifiers[0].identifier,
+                                "gender": patient.person.gender
+                            });
+                        });
+                    }));
+                }
+            };
+&nbsp;
+            $scope.hideBedInfoPopUp = function () {
+                $scope.selectedBed = null;
+                $scope.$apply();
+            };
+&nbsp;
+            $scope.setBedDetails = function (cell) {
+                $element.find('.bed-info').hide();
+                $scope.selectedBed = cell;
+                $scope.$apply();
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (!cell.empty) {
+                    $element.find('.bed-info').show();
+                }
+            };
+&nbsp;
+            $scope.highlightCurrentPatient = function (cell) {
+                var currentBed = $scope.getCurrentBed();
+                return !$scope.readOnly &amp;&amp; (currentBed &amp;&amp; currentBed.bedId === cell.bed.bedId);
+            };
+&nbsp;
+            init();
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<div class="reg-body-wrapper">
+<div class="edit-patient simple-form-ui">
+    <form name="myForms.myForm" ng-submit="update()">
+        <div class="box-container box-container-default">
+            <legend class="registraion_legend first-registraion_legend" ng-class="{'removeLegend': patient.primaryIdentifier == undefined}">
+                <span class="mylegend"><strong>{{'REGISTRATION_LABEL_PATIENT_DISPLAY_ID' | translate}}: <span id="patientIdentifierValue">{{patient.primaryIdentifier.identifier}}</span></strong></span>
+                <span ng-show= "isDigitized" class="right"><strong>{{::'REGISTRATION_LABEL_SCANNED' | translate}}</strong></span>
+            </legend>
+            <div class="photo-container-wrapper" ng-if="!disablePhotoCapture">
+                <span class="photo-container">
+                        <img class="patient-image" ng-src="{{patient.image}}" fallback-src="../images/blank-user.gif">
+                        <div ng-model="patient.image" capture-photo class="capture-photo-btn"></div>
+                 </span>
+            </div>
+            <span class="form-field-inline clearfix" ng-repeat="attribute in ::patientConfiguration.attributeTypes">
+                    <article class="form-field" ng-if="attribute.name == 'TYPE_OF_REGISTRATION'"
+                    ng-class="::{'right-form-field' : $index%2 != 0}">
+                        <span hidden>{{attribute.enabled = true}}</span>
+                            <attribute-types target-model="patient" attribute="::attribute" field-validation="::fieldValidation"
+                                is-auto-complete="isAutoComplete" get-auto-complete-list="getAutoCompleteList"
+                                on-change="checkDuplicatePatients()"
+                                get-data-results="getDataResults" is-read-only="isReadOnly" handle-update="handleUpdate"></attribute-types>
+                    </article>
+            </span>
+            <span class="form-field-inline clearfix" ng-repeat="attribute in ::patientConfiguration.attributeTypes">
+                     <article class="form-field" ng-if="attribute.name == 'PATIENT_STATUS'"
+                              ng-class="::{'right-form-field' : $index%2 != 0}">
+                            <attribute-types target-model="patient" attribute="::attribute" field-validation="::fieldValidation"
+                                             is-auto-complete="isAutoComplete" get-auto-complete-list="getAutoCompleteList"
+                                             on-change="checkDuplicatePatients()"
+                                             get-data-results="getDataResults" is-read-only="isReadOnly" handle-update="handleUpdate"></attribute-types>
+                    </article>
+                 </span>
+            <article class="form-field">
+
+            <span class="form-field-inline clearfix" ng-repeat="attribute in ::patientConfiguration.attributeTypes">
+                <article class="form-field" ng-if="attribute.name == 'US_REG_DATE'" 
+                ng-class="::{'right-form-field' : $index%2 != 0}">
+                        <attribute-types target-model="patient" attribute="::attribute" field-validation="::fieldValidation" 
+                            is-auto-complete="isAutoComplete" get-auto-complete-list="getAutoCompleteList" 
+                            on-change="checkDuplicatePatients()"
+                            get-data-results="getDataResults" is-read-only="isReadOnly"  handle-update="handleUpdate"></attribute-types>
+                </article>
+        </span>
+            <!--<article class="form-field">
+                    <div class="field-attribute">
+                    <label class="control-label">{{::'REGISTRATION_LABEL_REGISTRATION_DATE' | translate}}</label>
+                    </div>
+
+                    <div class="field-value">
+                        <span class="uneditable-input text-only">{{patient.registrationDate | bahmniDate}}</span>
+                   </div>
+            </article>-->
+        </div>
+        <ng-include src="'views/patientcommon.html'"></ng-include>
+        <patient-action></patient-action>
+    </form>
+    <br>
+</div>
+</div>

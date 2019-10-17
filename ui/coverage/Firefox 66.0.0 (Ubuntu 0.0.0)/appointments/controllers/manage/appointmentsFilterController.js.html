@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for appointments/controllers/manage/appointmentsFilterController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">appointments/controllers/manage/appointmentsFilterController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">96.55% <small>(112 / 116)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">85.29% <small>(29 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">92.16% <small>(47 / 51)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">96.55% <small>(112 / 116)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">appointments/controllers/manage/</a> &#187; appointmentsFilterController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">150</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">150</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">118</span>
+<span class="cline-any cline-yes">88</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">28</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">52</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">30</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.appointments')
+    .controller('AppointmentsFilterController', ['$scope', '$state', '$rootScope', '$q', '$translate', 'appointmentsServiceService', 'spinner', 'ivhTreeviewMgr', 'providerService', 'appService',
+        function ($scope, $state, $rootScope, $q, $translate, appointmentsServiceService, spinner, ivhTreeviewMgr, providerService, appService) {
+            var init = function () {
+                $scope.isSpecialityEnabled = appService.getAppDescriptor().getConfigValue('enableSpecialities');
+                $scope.isServiceTypeEnabled = appService.getAppDescriptor().getConfigValue('enableServiceTypes');
+                $scope.isFilterOpen = $state.params.isFilterOpen;
+                $scope.isSearchEnabled = $state.params.isSearchEnabled;
+                $scope.statusList = _.map(Bahmni.Appointments.Constants.appointmentStatusList, function (status) {
+                    return {name: status, value: status};
+                });
+                $scope.selectedStatusList = _.filter($scope.statusList, function (status) {
+                    return _.includes($state.params.filterParams.statusList, status.value);
+                });
+&nbsp;
+                if ($state.current.tabName === "calendar") {
+                    $scope.statusList = _.filter($scope.statusList, function (status) {
+                        return status.name !== "Cancelled";
+                    });
+                }
+                var params = {v: "custom:(display,person,uuid,retired,attributes:(attributeType:(display),value,voided))"};
+&nbsp;
+                spinner.forPromise($q.all([appointmentsServiceService.getAllServicesWithServiceTypes(), providerService.list(params)]).then(function (response) {
+                    $scope.providers = _.filter(response[1].data.results, function (provider) {
+                        return _.find(provider.attributes, function (attribute) {
+                            return !attribute.voided &amp;&amp; !provider.retired &amp;&amp; attribute.value &amp;&amp; attribute.attributeType.display === Bahmni.Appointments.Constants.availableForAppointments;
+                        });
+                    }).map(function (provider) {
+                        provider.name = provider.person.display;
+                        return provider;
+                    });
+                    $scope.providers.push({
+                        name: $translate.instant("NO_PROVIDER_COLUMN_KEY"),
+                        display: $translate.instant("NO_PROVIDER_COLUMN_KEY"),
+                        uuid: 'no-provider-uuid'
+                    });
+&nbsp;
+                    if ($scope.isSpecialityEnabled) {
+                        $scope.specialities = _.groupBy(response[0].data, function (service) {
+                            return service.speciality.name || <span class="branch-1 cbranch-no" title="branch not covered" >$translate.instant("NO_SPECIALITY_KEY");</span>
+                        });
+                        $scope.selectedSpecialities = _.map($scope.specialities, function (speciality, key) {
+                            return {
+                                label: key,
+                                id: speciality[0].speciality.uuid || <span class="branch-1 cbranch-no" title="branch not covered" >"",</span>
+                                children: _.map(speciality, function (service) {
+                                    return {
+                                        label: service.name, id: service.uuid, color: service.color,
+                                        children: !$scope.isServiceTypeEnabled ? <span class="branch-0 cbranch-no" title="branch not covered" >[] </span>: _.map(service.serviceTypes, function (serviceType) {
+                                            return {
+                                                label: serviceType.name + ' [' + serviceType.duration + ' ' + $translate.instant("PLACEHOLDER_SERVICE_TYPE_DURATION_MIN") + ']',
+                                                id: serviceType.uuid
+                                            };
+                                        })
+                                    };
+                                })
+                            };
+                        });
+                    } else {
+                        $scope.selectedSpecialities = _.map(response[0].data, function (service) {
+                            return {
+                                label: service.name, id: service.uuid, color: service.color,
+                                children: !$scope.isServiceTypeEnabled ? [] : <span class="branch-1 cbranch-no" title="branch not covered" >_.map(service.serviceTypes, <span class="fstat-no" title="function not covered" >function (serviceType) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                    return {</span>
+                                        label: serviceType.name + ' [' + serviceType.duration + ' ' + $translate.instant("PLACEHOLDER_SERVICE_TYPE_DURATION_MIN") + ']',
+                                        id: serviceType.uuid
+                                    };
+                                })
+                            };
+                        });
+                    }
+&nbsp;
+                    $scope.selectedProviders = _.filter($scope.providers, function (provider) {
+                        return _.includes($state.params.filterParams.providerUuids, provider.uuid);
+                    });
+&nbsp;
+                    if (!_.isEmpty($state.params.filterParams)) {
+                        ivhTreeviewMgr.selectEach($scope.selectedSpecialities, $state.params.filterParams.serviceUuids);
+                    }
+                }));
+            };
+&nbsp;
+            $scope.filterSelected = function () {
+                $scope.filterSelectedValues = $scope.showSelected ? {selected: true} : undefined;
+            };
+&nbsp;
+            $scope.expandFilter = function () {
+                $state.params.isFilterOpen = true;
+                $scope.isFilterOpen = $state.params.isFilterOpen;
+                $rootScope.$broadcast("filterClosedOpen", {filterViewStatus: $scope.isFilterOpen});
+            };
+&nbsp;
+            $scope.minimizeFilter = function () {
+                $state.params.isFilterOpen = false;
+                $scope.isFilterOpen = $state.params.isFilterOpen;
+                $rootScope.$broadcast("filterClosedOpen", {filterViewStatus: $scope.isFilterOpen});
+            };
+            var resetFilterParams = function () {
+                $state.params.filterParams = {
+                    serviceUuids: [],
+                    serviceTypeUuids: [],
+                    providerUuids: [],
+                    statusList: []
+                };
+            };
+            $scope.setSelectedSpecialities = <span class="fstat-no" title="function not covered" >function (selectedSpecialities) {</span>
+<span class="cstat-no" title="statement not covered" >                $scope.selectedSpecialities = selectedSpecialities;</span>
+            };
+&nbsp;
+            $scope.getCurrentAppointmentTabName = function () {
+                return $state.current.tabName;
+            };
+&nbsp;
+            $scope.resetFilter = function () {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if ($scope.selectedSpecialities) {
+                    ivhTreeviewMgr.deselectAll($scope.selectedSpecialities, false);
+                }
+                $scope.selectedProviders = [];
+                $scope.selectedStatusList = [];
+                $scope.showSelected = false;
+                $scope.filterSelectedValues = undefined;
+                $scope.searchText = undefined;
+                resetFilterParams();
+            };
+&nbsp;
+            $scope.resetSearchText = function () {
+                $scope.searchText = undefined;
+            };
+&nbsp;
+            $scope.applyFilter = function () {
+                resetFilterParams();
+                if ($scope.isSpecialityEnabled) {
+                    $state.params.filterParams.serviceUuids = _.reduce($scope.selectedSpecialities, function (accumulator, speciality) {
+                        var serviceUuids = _.chain(speciality.children)
+                            .filter(function (service) {
+                                return service.selected;
+                            }).map(function (service) {
+                                return service.id;
+                            }).value();
+                        return serviceUuids.concat(accumulator);
+                    }, []);
+&nbsp;
+                    if ($scope.isServiceTypeEnabled) {
+                        $state.params.filterParams.serviceTypeUuids = _.reduce($scope.selectedSpecialities, function (accumulator, speciality) {
+                            var selectedServiceTypes = _.reduce(speciality.children, function (accumulator, service) {
+                                var serviceTypesForService = [];
+                                if (!service.selected) {
+                                    serviceTypesForService = _.filter(service.children, function (serviceType) {
+                                        return serviceType.selected;
+                                    }).map(function (serviceType) {
+                                        return serviceType.id;
+                                    });
+                                }
+                                return serviceTypesForService.concat(accumulator);
+                            }, []);
+                            return selectedServiceTypes.concat(accumulator);
+                        }, []);
+                    } else {
+                        $state.params.filterParams.serviceTypeUuids = [];
+                    }
+                } else {
+                    $state.params.filterParams.serviceUuids = _.chain($scope.selectedSpecialities).filter(function (service) {
+                        return service.selected;
+                    }).map(function (service) {
+                        return service.id;
+                    }).value();
+&nbsp;
+                    if ($scope.isServiceTypeEnabled) {
+                        $state.params.filterParams.serviceTypeUuids = $scope.selectedSpecialities.filter(function (service) {
+                            return !service.selected;
+                        }).reduce(function (accumulator, service) {
+                            return accumulator.concat(service.children);
+                        }, []).filter(function (serviceType) {
+                            return serviceType.selected;
+                        }).reduce(function (accumulator, serviceType) {
+                            return accumulator.concat(serviceType.id);
+                        }, []);
+                    } else {
+                        $state.params.filterParams.serviceTypeUuids = [];
+                    }
+                }
+&nbsp;
+                $state.params.filterParams.providerUuids = _.map($scope.selectedProviders, <span class="fstat-no" title="function not covered" >function (provider) {</span>
+<span class="cstat-no" title="statement not covered" >                    return provider.uuid;</span>
+                });
+&nbsp;
+                $state.params.filterParams.statusList = _.map($scope.selectedStatusList, <span class="fstat-no" title="function not covered" >function (status) {</span>
+<span class="cstat-no" title="statement not covered" >                    return status.value;</span>
+                });
+            };
+&nbsp;
+            $scope.isFilterApplied = function () {
+                return _.find($state.params.filterParams, function (filterParam) {
+                    return !_.isEmpty(filterParam);
+                });
+            };
+            $scope.$watch(function () {
+                return $state.params.isFilterOpen;
+            }, function (isFilterHidden) {
+                $scope.isFilterOpen = isFilterHidden;
+                $scope.isSearchEnabled = isFilterHidden;
+            }, true);
+&nbsp;
+            $scope.$watch(function () {
+                return $state.params.isSearchEnabled;
+            }, function (isSearchEnabled) {
+                $scope.isSearchEnabled = isSearchEnabled;
+            }, true);
+&nbsp;
+            $scope.$watch(function () {
+                return $state.current.tabName;
+            }, function (newValue, oldValue) {
+                if (newValue !== oldValue) {
+                    if (newValue === "calendar") {
+                        $scope.statusList = _.filter($scope.statusList, function (status) {
+                            return status.name !== "Cancelled";
+                        });
+                        $scope.selectedStatusList = _.filter($scope.selectedStatusList, function (status) {
+                            return status.name !== "Cancelled";
+                        });
+                    } else {
+                        $scope.statusList = _.map(Bahmni.Appointments.Constants.appointmentStatusList, function (status) {
+                            return {name: status, value: status};
+                        });
+                    }
+                }
+            }, true);
+            init();
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

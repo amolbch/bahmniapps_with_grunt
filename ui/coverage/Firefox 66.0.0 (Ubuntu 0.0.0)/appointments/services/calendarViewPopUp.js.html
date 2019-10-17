@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for appointments/services/calendarViewPopUp.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">appointments/services/calendarViewPopUp.js</span></h1>
+    <h2>
+        Statements: <span class="metric">83.33% <small>(50 / 60)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">90% <small>(18 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">71.43% <small>(10 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">83.33% <small>(50 / 60)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">appointments/services/</a> &#187; calendarViewPopUp.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.appointments')
+    .service('calendarViewPopUp', ['$rootScope', 'ngDialog', '$state', '$translate', 'appointmentsService',
+        'confirmBox', 'checkinPopUp', 'appService', 'messagingService',
+        function ($rootScope, ngDialog, $state, $translate, appointmentsService, confirmBox, checkinPopUp, appService, messagingService) {
+            var calendarViewPopUp = function (config) {
+                var popUpScope = $rootScope.$new();
+                var dialog;
+                var scope = config.scope;
+                popUpScope.scope = scope;
+                popUpScope.appointment = scope.appointments.length === 1 ? scope.appointments[0] : undefined;
+                popUpScope.manageAppointmentPrivilege = Bahmni.Appointments.Constants.privilegeManageAppointments;
+                popUpScope.allowedActions = appService.getAppDescriptor().getConfigValue('allowedActions') || [];
+                popUpScope.allowedActionsByStatus = appService.getAppDescriptor().getConfigValue('allowedActionsByStatus') || {};
+&nbsp;
+                popUpScope.navigateTo = function (state, appointment) {
+                    var params = $state.params;
+                    if (state === 'edit') {
+                        ngDialog.close(dialog.id, false);
+                        params.uuid = appointment.uuid;
+                        $state.go('home.manage.appointments.calendar.edit', params, {reload: false});
+                    } else if (state === 'new') {
+                        ngDialog.close(dialog.id, false);
+                        params.appointment = { startDateTime: scope.appointments[0].startDateTime,
+                            endDateTime: scope.appointments[0].endDateTime,
+                            provider: scope.appointments[0].provider,
+                            appointmentKind: 'Scheduled'
+                        };
+                        $state.go('home.manage.appointments.calendar.new', params, {reload: false});
+                    } else {
+                        $state.go($state.current, $state.params, {reload: true});
+                    }
+                    popUpScope.$destroy();
+                };
+&nbsp;
+                var closeConfirmBox = function (closeConfirmBox) {
+                    closeConfirmBox();
+                };
+&nbsp;
+                var changeStatus = function (appointment, toStatus, onDate, closeConfirmBox) {
+                    var message = $translate.instant('APPOINTMENT_STATUS_CHANGE_SUCCESS_MESSAGE', {
+                        toStatus: toStatus
+                    });
+                    return appointmentsService.changeStatus(appointment.uuid, toStatus, onDate).then(function () {
+                        appointment.status = toStatus;
+                        closeConfirmBox();
+                        messagingService.showMessage('info', message);
+                    });
+                };
+&nbsp;
+                popUpScope.checkinAppointment = <span class="fstat-no" title="function not covered" >function (patientAppointment) {</span>
+<span class="cstat-no" title="statement not covered" >                    var scope = $rootScope.$new();</span>
+<span class="cstat-no" title="statement not covered" >                    scope.message = $translate.instant('APPOINTMENT_STATUS_CHANGE_CONFIRM_MESSAGE', {</span>
+                        toStatus: 'CheckedIn'
+                    });
+<span class="cstat-no" title="statement not covered" >                    scope.action = _.partial(changeStatus, patientAppointment, 'CheckedIn', _);</span>
+<span class="cstat-no" title="statement not covered" >                    checkinPopUp({</span>
+                        scope: scope,
+                        className: "ngdialog-theme-default app-dialog-container"
+                    });
+                };
+&nbsp;
+                popUpScope.confirmAction = function (appointment, toStatus) {
+                    var scope = {};
+                    scope.message = $translate.instant('APPOINTMENT_STATUS_CHANGE_CONFIRM_MESSAGE', {
+                        toStatus: toStatus
+                    });
+                    scope.no = closeConfirmBox;
+                    scope.yes = _.partial(changeStatus, appointment, toStatus, undefined, _);
+                    confirmBox({
+                        scope: scope,
+                        actions: [{name: 'yes', display: 'YES_KEY'}, {name: 'no', display: 'NO_KEY'}],
+                        className: "ngdialog-theme-default"
+                    });
+                };
+&nbsp;
+                popUpScope.isAllowedAction = function (action) {
+                    return _.includes(popUpScope.allowedActions, action);
+                };
+&nbsp;
+                popUpScope.isValidAction = function (appointment, action) {
+                    if (!appointment) {
+                        return false;
+                    }
+                    var allowedActions = popUpScope.allowedActionsByStatus.hasOwnProperty(appointment.status) ? popUpScope.allowedActionsByStatus[appointment.status] : [];
+                    return _.includes(allowedActions, action);
+                };
+&nbsp;
+                popUpScope.getAppointmentProviderNames = <span class="fstat-no" title="function not covered" >function (appointment) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (appointment.providers) {</span>
+<span class="cstat-no" title="statement not covered" >                        var providerNames = appointment.providers.filter(<span class="fstat-no" title="function not covered" >function (p) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            return p.response !== Bahmni.Appointments.Constants.providerResponses.CANCELLED;</span>
+                        }).map(<span class="fstat-no" title="function not covered" >function (p) {</span>
+<span class="cstat-no" title="statement not covered" >                            return p.name;</span>
+                        }).join(', ');
+<span class="cstat-no" title="statement not covered" >                        return providerNames;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    return '';</span>
+                };
+&nbsp;
+                dialog = ngDialog.open({
+                    template: '../appointments/views/manage/calendar/popUp.html',
+                    scope: popUpScope,
+                    className: config.className || 'ngdialog-theme-default'
+                });
+&nbsp;
+                dialog.closePromise.then(function (data) {
+                    if (data.value !== false) {
+                        popUpScope.navigateTo('calendar');
+                    }
+                });
+            };
+            return calendarViewPopUp;
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

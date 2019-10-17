@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/concept-set/directives/conceptSetGroup.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">common/concept-set/directives/conceptSetGroup.js</span></h1>
+    <h2>
+        Statements: <span class="metric">63.06% <small>(70 / 111)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">53.85% <small>(21 / 39)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">51.72% <small>(15 / 29)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">63.06% <small>(70 / 111)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/concept-set/directives/</a> &#187; conceptSetGroup.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.conceptSet')
+    .controller('ConceptSetGroupController', ['$scope', 'contextChangeHandler', 'spinner', 'messagingService',
+        'conceptSetService', '$rootScope', 'sessionService', 'encounterService', 'treatmentConfig',
+        'retrospectiveEntryService', 'userService', 'conceptSetUiConfigService', '$timeout', 'clinicalAppConfigService', '$stateParams', '$translate',
+        function ($scope, contextChangeHandler, spinner, messagingService, conceptSetService, $rootScope, sessionService,
+                  encounterService, treatmentConfig, retrospectiveEntryService, userService,
+                  conceptSetUiConfigService, $timeout, clinicalAppConfigService, $stateParams, $translate) {
+            var conceptSetUIConfig = conceptSetUiConfigService.getConfig();
+            var init = function () {
+                $scope.validationHandler = new Bahmni.ConceptSet.ConceptSetGroupPanelViewValidationHandler($scope.allTemplates);
+                contextChangeHandler.add($scope.validationHandler.validate);
+            };
+            $scope.toggleSideBar = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                $rootScope.showLeftpanelToggle = !$rootScope.showLeftpanelToggle;</span>
+            };
+            $scope.showLeftpanelToggle = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return $rootScope.showLeftpanelToggle;</span>
+            };
+&nbsp;
+            $scope.togglePref = <span class="fstat-no" title="function not covered" >function (conceptSet, conceptName) {</span>
+<span class="cstat-no" title="statement not covered" >                $rootScope.currentUser.toggleFavoriteObsTemplate(conceptName);</span>
+<span class="cstat-no" title="statement not covered" >                spinner.forPromise(userService.savePreferences());</span>
+            };
+&nbsp;
+            $scope.getNormalized = function (conceptName) {
+                return conceptName.replace(/['\.\s\(\)\/,\\]+/g, "_");
+            };
+&nbsp;
+            $scope.showPreviousButton = function (conceptSetName) {
+                return conceptSetUIConfig[conceptSetName] &amp;&amp; conceptSetUIConfig[conceptSetName].showPreviousButton;
+            };
+&nbsp;
+            $scope.showPrevious = function (conceptSetName, event) {
+                event.stopPropagation();
+                $timeout(function () {
+                    $scope.$broadcast('event:showPrevious' + conceptSetName);
+                });
+            };
+            $scope.isInEditEncounterMode = function () {
+                return $stateParams.encounterUuid !== undefined &amp;&amp; $stateParams.encounterUuid !== 'active';
+            };
+&nbsp;
+            $scope.computeField = <span class="fstat-no" title="function not covered" >function (conceptSet, event) {</span>
+<span class="cstat-no" title="statement not covered" >                event.stopPropagation();</span>
+<span class="cstat-no" title="statement not covered" >                $scope.consultation.preSaveHandler.fire();</span>
+<span class="cstat-no" title="statement not covered" >                var defaultRetrospectiveVisitType = clinicalAppConfigService.getVisitTypeForRetrospectiveEntries();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var encounterData = new Bahmni.Clinical.EncounterTransactionMapper().map(angular.copy($scope.consultation), $scope.patient, sessionService.getLoginLocationUuid(),</span>
+                    retrospectiveEntryService.getRetrospectiveEntry(), defaultRetrospectiveVisitType, $scope.isInEditEncounterMode());
+<span class="cstat-no" title="statement not covered" >                encounterData = encounterService.buildEncounter(encounterData);</span>
+<span class="cstat-no" title="statement not covered" >                encounterData.drugOrders = [];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var conceptSetData = {name: conceptSet.conceptName, uuid: conceptSet.uuid};</span>
+<span class="cstat-no" title="statement not covered" >                var data = {</span>
+                    encounterModifierObservations: encounterData.observations,
+                    drugOrders: encounterData.drugOrders,
+                    conceptSetData: conceptSetData,
+                    patientUuid: encounterData.patientUuid,
+                    encounterDateTime: encounterData.encounterDateTime
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                spinner.forPromise(treatmentConfig().then(<span class="fstat-no" title="function not covered" >function (treatmentConfig) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    $scope.treatmentConfiguration = treatmentConfig;</span>
+<span class="cstat-no" title="statement not covered" >                    return conceptSetService.getComputedValue(data);</span>
+                }).then(<span class="fstat-no" title="function not covered" >function (response) {</span>
+<span class="cstat-no" title="statement not covered" >                    response = response.data;</span>
+<span class="cstat-no" title="statement not covered" >                    copyValues($scope.consultation.observations, response.encounterModifierObservations);</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.consultation.newlyAddedTreatments = $scope.consultation.newlyAddedTreatments || [];</span>
+<span class="cstat-no" title="statement not covered" >                    response.drugOrders.forEach(<span class="fstat-no" title="function not covered" >function (drugOrder) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        $scope.consultation.newlyAddedTreatments.push(Bahmni.Clinical.DrugOrderViewModel.createFromContract(drugOrder, $scope.treatmentConfiguration));</span>
+                    });
+                }));
+            };
+&nbsp;
+            $scope.canRemove = function (index) {
+                var observations = $scope.allTemplates[index].observations;
+                if (observations === undefined || _.isEmpty(observations)) {
+                    return true;
+                }
+                return observations[0].uuid === undefined;
+            };
+&nbsp;
+            $scope.clone = <span class="fstat-no" title="function not covered" >function (index) {</span>
+<span class="cstat-no" title="statement not covered" >                var clonedObj = $scope.allTemplates[index].clone();</span>
+<span class="cstat-no" title="statement not covered" >                $scope.allTemplates.splice(index + 1, 0, clonedObj);</span>
+<span class="cstat-no" title="statement not covered" >                $.scrollTo('#concept-set-' + (index + 1), 200, {offset: {top: -400}});</span>
+            };
+&nbsp;
+            $scope.clonePanelConceptSet = <span class="fstat-no" title="function not covered" >function (conceptSet) {</span>
+<span class="cstat-no" title="statement not covered" >                var index = _.findIndex($scope.allTemplates, conceptSet);</span>
+<span class="cstat-no" title="statement not covered" >                messagingService.showMessage("info", $translate.instant("CLINICAL_TEMPLATE_ADDED_SUCCESS_KEY", {label: $scope.allTemplates[index].label}));</span>
+<span class="cstat-no" title="statement not covered" >                $scope.clone(index);</span>
+<span class="cstat-no" title="statement not covered" >                $scope.showLeftPanelConceptSet($scope.allTemplates[index + 1]);</span>
+            };
+&nbsp;
+            $scope.isClonedSection = <span class="fstat-no" title="function not covered" >function (conceptSetTemplate, allTemplates) {</span>
+<span class="cstat-no" title="statement not covered" >                if (allTemplates) {</span>
+<span class="cstat-no" title="statement not covered" >                    var index = allTemplates.indexOf(conceptSetTemplate);</span>
+<span class="cstat-no" title="statement not covered" >                    return (index &gt; 0) ? allTemplates[index].label == allTemplates[index - 1].label : false;</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return false;</span>
+            };
+&nbsp;
+            $scope.isLastClonedSection = <span class="fstat-no" title="function not covered" >function (conceptSetTemplate) {</span>
+<span class="cstat-no" title="statement not covered" >                var index = _.findIndex($scope.allTemplates, conceptSetTemplate);</span>
+<span class="cstat-no" title="statement not covered" >                if ($scope.allTemplates) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (index == $scope.allTemplates.length - 1 || $scope.allTemplates[index].label != $scope.allTemplates[index + 1].label) {</span>
+<span class="cstat-no" title="statement not covered" >                        return true;</span>
+                    }
+                }
+<span class="cstat-no" title="statement not covered" >                return false;</span>
+            };
+&nbsp;
+            $scope.remove = function (index) {
+                var label = $scope.allTemplates[index].label;
+                var currentTemplate = $scope.allTemplates[index];
+                var anotherTemplate = _.find($scope.allTemplates, function (template) {
+                    return template.label == currentTemplate.label &amp;&amp; template !== currentTemplate;
+                });
+                if (anotherTemplate) {
+                    $scope.allTemplates.splice(index, 1);
+                }
+                else {
+                    var clonedObj = $scope.allTemplates[index].clone();
+                    $scope.allTemplates[index] = clonedObj;
+                    $scope.allTemplates[index].isAdded = false;
+                    $scope.allTemplates[index].isOpen = false;
+                    $scope.allTemplates[index].klass = "";
+                    $scope.allTemplates[index].isLoaded = false;
+                }
+                $scope.leftPanelConceptSet = "";
+                messagingService.showMessage("info", $translate.instant("CLINICAL_TEMPLATE_REMOVED_SUCCESS_KEY", {label: label}));
+            };
+&nbsp;
+            $scope.openActiveForm = function (conceptSet) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (conceptSet &amp;&amp; conceptSet.klass == 'active' &amp;&amp; conceptSet != $scope.leftPanelConceptSet) {
+                    $scope.showLeftPanelConceptSet(conceptSet);
+                }
+                return conceptSet.klass;
+            };
+&nbsp;
+            var copyValues = <span class="fstat-no" title="function not covered" >function (existingObservations, modifiedObservations) {</span>
+<span class="cstat-no" title="statement not covered" >                existingObservations.forEach(<span class="fstat-no" title="function not covered" >function (observation, index) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (observation.groupMembers &amp;&amp; observation.groupMembers.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                        copyValues(observation.groupMembers, modifiedObservations[index].groupMembers);</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        observation.value = modifiedObservations[index].value;</span>
+                    }
+                });
+            };
+&nbsp;
+            var collapseExistingActiveSection = function (section) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (section) {
+                    section.klass = "";
+                    section.isOpen = false;
+                    section.isLoaded = false;
+                }
+            };
+&nbsp;
+            $scope.showLeftPanelConceptSet = function (selectedConceptSet) {
+                collapseExistingActiveSection($scope.leftPanelConceptSet);
+                $scope.leftPanelConceptSet = selectedConceptSet;
+                $scope.leftPanelConceptSet.isOpen = true;
+                $scope.leftPanelConceptSet.isLoaded = true;
+                $scope.leftPanelConceptSet.klass = "active";
+                $scope.leftPanelConceptSet.atLeastOneValueIsSet = selectedConceptSet.hasSomeValue();
+                $scope.leftPanelConceptSet.isAdded = true;
+                $scope.consultation.lastvisited = selectedConceptSet.id || selectedConceptSet.formUuid;
+                $(window).scrollTop(0);
+            };
+&nbsp;
+            $scope.focusOnErrors = function () {
+                var errorMessage = $scope.leftPanelConceptSet.errorMessage ? $scope.leftPanelConceptSet.errorMessage : "{{'CLINICAL_FORM_ERRORS_MESSAGE_KEY' | translate }}";
+                messagingService.showMessage('error', errorMessage);
+                $scope.$parent.$parent.$broadcast("event:errorsOnForm");
+            };
+&nbsp;
+            $scope.isFormTemplate = <span class="fstat-no" title="function not covered" >function (data) {</span>
+<span class="cstat-no" title="statement not covered" >                return data.formUuid;</span>
+            };
+&nbsp;
+            init();
+        }])
+    .directive('conceptSetGroup', function () {
+        return {
+            restrict: 'EA',
+            scope: {
+                conceptSetGroupExtensionId: "=?",
+                observations: "=",
+                allTemplates: "=",
+                context: "=",
+                autoScrollEnabled: "=",
+                patient: "=",
+                consultation: "="
+&nbsp;
+            },
+            controller: 'ConceptSetGroupController',
+            templateUrl: '../common/concept-set/views/conceptSetGroup.html'
+        };
+    });
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

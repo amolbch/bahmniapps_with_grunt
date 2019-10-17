@@ -1,0 +1,27 @@
+<article class="form-field form-field-ipad" id="age">
+    <div class="field-attribute">
+        <label for="ageYears">{{ ::'REGISTRATION_LABEL_AGE' | translate}}<span class="asterick" ng-hide="::dobMandatory ">*</span></label>
+    </div>
+
+    <div class="field-value age-field">
+        <div class="input-prepend">
+            <span class="add-on">{{ ::'REGISTRATION_LABEL_YEARS' | translate}}</span>
+            <input type="number" id="ageYears" name="ageYear" max="120" ng-model="patient.age.years" min="0" ng-required="::!dobMandatory" ng-change="patient.calculateBirthDate();checkDuplicatePatients();checkValidationForm()" ng-blur="handleUpdate('age')" ng-disabled="isAgeDisabled" ng-class="{ 'illegalValue': submitted && this.myForms.myForm.ageYear.$invalid || this.myForms.myForm.ageYear.$invalid && !this.myForms.myForm.ageYear.$pristine}">
+        </div>
+        <div class="input-prepend">
+            <span class="add-on">{{ ::'REGISTRATION_LABEL_MONTHS' | translate}}</span>
+            <input type="number" id="ageMonths" name="ageMonths" max="12" ng-model="patient.age.months" min="0" ng-change="patient.calculateBirthDate();checkDuplicatePatients();checkValidationForm()" ng-disabled="isAgeDisabled" required>
+        </div>
+        <div class="input-prepend">
+            <span class="add-on">{{ ::'REGISTRATION_LABEL_DAYS' | translate}}</span>
+            <input type="number" id="ageDays" name="ageDays" max="31" ng-model="patient.age.days" min="0" ng-change="patient.calculateBirthDate();checkDuplicatePatients();checkValidationForm()" ng-disabled="isAgeDisabled" required>
+        </div>
+
+    </div>
+
+    <div class="input-prepend estimate_box">
+        <input type="checkbox" ng-model="patient.birthdateEstimated" ng-blur="handleUpdate('birthdateEstimated')" class="estimate-check" ng-disabled="isBirthDateEstimatedDisabled" ng-change="updateDOB()">
+        <span class="estimate-label" for="birthdate">{{ ::'REGISTRATION_LABEL_ESTIMATE' | translate}}</span>
+    </div>
+
+</article>

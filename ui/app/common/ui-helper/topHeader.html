@@ -1,0 +1,23 @@
+<div class="top-header" ng-controller="TopHeaderController">
+    <div class="opd-header" style="padding-top: 10px">
+        <header class="reg-header">
+            <span class="health-facility-section"><img src="./../images/flag_of_mozambique.png" alt="flag" height="28px" width="40px" style="float:left" /><div style="float: left; margin-left: 8px; margin-top: 8px"><span>{{::healthFacility.name}} - {{::healthFacility.code}}</span></div></span>
+
+            <div class="reg-header-right fr">
+                <div class="btn-user-info fr">
+                    <i class="fa fa-user fa-white small"></i>
+                    <span>{{:: currentUser.person.display}}</span>
+                </div>
+            </div>
+        </header>
+    </div>
+</div>
+<style>
+    .top-header {background-color:#669999; height:60px;}
+    .health-facility-section {color:#fff;font-weight: 700; font-size: 16px; cursor:pointer; padding-top: 30px; text-transform: uppercase;}
+    .btn-user-info {background:#00796d; padding:12px; border:none; border-radius:0; margin:0; color: #FFFFFF}
+    .reg-header {height:50px; max-width: 1400px; margin: 0 auto; position: relative}
+</style>
+
+
+

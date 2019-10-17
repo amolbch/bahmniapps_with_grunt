@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/common/utils/c3Chart.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">clinical/common/utils/c3Chart.js</span></h1>
+    <h2>
+        Statements: <span class="metric">70.77% <small>(46 / 65)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">42.31% <small>(11 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">60% <small>(12 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">70.31% <small>(45 / 64)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">clinical/common/utils/</a> &#187; c3Chart.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">"use strict";
+&nbsp;
+var Bahmni = Bahmni || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+Bahmni.Graph = Bahmni.Graph || {};
+&nbsp;
+Bahmni.Graph.c3Chart = function () {
+    var dateUtil = Bahmni.Common.Util.DateUtil;
+&nbsp;
+    var createReferenceClasses = function (data) {
+        var classes = {};
+        _.each(data, <span class="fstat-no" title="function not covered" >function (datum) {</span>
+<span class="cstat-no" title="statement not covered" >            if (datum.reference) {</span>
+<span class="cstat-no" title="statement not covered" >                classes[datum.name] = 'reference-line';</span>
+            }
+        });
+        return classes;
+    };
+&nbsp;
+    var formatValueForDisplay = <span class="fstat-no" title="function not covered" >function (value, config) {</span>
+<span class="cstat-no" title="statement not covered" >        if (config.displayForAge()) {</span>
+<span class="cstat-no" title="statement not covered" >            return Bahmni.Common.Util.AgeUtil.monthsToAgeString(value);</span>
+        } else <span class="cstat-no" title="statement not covered" >if (config.displayForObservationDateTime()) {</span>
+<span class="cstat-no" title="statement not covered" >            return dateUtil.formatDateWithoutTime(value);</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return d3.round(value, 2);</span>
+        }
+    };
+&nbsp;
+    var createXAxisConfig = function (config) {
+        return {
+            label: {
+                text: config.xAxisConcept + (config.unit || ''),
+                position: 'outer-right'
+            },
+            type: config.type,
+            tick: {
+                culling: {
+                    max: 3
+                },
+                count: 10,
+                format: <span class="fstat-no" title="function not covered" >function (xAxisValue) {</span>
+<span class="cstat-no" title="statement not covered" >                    return formatValueForDisplay(xAxisValue, config);</span>
+                }
+            }
+        };
+    };
+&nbsp;
+    var createYAxisConfig = function (unit) {
+        return {
+            label: {
+                text: unit,
+                position: 'outer-top'
+            },
+            tick: {
+                culling: {
+                    max: 3
+                },
+                format: <span class="fstat-no" title="function not covered" >function (y) {</span>
+<span class="cstat-no" title="statement not covered" >                    return d3.round(y, 2);</span>
+                }
+            },
+            show: true
+        };
+    };
+&nbsp;
+    var createAxisConfig = function (config, units) {
+        var axis = {
+            x: createXAxisConfig(config),
+            y: createYAxisConfig(units[0])
+        };
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (units[1] !== undefined) {
+<span class="cstat-no" title="statement not covered" >            axis['y2'] = createYAxisConfig(units[1]);</span>
+        }
+        return axis;
+    };
+&nbsp;
+    var createGridConfig = function (config) {
+        var grid = {
+            y: {
+                lines: []
+            }
+        };
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (config.yAxisConcepts.length === 1) {
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (config.lowNormal !== undefined) {
+<span class="cstat-no" title="statement not covered" >                grid.y.lines.push({value: config.lowNormal, text: "low", class: "lowNormal"});</span>
+            }
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (config.hiNormal !== undefined) {
+<span class="cstat-no" title="statement not covered" >                grid.y.lines.push({value: config.hiNormal, text: "high", class: "hiNormal"});</span>
+            }
+        }
+        return grid;
+    };
+&nbsp;
+    var createConfigForToolTipGroupingFix = function (config) {
+        var xs = {};
+        config.yAxisConcepts.forEach(function (yAxisConcept) {
+            xs[yAxisConcept] = config.xAxisConcept;
+        });
+        return xs;
+    };
+&nbsp;
+    var createAxisAndPopulateAxes = function (axes, data, axisY, unit) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (!unit) { return; }
+<span class="cstat-no" title="statement not covered" >        _.each(data, <span class="fstat-no" title="function not covered" >function (item) {</span></span>
+<span class="cstat-no" title="statement not covered" >            if (item.units === unit) {</span>
+<span class="cstat-no" title="statement not covered" >                axes[item.name] = axisY;</span>
+            }
+        });
+    };
+    var createConfigForAxes = function (data, units) {
+        var axes = {};
+        createAxisAndPopulateAxes(axes, data, 'y', units[0]);
+        createAxisAndPopulateAxes(axes, data, 'y2', units[1]);
+        return axes;
+    };
+&nbsp;
+    this.render = function (bindTo, graphWidth, config, data) {
+        var distinctUnits = _.uniq(_.map(data, 'units'));
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (distinctUnits.length &gt; 2) {
+<span class="cstat-no" title="statement not covered" >            throw new Error("Cannot display line graphs with concepts that have more than 2 units");</span>
+        }
+&nbsp;
+        var allPoints = _(data).reduce(<span class="fstat-no" title="function not covered" >function (accumulator, item) {</span>
+<span class="cstat-no" title="statement not covered" >            return accumulator.concat(item.values);</span>
+        }, []);
+&nbsp;
+        var c3Chart;
+        var c3Config = {
+            bindto: bindTo,
+            size: {
+                width: graphWidth
+            },
+            padding: {
+                top: 20,
+                right: 50
+            },
+            data: {
+                json: allPoints,
+                keys: {
+                    x: config.xAxisConcept,
+                    value: config.yAxisConcepts
+                },
+                axes: createConfigForAxes(data, distinctUnits),
+                xs: createConfigForToolTipGroupingFix(config),
+                onclick: <span class="fstat-no" title="function not covered" >function (d) {</span>
+<span class="cstat-no" title="statement not covered" >                    c3Chart.tooltip.show({data: d});</span>
+                },
+                classes: createReferenceClasses(data)
+            },
+            point: {
+                show: true,
+                r: 5,
+                sensitivity: 20
+            },
+            line: {
+                connectNull: true
+            },
+            axis: createAxisConfig(config, distinctUnits),
+            tooltip: {
+                grouped: true,
+                format: {
+                    title: <span class="fstat-no" title="function not covered" >function (xAxisValue) {</span>
+<span class="cstat-no" title="statement not covered" >                        return formatValueForDisplay(xAxisValue, config);</span>
+                    }
+                }
+            },
+            zoom: {
+                enabled: true
+            },
+            transition_duration: 0,
+            grid: createGridConfig(config)
+        };
+        c3Chart = c3.generate(c3Config);
+        return c3Chart;
+    };
+};
+&nbsp;
+Bahmni.Graph.c3Chart.create = function () {
+    return new Bahmni.Graph.c3Chart(); // eslint-disable-line new-cap
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

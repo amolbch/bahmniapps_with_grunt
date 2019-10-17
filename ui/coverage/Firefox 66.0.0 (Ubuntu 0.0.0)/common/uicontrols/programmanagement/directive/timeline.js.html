@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/uicontrols/programmanagement/directive/timeline.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">common/uicontrols/programmanagement/directive/timeline.js</span></h1>
+    <h2>
+        Statements: <span class="metric">1.59% <small>(1 / 63)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">1.61% <small>(1 / 62)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">common/uicontrols/programmanagement/directive/</a> &#187; timeline.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.uicontrols.programmanagment')
+    .directive('timeline', ['$timeout', <span class="fstat-no" title="function not covered" >function ($timeout) {</span>
+<span class="cstat-no" title="statement not covered" >        var link = <span class="fstat-no" title="function not covered" >function ($scope, $element) {</span></span>
+<span class="cstat-no" title="statement not covered" >            $timeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                var dateUtil = Bahmni.Common.Util.DateUtil;</span>
+<span class="cstat-no" title="statement not covered" >                var data = getDataModel($scope.program);</span>
+<span class="cstat-no" title="statement not covered" >                var svg = d3.select($element[0]).select('.timeline-view').append("svg");</span>
+<span class="cstat-no" title="statement not covered" >                var elementDimension = $element[0].getBoundingClientRect();</span>
+<span class="cstat-no" title="statement not covered" >                var sortedDates = _.map(data.states, 'date');</span>
+<span class="cstat-no" title="statement not covered" >                var xMin = 0;</span>
+<span class="cstat-no" title="statement not covered" >                var xMax = elementDimension.width - 15;</span>
+<span class="cstat-no" title="statement not covered" >                var endDate = $scope.program.dateCompleted ? dateUtil.parse($scope.program.dateCompleted) : new Date();</span>
+<span class="cstat-no" title="statement not covered" >                var dateFormatter = d3.time.format("%_d %b%y");</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var timeScale = d3.time.scale()</span>
+                    .domain([sortedDates[0], endDate])
+                    .range([xMin, xMax]);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var states = svg.selectAll('.states').data(data.states);</span>
+<span class="cstat-no" title="statement not covered" >                var stateGroup = states.enter().append("g").classed('states', true);</span>
+<span class="cstat-no" title="statement not covered" >                var tooltipEl = d3.select($element[0]).select('.tool-tip');</span>
+<span class="cstat-no" title="statement not covered" >                var showTooltip = <span class="fstat-no" title="function not covered" >function (d) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var eventEl = this;</span>
+<span class="cstat-no" title="statement not covered" >                    tooltipEl</span>
+                        .html(<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                            return dateFormatter(d.date) + " | " + d.state;</span>
+                        })
+                        .style("left", <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                            var tooltipWidth = $(this).width();</span>
+<span class="cstat-no" title="statement not covered" >                            var eventX = eventEl.getBBox().x;</span>
+<span class="cstat-no" title="statement not covered" >                            var posX = (eventX + tooltipWidth &gt; elementDimension.width) ? (elementDimension.width - tooltipWidth) : eventX;</span>
+<span class="cstat-no" title="statement not covered" >                            return posX + "px";</span>
+                        })
+                        .style("visibility", "visible");
+                };
+<span class="cstat-no" title="statement not covered" >                stateGroup.append("rect").classed("label-bg", true);</span>
+<span class="cstat-no" title="statement not covered" >                stateGroup.append("text").classed("label", true);</span>
+<span class="cstat-no" title="statement not covered" >                stateGroup.append("rect").classed("date-bg", true);</span>
+<span class="cstat-no" title="statement not covered" >                stateGroup.append("line").classed("date-line", true);</span>
+<span class="cstat-no" title="statement not covered" >                stateGroup.append("text").classed("date", true);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var stateBar = {y: 5, height: 23, textPaddingX: 6};</span>
+<span class="cstat-no" title="statement not covered" >                var dateBar = {y: 30, height: 30, xPadding: -4, textPaddingY: 53};</span>
+<span class="cstat-no" title="statement not covered" >                var dateTick = {y: 0, height: 40};</span>
+<span class="cstat-no" title="statement not covered" >                states.select(".label-bg")</span>
+                    .attr('x', <span class="fstat-no" title="function not covered" >function (d) {</span>
+<span class="cstat-no" title="statement not covered" >                        return timeScale(d.date);</span>
+                    })
+                    .attr('y', stateBar.y)
+                    .attr('height', stateBar.height)
+                    .attr('width', <span class="fstat-no" title="function not covered" >function (d) {</span>
+<span class="cstat-no" title="statement not covered" >                        return xMax - timeScale(d.date);</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                states.select(".label")</span>
+                    .attr('x', <span class="fstat-no" title="function not covered" >function (d) {</span>
+<span class="cstat-no" title="statement not covered" >                        return timeScale(d.date) + stateBar.textPaddingX;</span>
+                    })
+                    .attr('y', stateBar.y + (stateBar.height * 0.7))
+                    .text(<span class="fstat-no" title="function not covered" >function (d) {</span>
+<span class="cstat-no" title="statement not covered" >                        return d.state;</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                states.select(".date-bg")</span>
+                    .attr('x', <span class="fstat-no" title="function not covered" >function (d) {</span>
+<span class="cstat-no" title="statement not covered" >                        return timeScale(d.date) + dateBar.xPadding;</span>
+                    })
+                    .attr('y', dateBar.y)
+                    .attr('height', dateBar.height)
+                    .attr('width', xMax);
+<span class="cstat-no" title="statement not covered" >                states.select(".date-line")</span>
+                    .attr('x1', <span class="fstat-no" title="function not covered" >function (d) {</span>
+<span class="cstat-no" title="statement not covered" >                        return timeScale(d.date);</span>
+                    })
+                    .attr('y1', dateTick.y)
+                    .attr('x2', <span class="fstat-no" title="function not covered" >function (d) {</span>
+<span class="cstat-no" title="statement not covered" >                        return timeScale(d.date);</span>
+                    })
+                    .attr('y2', dateTick.y + dateTick.height);
+<span class="cstat-no" title="statement not covered" >                states.select(".date")</span>
+                    .attr('x', <span class="fstat-no" title="function not covered" >function (d) {</span>
+<span class="cstat-no" title="statement not covered" >                        return timeScale(d.date);</span>
+                    })
+                    .attr('y', dateBar.textPaddingY)
+                    .text(<span class="fstat-no" title="function not covered" >function (d) {</span>
+<span class="cstat-no" title="statement not covered" >                        return dateFormatter(d.date);</span>
+                    });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                states.select(".label-bg").on("mouseenter", showTooltip);</span>
+<span class="cstat-no" title="statement not covered" >                states.select(".label-bg").on("click", showTooltip);</span>
+<span class="cstat-no" title="statement not covered" >                states.select(".label-bg").on("mouseout", <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    tooltipEl.style("visibility", "hidden");</span>
+                });
+&nbsp;
+                // Draw completed state
+<span class="cstat-no" title="statement not covered" >                if (!data.completed &amp;&amp; !_.isEmpty(data.states)) {</span>
+<span class="cstat-no" title="statement not covered" >                    svg.append("polygon")</span>
+                        .attr("points", (xMax + "," + stateBar.y + " " + (xMax + 12) + "," +
+                        (stateBar.y + stateBar.height / 2) + " " + (xMax - 1) + "," + (stateBar.y + stateBar.height)));
+                }
+            }, 0);
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var getActiveProgramStates = <span class="fstat-no" title="function not covered" >function (patientProgram) {</span></span>
+<span class="cstat-no" title="statement not covered" >            return _.reject(patientProgram.states, <span class="fstat-no" title="function not covered" >function (st) {</span> <span class="cstat-no" title="statement not covered" >return st.voided; </span>});</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var getDataModel = <span class="fstat-no" title="function not covered" >function (program) {</span></span>
+<span class="cstat-no" title="statement not covered" >            var states = _.sortBy(_.map(getActiveProgramStates(program), <span class="fstat-no" title="function not covered" >function (stateObject) {</span></span>
+<span class="cstat-no" title="statement not covered" >                return {state: stateObject.state.concept.display, date: moment(stateObject.startDate).toDate()};</span>
+            }), 'date');
+<span class="cstat-no" title="statement not covered" >            var completed = isProgramCompleted(program);</span>
+<span class="cstat-no" title="statement not covered" >            return {states: states, completed: completed};</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var isProgramCompleted = <span class="fstat-no" title="function not covered" >function (program) {</span></span>
+<span class="cstat-no" title="statement not covered" >            return !_.isEmpty(program.dateCompleted);</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            restrict: 'E',
+            templateUrl: "../common/uicontrols/programmanagement/views/timeline.html",
+            link: link,
+            scope: {
+                program: "="
+            }
+        };
+    }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

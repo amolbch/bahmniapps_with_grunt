@@ -1,0 +1,9 @@
+<section class="template-container">
+    <h6>{{ 'ALL_LAB_RESULTS_LABEL'|translate  }}</h6>
+    <div class="concept-set-container concept-set-container-lab">
+        <div>
+            <investigation-chart ng-if="showChart" accessions="tabular" params="params"></investigation-chart>
+            <investigation-table ng-if="showTable" accessions="labAccessions" params="params"></investigation-table>
+        </div>
+    </div>
+</section>

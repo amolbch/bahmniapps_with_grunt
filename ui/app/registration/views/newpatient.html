@@ -1,0 +1,135 @@
+<div>
+    <div ng-controller="PatientCommonController" ng-include="'views/duplicatePatientTable.html'"></div>
+</div>
+<div class="reg-body-wrapper">
+    <div class="simple-form-ui new-patient">
+        <form name="myForms.myForm" class="form-horizontal well" ng-submit="create()" novalidate>
+            <div class="box-container box-container-default">
+                <legend class="registraion_legend first-registraion_legend">
+                    <span class="mylegend"><strong>{{::'REGISTRATION_PATIENT_DETAILS' | translate}}</strong></span>
+                </legend>
+                <span class="form-field-inline clearfix" ng-repeat="attribute in ::patientConfiguration.attributeTypes"
+                    ng-class="{'has-error' : submitted && typeOfRegistrationSelected === undefined}">
+                    <article class="form-field" ng-if="attribute.name == 'TYPE_OF_REGISTRATION'"
+                        ng-class="::{'right-form-field' : $index%2 != 0}">
+                        <attribute-types target-model="patient" attribute="::attribute"
+                            field-validation="::fieldValidation" is-auto-complete="isAutoComplete"
+                            get-auto-complete-list="getAutoCompleteList" on-change="checkDuplicatePatients();"
+                            get-data-results="getDataResults" is-read-only="isReadOnly" handle-update="handleUpdate">
+                        </attribute-types>
+                    </article>
+                </span>
+                <span class="form-field-inline clearfix" ng-repeat="attribute in ::patientConfiguration.attributeTypes"
+                    ng-class="{'has-error' : submitted && patientStatus === undefined}">
+                    <article class="form-field" ng-if="attribute.name == 'PATIENT_STATUS'"
+                        ng-class="::{'right-form-field' : $index%2 != 0}">
+                        <attribute-types target-model="patient" attribute="::attribute"
+                            field-validation="::fieldValidation" is-auto-complete="isAutoComplete"
+                            get-auto-complete-list="getAutoCompleteList" on-change="checkDuplicatePatients()"
+                            get-data-results="getDataResults" is-read-only="isReadOnly" handle-update="handleUpdate">
+                        </attribute-types>
+                    </article>
+                </span>
+                <span class="form-field-inline clearfix" ng-repeat="attribute in ::patientConfiguration.attributeTypes">
+                    <article class="form-field" ng-if="attribute.name == 'US_REG_DATE'"
+                        ng-class="::{'right-form-field' : $index%2 != 0}" style="margin-bottom: 5px">
+                        <attribute-types target-model="patient" attribute="::attribute"
+                            field-validation="::fieldValidation" is-auto-complete="isAutoComplete"
+                            get-auto-complete-list="getAutoCompleteList" on-change="checkDuplicatePatients()"
+                            get-data-results="getDataResults" is-read-only="isReadOnly" handle-update="handleUpdate">
+                        </attribute-types>
+                    </article>
+                </span>
+
+                <section class="clearfix">
+                    <div class="photo-container-wrapper" ng-if="!disablePhotoCapture">
+                        <span class="pull-right photo-container">
+                            <img class="patient-image" ng-src="{{patient.image}}"
+                                fallback-src="../images/blank-user.gif">
+                            <div ng-model="patient.image" capture-photo="" class="capture-photo-btn"></div>
+                        </span>
+                    </div>
+                </section>
+                <section>
+                    <article class="form-field existing-patient">
+                        <div class="field-attribute">
+                            <label class="control-label"
+                                for="patientID">{{'REGISTRATION_LABEL_PATIENT_ENTER_ID' | translate}}
+                                <span
+                                    ng-show="::patient.primaryIdentifier.identifierType.required && !patient.primaryIdentifier.hasIdentifierSources()"
+                                    class="asterick">*</span>
+                            </label>
+                        </div>
+                        <div class="input-prepend" ng-if="typeOfRegistrationSelected == 'TRANSFERRED_PATIENT'">
+                            <span class="add-on">{{ ::'REGISTRATION_HEALTH_FACILITY_CODE' | translate}}</span>
+                            <input type="text" name="healthFacilityCode" id="healthFacilityCode"
+                                ng-init="NID.healthFacilityCode=''" ng-model="NID.healthFacilityCode" pattern-validate
+                                onfocus="this.value=''" focus-me="true"
+                                placeholder="{{::'REGISTRATION_PLACEHOLDER_FOR_NID_HEALTHFACILITY_CODE' | translate}}"
+                                focus-on="patient.primaryIdentifier.hasOldIdentifier" ng-blur="buildFinalNID()"
+                                minlength="8" ng-pattern="regexDigits" maxlength="8" size=8 required
+                                ng-class="{'illegalValue' : submitted && this.myForms.myForm.healthFacilityCode.$invalid || this.myForms.myForm.healthFacilityCode.$invalid && !this.myForms.myForm.healthFacilityCode.$pristine || this.myForms.myForm.healthFacilityCode.$error.pattern}">
+                            <p class="help-block"
+                                ng-show="this.myForms.myForm.healthFacilityCode.$error.minlength && !this.myForms.myForm.healthFacilityCode.$error.pattern">
+                                {{::'MINLENGTH_HEALTH_FACILITY_CODE' | translate}}</p>
+                        </div>
+
+                        <div class="input-prepend" ng-if="typeOfRegistrationSelected == undefined">
+                            <span class="add-on">{{ ::'REGISTRATION_HEALTH_FACILITY_CODE' | translate}}</span>
+                            <input type="text" required ng-value="NID.healthFacilityCode = ''" name="healthFacilityCode"
+                                id="healthFacilityCode" ng-model="NID.healthFacilityCode" size="8" ng-disabled="true">
+                        </div>
+
+                        <div class="input-prepend" ng-if="typeOfRegistrationSelected == 'NEW_PATIENT'">
+                            <span class="add-on">{{ ::'REGISTRATION_HEALTH_FACILITY_CODE' | translate}}</span>
+                            <input type="text" name="healthFacilityCode" id="healthFacilityCode"
+                                ng-model="NID.healthFacilityCode" pattern-validate onfocus="this.value=''"
+                                focus-me="true"
+                                placeholder="{{::'REGISTRATION_PLACEHOLDER_FOR_NID_HEALTHFACILITY_CODE' | translate}}"
+                                focus-on="patient.primaryIdentifier.hasOldIdentifier"
+                                ng-focus="NID.healthFacilityCode = healthFacility.code" ng-blur="buildFinalNID()"
+                                minlength="8" ng-pattern="regexDigits" maxlength="8" size=8 required readonly
+                                ng-class="{'illegalValue' : submitted && this.myForms.myForm.healthFacilityCode.$invalid || this.myForms.myForm.healthFacilityCode.$invalid && !this.myForms.myForm.healthFacilityCode.$pristine || this.myForms.myForm.healthFacilityCode.$error.pattern}">
+                            <p class="help-block"
+                                ng-show="this.myForms.myForm.healthFacilityCode.$error.minlength && !this.myForms.myForm.healthFacilityCode.$error.pattern">
+                            </p>
+                        </div>
+
+                        <div class="input-prepend">
+                            <span class="add-on">{{ ::'REGISTRATION_SERVICE_CODE' | translate}}</span>
+                            <input type="text" name="serviceCode" id="serviceCode" ng-model="NID.serviceCode"
+                                pattern-validate focus-on="patient.primaryIdentifier.hasOldIdentifier" disabled size="2"
+                                ng-init="NID.serviceCode='01'">
+                        </div>
+
+                        <div class="input-prepend">
+                            <span class="add-on">{{ ::'REGISTRATION_NID_YEAR' | translate}}</span>
+                            <input type="number" id="nidYear" name="nidYear" ng-model="NID.year" pattern-validate
+                                focus-on="patient.primaryIdentifier.hasOldIdentifier" ng-blur="buildFinalNID()"
+                                min="1900" size="4" max="{{currentYear}}" minlength="1" maxlength="4" required
+                                placeholder="{{::'REGISTRATION_PLACEHOLDER_FOR_NID_YEAR' | translate}}"
+                                ng-class="{'illegalValue' : submitted && this.myForms.myForm.nidYear.$invalid || this.myForms.myForm.nidYear.$invalid && !this.myForms.myForm.nidYear.$pristine}">
+                        </div>
+
+                        <div class="input-prepend">
+                            <span class="add-on">{{ ::'REGISTRATION_SEQUENTIAL_CODE' | translate}}</span>
+                            <input type="text" name="sequentialCode" id="sequentialCode" ng-model="NID.sequentialCode"
+                                pattern-validate focus-on="patient.primaryIdentifier.hasOldIdentifier"
+                                ng-blur="buildFinalNID()" minlength="5" ng-pattern="regexDigits" maxlength="5" size="8"
+                                required
+                                placeholder="{{::'REGISTRATION_PLACEHOLDER_FOR_NID_SEQUENCIAL_CODE' | translate}}"
+                                ng-class="{'illegalValue' : submitted && this.myForms.myForm.sequentialCode.$invalid || !this.myForms.myForm.sequentialCode.$pristine && this.myForms.myForm.sequentialCode.$invalid || this.myForms.myForm.sequentialCode.$error.pattern || this.myForms.myForm.sequentialCode.$error.minlength}">
+                            <p class="help-block"
+                                ng-show="this.myForms.myForm.sequentialCode.$error.minlength && !this.myForms.myForm.sequentialCode.$error.pattern">
+                                {{::'MINLENGTH_REGISTRATION_SEQUENTIAL_CODE' | translate}}</p>
+                        </div>
+
+                    </article>
+                </section>
+            </div>
+            <div ng-include="'views/patientcommon.html'"></div>
+            <patient-action></patient-action>
+        </form>
+        <br>
+    </div>
+</div>

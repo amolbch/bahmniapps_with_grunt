@@ -1,0 +1,753 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/consultation/controllers/conceptSetPageController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">clinical/consultation/controllers/conceptSetPageController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">90.98% <small>(121 / 133)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">80.77% <small>(63 / 78)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">85% <small>(34 / 40)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">90.98% <small>(121 / 133)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">clinical/consultation/controllers/</a> &#187; conceptSetPageController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.clinical')
+    .controller('ConceptSetPageController', ['$scope', '$rootScope', '$stateParams', 'conceptSetService',
+        'clinicalAppConfigService', 'messagingService', 'configurations', '$state', 'spinner',
+        'contextChangeHandler', '$q', '$translate', 'formService',
+        function ($scope, $rootScope, $stateParams, conceptSetService,
+                  clinicalAppConfigService, messagingService, configurations, $state, spinner,
+                  contextChangeHandler, $q, $translate, formService) {
+            $scope.consultation.selectedObsTemplate = $scope.consultation.selectedObsTemplate || [];
+            $scope.allTemplates = $scope.allTemplates || [];
+            $scope.scrollingEnabled = false;
+            var extensions = clinicalAppConfigService.getAllConceptSetExtensions($stateParams.conceptSetGroupName);
+            var configs = clinicalAppConfigService.getAllConceptsConfig();
+            var visitType = configurations.encounterConfig().getVisitTypeByUuid($scope.consultation.visitTypeUuid);
+            $scope.context = {visitType: visitType, patient: $scope.patient};
+            var numberOfLevels = 2;
+            var fields = ['uuid', 'name:(name,display)', 'names:(uuid,conceptNameType,name)'];
+            var customRepresentation = Bahmni.ConceptSet.CustomRepresentationBuilder.build(fields, 'setMembers', numberOfLevels);
+            var allConceptSections = [];
+&nbsp;
+            var init = function () {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (!($scope.allTemplates !== undefined &amp;&amp; $scope.allTemplates.length &gt; 0)) {
+                    spinner.forPromise(conceptSetService.getConcept({
+                        name: "All Observation Templates",
+                        v: "custom:" + customRepresentation
+                    }).then(function (response) {
+                        var allTemplates = response.data.results[0].setMembers;
+                        createConceptSections(allTemplates);
+                        if ($state.params.programUuid) {
+                            showOnlyTemplatesFilledInProgram();
+                        }
+&nbsp;
+                        // Retrieve Form Details
+                        <span class="missing-if-branch" title="else path not taken" >E</span>if (!($scope.consultation.observationForms !== undefined &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >$scope.consultation.observationForms.length &gt; 0)</span>) {
+                            spinner.forPromise(formService.getFormList($scope.consultation.encounterUuid)
+                                .then(function (response) {
+                                    $scope.consultation.observationForms = getObservationForms(response.data);
+                                    concatObservationForms();
+                                })
+                            );
+                        } else {
+<span class="cstat-no" title="statement not covered" >                            concatObservationForms();</span>
+                        }
+                    }));
+                }
+            };
+&nbsp;
+            var concatObservationForms = function () {
+                $scope.allTemplates = getSelectedObsTemplate(allConceptSections);
+                $scope.uniqueTemplates = _.uniqBy($scope.allTemplates, 'label');
+                $scope.allTemplates = $scope.allTemplates.concat($scope.consultation.observationForms);
+                <span class="missing-if-branch" title="else path not taken" >E</span>if ($scope.consultation.selectedObsTemplate.length == 0) {
+                    initializeDefaultTemplates();
+                    if ($scope.consultation.observations &amp;&amp; $scope.consultation.observations.length &gt; 0) {
+                        addTemplatesInSavedOrder();
+                    }
+                    var templateToBeOpened = getLastVisitedTemplate() ||
+                        _.first($scope.consultation.selectedObsTemplate);
+&nbsp;
+                    if (templateToBeOpened) {
+                        openTemplate(templateToBeOpened);
+                    }
+                }
+            };
+&nbsp;
+            var addTemplatesInSavedOrder = function () {
+                var templatePreference = JSON.parse(localStorage.getItem("templatePreference"));
+                if (templatePreference &amp;&amp; templatePreference.patientUuid === $scope.patient.uuid &amp;&amp;
+                    !_.isEmpty(templatePreference.templates) &amp;&amp; $rootScope.currentProvider.uuid === templatePreference.providerUuid) {
+                    insertInSavedOrder(templatePreference);
+                } else {
+                    insertInDefaultOrder();
+                }
+            };
+&nbsp;
+            var insertInSavedOrder = function (templatePreference) {
+                var templateNames = templatePreference.templates;
+                _.each(templateNames, function (templateName) {
+                    var foundTemplates = _.filter($scope.allTemplates, function (allTemplate) {
+                        return allTemplate.conceptName === templateName;
+                    });
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (foundTemplates.length &gt; 0) {
+                        _.each(foundTemplates, function (template) {
+                            <span class="missing-if-branch" title="else path not taken" >E</span>if (!_.isEmpty(template.observations)) {
+                                insertTemplate(template);
+                            }
+                        });
+                    }
+                });
+            };
+&nbsp;
+            var insertInDefaultOrder = function () {
+                _.each($scope.allTemplates, function (template) {
+                    if (template.observations.length &gt; 0) {
+                        insertTemplate(template);
+                    }
+                });
+            };
+&nbsp;
+            var insertTemplate = function (template) {
+                if (template &amp;&amp; !(template.isDefault() || template.alwaysShow)) {
+                    $scope.consultation.selectedObsTemplate.push(template);
+                }
+            };
+&nbsp;
+            var getLastVisitedTemplate = function () {
+                return _.find($scope.consultation.selectedObsTemplate, function (template) {
+                    return template.id === $scope.consultation.lastvisited;
+                });
+            };
+&nbsp;
+            var openTemplate = function (template) {
+                template.isOpen = true;
+                template.isLoaded = true;
+                template.klass = "active";
+            };
+&nbsp;
+            var initializeDefaultTemplates = function () {
+                $scope.consultation.selectedObsTemplate = _.filter($scope.allTemplates, function (template) {
+                    return template.isDefault() || template.alwaysShow;
+                });
+            };
+&nbsp;
+            $scope.filterTemplates = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                $scope.uniqueTemplates = _.uniqBy($scope.allTemplates, 'label');</span>
+<span class="cstat-no" title="statement not covered" >                if ($scope.consultation.searchParameter) {</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.uniqueTemplates = _.filter($scope.uniqueTemplates, <span class="fstat-no" title="function not covered" >function (template) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        return _.includes(template.label.toLowerCase(), $scope.consultation.searchParameter.toLowerCase());</span>
+                    });
+                }
+<span class="cstat-no" title="statement not covered" >                return $scope.uniqueTemplates;</span>
+            };
+&nbsp;
+            var showOnlyTemplatesFilledInProgram = function () {
+                spinner.forPromise(conceptSetService.getObsTemplatesForProgram($state.params.programUuid).success(function (data) {
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (data.results.length &gt; 0 &amp;&amp; data.results[0].mappings.length &gt; 0) {
+                        _.map(allConceptSections, function (conceptSection) {
+                            conceptSection.isAdded = false;
+                            conceptSection.alwaysShow = false;
+                        });
+&nbsp;
+                        _.map(data.results[0].mappings, function (template) {
+                            var matchedTemplate = _.find(allConceptSections, {uuid: template.uuid});
+                            <span class="missing-if-branch" title="else path not taken" >E</span>if (matchedTemplate) {
+                                matchedTemplate.alwaysShow = true;
+                            }
+                        });
+                    }
+                }));
+            };
+&nbsp;
+            var createConceptSections = function (allTemplates) {
+                _.map(allTemplates, function (template) {
+                    var conceptSetExtension = _.find(extensions, function (extension) {
+                        return extension.extensionParams.conceptName === template.name.name;
+                    }) || {};
+                    var conceptSetConfig = configs[template.name.name] || {};
+                    var observationsForTemplate = getObservationsForTemplate(template);
+                    if (observationsForTemplate &amp;&amp; observationsForTemplate.length &gt; 0) {
+                        _.each(observationsForTemplate, function (observation) {
+                            allConceptSections.push(new Bahmni.ConceptSet.ConceptSetSection(conceptSetExtension, $rootScope.currentUser, conceptSetConfig, [observation], template));
+                        });
+                    } else {
+                        allConceptSections.push(new Bahmni.ConceptSet.ConceptSetSection(conceptSetExtension, $rootScope.currentUser, conceptSetConfig, [], template));
+                    }
+                });
+            };
+&nbsp;
+            var collectObservationsFromConceptSets = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                $scope.consultation.observations = [];</span>
+<span class="cstat-no" title="statement not covered" >                _.each($scope.consultation.selectedObsTemplate, <span class="fstat-no" title="function not covered" >function (conceptSetSection) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (conceptSetSection.observations[0]) {</span>
+<span class="cstat-no" title="statement not covered" >                        $scope.consultation.observations.push(conceptSetSection.observations[0]);</span>
+                    }
+                });
+            };
+&nbsp;
+            var getObservationsForTemplate = function (template) {
+                return _.filter($scope.consultation.observations, function (observation) {
+                    return !observation.formFieldPath &amp;&amp; observation.concept.uuid === template.uuid;
+                });
+            };
+&nbsp;
+            var getSelectedObsTemplate = function (allConceptSections) {
+                return allConceptSections.filter(function (conceptSet) {
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (conceptSet.isAvailable($scope.context)) {
+                        return true;
+                    }
+                });
+            };
+&nbsp;
+            $scope.stopAutoClose = <span class="fstat-no" title="function not covered" >function ($event) {</span>
+<span class="cstat-no" title="statement not covered" >                $event.stopPropagation();</span>
+            };
+&nbsp;
+            $scope.addTemplate = function (template) {
+                $scope.scrollingEnabled = true;
+                $scope.showTemplatesList = false;
+                var index = _.findLastIndex($scope.consultation.selectedObsTemplate, function (consultationTemplate) {
+                    return consultationTemplate.label == template.label;
+                });
+&nbsp;
+                if (index != -1 &amp;&amp; $scope.consultation.selectedObsTemplate[index].allowAddMore) {
+                    var clonedObj = template.clone();
+                    clonedObj.klass = "active";
+                    $scope.consultation.selectedObsTemplate.splice(index + 1, 0, clonedObj);
+                } else {
+                    template.toggle();
+                    template.klass = "active";
+                    $scope.consultation.selectedObsTemplate.push(template);
+                }
+                $scope.consultation.searchParameter = "";
+                messagingService.showMessage("info", $translate.instant("CLINICAL_TEMPLATE_ADDED_SUCCESS_KEY", {label: template.label}));
+            };
+&nbsp;
+            $scope.getNormalized = <span class="fstat-no" title="function not covered" >function (conceptName) {</span>
+<span class="cstat-no" title="statement not covered" >                return conceptName.replace(/['\.\s\(\)\/,\\]+/g, "_");</span>
+            };
+&nbsp;
+            $scope.consultation.preSaveHandler.register("collectObservationsFromConceptSets", collectObservationsFromConceptSets);
+            // Form Code :: Start
+            var getObservationForms = function (observationsForms) {
+                var forms = [];
+                var observations = $scope.consultation.observations || [];
+                _.each(observationsForms, function (observationForm) {
+                    var formUuid = observationForm.formUuid || observationForm.uuid;
+                    var formName = observationForm.name || <span class="branch-1 cbranch-no" title="branch not covered" >observationForm.formName;</span>
+                    var formVersion = observationForm.version || <span class="branch-1 cbranch-no" title="branch not covered" >observationForm.formVersion;</span>
+                    forms.push(new Bahmni.ObservationForm(formUuid, $rootScope.currentUser, formName, formVersion, observations));
+                });
+                return forms;
+            };
+            // Form Code :: End
+            init();
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

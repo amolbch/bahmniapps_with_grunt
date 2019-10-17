@@ -1,0 +1,24 @@
+<div class="revise-refill-modal-wrapper" aria-labelledby="dialog-label">
+	<span class="ngdialog-start"></span>
+
+	<span class="ngdialog-close"></span>
+	<div class="drug-details" ng-if="alreadyActiveSimilarOrder.effectiveStopDate">
+		<p><strong class="drug-name">{{alreadyActiveSimilarOrder.getDisplayName()}}</strong> {{::'MEDICATIONN_FROM' | translate}} <strong>{{alreadyActiveSimilarOrder.effectiveStartDate | bahmniDate}}</strong> {{::'PROGRAM_MANAGEMENT_TO_KEY' | translate}} <strong>{{alreadyActiveSimilarOrder.effectiveStopDate | bahmniDate}}</strong> {{::'MEDICATION_ERROR_CONFLICTING_WITH_DRUG_ORDER_YOU_CAN_REVISE' | translate}}</p>
+	</div>
+
+	<div class="drug-details" ng-if="!alreadyActiveSimilarOrder.effectiveStopDate">
+	    <p><strong class="drug-name">{{alreadyActiveSimilarOrder.getDisplayName()}}</strong> {{::'MEDICATIONN_FROM' | translate}} <strong>{{alreadyActiveSimilarOrder.effectiveStartDate | bahmniDate}}</strong> {{::'MEDICATION_ERROR_CONFLICTING_WITH_DRUG_ORDER_YOU_CAN_STOP' | translate}}</p>
+	</div>
+
+	<div class="dialog-button-group" ng-if="alreadyActiveSimilarOrder.effectiveStopDate">
+		<button id="modal-refill-button" class="secondary-button" type="button" ng-click="refillConflictingDrug(treatment, alreadyActiveSimilarOrder)" focus-on="popupActive" ng-focus="toggleTabIndexWithinModal($event)">{{::'MEDICATION_REFILL' | translate}}</button>
+		<button id="modal-revise-button" class="secondary-button" ng-click="revise(alreadyActiveSimilarOrder, conflictingIndex)" ng-focus="toggleTabIndexWithinModal($event)">{{::'MEDICATION_REVISE' | translate}}</button>
+	</div>
+	<div class="dialog-button-group" ng-if="!alreadyActiveSimilarOrder.effectiveStopDate">
+		<button id="modal-ok-button" class="secondary-button " type="button"  ng-click="closeDialog()" focus-on="popupActive">Ok</button>
+	</div>
+
+	<span class="ngdialog-end"></span>
+</div>
+
+

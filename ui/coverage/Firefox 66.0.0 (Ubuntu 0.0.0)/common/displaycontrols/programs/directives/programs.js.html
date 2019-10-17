@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/displaycontrols/programs/directives/programs.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">common/displaycontrols/programs/directives/programs.js</span></h1>
+    <h2>
+        Statements: <span class="metric">92.31% <small>(36 / 39)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">60% <small>(12 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">92.31% <small>(12 / 13)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">92.31% <small>(36 / 39)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">common/displaycontrols/programs/directives/</a> &#187; programs.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">32</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.displaycontrol.programs')
+    .directive('programs', ['programService', '$state', 'spinner',
+        function (programService, $state, spinner) {
+            var controller = function ($scope) {
+                $scope.initialization = programService.getPatientPrograms($scope.patient.uuid, true, $state.params.enrollment).then(function (patientPrograms) {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (_.isEmpty(patientPrograms.activePrograms) &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >_.isEmpty(patientPrograms.endedPrograms))</span> {
+<span class="cstat-no" title="statement not covered" >                        $scope.$emit("no-data-present-event");</span>
+                    }
+                    $scope.activePrograms = patientPrograms.activePrograms;
+                    $scope.pastPrograms = patientPrograms.endedPrograms;
+                });
+                $scope.hasPatientAnyActivePrograms = function () {
+                    return !_.isEmpty($scope.activePrograms);
+                };
+                $scope.hasPatientAnyPastPrograms = function () {
+                    return !_.isEmpty($scope.pastPrograms);
+                };
+                $scope.hasPatientAnyPrograms = function () {
+                    return $scope.hasPatientAnyPastPrograms() || <span class="branch-1 cbranch-no" title="branch not covered" >$scope.hasPatientAnyActivePrograms();</span>
+                };
+                $scope.showProgramStateInTimeline = function () {
+                    return programService.getProgramStateConfig();
+                };
+                $scope.hasStates = function (program) {
+                    return !_.isEmpty(program.states);
+                };
+                $scope.getAttributeValue = function (attribute) {
+                    if (isDateFormat(attribute.attributeType.format)) {
+                        return Bahmni.Common.Util.DateUtil.formatDateWithoutTime(attribute.value);
+                    } else if (isCodedConceptFormat(attribute.attributeType.format)) {
+                        var mrsAnswer = attribute.value;
+                        var displayName = mrsAnswer.display;
+                        <span class="missing-if-branch" title="else path not taken" >E</span>if (mrsAnswer.names &amp;&amp; mrsAnswer.names.length == 2) {
+                            <span class="missing-if-branch" title="else path not taken" >E</span>if (mrsAnswer.name.conceptNameType == 'FULLY_SPECIFIED') {
+                                <span class="missing-if-branch" title="else path not taken" >E</span>if (mrsAnswer.names[0].display == displayName) {
+                                    displayName = mrsAnswer.names[1].display;
+                                } else {
+<span class="cstat-no" title="statement not covered" >                                    displayName = mrsAnswer.names[0].display;</span>
+                                }
+                            }
+                        }
+                        return displayName;
+                    } else {
+                        return attribute.value;
+                    }
+                };
+                $scope.isIncluded = <span class="fstat-no" title="function not covered" >function (attributeType, program) {</span>
+<span class="cstat-no" title="statement not covered" >                    return !(program.program &amp;&amp; _.includes(attributeType.excludeFrom, program.program.name));</span>
+                };
+                var isDateFormat = function (format) {
+                    return format == "org.openmrs.customdatatype.datatype.DateDatatype";
+                };
+                var isCodedConceptFormat = function (format) {
+                    return format == "org.bahmni.module.bahmnicore.customdatatype.datatype.CodedConceptDatatype";
+                };
+            };
+&nbsp;
+            var link = function ($scope, element) {
+                spinner.forPromise($scope.initialization, element);
+            };
+&nbsp;
+            return {
+                restrict: 'E',
+                link: link,
+                controller: controller,
+                templateUrl: "../common/displaycontrols/programs/views/programs.html",
+                scope: {
+                    patient: "="
+                }
+            };
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/attributeTypes/directives/attributeTypes.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">common/attributeTypes/directives/attributeTypes.js</span></h1>
+    <h2>
+        Statements: <span class="metric">3.33% <small>(1 / 30)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">3.7% <small>(1 / 27)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/attributeTypes/directives/</a> &#187; attributeTypes.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.attributeTypes', []).directive('attributeTypes', [<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+        scope: {
+            targetModel: '=',
+            attribute: '=',
+            fieldValidation: '=',
+            isAutoComplete: '&amp;',
+            getAutoCompleteList: '&amp;',
+            getDataResults: '&amp;',
+            handleUpdate: '&amp;',
+            isReadOnly: '&amp;',
+            isForm: '=?'
+        },
+        templateUrl: '../common/attributeTypes/views/attributeInformation.html',
+        restrict: 'E',
+        controller: <span class="fstat-no" title="function not covered" >function ($scope) {</span>
+<span class="cstat-no" title="statement not covered" >            $scope.getAutoCompleteList = $scope.getAutoCompleteList();</span>
+<span class="cstat-no" title="statement not covered" >            $scope.getDataResults = $scope.getDataResults();</span>
+            // to avoid watchers in one way binding
+<span class="cstat-no" title="statement not covered" >            $scope.isAutoComplete = $scope.isAutoComplete() || <span class="fstat-no" title="function not covered" >function () {</span> <span class="cstat-no" title="statement not covered" >return false; </span>};</span>
+<span class="cstat-no" title="statement not covered" >            $scope.isReadOnly = $scope.isReadOnly() || <span class="fstat-no" title="function not covered" >function () {</span> <span class="cstat-no" title="statement not covered" >return false; </span>};</span>
+<span class="cstat-no" title="statement not covered" >            $scope.handleUpdate = $scope.handleUpdate() || <span class="fstat-no" title="function not covered" >function () {</span> <span class="cstat-no" title="statement not covered" >return false; </span>};</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.suggestions = $scope.attribute.answers;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.showTag = false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.appendConceptNameToModel = <span class="fstat-no" title="function not covered" >function (attribute) {</span></span>
+<span class="cstat-no" title="statement not covered" >                var attributeValueConceptType = $scope.targetModel[attribute.name];</span>
+<span class="cstat-no" title="statement not covered" >                var concept = _.find(attribute.answers, <span class="fstat-no" title="function not covered" >function (answer) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return answer.conceptId === attributeValueConceptType.conceptUuid;</span>
+                });
+<span class="cstat-no" title="statement not covered" >                attributeValueConceptType.value = concept &amp;&amp; concept.fullySpecifiedName;</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.suggest = <span class="fstat-no" title="function not covered" >function (string) {</span></span>
+<span class="cstat-no" title="statement not covered" >                $scope.hideList = false;</span>
+<span class="cstat-no" title="statement not covered" >                $scope.showTag = true;</span>
+<span class="cstat-no" title="statement not covered" >                var output = [];</span>
+<span class="cstat-no" title="statement not covered" >                angular.forEach($scope.suggestions, <span class="fstat-no" title="function not covered" >function (suggestion) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (suggestion.description.toLowerCase().indexOf(string.value.toLowerCase()) &gt;= 0) {</span>
+<span class="cstat-no" title="statement not covered" >                        output.push(suggestion);</span>
+                    }
+                });
+<span class="cstat-no" title="statement not covered" >                $scope.filterOcuppation = output;</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.hideSuggestions = <span class="fstat-no" title="function not covered" >function (object) {</span></span>
+<span class="cstat-no" title="statement not covered" >                $scope.targetModel[$scope.attribute.name] = object;</span>
+<span class="cstat-no" title="statement not covered" >                $scope.targetModel[$scope.attribute.name].value = object.description;</span>
+<span class="cstat-no" title="statement not covered" >                $scope.targetModel[$scope.attribute.name].conceptUuid = object.conceptId;</span>
+<span class="cstat-no" title="statement not covered" >                $scope.hideList = true;</span>
+            };
+        }
+    };
+}]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

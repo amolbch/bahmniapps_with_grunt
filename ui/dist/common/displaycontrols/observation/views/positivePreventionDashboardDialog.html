@@ -1,0 +1,19 @@
+<section class="template-container" style="overflow-y: scroll">
+    <h2 ng-class="::{'section-title': !isFulfilmentDisplayControl, 'form-field': isFulfilmentDisplayControl}">{{::title | titleTranslate}}</h2>
+    <p ng-if="visitsList.length == 0" style="background-color:#ffffff;color:#444444;padding:5px">{{::'NO_POSITIVE_PREVENTION_WITH_YES_MESSAGE' | translate}} </p>
+    <ul style="font-size: 14px;color: #000000">
+        <li ng-repeat="dateTime in visitsList track by $index" style="background-color:#ddd">
+            <span class="tree-list-item row-click toggle-container ng-scope ng-isolate-scope active" id="visit{{section.visitDomId[$index]}}" toggle="isOpen[$index]">
+                <i ng-class="isOpen[$index] ? 'fa fa-caret-down' : 'fa fa-caret-right'"></i>
+                <span class="obs-date">
+                    {{dateTime | bahmniDateTime}}
+                </span>
+            </span>
+            <div ng-if="isOpen[$index] == true">
+                <div ng-repeat="concept in conceptsWithYes[$index] track by $index" class="print-observations hidden-print" style="background-color:#fff;margin-bottom:1px;padding-left:20px;padding-top:4px;padding-bottom:4px">
+                    {{concept}}
+                </div>
+            </div>
+        </li>
+    </ul>
+</section>

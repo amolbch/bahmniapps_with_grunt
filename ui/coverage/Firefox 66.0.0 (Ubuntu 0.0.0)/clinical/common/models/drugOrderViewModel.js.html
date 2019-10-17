@@ -1,0 +1,2259 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/common/models/drugOrderViewModel.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">clinical/common/models/drugOrderViewModel.js</span></h1>
+    <h2>
+        Statements: <span class="metric">91.47% <small>(397 / 434)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">84.5% <small>(289 / 342)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">88.24% <small>(75 / 85)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">91.67% <small>(396 / 432)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">clinical/common/models/</a> &#187; drugOrderViewModel.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">636</span>
+<span class="cline-any cline-yes">636</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">1160</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1578</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1138</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1138</span>
+<span class="cline-any cline-yes">167</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">971</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">443</span>
+<span class="cline-any cline-yes">433</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">103</span>
+<span class="cline-any cline-yes">103</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">102</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">97</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">1083</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1083</span>
+<span class="cline-any cline-yes">1072</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">25</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">539</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">42</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">492</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-yes">24</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">597</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">61</span>
+<span class="cline-any cline-yes">296</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">61</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-yes">36</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">514</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">534</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">40</span>
+<span class="cline-any cline-yes">54</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">961</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">315</span>
+<span class="cline-any cline-yes">315</span>
+<span class="cline-any cline-yes">315</span>
+<span class="cline-any cline-yes">315</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">57</span>
+<span class="cline-any cline-yes">57</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">755</span>
+<span class="cline-any cline-yes">57</span>
+<span class="cline-any cline-yes">47</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">243</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">247</span>
+<span class="cline-any cline-yes">247</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">206</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">258</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+var constructDrugNameDisplay = function (drug) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!_.isEmpty(drug)) {
+        return drug.name + " (" + drug.form + ")";
+    }
+};
+&nbsp;
+Bahmni.Clinical.DrugOrderViewModel = function (config, proto, encounterDate) {
+    angular.copy(proto, this);
+&nbsp;
+    var DateUtil = Bahmni.Common.Util.DateUtil;
+    var self = this;
+    config = config || {};
+    var inputOptionsConfig = config.inputOptionsConfig || {};
+    var drugFormDefaults = inputOptionsConfig.drugFormDefaults || {};
+    var durationUnits = config.durationUnits || [];
+    var now = DateUtil.now();
+&nbsp;
+    var today = function () {
+        return DateUtil.parse(self.encounterDate);
+    };
+&nbsp;
+    Object.defineProperty(this, 'effectiveStartDate', {
+        get: function () {
+            return self._effectiveStartDate;
+        },
+        set: function (value) {
+            self._effectiveStartDate = value;
+&nbsp;
+            if (DateUtil.parse(value) &gt; today()) {
+                self.scheduledDate = self._effectiveStartDate;
+            } else {
+                self.scheduledDate = null;
+            }
+        },
+        enumerable: true
+    });
+&nbsp;
+    Object.defineProperty(this, 'doseUnits', {
+        enumerable: true,
+        get: function () {
+            if (this.isUniformDosingType()) {
+                return this.uniformDosingType.doseUnits;
+            }
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (this.isVariableDosingType()) {
+                return this.variableDosingType.doseUnits;
+            }
+<span class="cstat-no" title="statement not covered" >            return null;</span>
+        },
+        set: function (value) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (this.isUniformDosingType()) {
+                this.uniformDosingType.doseUnits = value;
+            } else <span class="cstat-no" title="statement not covered" >if (this.isVariableDosingType()) {</span>
+<span class="cstat-no" title="statement not covered" >                this.variableDosingType.doseUnits = value;</span>
+            }
+        }
+    });
+&nbsp;
+    var getDosingType = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        return self.isUniformDosingType() ? self.uniformDosingType : self.variableDosingType;</span>
+    };
+&nbsp;
+    var destructureReal = function (number) {
+        var mantissa = parseFloat((number - Math.floor(number)).toFixed(2)),
+            abscissa = Math.ceil(number - mantissa);
+&nbsp;
+        var result = _.result(_.find(config.getDoseFractions(), function (item) {
+            return item.value === mantissa;
+        }), 'label');
+&nbsp;
+        var response = {
+            dose: number,
+            fraction: null
+        };
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (result) {
+<span class="cstat-no" title="statement not covered" >            response.dose = abscissa;</span>
+<span class="cstat-no" title="statement not covered" >            response.fraction = {</span>
+                label: result,
+                value: mantissa
+            };
+        }
+&nbsp;
+        return response;
+    };
+&nbsp;
+    this.encounterDate = encounterDate ? encounterDate : now;
+    this.asNeeded = this.asNeeded || false;
+    this.route = this.route || undefined;
+    this.durationUnit = this.durationUnit || inputOptionsConfig.defaultDurationUnit;
+    this.simpleDrugForm = this.simpleDrugForm || inputOptionsConfig.simpleDrugForm || false;
+    this.instructions = this.instructions || inputOptionsConfig.defaultInstructions;
+    this.autoExpireDate = this.autoExpireDate || undefined;
+    this.frequencyType = this.frequencyType || Bahmni.Clinical.Constants.dosingTypes.uniform;
+    this.uniformDosingType = this.uniformDosingType || {};
+    if (this.uniformDosingType.dose &amp;&amp; config.getDoseFractions &amp;&amp; !_.isEmpty(config.getDoseFractions())) {
+        var destructredNumber = destructureReal(this.uniformDosingType.dose);
+        this.uniformDosingType.dose = destructredNumber.dose === 0 ? <span class="branch-0 cbranch-no" title="branch not covered" >"" </span>: destructredNumber.dose;
+&nbsp;
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (destructredNumber.fraction) {
+<span class="cstat-no" title="statement not covered" >            this.uniformDosingType.doseFraction = destructredNumber.fraction;</span>
+        }
+    }
+    this.variableDosingType = this.variableDosingType || {};
+    this.durationInDays = this.durationInDays || 0;
+    this.isDiscontinuedAllowed = this.isDiscontinuedAllowed || true;
+    this.isEditAllowed = this.isEditAllowed || true;
+    this.quantityEnteredViaEdit = this.quantityEnteredViaEdit || false;
+    this.quantityEnteredManually = this.quantityEnteredManually || false;
+    this.quantityUnitEnteredManually = this.quantityUnitEnteredManually || false;
+    this.isBeingEdited = this.isBeingEdited || false;
+    this.orderAttributes = [];
+    this.isNonCodedDrug = this.isNonCodedDrug || false;
+    this.isDurationRequired = inputOptionsConfig.duration &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >inputOptionsConfig.duration.required == false </span>? <span class="branch-0 cbranch-no" title="branch not covered" >false </span>: true;
+&nbsp;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (inputOptionsConfig.defaultStartDate === false &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >!this.effectiveStartDate)</span> {
+<span class="cstat-no" title="statement not covered" >        this.effectiveStartDate = null;</span>
+    } else {
+        this.effectiveStartDate = this.effectiveStartDate || this.encounterDate;
+    }
+&nbsp;
+    this.isUniformFrequency = true;
+    this.showExtraInfo = false;
+&nbsp;
+    this.overlappingScheduledWith = function (otherDrugOrder) {
+        var dateUtil = Bahmni.Common.Util.DateUtil;
+        if (!otherDrugOrder.effectiveStopDate &amp;&amp; !this.effectiveStopDate) {
+            return true;
+        }
+&nbsp;
+        if (!otherDrugOrder.effectiveStopDate) {
+            return dateUtil.diffInSeconds(this.effectiveStopDate, otherDrugOrder.effectiveStartDate) &gt; -1;
+        }
+&nbsp;
+        if (!this.effectiveStopDate) {
+            return (dateUtil.diffInSeconds(this.effectiveStartDate, otherDrugOrder.effectiveStartDate) &gt; -1) &amp;&amp; (dateUtil.diffInSeconds(this.effectiveStartDate, otherDrugOrder.effectiveStopDate) &lt; 1);
+        }
+&nbsp;
+        return (dateUtil.diffInSeconds(this.effectiveStartDate, otherDrugOrder.effectiveStopDate) &lt;= 0 &amp;&amp; dateUtil.diffInSeconds(this.effectiveStopDate, otherDrugOrder.effectiveStartDate) &gt; -1);
+    };
+&nbsp;
+    var morphToMixedFraction = function (number) {
+        var mantissa = parseFloat((number - Math.floor(number)).toFixed(2)),
+            abscissa = Math.ceil(number - mantissa);
+&nbsp;
+        if (!config.getDoseFractions || _.isEmpty(config.getDoseFractions()) || mantissa === 0) {
+            return number;
+        }
+&nbsp;
+        var result = _.result(_.find(config.getDoseFractions(), function (item) {
+            return item.value === mantissa;
+        }), 'label');
+&nbsp;
+        if (!result) {
+            return number;
+        }
+&nbsp;
+        return abscissa ? "" + abscissa + result : <span class="branch-1 cbranch-no" title="branch not covered" >"" + result;</span>
+    };
+&nbsp;
+    var simpleDoseAndFrequency = function () {
+        var uniformDosingType = self.uniformDosingType;
+        var mantissa = self.uniformDosingType.doseFraction ? <span class="branch-0 cbranch-no" title="branch not covered" >self.uniformDosingType.doseFraction.value </span>: 0;
+        var dose = uniformDosingType.dose ? uniformDosingType.dose : 0;
+        var doseAndUnits;
+        if (uniformDosingType.dose || mantissa) {
+            doseAndUnits = blankIfFalsy(morphToMixedFraction(parseFloat(dose) + mantissa)) + " " + blankIfFalsy(self.doseUnits);
+        }
+&nbsp;
+        return addDelimiter(blankIfFalsy(doseAndUnits), ", ") +
+            addDelimiter(blankIfFalsy(uniformDosingType.frequency), ", ");
+    };
+&nbsp;
+    var numberBasedDoseAndFrequency = function () {
+        var variableDosingType = self.variableDosingType;
+        var variableDosingString = addDelimiter(morphToMixedFraction(variableDosingType.morningDose || 0) + "-" +
+            morphToMixedFraction(variableDosingType.afternoonDose || 0) +
+            "-" + morphToMixedFraction(variableDosingType.eveningDose || 0), " ");
+&nbsp;
+        if (!self.isVariableDoseEmpty(variableDosingType)) {
+            return addDelimiter((variableDosingString + blankIfFalsy(self.doseUnits)).trim(), ", ");
+        }
+    };
+&nbsp;
+    this.isVariableDoseEmpty = function (variableDosingType) {
+        return (!variableDosingType.morningDose &amp;&amp; !variableDosingType.afternoonDose &amp;&amp; !variableDosingType.eveningDose);
+    };
+&nbsp;
+    var asNeeded = function (asNeeded) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (asNeeded &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >config.translate)</span> {
+<span class="cstat-no" title="statement not covered" >            return config.translate(null, 'MEDICATION_AS_NEEDED');</span>
+        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (asNeeded) {
+<span class="cstat-no" title="statement not covered" >            return 'sos';</span>
+        } else {
+            return '';
+        }
+    };
+&nbsp;
+    var blankIfFalsy = function (value) {
+        return value ? value.toString().trim() : "";
+    };
+&nbsp;
+    var getDoseAndFrequency = function () {
+        return self.frequencyType === Bahmni.Clinical.Constants.dosingTypes.uniform ? simpleDoseAndFrequency() : numberBasedDoseAndFrequency();
+    };
+&nbsp;
+    var addDelimiter = function (item, delimiter) {
+        return item &amp;&amp; item.length &gt; 0 ? item + delimiter : item;
+    };
+&nbsp;
+    var getInstructions = function () {
+        if (self.instructions !== Bahmni.Clinical.Constants.asDirectedInstruction) {
+            return self.instructions;
+        }
+        return undefined;
+    };
+&nbsp;
+    var getOtherDescription = function (withRoute, withDuration) {
+        var otherDescription = addDelimiter(blankIfFalsy(getInstructions()), ", ") +
+            addDelimiter(blankIfFalsy(asNeeded(self.asNeeded)), ', ');
+        if (withRoute) {
+            otherDescription = otherDescription + addDelimiter(blankIfFalsy(self.route), " - ");
+        } else {
+            otherDescription = otherDescription.substring(0, otherDescription.length - 2);
+            otherDescription = addDelimiter(blankIfFalsy(otherDescription), " - ");
+        }
+        if (withDuration) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (self.duration &amp;&amp; self.duration != 0) {
+                otherDescription = otherDescription + addDelimiter(blankIfFalsy(self.duration), " ") + addDelimiter(blankIfFalsy(self.durationUnit), ", ");
+            }
+        }
+        otherDescription = otherDescription.substring(0, otherDescription.length - 2);
+        return otherDescription;
+    };
+&nbsp;
+    this.getDoseInformation = function () {
+        return getDoseAndFrequency();
+    };
+&nbsp;
+    this.getDisplayName = function () {
+        return this.drugNameDisplay ? this.drugNameDisplay : constructDrugNameDisplay(this.drug);
+    };
+&nbsp;
+    this.getDrugOrderName = <span class="fstat-no" title="function not covered" >function (showDrugForm) {</span>
+<span class="cstat-no" title="statement not covered" >        if (showDrugForm) {</span>
+<span class="cstat-no" title="statement not covered" >            return this.getDisplayName();</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            return self.drugNonCoded ? self.drugNonCoded : self.drug.name;</span>
+        }
+    };
+&nbsp;
+    this.getDescription = function () {
+        return addDelimiter(blankIfFalsy(getDoseAndFrequency()), " ") +
+            getOtherDescription(true, true);
+    };
+&nbsp;
+    this.getDescriptionWithoutRoute = function () {
+        return addDelimiter(blankIfFalsy(getDoseAndFrequency()), " ") +
+            getOtherDescription(false, true);
+    };
+&nbsp;
+    this.getDescriptionWithoutRouteAndDuration = function () {
+        var otherDescription = getOtherDescription(false, false);
+        var description = addDelimiter(blankIfFalsy(getDoseAndFrequency()), " ");
+        return otherDescription ? description + otherDescription : <span class="branch-1 cbranch-no" title="branch not covered" >description.substring(0, description.length - 2);</span>
+    };
+&nbsp;
+    this.getDescriptionWithoutDuration = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        var otherDescription = getOtherDescription(true, false);</span>
+<span class="cstat-no" title="statement not covered" >        var description = addDelimiter(blankIfFalsy(getDoseAndFrequency()), " ");</span>
+<span class="cstat-no" title="statement not covered" >        return otherDescription ? description + otherDescription : description.substring(0, description.length - 2);</span>
+    };
+&nbsp;
+    this.getDescriptionWithQuantity = function () {
+        var description = self.getDescription();
+        var qtywithUnit = self.getQuantityWithUnit();
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_.isEmpty(qtywithUnit)) {
+<span class="cstat-no" title="statement not covered" >            return description;</span>
+        }
+        return addDelimiter(description, "(") + addDelimiter(qtywithUnit, ")");
+    };
+&nbsp;
+    this.getQuantityWithUnit = function () {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (this.simpleDrugForm === true || self.quantity === 0) {
+<span class="cstat-no" title="statement not covered" >            return "";</span>
+        }
+        return addDelimiter(blankIfFalsy(self.quantity), " ") + blankIfFalsy(quantityUnitsFrom(self.quantityUnit));
+    };
+&nbsp;
+    var getFrequencyPerDay = function () {
+        var frequency = self.isUniformDosingType() &amp;&amp; _.find(config.frequencies, function (frequency) {
+            return self.uniformDosingType.frequency &amp;&amp; (frequency.name === self.uniformDosingType.frequency);
+        });
+&nbsp;
+        return frequency &amp;&amp; frequency.frequencyPerDay;
+    };
+&nbsp;
+    var findAnElement = function (array, element) {
+        var found = _.find(array, function (arrayElement) {
+            return arrayElement.name === element;
+        });
+&nbsp;
+        return found ? element : undefined;
+    };
+&nbsp;
+    var getDoseUnits = function (doseUnit) {
+        return findAnElement(config.doseUnits, doseUnit);
+    };
+&nbsp;
+    var getRoute = function (route) {
+        return findAnElement(config.routes, route);
+    };
+&nbsp;
+    this.changeDrug = function (drug) {
+        this.drug = drug;
+        if (!drug) {
+            return;
+        }
+        var defaults = drugFormDefaults[this.drug.form];
+        if (defaults) {
+            this.doseUnits = getDoseUnits(defaults.doseUnits);
+            this.route = getRoute(defaults.route);
+        }
+    };
+&nbsp;
+    this.calculateDurationUnit = function () {
+        if (self.frequencyType === Bahmni.Clinical.Constants.dosingTypes.uniform &amp;&amp; self.uniformDosingType.frequency != null) {
+            var defaultDurationUnitMap = inputOptionsConfig.frequencyDefaultDurationUnitsMap || [];
+&nbsp;
+            defaultDurationUnitMap.forEach(function (range) {
+                var minFrequency = eval(range.minFrequency); // eslint-disable-line no-eval
+                var maxFrequency = eval(range.maxFrequency); // eslint-disable-line no-eval
+                if ((!minFrequency || minFrequency &lt; getFrequencyPerDay()) &amp;&amp;
+                    (!maxFrequency || getFrequencyPerDay() &lt;= maxFrequency)) {
+                    self.durationUnit = range.defaultDurationUnit;
+                }
+            });
+        }
+    };
+&nbsp;
+    this.setFrequencyType = function (type) {
+        self.frequencyType = type;
+        if (self.frequencyType === Bahmni.Clinical.Constants.dosingTypes.variable) {
+            if (self.uniformDosingType.doseUnits) {
+                self.variableDosingType.doseUnits = self.uniformDosingType.doseUnits;
+            }
+            self.uniformDosingType = {};
+        } else {
+            if (self.variableDosingType.doseUnits) {
+                self.uniformDosingType.doseUnits = self.variableDosingType.doseUnits;
+            }
+            self.variableDosingType = {};
+        }
+    };
+&nbsp;
+    this.toggleFrequency = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        if (this.isUniformFrequency) {</span>
+<span class="cstat-no" title="statement not covered" >            self.frequencyType = Bahmni.Clinical.Constants.dosingTypes.variable;</span>
+<span class="cstat-no" title="statement not covered" >            self.setFrequencyType(self.frequencyType);</span>
+<span class="cstat-no" title="statement not covered" >            this.isUniformFrequency = false;</span>
+        } else {
+<span class="cstat-no" title="statement not covered" >            self.frequencyType = Bahmni.Clinical.Constants.dosingTypes.uniform;</span>
+<span class="cstat-no" title="statement not covered" >            self.setFrequencyType(self.frequencyType);</span>
+<span class="cstat-no" title="statement not covered" >            this.isUniformFrequency = true;</span>
+        }
+    };
+&nbsp;
+    this.toggleExtraInfo = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        this.showExtraInfo = !this.showExtraInfo;</span>
+    };
+&nbsp;
+    this.isCurrentDosingTypeEmpty = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        var dosingType = getDosingType();</span>
+<span class="cstat-no" title="statement not covered" >        return _.every(dosingType, <span class="fstat-no" title="function not covered" >function (element) {</span> <span class="cstat-no" title="statement not covered" >return !element; </span>});</span>
+    };
+&nbsp;
+    this.isVariableDosingType = function () {
+        return self.isFrequencyType(Bahmni.Clinical.Constants.dosingTypes.variable);
+    };
+&nbsp;
+    this.isUniformDosingType = function () {
+        return self.isFrequencyType(Bahmni.Clinical.Constants.dosingTypes.uniform);
+    };
+&nbsp;
+    this.isFrequencyType = function (type) {
+        return self.frequencyType === type;
+    };
+&nbsp;
+    this.setQuantityEnteredManually = function () {
+        self.quantityEnteredManually = true;
+    };
+&nbsp;
+    this.setQuantityUnitEnteredManually = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        self.quantityUnitEnteredManually = true;</span>
+    };
+&nbsp;
+    this.calculateDurationInDays = function () {
+        var durationUnitFromConfig = _.find(durationUnits, function (unit) {
+            return unit.name === self.durationUnit;
+        });
+        self.durationInDays = self.duration ? self.duration * (durationUnitFromConfig &amp;&amp; durationUnitFromConfig.factor || 1) : Number.NaN;
+    };
+&nbsp;
+    var quantityUnitsFrom = function (doseUnit) {
+        return doseUnit;
+    };
+&nbsp;
+    var modifyForReverseSyncIfRequired = function (drugOrder) {
+        if (drugOrder.reverseSynced) {
+            drugOrder.uniformDosingType = {};
+            drugOrder.quantity = undefined;
+            drugOrder.quantityUnit = undefined;
+            drugOrder.doseUnits = undefined;
+&nbsp;
+            drugOrder.changeDrug(drugOrder.drug);
+        }
+    };
+&nbsp;
+    this.calculateQuantityAndUnit = function () {
+        self.calculateDurationInDays();
+        if (!self.quantityEnteredManually &amp;&amp; !self.quantityEnteredViaEdit) {
+            if (self.frequencyType === Bahmni.Clinical.Constants.dosingTypes.uniform) {
+                var mantissa = self.uniformDosingType.doseFraction ? <span class="branch-0 cbranch-no" title="branch not covered" >self.uniformDosingType.doseFraction.value </span>: 0;
+                var dose = self.uniformDosingType.dose ? self.uniformDosingType.dose : 0;
+                self.quantity = (dose + mantissa) * (self.uniformDosingType.frequency ? getFrequencyPerDay() : 0) * self.durationInDays;
+            } else <span class="missing-if-branch" title="else path not taken" >E</span>if (self.frequencyType === Bahmni.Clinical.Constants.dosingTypes.variable) {
+                var dose = self.variableDosingType;
+                self.quantity = (dose.morningDose + dose.afternoonDose + dose.eveningDose) * self.durationInDays;
+            }
+&nbsp;
+            if (self.quantity % 1 !== 0) {
+                self.quantity = self.quantity - (self.quantity % 1) + 1;
+            }
+        }
+        <span class="missing-if-branch" title="if path not taken" >I</span>if ((self.quantityEnteredViaEdit &amp;&amp; self.quantityUnit) || self.quantityUnitEnteredManually) {
+<span class="cstat-no" title="statement not covered" >            self.quantityUnit = quantityUnitsFrom(self.quantityUnit);</span>
+        } else {
+            self.quantityUnit = quantityUnitsFrom(self.doseUnits);
+        }
+        self.quantityEnteredViaEdit = false;
+        self.quantityUnitEnteredViaEdit = false;
+    };
+&nbsp;
+    this.isStopped = function () {
+        return !!self.dateStopped;
+    };
+&nbsp;
+    this.isScheduled = function () {
+        return !self.isDiscontinuedOrStopped() &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >self.scheduledDate </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >self.scheduledDate &gt; today();</span>
+    };
+&nbsp;
+    this.isActive = function () {
+        return !self.isDiscontinuedOrStopped() &amp;&amp; (!self.effectiveStopDate || self.effectiveStopDate &gt;= today());
+    };
+&nbsp;
+    this.discontinued = function () {
+        return self.action === Bahmni.Clinical.Constants.orderActions.discontinue;
+    };
+&nbsp;
+    this.isDiscontinuedOrStopped = function () {
+        return (self.isStopped() || self.discontinued()) &amp;&amp; self.isMarkedForDiscontinue === undefined;
+    };
+&nbsp;
+    var defaultQuantityUnit = function (drugOrder) {
+        if (!drugOrder.quantityUnit) {
+            drugOrder.quantityUnit = "Unit(s)";
+        }
+    };
+&nbsp;
+    this.getSpanDetails = function () {
+        var valueString = '- ';
+        _.forEach(this.span, function (value, key) {
+            <span class="missing-if-branch" title="else path not taken" >E</span>if (value) {
+                valueString += value + " " + key + " + ";
+            }
+        });
+        return valueString.substring(0, valueString.length - 3);
+    };
+&nbsp;
+    this.getDurationAndDurationUnits = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        return self.duration ? self.duration + " " + self.durationUnit : "";</span>
+    };
+&nbsp;
+    this.refill = function (existingOrderStopDate) {
+        var newDrugOrder = new Bahmni.Clinical.DrugOrderViewModel(config, this);
+        newDrugOrder.previousOrderUuid = undefined;
+        newDrugOrder.action = Bahmni.Clinical.Constants.orderActions.new;
+        newDrugOrder.uuid = undefined;
+        newDrugOrder.dateActivated = undefined;
+        var oldEffectiveStopDate = existingOrderStopDate ? <span class="branch-0 cbranch-no" title="branch not covered" >new Date(existingOrderStopDate) </span>: new Date(self.effectiveStopDate);
+        newDrugOrder.effectiveStartDate = oldEffectiveStopDate &gt;= today() ? DateUtil.addSeconds(oldEffectiveStopDate, 1) : today();
+        newDrugOrder.calculateDurationInDays();
+        newDrugOrder.effectiveStopDate = DateUtil.addDays(DateUtil.parse(newDrugOrder.effectiveStartDate), newDrugOrder.durationInDays);
+        modifyForReverseSyncIfRequired(newDrugOrder);
+        defaultQuantityUnit(newDrugOrder);
+        newDrugOrder.orderReasonText = null;
+        newDrugOrder.orderReasonConcept = null;
+        newDrugOrder.orderSetUuid = self.orderSetUuid;
+        newDrugOrder.orderGroupUuid = undefined;
+        newDrugOrder.isNewOrderSet = false;
+        return newDrugOrder;
+    };
+&nbsp;
+    this.revise = function () {
+        var newDrugOrder = new Bahmni.Clinical.DrugOrderViewModel(config, this);
+&nbsp;
+        newDrugOrder.previousOrderUuid = self.uuid;
+        self.calculateDurationInDays();
+        newDrugOrder.previousOrderDurationInDays = self.durationInDays;
+        newDrugOrder.action = Bahmni.Clinical.Constants.orderActions.revise;
+        newDrugOrder.uuid = undefined;
+        newDrugOrder.dateActivated = undefined;
+        newDrugOrder.drugNameDisplay = constructDrugNameDisplay(self.drug) || <span class="branch-1 cbranch-no" title="branch not covered" >self.drugNonCoded </span>|| <span class="branch-2 cbranch-no" title="branch not covered" >self.concept.name;</span>
+&nbsp;
+        // this field is just a flag that you turn on when revising the first time. It is turned off at the first
+        // call of calculateQuantityAndUnit(). Bad code. Needs change. // I agree.
+        newDrugOrder.quantityEnteredViaEdit = true;
+        newDrugOrder.isBeingEdited = true;
+&nbsp;
+        newDrugOrder.orderSetUuid = self.orderSetUuid;
+        newDrugOrder.orderGroupUuid = self.orderGroupUuid;
+        newDrugOrder.isNewOrderSet = false;
+&nbsp;
+        if (newDrugOrder.effectiveStartDate &lt;= today()) {
+            newDrugOrder.effectiveStartDate = today();
+        }
+&nbsp;
+        modifyForReverseSyncIfRequired(newDrugOrder);
+        defaultQuantityUnit(newDrugOrder);
+&nbsp;
+        return newDrugOrder;
+    };
+&nbsp;
+    this.cloneForEdit = function (index, config) {
+        var editableDrugOrder = new Bahmni.Clinical.DrugOrderViewModel(config, this);
+        editableDrugOrder.currentIndex = index;
+        editableDrugOrder.isBeingEdited = true;
+        editableDrugOrder.quantityEnteredViaEdit = true;
+        editableDrugOrder.orderSetUuid = self.orderSetUuid;
+        editableDrugOrder.orderGroupUuid = self.orderGroupUuid;
+        defaultQuantityUnit(editableDrugOrder);
+        if (editableDrugOrder.frequencyType === Bahmni.Clinical.Constants.dosingTypes.variable) {
+            editableDrugOrder.isUniformFrequency = false;
+        }
+        return editableDrugOrder;
+    };
+&nbsp;
+    this.isDoseMandatory = function () {
+        inputOptionsConfig.routesToMakeDoseSectionNonMandatory = inputOptionsConfig.routesToMakeDoseSectionNonMandatory || [];
+        return (inputOptionsConfig.routesToMakeDoseSectionNonMandatory.indexOf(this.route) === -1) &amp;&amp;
+            (!_.isEmpty(self.uniformDosingType.doseUnits) || !_.isEmpty(self.variableDosingType.doseUnits));
+    };
+&nbsp;
+    this.isMantissaRequired = function () {
+        return (this.isDoseMandatory() &amp;&amp; this.isUniformFrequency &amp;&amp; !this.uniformDosingType.dose);
+    };
+&nbsp;
+    this.isUniformDoseUnitRequired = function () {
+        return (this.uniformDosingType.dose) ||
+               (this.uniformDosingType.doseFraction) ||
+               (this.isUniformFrequency &amp;&amp; this.isDoseMandatory());
+    };
+&nbsp;
+    this.isUniformDoseRequired = function () {
+        return this.isUniformFrequency &amp;&amp;
+               this.isDoseMandatory() &amp;&amp;
+               !this.uniformDosingType.doseFraction;
+    };
+&nbsp;
+    this.isVariableDoseRequired = function () {
+        if (!this.isUniformFrequency) {
+            if (this.isDoseMandatory()) {
+                return true;
+            } else {
+                return (self.variableDosingType.morningDose ||
+                    self.variableDosingType.afternoonDose ||
+                    self.variableDosingType.eveningDose
+                );
+            }
+        }
+    };
+    this.loadOrderAttributes = function (drugOrderResponse) {
+        if (config &amp;&amp; config.orderAttributes) {
+            var findOrderAttribute = function (drugOrder, orderAttribute) {
+                return _.find(drugOrder.orderAttributes, function (drugOrderAttribute) {
+                    return orderAttribute.name === drugOrderAttribute.name;
+                });
+            };
+&nbsp;
+            config.orderAttributes.forEach(function (orderAttributeInConfig) {
+                var orderAttributeInDrugOrder = findOrderAttribute(drugOrderResponse, orderAttributeInConfig);
+                var existingOrderAttribute = findOrderAttribute(self, orderAttributeInConfig);
+                var orderAttribute = existingOrderAttribute || {};
+                orderAttribute.name = orderAttributeInConfig.name;
+                orderAttribute.shortName = orderAttributeInConfig.shortName;
+                orderAttribute.conceptUuid = orderAttributeInConfig.uuid;
+                orderAttribute.value = orderAttributeInDrugOrder &amp;&amp; orderAttributeInDrugOrder.value === "true";
+                orderAttribute.obsUuid = orderAttributeInDrugOrder ? orderAttributeInDrugOrder.obsUuid : undefined;
+                orderAttribute.encounterUuid = orderAttributeInDrugOrder ? orderAttributeInDrugOrder.encounterUuid : undefined;
+                if (!existingOrderAttribute) {
+                    self.orderAttributes.push(orderAttribute);
+                }
+            });
+        }
+    };
+&nbsp;
+    this.getOrderAttributesAsObs = function () {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (self.orderAttributes) {
+            var orderAttributesWithValues = self.orderAttributes.filter(function (orderAttribute) { return orderAttribute.value || orderAttribute.obsUuid; });
+            return orderAttributesWithValues.map(function (orderAttribute) {
+                return {
+                    uuid: orderAttribute.obsUuid,
+                    value: orderAttribute.value ? true : false,
+                    orderUuid: self.uuid,
+                    concept: {uuid: orderAttribute.conceptUuid }
+                };
+            });
+        }
+    };
+&nbsp;
+    this.loadOrderAttributes({});
+&nbsp;
+    var calculateUniformDose = function () {
+        var mantissa = self.uniformDosingType.doseFraction ? <span class="branch-0 cbranch-no" title="branch not covered" >self.uniformDosingType.doseFraction.value </span>: 0;
+        var dose = self.uniformDosingType.dose ? self.uniformDosingType.dose : 0;
+        self.uniformDosingType.doseFraction = void 0;
+        return !dose &amp;&amp; !mantissa ? null : dose + mantissa;
+    };
+&nbsp;
+    this.setUniformDoseFraction = function () {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (self.frequencyType === "uniform") {
+            self.uniformDosingType.dose = calculateUniformDose();
+        }
+    };
+&nbsp;
+    this.getDoseAndUnits = function () {
+        var variableDosingType = self.variableDosingType;
+        var variableDosingString = addDelimiter(morphToMixedFraction(variableDosingType.morningDose || 0) + "-" + morphToMixedFraction(variableDosingType.afternoonDose || 0) + "-" + morphToMixedFraction(variableDosingType.eveningDose || 0), " ");
+&nbsp;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (self.frequencyType === Bahmni.Clinical.Constants.dosingTypes.uniform) {
+            var value = morphToMixedFraction(calculateUniformDose());
+            return value ? value + " " + blankIfFalsy(self.doseUnits) : "";
+        } else {
+<span class="cstat-no" title="statement not covered" >            return (variableDosingString + blankIfFalsy(self.doseUnits)).trim();</span>
+        }
+    };
+&nbsp;
+    this.getFrequency = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        return self.frequencyType === Bahmni.Clinical.Constants.dosingTypes.uniform ? blankIfFalsy(self.uniformDosingType.frequency) : "";</span>
+    };
+&nbsp;
+    this.calculateEffectiveStopDate = function () {
+        if (this.durationInDays) {
+            this.effectiveStopDate = DateUtil
+                .addDays(
+                DateUtil.parse(this.effectiveStartDate), this.durationInDays);
+        }
+    };
+};
+&nbsp;
+Bahmni.Clinical.DrugOrderViewModel.createFromContract = function (drugOrderResponse, config) {
+    var DateUtil = Bahmni.Common.Util.DateUtil;
+    drugOrderResponse.dosingInstructions = drugOrderResponse.dosingInstructions || {};
+    var administrationInstructions = JSON.parse(drugOrderResponse.dosingInstructions.administrationInstructions || "{}");
+    var viewModel = new Bahmni.Clinical.DrugOrderViewModel(config);
+    viewModel.asNeeded = !drugOrderResponse.dosingInstructions.asNeeded ? false : <span class="branch-1 cbranch-no" title="branch not covered" >drugOrderResponse.dosingInstructions.asNeeded;</span>
+    viewModel.route = drugOrderResponse.dosingInstructions.route;
+&nbsp;
+    if (drugOrderResponse.effectiveStartDate) {
+        viewModel.effectiveStartDate = DateUtil.parse(drugOrderResponse.effectiveStartDate);
+    }
+    viewModel.effectiveStopDate = drugOrderResponse.effectiveStopDate;
+    viewModel.durationUnit = drugOrderResponse.durationUnits;
+    viewModel.scheduledDate = drugOrderResponse.effectiveStartDate;
+    viewModel.duration = drugOrderResponse.duration;
+    if (drugOrderResponse.dosingInstructions.frequency || drugOrderResponse.dosingInstructions.dose) {
+        viewModel.frequencyType = Bahmni.Clinical.Constants.dosingTypes.uniform;
+        viewModel.uniformDosingType = {
+            dose: drugOrderResponse.dosingInstructions.dose,
+            doseUnits: drugOrderResponse.dosingInstructions.doseUnits,
+            frequency: drugOrderResponse.dosingInstructions.frequency
+        };
+    } else <span class="missing-if-branch" title="if path not taken" >I</span>if (administrationInstructions.morningDose || administrationInstructions.afternoonDose || administrationInstructions.eveningDose) {
+<span class="cstat-no" title="statement not covered" >        viewModel.frequencyType = Bahmni.Clinical.Constants.dosingTypes.variable;</span>
+<span class="cstat-no" title="statement not covered" >        viewModel.variableDosingType = {</span>
+            morningDose: administrationInstructions.morningDose,
+            afternoonDose: administrationInstructions.afternoonDose,
+            eveningDose: administrationInstructions.eveningDose,
+            doseUnits: drugOrderResponse.dosingInstructions.doseUnits
+        };
+    } else {
+        viewModel.frequencyType = Bahmni.Clinical.Constants.dosingTypes.uniform;
+        viewModel.reverseSynced = true;
+        viewModel.uniformDosingType = {
+            dose: parseFloat(administrationInstructions.dose),
+            doseUnits: administrationInstructions.doseUnits
+        };
+    }
+    viewModel.instructions = administrationInstructions.instructions;
+    viewModel.additionalInstructions = administrationInstructions.additionalInstructions;
+    viewModel.quantity = drugOrderResponse.dosingInstructions.quantity;
+    viewModel.quantityUnit = drugOrderResponse.dosingInstructions.quantityUnits;
+    viewModel.drug = drugOrderResponse.drug;
+    viewModel.provider = drugOrderResponse.provider;
+    viewModel.creatorName = drugOrderResponse.creatorName;
+    viewModel.action = drugOrderResponse.action;
+    viewModel.concept = drugOrderResponse.concept;
+    viewModel.dateStopped = drugOrderResponse.dateStopped;
+    viewModel.uuid = drugOrderResponse.uuid;
+    viewModel.previousOrderUuid = drugOrderResponse.previousOrderUuid;
+    viewModel.dateActivated = drugOrderResponse.dateActivated;
+    viewModel.encounterUuid = drugOrderResponse.encounterUuid;
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (drugOrderResponse.orderReasonConcept) {
+<span class="cstat-no" title="statement not covered" >        viewModel.orderReasonConcept = drugOrderResponse.orderReasonConcept;</span>
+    }
+    viewModel.orderReasonText = drugOrderResponse.orderReasonText;
+    viewModel.orderNumber = drugOrderResponse.orderNumber &amp;&amp; parseInt(drugOrderResponse.orderNumber.replace("ORD-", ""));
+    viewModel.drugNonCoded = drugOrderResponse.drugNonCoded;
+    viewModel.isNonCodedDrug = drugOrderResponse.drugNonCoded ? <span class="branch-0 cbranch-no" title="branch not covered" >true </span>: false;
+    viewModel.drugNameDisplay = viewModel.drugNonCoded || constructDrugNameDisplay(viewModel.drug)
+        || <span class="branch-2 cbranch-no" title="branch not covered" >_.get(viewModel, 'concept.name');</span>
+    if (config) {
+        viewModel.loadOrderAttributes(drugOrderResponse);
+    } else {
+        viewModel.orderAttributes = drugOrderResponse.orderAttributes;
+    }
+    viewModel.visit = drugOrderResponse.visit;
+    viewModel.voided = drugOrderResponse.voided;
+    viewModel.dosage = viewModel.getDoseAndUnits();
+    viewModel.isDrugRetired = drugOrderResponse.retired;
+    if (drugOrderResponse.orderGroup) {
+        viewModel.orderGroupUuid = drugOrderResponse.orderGroup.uuid;
+        viewModel.orderSetUuid = drugOrderResponse.orderGroup.orderSet.uuid;
+        viewModel.sortWeight = drugOrderResponse.sortWeight;
+    }
+    return viewModel;
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

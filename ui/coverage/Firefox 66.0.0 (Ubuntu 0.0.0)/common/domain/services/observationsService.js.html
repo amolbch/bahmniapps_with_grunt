@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/domain/services/observationsService.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">common/domain/services/observationsService.js</span></h1>
+    <h2>
+        Statements: <span class="metric">46.43% <small>(13 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">62.5% <small>(5 / 8)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">46.43% <small>(13 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/domain/services/</a> &#187; observationsService.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.domain')
+    .service('observationsService', ['$http', function ($http) {
+        this.fetch = <span class="fstat-no" title="function not covered" >function (patientUuid, conceptNames, scope, numberOfVisits, visitUuid, obsIgnoreList, filterObsWithOrders, patientProgramUuid) {</span>
+<span class="cstat-no" title="statement not covered" >            var params = {concept: conceptNames};</span>
+<span class="cstat-no" title="statement not covered" >            if (obsIgnoreList) {</span>
+<span class="cstat-no" title="statement not covered" >                params.obsIgnoreList = obsIgnoreList;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            if (filterObsWithOrders != null) {</span>
+<span class="cstat-no" title="statement not covered" >                params.filterObsWithOrders = filterObsWithOrders;</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            if (visitUuid) {</span>
+<span class="cstat-no" title="statement not covered" >                params.visitUuid = visitUuid;</span>
+<span class="cstat-no" title="statement not covered" >                params.scope = scope;</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                params.patientUuid = patientUuid;</span>
+<span class="cstat-no" title="statement not covered" >                params.numberOfVisits = numberOfVisits;</span>
+<span class="cstat-no" title="statement not covered" >                params.scope = scope;</span>
+<span class="cstat-no" title="statement not covered" >                params.patientProgramUuid = patientProgramUuid;</span>
+            }
+<span class="cstat-no" title="statement not covered" >            return $http.get(Bahmni.Common.Constants.observationsUrl, {</span>
+                params: params,
+                withCredentials: true
+            });
+        };
+&nbsp;
+        this.getByUuid = function (observationUuid) {
+            return $http.get(Bahmni.Common.Constants.observationsUrl, {
+                params: {observationUuid: observationUuid},
+                withCredentials: true
+            });
+        };
+&nbsp;
+        this.getRevisedObsByUuid = <span class="fstat-no" title="function not covered" >function (observationUuid) {</span>
+<span class="cstat-no" title="statement not covered" >            return $http.get(Bahmni.Common.Constants.observationsUrl, {</span>
+                params: {observationUuid: observationUuid, revision: "latest"},
+                withCredentials: true
+            });
+        };
+&nbsp;
+        this.fetchForEncounter = function (encounterUuid, conceptNames) {
+            return $http.get(Bahmni.Common.Constants.observationsUrl, {
+                params: {encounterUuid: encounterUuid, concept: conceptNames},
+                withCredentials: true
+            });
+        };
+&nbsp;
+        this.fetchForPatientProgram = function (patientProgramUuid, conceptNames, scope, obsIgnoreList) {
+            return $http.get(Bahmni.Common.Constants.observationsUrl, {
+                params: {patientProgramUuid: patientProgramUuid, concept: conceptNames, scope: scope, obsIgnoreList: obsIgnoreList},
+                withCredentials: true
+            });
+        };
+&nbsp;
+        this.getObsRelationship = <span class="fstat-no" title="function not covered" >function (targetObsUuid) {</span>
+<span class="cstat-no" title="statement not covered" >            return $http.get(Bahmni.Common.Constants.obsRelationshipUrl, {</span>
+                params: {
+                    targetObsUuid: targetObsUuid
+                },
+                withCredentials: true
+            });
+        };
+&nbsp;
+        this.getObsInFlowSheet = function (patientUuid, conceptSet, groupByConcept, orderByConcept, conceptNames,
+                                           numberOfVisits, initialCount, latestCount, groovyExtension,
+                                           startDate, endDate, patientProgramUuid) {
+            var params = {
+                patientUuid: patientUuid,
+                conceptSet: conceptSet,
+                groupByConcept: groupByConcept,
+                orderByConcept: orderByConcept,
+                conceptNames: conceptNames,
+                numberOfVisits: numberOfVisits,
+                initialCount: initialCount,
+                latestCount: latestCount,
+                name: groovyExtension,
+                startDate: Bahmni.Common.Util.DateUtil.parseLongDateToServerFormat(startDate),
+                endDate: Bahmni.Common.Util.DateUtil.parseLongDateToServerFormat(endDate),
+                enrollment: patientProgramUuid
+            };
+            return $http.get(Bahmni.Common.Constants.observationsUrl + "/flowSheet", {
+                params: params,
+                withCredentials: true
+            });
+        };
+    }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

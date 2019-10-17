@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for home/controllers/loginController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">home/controllers/loginController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">70.59% <small>(84 / 119)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">50% <small>(19 / 38)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">59.38% <small>(19 / 32)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">70.34% <small>(83 / 118)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">home/controllers/</a> &#187; loginController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">15</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.home')
+    .controller('LoginController', ['$rootScope', '$scope', '$window', '$location', 'sessionService', 'initialData', 'spinner', '$q', '$stateParams', '$bahmniCookieStore', 'localeService', '$translate', 'userService', 'auditLogService',
+        function ($rootScope, $scope, $window, $location, sessionService, initialData, spinner, $q, $stateParams, $bahmniCookieStore, localeService, $translate, userService, auditLogService) {
+            var redirectUrl = $location.search()['from'];
+            var landingPagePath = "/dashboard";
+            var loginPagePath = "/login";
+            $scope.locations = initialData.locations;
+            $scope.loginInfo = {};
+            var localeLanguages = [];
+&nbsp;
+            var getLocalTimeZone = function () {
+                var currentLocalTime = new Date().toString();
+                var localTimeZoneList = currentLocalTime.split(" ");
+                var localTimeZone = localTimeZoneList[localTimeZoneList.length - 1];
+                localTimeZone = localTimeZone.substring(1, localTimeZone.length - 1);
+                return localTimeZone;
+            };
+&nbsp;
+            var findLanguageByLocale = function (localeCode) {
+                return _.find(localeLanguages, function (localeLanguage) {
+                    return localeLanguage.code == localeCode;
+                });
+            };
+&nbsp;
+            var logAuditForLoginAttempts = function (eventType, isFailedEvent) {
+                if ($scope.loginInfo.username) {
+                    var messageParams = isFailedEvent ? {userName: $scope.loginInfo.username} : undefined;
+                    auditLogService.log(undefined, eventType, messageParams, 'MODULE_LABEL_LOGIN_KEY');
+                }
+            };
+&nbsp;
+            var promise = localeService.allowedLocalesList();
+            localeService.serverDateTime().then(function (response) {
+                var serverTime = response.data.date;
+                var offset = response.data.offset;
+                var localTime = new Date().toLocaleString();
+                var localtimeZone = getLocalTimeZone();
+                var localeTimeZone = localTime + " " + localtimeZone;
+                $scope.timeZoneObject = { serverTime: serverTime, localeTimeZone: localeTimeZone};
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (offset &amp;&amp; !new Date().toString().includes(offset)) {
+                    $scope.warning = "Warning";
+                    $scope.warningMessage = "WARNING_SERVER_TIME_ZONE_MISMATCH";
+                }
+            });
+&nbsp;
+            localeService.getLoginText().then(function (response) {
+                $scope.logo = response.data.loginPage.logo;
+                $scope.bottomLogos = response.data.loginPage.bottomLogos;
+                $scope.headerText = response.data.loginPage.showHeaderText;
+                $scope.titleText = response.data.loginPage.showTitleText;
+                $scope.helpLink = response.data.helpLink.url;
+            });
+&nbsp;
+            localeService.getLocalesLangs().then(function (response) {
+                localeLanguages = response.data.locales;
+            }).finally(function () {
+                promise.then(function (response) {
+                    var localeList = response.data.replace(/\s+/g, '').split(',');
+                    $scope.locales = [];
+                    _.forEach(localeList, function (locale) {
+                        var localeLanguage = findLanguageByLocale(locale);
+                        if (_.isUndefined(localeLanguage)) {
+                            $scope.locales.push({"code": locale, "nativeName": locale});
+                        } else {
+                            $scope.locales.push(localeLanguage);
+                        }
+                    });
+                    $scope.selectedLocale = $translate.use() ? <span class="branch-0 cbranch-no" title="branch not covered" >$translate.use() </span>: $scope.locales[0].code;
+                });
+            });
+&nbsp;
+            $scope.isChrome = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                if ($window.navigator.userAgent.indexOf("Chrome") != -1) {</span>
+<span class="cstat-no" title="statement not covered" >                    return true;</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return false;</span>
+            };
+&nbsp;
+            $scope.$watch('selectedLocale', <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                $translate.use($scope.selectedLocale);</span>
+            });
+&nbsp;
+            var getLoginLocationUuid = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return $bahmniCookieStore.get(Bahmni.Common.Constants.locationCookieName) ? $bahmniCookieStore.get(Bahmni.Common.Constants.locationCookieName).uuid : null;</span>
+            };
+            var getLastLoggedinLocation = function () {
+                return _.find(initialData.locations, <span class="fstat-no" title="function not covered" >function (location) {</span>
+<span class="cstat-no" title="statement not covered" >                    return location.uuid === getLoginLocationUuid();</span>
+                });
+            };
+&nbsp;
+            $scope.loginInfo.currentLocation = getLastLoggedinLocation();
+&nbsp;
+            <span class="missing-if-branch" title="if path not taken" >I</span>if ($stateParams.showLoginMessage) {
+<span class="cstat-no" title="statement not covered" >                $scope.errorMessageTranslateKey = "LOGIN_LABEL_LOGIN_ERROR_MESSAGE_KEY";</span>
+            }
+&nbsp;
+            var redirectToLandingPageIfAlreadyAuthenticated = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                sessionService.get().then(<span class="fstat-no" title="function not covered" >function (data) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (data.authenticated) {</span>
+<span class="cstat-no" title="statement not covered" >                        $location.path(landingPagePath);</span>
+                    }
+                });
+            };
+&nbsp;
+            <span class="missing-if-branch" title="if path not taken" >I</span>if ($location.path() === loginPagePath) {
+<span class="cstat-no" title="statement not covered" >                redirectToLandingPageIfAlreadyAuthenticated();</span>
+            }
+            var onSuccessfulAuthentication = function () {
+                $bahmniCookieStore.remove(Bahmni.Common.Constants.retrospectiveEntryEncounterDateCookieName, {
+                    path: '/',
+                    expires: 1
+                });
+                $rootScope.$broadcast('event:auth-loggedin');
+                $scope.loginInfo.currentLocation = getLastLoggedinLocation();
+            };
+&nbsp;
+            $scope.login = function () {
+                $scope.errorMessageTranslateKey = null;
+                var deferrable = $q.defer();
+&nbsp;
+                var ensureNoSessionIdInRoot = function () {
+                    // See https://bahmni.mingle.thoughtworks.com/projects/bahmni_emr/cards/2934
+                    // The cookie should ideally not be set at root, and is interfering with
+                    // authentication for reporting. This seems to be one of the best places to remove it.
+                    $bahmniCookieStore.remove(Bahmni.Common.Constants.JSESSIONID, {
+                        path: '/',
+                        expires: 1
+                    });
+                };
+&nbsp;
+                sessionService.loginUser($scope.loginInfo.username, $scope.loginInfo.password, $scope.loginInfo.currentLocation, $scope.loginInfo.otp).then(
+                    function (data) {
+                        ensureNoSessionIdInRoot();
+                        <span class="missing-if-branch" title="if path not taken" >I</span>if (data &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >data.firstFactAuthorization)</span> {
+<span class="cstat-no" title="statement not covered" >                            $scope.showOTP = true;</span>
+<span class="cstat-no" title="statement not covered" >                            deferrable.resolve(data);</span>
+<span class="cstat-no" title="statement not covered" >                            return;</span>
+                        }
+                        sessionService.loadCredentials().then(function () {
+                            onSuccessfulAuthentication();
+                            $rootScope.currentUser.addDefaultLocale($scope.selectedLocale);
+                            userService.savePreferences().then(
+<span class="fstat-no" title="function not covered" >                                function () {</span> <span class="cstat-no" title="statement not covered" >deferrable.resolve(); </span>},
+<span class="fstat-no" title="function not covered" >                                function (error) {</span> <span class="cstat-no" title="statement not covered" >deferrable.reject(error); </span>}
+                            );
+                            logAuditForLoginAttempts("USER_LOGIN_SUCCESS");
+                        }, <span class="fstat-no" title="function not covered" >function (error) {</span>
+<span class="cstat-no" title="statement not covered" >                            $scope.errorMessageTranslateKey = error;</span>
+<span class="cstat-no" title="statement not covered" >                            deferrable.reject(error);</span>
+<span class="cstat-no" title="statement not covered" >                            logAuditForLoginAttempts("USER_LOGIN_FAILED", true);</span>
+                        }
+                        );
+                    },
+                    function (error) {
+                        $scope.errorMessageTranslateKey = error;
+                        <span class="missing-if-branch" title="if path not taken" >I</span>if (error === 'LOGIN_LABEL_MAX_FAILED_ATTEMPTS' || error == 'LOGIN_LABEL_OTP_EXPIRED') {
+<span class="cstat-no" title="statement not covered" >                            deleteUserCredentialsAndShowLoginPage();</span>
+                        } else <span class="missing-if-branch" title="if path not taken" >I</span>if (error == 'LOGIN_LABEL_WRONG_OTP_MESSAGE_KEY') {
+<span class="cstat-no" title="statement not covered" >                            delete $scope.loginInfo.otp;</span>
+                        }
+                        deferrable.reject(error);
+                        logAuditForLoginAttempts("USER_LOGIN_FAILED", true);
+                    }
+                );
+&nbsp;
+                var deleteUserCredentialsAndShowLoginPage = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.showOTP = false;</span>
+<span class="cstat-no" title="statement not covered" >                    delete $scope.loginInfo.otp;</span>
+<span class="cstat-no" title="statement not covered" >                    delete $scope.loginInfo.username;</span>
+<span class="cstat-no" title="statement not covered" >                    delete $scope.loginInfo.password;</span>
+                };
+&nbsp;
+                $scope.resendOTP = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    var promise = sessionService.resendOTP($scope.loginInfo.username, $scope.loginInfo.password);</span>
+<span class="cstat-no" title="statement not covered" >                    spinner.forPromise(promise);</span>
+<span class="cstat-no" title="statement not covered" >                    promise.then(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                        $scope.errorMessageTranslateKey = 'LOGIN_LABEL_RESEND_SUCCESS';</span>
+                    }, <span class="fstat-no" title="function not covered" >function (response) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (response.status === 429) {</span>
+<span class="cstat-no" title="statement not covered" >                            $scope.errorMessageTranslateKey = 'LOGIN_LABEL_MAX_RESEND_ATTEMPTS';</span>
+<span class="cstat-no" title="statement not covered" >                            deleteUserCredentialsAndShowLoginPage();</span>
+                        }
+                    });
+                };
+&nbsp;
+                spinner.forPromise(deferrable.promise).then(
+                    function (data) {
+                        <span class="missing-if-branch" title="else path not taken" >E</span>if (data) return;
+<span class="cstat-no" title="statement not covered" >                        if (redirectUrl) {</span>
+<span class="cstat-no" title="statement not covered" >                            $window.location = redirectUrl;</span>
+                        } else {
+<span class="cstat-no" title="statement not covered" >                            $location.path(landingPagePath);</span>
+                        }
+                    }
+                );
+            };
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

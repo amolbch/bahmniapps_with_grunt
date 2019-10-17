@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for registration/directives/patientAction.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">registration/directives/patientAction.js</span></h1>
+    <h2>
+        Statements: <span class="metric">94.68% <small>(89 / 94)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">88.37% <small>(38 / 43)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">90.48% <small>(19 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">94.68% <small>(89 / 94)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">registration/directives/</a> &#187; patientAction.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.registration')
+    .directive('patientAction', ['$window', '$location', '$state', 'spinner', '$rootScope', '$stateParams',
+        '$bahmniCookieStore', 'appService', 'visitService', 'sessionService', 'encounterService',
+        'messagingService', '$translate', 'auditLogService',
+        function ($window, $location, $state, spinner, $rootScope, $stateParams,
+                  $bahmniCookieStore, appService, visitService, sessionService, encounterService,
+                  messagingService, $translate, auditLogService) {
+            var controller = function ($scope) {
+                var self = this;
+                var uuid = $stateParams.patientUuid;
+                var editActionsConfig = appService.getAppDescriptor().getExtensions(Bahmni.Registration.Constants.nextStepConfigId, "config") || <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
+                var conceptSetExtensions = appService.getAppDescriptor().getExtensions("org.bahmni.registration.conceptSetGroup.observations", "config");
+                var loginLocationUuid = $bahmniCookieStore.get(Bahmni.Common.Constants.locationCookieName).uuid;
+                var defaultVisitType = $rootScope.regEncounterConfiguration.getDefaultVisitType(loginLocationUuid);
+                defaultVisitType = defaultVisitType || <span class="branch-1 cbranch-no" title="branch not covered" >appService.getAppDescriptor().getConfigValue('defaultVisitType');</span>
+                var showStartVisitButton = appService.getAppDescriptor().getConfigValue("showStartVisitButton");
+                var forwardUrlsForVisitTypes = appService.getAppDescriptor().getConfigValue("forwardUrlsForVisitTypes");
+                showStartVisitButton = (_.isUndefined(showStartVisitButton) || _.isNull(showStartVisitButton)) ? true : showStartVisitButton;
+                var visitLocationUuid = $rootScope.visitLocation;
+                var forwardUrls = forwardUrlsForVisitTypes || false;
+&nbsp;
+                var getForwardUrlEntryForVisitFromTheConfig = function () {
+                    var matchedEntry = _.find(forwardUrls, function (entry) {
+                        if (self.hasActiveVisit) {
+                            return entry.visitType === self.activeVisit.visitType.name;
+                        }
+                        return entry.visitType === $scope.visitControl.selectedVisitType.name;
+                    });
+                    return matchedEntry;
+                };
+&nbsp;
+                var keyForActiveVisitEntry = function () {
+                    var matchedEntry = getForwardUrlEntryForVisitFromTheConfig();
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (matchedEntry) {
+                        $scope.activeVisitConfig = matchedEntry;
+                        if (_.isEmpty(_.get($scope.activeVisitConfig, 'translationKey'))) {
+                            $scope.activeVisitConfig.translationKey = "REGISTRATION_LABEL_ENTER_VISIT";
+                            $scope.activeVisitConfig.shortcutKey = "REGISTRATION_ENTER_VISIT_DETAILS_ACCESS_KEY";
+                        }
+                        return 'forwardAction';
+                    }
+                };
+&nbsp;
+                function setForwardActionKey () {
+                    if (editActionsConfig.length === 0) {
+                        $scope.forwardActionKey = self.hasActiveVisit ? (getForwardUrlEntryForVisitFromTheConfig() ? keyForActiveVisitEntry() : 'enterVisitDetails') : 'startVisit';
+                    } else {
+                        $scope.actionConfig = editActionsConfig[0];
+                        $scope.forwardActionKey = 'configAction';
+                    }
+                }
+&nbsp;
+                var init = function () {
+                    if (_.isEmpty(uuid)) {
+                        self.hasActiveVisit = false;
+                        setForwardActionKey();
+                        return;
+                    }
+                    var searchParams = {
+                        patient: uuid,
+                        includeInactive: false,
+                        v: "custom:(uuid,visitType,location:(uuid))"
+                    };
+                    spinner.forPromise(visitService.search(searchParams).then(function (response) {
+                        var results = response.data.results;
+                        var activeVisitForCurrentLoginLocation;
+                        if (results) {
+                            activeVisitForCurrentLoginLocation = _.filter(results, function (result) {
+                                return result.location.uuid === visitLocationUuid;
+                            });
+                        }
+                        self.hasActiveVisit = activeVisitForCurrentLoginLocation &amp;&amp; (activeVisitForCurrentLoginLocation.length &gt; 0);
+                        if (self.hasActiveVisit) {
+                            self.activeVisit = activeVisitForCurrentLoginLocation[0];
+                        }
+                        setForwardActionKey();
+                    }));
+                };
+&nbsp;
+                $scope.visitControl = new Bahmni.Common.VisitControl(
+                    $rootScope.regEncounterConfiguration.getVisitTypesAsArray(),
+                    defaultVisitType, encounterService, $translate, visitService
+                );
+&nbsp;
+                $scope.visitControl.onStartVisit = function () {
+                    $scope.setSubmitSource('startVisit');
+                };
+&nbsp;
+                $scope.setSubmitSource = function (source) {
+                    $scope.actions.submitSource = source;
+                };
+&nbsp;
+                $scope.showStartVisitButton = function () {
+                    return showStartVisitButton;
+                };
+&nbsp;
+                var goToForwardUrlPage = function (patientData) {
+                    var forwardUrl = appService.getAppDescriptor().formatUrl($scope.activeVisitConfig.forwardUrl, {'patientUuid': patientData.patient.uuid});
+                    $window.location.href = forwardUrl;
+                };
+&nbsp;
+                $scope.actions.followUpAction = function (patientProfileData) {
+                    messagingService.clearAll();
+                    switch ($scope.actions.submitSource) {
+                    case 'startVisit':
+                        var entry = getForwardUrlEntryForVisitFromTheConfig();
+                        var forwardUrl = entry ? entry.forwardUrl : undefined;
+                        return createVisit(patientProfileData, forwardUrl);
+                    case 'forwardAction':
+                        return goToForwardUrlPage(patientProfileData);
+                    case 'enterVisitDetails':
+                        return goToVisitPage(patientProfileData);
+                    case 'configAction':
+                        return handleConfigAction(patientProfileData);
+<span class="branch-4 cbranch-no" title="branch not covered" >                    case 'save':</span>
+<span class="cstat-no" title="statement not covered" >                        $scope.afterSave();</span>
+                    }
+                };
+&nbsp;
+                var handleConfigAction = function (patientProfileData) {
+                    var forwardUrl = appService.getAppDescriptor().formatUrl($scope.actionConfig.extensionParams.forwardUrl, {'patientUuid': patientProfileData.patient.uuid});
+                    if (!self.hasActiveVisit) {
+                        createVisit(patientProfileData, forwardUrl);
+                    } else {
+                        $window.location.href = forwardUrl;
+                    }
+                };
+&nbsp;
+                var goToVisitPage = function (patientData) {
+                    $scope.patient.uuid = patientData.patient.uuid;
+                    $scope.patient.name = patientData.patient.person.names[0].display;
+                    $location.path("/patient/" + patientData.patient.uuid + "/visit");
+                };
+&nbsp;
+                var isEmptyVisitLocation = function () {
+                    return _.isEmpty($rootScope.visitLocation);
+                };
+&nbsp;
+                var createVisit = function (patientProfileData, forwardUrl) {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (isEmptyVisitLocation()) {
+<span class="cstat-no" title="statement not covered" >                        $state.go('patient.edit', {patientUuid: $scope.patient.uuid}).then(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                            messagingService.showMessage("error", "NO_LOCATION_TAGGED_TO_VISIT_LOCATION");</span>
+                        });
+<span class="cstat-no" title="statement not covered" >                        return;</span>
+                    }
+                    spinner.forPromise($scope.visitControl.createVisitOnly(patientProfileData.patient.uuid, $rootScope.visitLocation).then(function (response) {
+                        auditLogService.log(patientProfileData.patient.uuid, "OPEN_VISIT", {visitUuid: response.data.uuid, visitType: response.data.visitType.display}, 'MODULE_LABEL_REGISTRATION_KEY');
+                        if (forwardUrl) {
+                            var updatedForwardUrl = appService.getAppDescriptor().formatUrl(forwardUrl, {'patientUuid': patientProfileData.patient.uuid});
+                            $window.location.href = updatedForwardUrl;
+                        } else {
+                            goToVisitPage(patientProfileData);
+                        }
+                    }, <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        $state.go('patient.edit', {patientUuid: $scope.patient.uuid});</span>
+                    }));
+                };
+&nbsp;
+                init();
+            };
+            return {
+                restrict: 'E',
+                templateUrl: 'views/patientAction.html',
+                controller: controller
+            };
+        }
+    ]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

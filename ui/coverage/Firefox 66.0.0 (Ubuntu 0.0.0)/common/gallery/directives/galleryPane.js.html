@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/gallery/directives/galleryPane.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">common/gallery/directives/galleryPane.js</span></h1>
+    <h2>
+        Statements: <span class="metric">2.22% <small>(2 / 90)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 33)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 30)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">2.22% <small>(2 / 90)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/gallery/directives/</a> &#187; galleryPane.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.gallery')
+    .directive('bmGalleryPane', ['$rootScope', '$document', 'observationsService', 'encounterService', 'spinner', 'configurations', 'ngDialog',
+<span class="fstat-no" title="function not covered" >        function ($rootScope, $document, observationsService, encounterService, spinner, configurations, ngDialog) {</span>
+<span class="cstat-no" title="statement not covered" >            var $body = $document.find('body');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $rootScope.$on('$stateChangeStart', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                close();</span>
+            });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var link = <span class="fstat-no" title="function not covered" >function ($scope, element) {</span></span>
+<span class="cstat-no" title="statement not covered" >                $scope.galleryElement = element;</span>
+<span class="cstat-no" title="statement not covered" >                $body.prepend($scope.galleryElement).addClass('gallery-open');</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                keyboardJS.on('right', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    $scope.$apply(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                        if ($scope.getTotalLength() &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >                            $scope.showNext();</span>
+                        }
+                    });
+                });
+<span class="cstat-no" title="statement not covered" >                keyboardJS.on('left', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    $scope.$apply(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                        if ($scope.getTotalLength() &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >                            $scope.showPrev();</span>
+                        }
+                    });
+                });
+            };
+&nbsp;
+<span class="fstat-no" title="function not covered" >            function close () {</span>
+<span class="cstat-no" title="statement not covered" >                $('body #gallery-pane').remove();</span>
+<span class="cstat-no" title="statement not covered" >                $body.removeClass('gallery-open');</span>
+<span class="cstat-no" title="statement not covered" >                keyboardJS.releaseKey('right');</span>
+<span class="cstat-no" title="statement not covered" >                keyboardJS.releaseKey('left');</span>
+            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var controller = <span class="fstat-no" title="function not covered" >function ($scope) {</span></span>
+<span class="cstat-no" title="statement not covered" >                $scope.imageIndex = $scope.imagePosition.index ? $scope.imagePosition.index : 0;</span>
+<span class="cstat-no" title="statement not covered" >                $scope.albumTag = $scope.imagePosition.tag ? $scope.imagePosition.tag : 'defaultTag';</span>
+<span class="cstat-no" title="statement not covered" >                $scope.showImpression = false;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.isActive = <span class="fstat-no" title="function not covered" >function (index, tag) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return $scope.imageIndex == index &amp;&amp; $scope.albumTag == tag;</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var getAlbumIndex = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return _.findIndex($scope.albums, <span class="fstat-no" title="function not covered" >function (album) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        return album.tag == $scope.albumTag;</span>
+                    });
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.showPrev = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var albumIndex = getAlbumIndex();</span>
+<span class="cstat-no" title="statement not covered" >                    if ($scope.imageIndex &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                        --$scope.imageIndex;</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        if (albumIndex == 0) {</span>
+<span class="cstat-no" title="statement not covered" >                            albumIndex = $scope.albums.length;</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        var previousAlbum = $scope.albums[albumIndex - 1];</span>
+<span class="cstat-no" title="statement not covered" >                        if (previousAlbum.images.length == 0) {</span>
+<span class="cstat-no" title="statement not covered" >                            $scope.showPrev(albumIndex - 1);</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        $scope.albumTag = previousAlbum.tag;</span>
+<span class="cstat-no" title="statement not covered" >                        $scope.imageIndex = previousAlbum.images.length - 1;</span>
+                    }
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.showNext = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var albumIndex = getAlbumIndex();</span>
+<span class="cstat-no" title="statement not covered" >                    if ($scope.imageIndex &lt; $scope.albums[albumIndex].images.length - 1) {</span>
+<span class="cstat-no" title="statement not covered" >                        ++$scope.imageIndex;</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        if (albumIndex == $scope.albums.length - 1) {</span>
+<span class="cstat-no" title="statement not covered" >                            albumIndex = -1;</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        var nextAlbum = $scope.albums[albumIndex + 1];</span>
+<span class="cstat-no" title="statement not covered" >                        if (nextAlbum.images.length == 0) {</span>
+<span class="cstat-no" title="statement not covered" >                            $scope.showNext(albumIndex + 1);</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        $scope.albumTag = nextAlbum.tag;</span>
+<span class="cstat-no" title="statement not covered" >                        $scope.imageIndex = 0;</span>
+                    }
+                };
+<span class="cstat-no" title="statement not covered" >                $scope.isPdf = <span class="fstat-no" title="function not covered" >function (image) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return image.src &amp;&amp; (image.src.indexOf(".pdf") &gt; 0);</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.getTotalLength = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var totalLength = 0;</span>
+<span class="cstat-no" title="statement not covered" >                    angular.forEach($scope.albums, <span class="fstat-no" title="function not covered" >function (album) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        totalLength += album.images.length;</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                    return totalLength;</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.getCurrentIndex = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var currentIndex = 1;</span>
+<span class="cstat-no" title="statement not covered" >                    for (var i = 0; i &lt; getAlbumIndex(); i++) {</span>
+<span class="cstat-no" title="statement not covered" >                        currentIndex += $scope.albums[i].images.length;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    return currentIndex + parseInt($scope.imageIndex);</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.close = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    close($scope);</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.toggleImpression = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    $scope.showImpression = !$scope.showImpression;</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.hasObsRelationship = <span class="fstat-no" title="function not covered" >function (image) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return image.commentOnUpload || (image.sourceObs &amp;&amp; image.sourceObs.length &gt; 0);</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.saveImpression = <span class="fstat-no" title="function not covered" >function (image) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var bahmniEncounterTransaction = mapBahmniEncounterTransaction(image);</span>
+<span class="cstat-no" title="statement not covered" >                    spinner.forPromise(encounterService.create(bahmniEncounterTransaction).then(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                        constructNewSourceObs(image);</span>
+<span class="cstat-no" title="statement not covered" >                        fetchObsRelationship(image);</span>
+                    }));
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var init = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if ($scope.accessImpression) {</span>
+<span class="cstat-no" title="statement not covered" >                        $scope.albums.forEach(<span class="fstat-no" title="function not covered" >function (album) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            album.images.forEach(<span class="fstat-no" title="function not covered" >function (image) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                fetchObsRelationship(image);</span>
+<span class="cstat-no" title="statement not covered" >                                constructNewSourceObs(image);</span>
+                            });
+                        });
+                    }
+<span class="cstat-no" title="statement not covered" >                    ngDialog.openConfirm({template: '../common/gallery/views/gallery.html', scope: $scope, closeByEscape: true});</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var fetchObsRelationship = <span class="fstat-no" title="function not covered" >function (image) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    observationsService.getObsRelationship(image.uuid).then(<span class="fstat-no" title="function not covered" >function (response) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        image.sourceObs = response.data;</span>
+                    });
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var constructNewSourceObs = <span class="fstat-no" title="function not covered" >function (image) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    image.newSourceObs = $scope.newSourceObs &amp;&amp; $scope.newSourceObs.targetObsRelation.targetObs.uuid === image.uuid ? $scope.targetObs : {</span>
+                        value: "",
+                        concept: {
+                            uuid: configurations.impressionConcept().uuid
+                        },
+                        targetObsRelation: {
+                            relationshipType: Bahmni.Common.Constants.qualifiedByRelationshipType,
+                            targetObs: {
+                                uuid: image.uuid
+                            }
+                        }
+                    };
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var mapBahmniEncounterTransaction = <span class="fstat-no" title="function not covered" >function (image) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return {</span>
+                        patientUuid: $scope.patient.uuid,
+                        encounterTypeUuid: configurations.encounterConfig().getConsultationEncounterTypeUuid(),
+                        observations: [image.newSourceObs]
+                    };
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                init();</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return {</span>
+                link: link,
+                controller: controller
+            };
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

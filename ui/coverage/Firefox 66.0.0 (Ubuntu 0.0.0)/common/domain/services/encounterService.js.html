@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/domain/services/encounterService.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">common/domain/services/encounterService.js</span></h1>
+    <h2>
+        Statements: <span class="metric">84.06% <small>(58 / 69)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">88.57% <small>(31 / 35)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">70.83% <small>(17 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">84.06% <small>(58 / 69)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/domain/services/</a> &#187; encounterService.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">21</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.domain')
+    .service('encounterService', ['$http', '$q', '$rootScope', 'configurations', '$bahmniCookieStore',
+        function ($http, $q, $rootScope, configurations, $bahmniCookieStore) {
+            this.buildEncounter = function (encounter) {
+                encounter.observations = encounter.observations || <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
+                encounter.observations.forEach(function (obs) {
+                    stripExtraConceptInfo(obs);
+                });
+&nbsp;
+                encounter.providers = encounter.providers || [];
+&nbsp;
+                var providerData = $bahmniCookieStore.get(Bahmni.Common.Constants.grantProviderAccessDataCookieName);
+                if (_.isEmpty(encounter.providers)) {
+                    if (providerData &amp;&amp; providerData.uuid) {
+                        encounter.providers.push({"uuid": providerData.uuid});
+                    } else <span class="missing-if-branch" title="else path not taken" >E</span>if ($rootScope.currentProvider &amp;&amp; $rootScope.currentProvider.uuid) {
+                        encounter.providers.push({"uuid": $rootScope.currentProvider.uuid});
+                    }
+                }
+                return encounter;
+            };
+&nbsp;
+            var getDefaultEncounterType = function () {
+                var url = Bahmni.Common.Constants.encounterTypeUrl;
+                return $http.get(url + '/' + configurations.defaultEncounterType()).then(function (response) {
+                    return response.data;
+                });
+            };
+&nbsp;
+            var getEncounterTypeBasedOnLoginLocation = function (loginLocationUuid) {
+                return $http.get(Bahmni.Common.Constants.entityMappingUrl, {
+                    params: {
+                        entityUuid: loginLocationUuid,
+                        mappingType: 'location_encountertype',
+                        s: 'byEntityAndMappingType'
+                    },
+                    withCredentials: true
+                });
+            };
+&nbsp;
+            var getEncounterTypeBasedOnProgramUuid = function (programUuid) {
+                return $http.get(Bahmni.Common.Constants.entityMappingUrl, {
+                    params: {
+                        entityUuid: programUuid,
+                        mappingType: 'program_encountertype',
+                        s: 'byEntityAndMappingType'
+                    },
+                    withCredentials: true
+                });
+            };
+&nbsp;
+            var getDefaultEncounterTypeIfMappingNotFound = function (entityMappings) {
+                var encounterType = entityMappings.data.results[0] &amp;&amp; entityMappings.data.results[0].mappings[0];
+                if (!encounterType) {
+                    encounterType = getDefaultEncounterType();
+                }
+                return encounterType;
+            };
+&nbsp;
+            this.getEncounterType = function (programUuid, loginLocationUuid) {
+                if (programUuid) {
+                    return getEncounterTypeBasedOnProgramUuid(programUuid).then(function (response) {
+                        return getDefaultEncounterTypeIfMappingNotFound(response);
+                    });
+                } else if (loginLocationUuid) {
+                    return getEncounterTypeBasedOnLoginLocation(loginLocationUuid).then(function (response) {
+                        return getDefaultEncounterTypeIfMappingNotFound(response);
+                    });
+                } else {
+                    return getDefaultEncounterType();
+                }
+            };
+&nbsp;
+            this.create = function (encounter) {
+                encounter = this.buildEncounter(encounter);
+&nbsp;
+                return $http.post(Bahmni.Common.Constants.bahmniEncounterUrl, encounter, {
+                    withCredentials: true
+                });
+            };
+&nbsp;
+            this.delete = <span class="fstat-no" title="function not covered" >function (encounterUuid, reason) {</span>
+<span class="cstat-no" title="statement not covered" >                return $http.delete(Bahmni.Common.Constants.bahmniEncounterUrl + "/" + encounterUuid, {</span>
+                    params: {reason: reason}
+                });
+            };
+&nbsp;
+            function isObsConceptClassVideoOrImage (obs) {
+                return (obs.concept.conceptClass === 'Video' || obs.concept.conceptClass === 'Image');
+            }
+&nbsp;
+            var deleteIfImageOrVideoObsIsVoided = function (obs) {
+                if (obs.voided &amp;&amp; obs.groupMembers &amp;&amp; !obs.groupMembers.length &amp;&amp; obs.value
+                    &amp;&amp; isObsConceptClassVideoOrImage(obs)) {
+                    var url = Bahmni.Common.Constants.RESTWS_V1 + "/bahmnicore/visitDocument?filename=" + obs.value;
+                    $http.delete(url, {withCredentials: true});
+                }
+            };
+&nbsp;
+            var stripExtraConceptInfo = function (obs) {
+                deleteIfImageOrVideoObsIsVoided(obs);
+                obs.concept = {uuid: obs.concept.uuid, name: obs.concept.name, dataType: obs.concept.dataType};
+                obs.groupMembers = obs.groupMembers || [];
+                obs.groupMembers.forEach(function (groupMember) {
+                    stripExtraConceptInfo(groupMember);
+                });
+            };
+&nbsp;
+            var searchWithoutEncounterDate = <span class="fstat-no" title="function not covered" >function (visitUuid) {</span>
+<span class="cstat-no" title="statement not covered" >                return $http.post(Bahmni.Common.Constants.bahmniEncounterUrl + '/find', {</span>
+                    visitUuids: [visitUuid],
+                    includeAll: Bahmni.Common.Constants.includeAllObservations
+                }, {
+                    withCredentials: true
+                });
+            };
+&nbsp;
+            this.search = <span class="fstat-no" title="function not covered" >function (visitUuid, encounterDate) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!encounterDate) {</span>
+<span class="cstat-no" title="statement not covered" >                    return searchWithoutEncounterDate(visitUuid);</span>
+                }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                return $http.get(Bahmni.Common.Constants.emrEncounterUrl, {</span>
+                    params: {
+                        visitUuid: visitUuid,
+                        encounterDate: encounterDate,
+                        includeAll: Bahmni.Common.Constants.includeAllObservations
+                    },
+                    withCredentials: true
+                });
+            };
+&nbsp;
+            this.find = <span class="fstat-no" title="function not covered" >function (params) {</span>
+<span class="cstat-no" title="statement not covered" >                return $http.post(Bahmni.Common.Constants.bahmniEncounterUrl + '/find', params, {</span>
+                    withCredentials: true
+                });
+            };
+            this.findByEncounterUuid = <span class="fstat-no" title="function not covered" >function (encounterUuid) {</span>
+<span class="cstat-no" title="statement not covered" >                return $http.get(Bahmni.Common.Constants.bahmniEncounterUrl + '/' + encounterUuid, {</span>
+                    params: {includeAll: true},
+                    withCredentials: true
+                });
+            };
+&nbsp;
+            this.getEncountersForEncounterType = function (patientUuid, encounterTypeUuid) {
+                return $http.get(Bahmni.Common.Constants.encounterUrl, {
+                    params: {
+                        patient: patientUuid,
+                        encounterType: encounterTypeUuid,
+                        v: "custom:(uuid,provider,visit:(uuid,startDatetime,stopDatetime),obs:(uuid,concept:(uuid,name),groupMembers:(id,uuid,obsDatetime,value,comment)))"
+                    },
+                    withCredentials: true
+                });
+            };
+&nbsp;
+            this.getDigitized = <span class="fstat-no" title="function not covered" >function (patientUuid) {</span>
+<span class="cstat-no" title="statement not covered" >                var patientDocumentEncounterTypeUuid = configurations.encounterConfig().getPatientDocumentEncounterTypeUuid();</span>
+<span class="cstat-no" title="statement not covered" >                return $http.get(Bahmni.Common.Constants.encounterUrl, {</span>
+                    params: {
+                        patient: patientUuid,
+                        encounterType: patientDocumentEncounterTypeUuid,
+                        v: "custom:(uuid,obs:(uuid))"
+                    },
+                    withCredentials: true
+                });
+            };
+&nbsp;
+            this.discharge = <span class="fstat-no" title="function not covered" >function (encounterData) {</span>
+<span class="cstat-no" title="statement not covered" >                var encounter = this.buildEncounter(encounterData);</span>
+<span class="cstat-no" title="statement not covered" >                return $http.post(Bahmni.Common.Constants.dischargeUrl, encounter, {</span>
+                    withCredentials: true
+                });
+            };
+        }]);
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

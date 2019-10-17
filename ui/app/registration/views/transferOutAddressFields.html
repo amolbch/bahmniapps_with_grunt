@@ -1,0 +1,72 @@
+<article class="form-field" ng-class="::{'left-form-field': $index % 2 != 0 }"
+         ng-repeat="addressLevel in ::addressLevels"
+         ng-if="addressLevel.name === 'HF_NAME' || addressLevel.name === 'HF_DISTRICT' || addressLevel.name === 'HF_PROVINCE'" addressLevel="2">
+    <div class="field-attribute" ng-if="addressLevel.name!='HF_NAME'"><label for="{{::addressLevel.addressField}}">{{::addressLevel.name | translate}}</label>
+    </div>
+    <div class="field-attribute" ng-if="addressLevel.name =='HF_NAME'"><label for="{{::addressLevel.addressField}}">{{::'REGISTRATION_TRANSFER_OUT_HF_NAME_INFO' | translate}}<span class="asterick" ng-show="isRequired" >*</span></label>
+    </div>
+    <div class="field-value" ng-if="addressLevel.name === 'HF_DISTRICT'" >
+        <input type="text"
+               autocomplete="off"
+               id="{{::addressLevel.addressField + '_out'}}"
+               pattern-validate
+               non-blank="::addressLevel.required"
+               ng-model="transferOutDistrict"
+               bahmni-autocomplete
+               source="getAddressEntryList(addressLevel.addressField)"
+               response-map="getAddressDataResults"
+               on-select="addressFieldSelected(addressLevel.addressField)"
+               ng-change="clearFields(addressLevel.addressField)"
+               min-length="1"
+               strict-select="true"
+               initial-value="selectedValue[addressLevel.addressField]"
+               is-invalid="addressFieldInvalid"
+               ng-keydown="removeSelection($event, addressLevel.addressField)"
+               ng-disabled="isAddressDisabled"
+               required/>
+    </div>
+
+
+    <div class="field-value" ng-if="addressLevel.name === 'HF_PROVINCE'">
+        <input type="text"
+               autocomplete="off"
+               id="{{::addressLevel.addressField + '_out'}}"
+               pattern-validate
+               non-blank="::addressLevel.required"
+               ng-model="transferOutProvince"
+               bahmni-autocomplete
+               source="getAddressEntryList(addressLevel.addressField)"
+               response-map="getAddressDataResults"
+               on-select="addressFieldSelected(addressLevel.addressField)"
+               ng-change="clearFields(addressLevel.addressField)"
+               min-length="1"
+               strict-select="true"
+               initial-value="selectedValue[addressLevel.addressField]"
+               is-invalid="addressFieldInvalid"
+               ng-keydown="removeSelection($event, addressLevel.addressField)"
+               ng-disabled="isAddressDisabled"
+               required/>
+    </div>
+
+    <div class="field-value" ng-if="addressLevel.name === 'HF_NAME'" >
+        <input type="text"
+               autocomplete="off"
+               id="{{::addressLevel.addressField + '_out'}}"
+               pattern-validate
+               non-blank="::addressLevel.required"
+               ng-model="transferOutName"
+               bahmni-autocomplete
+               source="getAddressEntryList(addressLevel.addressField)"
+               response-map="getAddressDataResults"
+               on-select="addressFieldSelected(addressLevel.addressField)"
+               ng-change="clearFields(addressLevel.addressField)"
+               min-length="1"
+               strict-select="true"
+               initial-value="selectedValue[addressLevel.addressField]"
+               is-invalid="addressFieldInvalid"
+               ng-keydown="removeSelection($event, addressLevel.addressField)"
+               ng-disabled="isAddressDisabled"
+               ng-required="isRequired"/>
+    </div>
+
+</article>

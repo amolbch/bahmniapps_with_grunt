@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/common/services/treatmentService.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">clinical/common/services/treatmentService.js</span></h1>
+    <h2>
+        Statements: <span class="metric">84.21% <small>(48 / 57)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">60% <small>(12 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">76.47% <small>(13 / 17)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">84.21% <small>(48 / 57)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">clinical/common/services/</a> &#187; treatmentService.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.clinical')
+    .factory('treatmentService', ['$http', '$q', 'appService', function ($http, $q, appService) {
+        var createDrugOrder = function (drugOrder) {
+            return Bahmni.Clinical.DrugOrder.create(drugOrder);
+        };
+        var getActiveDrugOrdersFromServer = function (patientUuid, startDate, endDate) {
+            return $http.get(Bahmni.Common.Constants.bahmniDrugOrderUrl + "/active", {
+                params: {
+                    patientUuid: patientUuid,
+                    startDate: startDate,
+                    endDate: endDate
+                },
+                withCredentials: true
+            });
+        };
+&nbsp;
+        var getPrescribedAndActiveDrugOrders = <span class="fstat-no" title="function not covered" >function (patientUuid, numberOfVisits, getOtherActive, visitUuids, startDate, endDate, getEffectiveOrdersOnly) {</span>
+<span class="cstat-no" title="statement not covered" >            return $http.get(Bahmni.Common.Constants.bahmniDrugOrderUrl + "/prescribedAndActive", {</span>
+                params: {
+                    patientUuid: patientUuid,
+                    numberOfVisits: numberOfVisits,
+                    getOtherActive: getOtherActive,
+                    visitUuids: visitUuids,
+                    startDate: startDate,
+                    endDate: endDate,
+                    getEffectiveOrdersOnly: getEffectiveOrdersOnly
+                },
+                withCredentials: true
+            }).success(<span class="fstat-no" title="function not covered" >function (response) {</span>
+<span class="cstat-no" title="statement not covered" >                for (var key in response) {</span>
+<span class="cstat-no" title="statement not covered" >                    response[key] = response[key].map(createDrugOrder);</span>
+                }
+            });
+        };
+&nbsp;
+        var getConfig = function () {
+            return $http.get(Bahmni.Common.Constants.drugOrderConfigurationUrl, {
+                withCredentials: true
+            });
+        };
+&nbsp;
+        var getProgramConfig = function () {
+            var programConfig = appService.getAppDescriptor() ? appService.getAppDescriptor().getConfigValue("program") || <span class="branch-1 cbranch-no" title="branch not covered" >{} </span>: <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+            return programConfig;
+        };
+&nbsp;
+        var getActiveDrugOrders = function (patientUuid, fromDate, toDate) {
+            var programConfig = getProgramConfig();
+            var startDate = programConfig.showDetailsWithinDateRange ? <span class="branch-0 cbranch-no" title="branch not covered" >fromDate </span>: null;
+            var endDate = programConfig.showDetailsWithinDateRange ? <span class="branch-0 cbranch-no" title="branch not covered" >toDate </span>: null;
+&nbsp;
+            var deferred = $q.defer();
+            getActiveDrugOrdersFromServer(patientUuid, startDate, endDate).success(function (response) {
+                var activeDrugOrders = response.map(createDrugOrder);
+                deferred.resolve(activeDrugOrders);
+            });
+            return deferred.promise;
+        };
+&nbsp;
+        var getPrescribedDrugOrders = function (patientUuid, includeActiveVisit, numberOfVisits, fromDate, toDate) {
+            var programConfig = getProgramConfig();
+            var startDate = programConfig.showDetailsWithinDateRange ? <span class="branch-0 cbranch-no" title="branch not covered" >fromDate </span>: null;
+            var endDate = programConfig.showDetailsWithinDateRange ? <span class="branch-0 cbranch-no" title="branch not covered" >toDate </span>: null;
+&nbsp;
+            var deferred = $q.defer();
+            $http.get(Bahmni.Common.Constants.bahmniDrugOrderUrl, {
+                method: "GET",
+                params: {
+                    patientUuid: patientUuid,
+                    numberOfVisits: numberOfVisits,
+                    includeActiveVisit: includeActiveVisit,
+                    startDate: startDate,
+                    endDate: endDate
+                },
+                withCredentials: true
+            }).success(function (response) {
+                var activeDrugOrders = response.map(createDrugOrder);
+                deferred.resolve(activeDrugOrders);
+            });
+            return deferred.promise;
+        };
+&nbsp;
+        var getNonCodedDrugConcept = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >            var deferred = $q.defer();</span>
+<span class="cstat-no" title="statement not covered" >            $http.get(Bahmni.Common.Constants.globalPropertyUrl, {</span>
+                method: "GET",
+                params: {
+                    property: 'drugOrder.drugOther'
+                },
+                withCredentials: true,
+                headers: {
+                    Accept: 'text/plain'
+                }
+            }).success(<span class="fstat-no" title="function not covered" >function (conceptUuid) {</span>
+<span class="cstat-no" title="statement not covered" >                deferred.resolve(conceptUuid);</span>
+            });
+<span class="cstat-no" title="statement not covered" >            return deferred.promise;</span>
+        };
+&nbsp;
+        var getAllDrugOrdersFor = function (patientUuid, conceptSetToBeIncluded, conceptSetToBeExcluded, isActive, patientProgramUuid) {
+            var deferred = $q.defer();
+            var params = {patientUuid: patientUuid};
+            if (conceptSetToBeIncluded) {
+                params.includeConceptSet = conceptSetToBeIncluded;
+            }
+            if (conceptSetToBeExcluded) {
+                params.excludeConceptSet = conceptSetToBeExcluded;
+            }
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (isActive !== undefined) {
+<span class="cstat-no" title="statement not covered" >                params.isActive = isActive;</span>
+            }
+            <span class="missing-if-branch" title="if path not taken" >I</span>if (patientProgramUuid) {
+<span class="cstat-no" title="statement not covered" >                params.patientProgramUuid = patientProgramUuid;</span>
+            }
+&nbsp;
+            $http.get(Bahmni.Common.Constants.bahmniDrugOrderUrl + "/drugOrderDetails", {
+                params: params,
+                withCredentials: true
+            }).success(function (response) {
+                deferred.resolve(response);
+            });
+            return deferred.promise;
+        };
+&nbsp;
+        var voidDrugOrder = function (drugOrder) {
+            var deferred = $q.defer();
+&nbsp;
+            $http.delete([Bahmni.Common.Constants.ordersUrl, '/', drugOrder.uuid].join('')).success(function (response) {
+                deferred.resolve(response);
+            });
+&nbsp;
+            return deferred.promise;
+        };
+&nbsp;
+        return {
+            getActiveDrugOrders: getActiveDrugOrders,
+            getConfig: getConfig,
+            getPrescribedDrugOrders: getPrescribedDrugOrders,
+            getPrescribedAndActiveDrugOrders: getPrescribedAndActiveDrugOrders,
+            getNonCodedDrugConcept: getNonCodedDrugConcept,
+            getAllDrugOrdersFor: getAllDrugOrdersFor,
+            voidDrugOrder: voidDrugOrder
+        };
+    }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

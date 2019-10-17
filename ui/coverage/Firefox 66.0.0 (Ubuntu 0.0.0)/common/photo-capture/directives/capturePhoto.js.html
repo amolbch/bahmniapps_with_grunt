@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/photo-capture/directives/capturePhoto.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">common/photo-capture/directives/capturePhoto.js</span></h1>
+    <h2>
+        Statements: <span class="metric">1.09% <small>(1 / 92)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 24)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">1.09% <small>(1 / 92)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/photo-capture/directives/</a> &#187; capturePhoto.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.photoCapture')
+    .directive('capturePhoto', ['$parse', '$window', <span class="fstat-no" title="function not covered" >function factory ($parse, $window) {</span>
+<span class="cstat-no" title="statement not covered" >        var link = <span class="fstat-no" title="function not covered" >function (scope, iElement, iAttrs) {</span></span>
+<span class="cstat-no" title="statement not covered" >            var captureDialogElement = iElement.find(".photoCaptureDialog"),</span>
+                captureVideo = captureDialogElement.find("video")[0],
+                captureActiveStream,
+                captureCanvas = captureDialogElement.find("canvas")[0],
+                captureContext = captureCanvas.getContext("2d"),
+                captureConfirmImageButton = captureDialogElement.find(".confirmImage"),
+                uploadDialogElement = iElement.find(".photoUploadDialog"),
+                uploadCanvas = uploadDialogElement.find("canvas")[0],
+                uploadContext = uploadCanvas.getContext("2d"),
+                uploadConfirmImageButton = uploadDialogElement.find(".confirmImage"),
+                uploadField = iElement.find(".fileUpload")[0],
+                dialogOpen = false,
+                pixelRatio = window.devicePixelRatio;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            captureContext.scale(pixelRatio, pixelRatio);</span>
+<span class="cstat-no" title="statement not covered" >            uploadContext.scale(pixelRatio, pixelRatio);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var confirmImage = <span class="fstat-no" title="function not covered" >function (canvas, dialogElement) {</span></span>
+<span class="cstat-no" title="statement not covered" >                var image = canvas.toDataURL("image/jpeg");</span>
+<span class="cstat-no" title="statement not covered" >                var onConfirmationSuccess = <span class="fstat-no" title="function not covered" >function (image) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var ngModel = $parse(iAttrs.ngModel);</span>
+<span class="cstat-no" title="statement not covered" >                    ngModel.assign(scope, image);</span>
+<span class="cstat-no" title="statement not covered" >                    dialogElement.dialog('close');</span>
+                };
+<span class="cstat-no" title="statement not covered" >                if (iAttrs.capturePhoto) {</span>
+<span class="cstat-no" title="statement not covered" >                    var onConfirmationPromise = scope[iAttrs.capturePhoto](image);</span>
+<span class="cstat-no" title="statement not covered" >                    onConfirmationPromise.then(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                        onConfirmationSuccess(image);</span>
+                    }, <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                        alert("Failed to save image. Please try again later");</span>
+                    });
+                } else {
+<span class="cstat-no" title="statement not covered" >                    onConfirmationSuccess(image);</span>
+                }
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var drawImage = <span class="fstat-no" title="function not covered" >function (canvas, context, image, imageWidth, imageHeight) {</span></span>
+<span class="cstat-no" title="statement not covered" >                var sourceX = 0;</span>
+<span class="cstat-no" title="statement not covered" >                var sourceY = 0;</span>
+<span class="cstat-no" title="statement not covered" >                var destX = 0;</span>
+<span class="cstat-no" title="statement not covered" >                var destY = 0;</span>
+<span class="cstat-no" title="statement not covered" >                var stretchRatio, sourceWidth, sourceHeight;</span>
+<span class="cstat-no" title="statement not covered" >                if (canvas.width &gt; canvas.height) {</span>
+<span class="cstat-no" title="statement not covered" >                    stretchRatio = (imageWidth / canvas.width);</span>
+<span class="cstat-no" title="statement not covered" >                    sourceWidth = imageWidth;</span>
+<span class="cstat-no" title="statement not covered" >                    sourceHeight = Math.floor(canvas.height * stretchRatio);</span>
+<span class="cstat-no" title="statement not covered" >                    sourceY = Math.floor((imageHeight - sourceHeight) / 2);</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    stretchRatio = (imageHeight / canvas.height);</span>
+<span class="cstat-no" title="statement not covered" >                    sourceWidth = Math.floor(canvas.width * stretchRatio);</span>
+<span class="cstat-no" title="statement not covered" >                    sourceHeight = imageHeight;</span>
+<span class="cstat-no" title="statement not covered" >                    sourceX = Math.floor((imageWidth - sourceWidth) / 2);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                var destWidth = Math.floor(canvas.width / pixelRatio);</span>
+<span class="cstat-no" title="statement not covered" >                var destHeight = Math.floor(canvas.height / pixelRatio);</span>
+<span class="cstat-no" title="statement not covered" >                context.drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            scope.launchPhotoCapturePopup = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (dialogOpen) {</span>
+<span class="cstat-no" title="statement not covered" >                    alert("Please allow access to web camera and wait for photo capture dialog to be launched");</span>
+<span class="cstat-no" title="statement not covered" >                    return;</span>
+                }
+<span class="cstat-no" title="statement not covered" >                dialogOpen = true;</span>
+<span class="cstat-no" title="statement not covered" >                var navigatorUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;</span>
+<span class="cstat-no" title="statement not covered" >                if (navigator.mediaDevices) {</span>
+<span class="cstat-no" title="statement not covered" >                    navigator.mediaDevices.getUserMedia({video: true, audio: false})</span>
+                    .then(<span class="fstat-no" title="function not covered" >function (localMediaStream) {</span>
+<span class="cstat-no" title="statement not covered" >                        captureVideo.srcObject = localMediaStream;</span>
+<span class="cstat-no" title="statement not covered" >                        captureActiveStream = localMediaStream;</span>
+<span class="cstat-no" title="statement not covered" >                        captureDialogElement.dialog('open');</span>
+                    }).catch(<span class="fstat-no" title="function not covered" >function (e) {</span>
+<span class="cstat-no" title="statement not covered" >                        alert("Could not get access to web camera. Please allow access to web camera");</span>
+                    });
+                } else <span class="cstat-no" title="statement not covered" >if (navigatorUserMedia) {</span>
+<span class="cstat-no" title="statement not covered" >                    navigatorUserMedia(</span>
+                        {video: true, audio: false},
+<span class="fstat-no" title="function not covered" >                        function (localMediaStream) {</span>
+<span class="cstat-no" title="statement not covered" >                            captureVideo.src = $window.URL.createObjectURL(localMediaStream);</span>
+<span class="cstat-no" title="statement not covered" >                            captureActiveStream = localMediaStream;</span>
+<span class="cstat-no" title="statement not covered" >                            captureDialogElement.dialog('open');</span>
+                        },
+<span class="fstat-no" title="function not covered" >                        function () {</span>
+<span class="cstat-no" title="statement not covered" >                            alert("Could not get access to web camera. Please allow access to web camera");</span>
+                        }
+                    );
+                } else {
+<span class="cstat-no" title="statement not covered" >                    alert('Photo capture is not supported in your browser. Please use chrome');</span>
+                }
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            scope.captureConfirmImage = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                confirmImage(captureCanvas, captureDialogElement);</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            scope.captureClickImage = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                drawImage(captureCanvas, captureContext, captureVideo, captureVideo.videoWidth, captureVideo.videoHeight);</span>
+<span class="cstat-no" title="statement not covered" >                captureConfirmImageButton.prop('disabled', false);</span>
+<span class="cstat-no" title="statement not covered" >                captureConfirmImageButton.focus();</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            captureDialogElement.dialog({autoOpen: false, height: 300, width: 500, modal: true,</span>
+                close: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    dialogOpen = false;</span>
+<span class="cstat-no" title="statement not covered" >                    if (captureActiveStream) {</span>
+<span class="cstat-no" title="statement not covered" >                        var captureActiveStreamTrack = captureActiveStream.getTracks();</span>
+<span class="cstat-no" title="statement not covered" >                        if (captureActiveStreamTrack) {</span>
+<span class="cstat-no" title="statement not covered" >                            captureActiveStreamTrack[0].stop();</span>
+                        }
+                    }
+                }
+            });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            scope.uploadConfirmImage = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                confirmImage(uploadCanvas, uploadDialogElement);</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            scope.launchPhotoUploadPopup = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (dialogOpen) {</span>
+<span class="cstat-no" title="statement not covered" >                    alert("Please wait for photo upload dialog to be launched");</span>
+<span class="cstat-no" title="statement not covered" >                    return;</span>
+                }
+<span class="cstat-no" title="statement not covered" >                dialogOpen = true;</span>
+<span class="cstat-no" title="statement not covered" >                uploadDialogElement.dialog('open');</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            scope.uploadImage = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (this.files &amp;&amp; this.files[0]) {</span>
+<span class="cstat-no" title="statement not covered" >                    var fileReader = new FileReader();</span>
+<span class="cstat-no" title="statement not covered" >                    fileReader.onload = <span class="fstat-no" title="function not covered" >function (e) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        var image = new Image();</span>
+<span class="cstat-no" title="statement not covered" >                        image.onload = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                            drawImage(uploadCanvas, uploadContext, image, image.width, image.height);</span>
+                        };
+<span class="cstat-no" title="statement not covered" >                        image.src = e.target.result;</span>
+                    };
+<span class="cstat-no" title="statement not covered" >                    fileReader.readAsDataURL(this.files[0]);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                uploadConfirmImageButton.prop('disabled', false);</span>
+<span class="cstat-no" title="statement not covered" >                uploadConfirmImageButton.focus();</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            uploadDialogElement.dialog({autoOpen: false, height: 350, width: 350, modal: true,</span>
+                close: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    dialogOpen = false;</span>
+                }
+            });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            iElement.bind("$destroy", <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                captureDialogElement.dialog("destroy");</span>
+<span class="cstat-no" title="statement not covered" >                uploadDialogElement.dialog("destroy");</span>
+            });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            uploadField.addEventListener("change", scope.uploadImage, false);</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            templateUrl: '../common/photo-capture/views/photo.html',
+            restrict: 'A',
+            scope: true,
+            link: link
+        };
+    }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

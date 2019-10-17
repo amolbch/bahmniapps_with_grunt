@@ -1,0 +1,212 @@
+<html>
+
+<head>
+    <style>
+       
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+            text-align: left;
+        }
+
+        td.td_box1 {
+            position: relative;
+            width: 16%;
+            line-height: 2;
+        }
+
+        td.td_box2 {
+            position: relative;
+            width: 64%;
+            line-height: 2;
+        }
+        td.td_box1 {
+            position: relative;
+            width: 20%;
+            line-height: 2;
+        }
+
+        tr.abc {
+    position: relative;
+    display: flex;
+}
+
+td.td_box4 {
+    position: relative;
+    display: flex;
+    width: 60%;
+    line-height: 2;
+}
+td.td_box5 {
+    display: flex;
+    position: relative;
+    width: 12%;
+    line-height: 2;
+}
+td.cng {
+    width: 100%;
+}
+
+@media print {
+    .hi {
+        background-color: #000 !important;
+        -webkit-print-color-adjust: exact; 
+        width: 15px;
+        height: 100%;
+    }
+
+    .ver-rot {
+            writing-mode: vertical-rl;
+            -webkit-writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            color: white;
+        }
+
+        .mainName{
+            font-weight: bold ;
+            text-align: center;
+            font-size: 20px;
+            background-color :rgb(149, 218, 172) !important;
+            -webkit-print-color-adjust: exact;
+        }
+    
+
+}
+    </style>
+</head>
+
+<body>
+
+    <div ng-controller="PrintPrescriptionReportController">
+
+        <div ng-if="data">
+
+            <div style="border: 1px solid black; margin:10px">
+
+                <div style="border: 1px solid black; padding: 5px">
+                    <div style="border :1px solid black; padding: 5px">
+                        <table style="width: 100%">
+                            <tr>
+                                <td rowspan="4" class="hi">
+                                    <div class="ver-rot">CMAM<span>&#8208;</span>Modelo&nbsp;06</div>
+                                </td>
+
+                                <td colspan="9" class="mainName">
+                                    <span class="prescribe-report-label">{{ 'PRESCRIPTION_REPORT_NATIONAL_HEALTH_SERVICE' | translate }}</span>
+                                </td>
+                            </tr>
+                            <td rowspan="3"><img ng-if="data.hospitalLogo" height="80px" width="80px" src="{{ data.hospitalLogo }}" class="prescribe-report-logo"></td>
+                            <tr class="abc">
+                                <td class="td_box1">&#x2116 </td>
+                                <td class="td_box2"><span>{{ 'PRESCRIPTION_REPORT_HOSPITAL_NAME' | translate }}</span>: <span> {{ data.hospitalName }}</span></td>
+                                <td class="td_box3"><span>{{ 'PRESCRIPTION_REPORT_PRESCRIPTION_DATE' | translate }}</span>:
+                                    {{data.prescriptionDate}}</td>
+                            </tr>
+                            <tr class="abc">
+                                <td class="td_box4">
+                                    <span>{{ 'PRESCRIPTION_REPORT_PATIENT_NAME' | translate }}</span>:
+                                    <span> &nbsp; {{ data.patientInfo.firstName }}&nbsp;{{ data.patientInfo.lastName }}</span>
+                                </td>
+                                <td class="td_box5"><span>{{ 'PRESCRIPTION_REPORT_PATIENT_AGE_AND_SEX' | translate }}</span>:<span> {{ data.patientInfo.age }}</span></td>
+                                <td class="td_box6">
+                                    <span>{{ 'PRESCRIPTION_REPORT_PATIENT_ID' | translate }}</span>:
+                                    <span> {{ data.patientInfo.patientId }}</span></td>
+
+                            </tr>
+                            <tr class="abc">
+                                <td colspan="9" class="cng"> 
+                                    <span class="cng">{{ 'PRESCRIPTION_REPORT_PATIENT_ADDRESS' | translate }}</span>:
+                                    <span class="cng2">{{ data.patientInfo.address }}</span></td>
+                            </tr>
+                        </table>
+
+
+                        <br>
+
+                        <table style="width: 100%">
+
+                            <tr style="text-align: center;font-weight: bold">
+                                <td colspan="10" style="text-align: center"><span class="prescribe-report-label">{{ 'PRESCRIPTION_REPORT_DESCRIPTION' | translate }}
+                                    </span></td>
+                                <td rowspan="2" colspan="3"><span class="prescribe-report-label">{{ 'PRESCRIPTION_REPORT_POSOLOGY' | translate }}
+                                    </span></td>
+                                <td rowspan="2" colspan="2"> <span class="prescribe-report-label">{{ 'PRESCRIPTION_REPORT_TREATMENT_DURATION' | translate }}
+                                    </span></td>
+                                <td rowspan="2" colspan="2"> <span class="prescribe-report-label">{{ 'PRESCRIPTION_REPORT_QUANTITY_PRESCRIBED' | translate }}
+                                    </span></td>
+                                <td colspan="4" rowspan="{{2+data.orders.length}}">Receita sujeita a taxa única</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">FNM</td>
+                                <td colspan="3"><span class="prescribe-report-label">{{ 'PRESCRIPTION_REPORT_GENERIC_NAME' | translate }}
+                                    </span></td>
+                                <td colspan="2"><span class="prescribe-report-label">{{ 'PRESCRIPTION_REPORT_DOSAGE' | translate }}
+                                    </span></td>
+                                <td colspan="3"><span class="prescribe-report-label">{{ 'PRESCRIPTION_REPORT_PHARMACEUTICAL_FORM' | translate }}
+                                    </span></td>
+                            </tr>
+
+
+
+                            <tr ng-repeat="order in data.orders">
+                                <td colspan="2"></td>
+                                <td colspan="3">{{ order.drugName }}</td>
+                                <td colspan="2">{{ order.dosage }}</td>
+                                <td colspan="3">{{order.drugUnit}}</td>
+                                <td colspan="2"><span>{{ order.frequency | translate}},{{ data.route | translate }}
+                                    </span></td>
+                                <td colspan="3">{{ order.duration | translate }}{{ order.durationUnit | translate }}
+                                </td>
+                                <td colspan="2">{{ order.quantity}}</td>
+                            </tr>
+
+
+                            <tr>
+                                <td rowspan="3" colspan="7" style="text-align: center"><span class="prescribe-report-label">{{'PRESCRIPTION_REPORT_PRESCRIBED' | translate }}<br>{{data.prescriber}}<br><br>{{'PRESCRIPTION_REPORT_SIGNATURE' | translate}}</span>
+                                </td>
+                                <td rowspan="3" colspan="7" style="text-align: center"><span class="prescribe-report-label">{{'PRESCRIPTION_REPORT_PHARMACY' | translate }}<br>{{}}<br><br>{{'PRESCRIPTION_REPORT_SIGNATURE' | translate}}</span>
+                                </td>
+                                <td colspan="3"><span class="prescribe-report-label">{{ 'PRESCRIPTION_REPORT_AMOUNT' | translate }}</span>
+                                </td>
+                                <td colspan="1"></td>
+                                <td colspan="1"></td>
+                                <td colspan="1">00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><span class="prescribe-report-label">{{ 'PRESCRIPTION_REPORT_SUBSIDIZED_AMOUNT' | translate }}</span>
+                                </td>
+                                <td colspan="1"></td>
+                                <td colspan="1"></td>
+                                <td colspan="1">00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3"><span class="prescribe-report-label">{{ 'PRESCRIPTION_REPORT_AMOUNT_CHARGED' | translate }}</span>
+                                </td>
+                                <td colspan="1"></td>
+                                <td colspan="1"></td>
+                                <td colspan="1">00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="14"><span class="prescribe-report-label">{{ 'PRESCRIPTION_REPORT_NOTE' | translate }}
+                                    </span></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

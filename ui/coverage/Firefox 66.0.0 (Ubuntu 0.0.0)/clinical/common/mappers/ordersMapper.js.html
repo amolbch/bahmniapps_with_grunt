@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/common/mappers/ordersMapper.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">clinical/common/mappers/ordersMapper.js</span></h1>
+    <h2>
+        Statements: <span class="metric">83.33% <small>(40 / 48)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">75% <small>(9 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">87.5% <small>(14 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">82.98% <small>(39 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">clinical/common/mappers/</a> &#187; ordersMapper.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Bahmni.Clinical.OrdersMapper = function (nameToSort) {
+    this.nameToSort = nameToSort;
+};
+&nbsp;
+Bahmni.Clinical.OrdersMapper.prototype.group = function (orders, groupingParameter) {
+    var getGroupingFunction = function (groupingParameter) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (groupingParameter === 'date') {
+            return function (order) {
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (order.startDate) {
+                    return Bahmni.Common.Util.DateUtil.getDate(order.startDate);
+                } else {
+<span class="cstat-no" title="statement not covered" >                    return Bahmni.Common.Util.DateUtil.getDate(order.effectiveStartDate);</span>
+                }
+            };
+        }
+<span class="cstat-no" title="statement not covered" >        return <span class="fstat-no" title="function not covered" >function (order) {</span></span>
+<span class="cstat-no" title="statement not covered" >            return order[groupingParameter];</span>
+        };
+    };
+&nbsp;
+    groupingParameter = groupingParameter || 'date';
+    var groupingFunction = getGroupingFunction(groupingParameter);
+    var groupedOrders = new Bahmni.Clinical.ResultGrouper().group(orders, groupingFunction, 'orders', groupingParameter);
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (groupingParameter === 'date') {
+        return groupedOrders.map(function (order) {
+            return {
+                date: Bahmni.Common.Util.DateUtil.parse(order.date),
+                orders: _.sortBy(order.orders, 'orderNumber')
+            };
+        }).sort(function (first, second) { return first.date &lt; second.date ? 1 : -1; });
+    }
+<span class="cstat-no" title="statement not covered" >    return groupedOrders.map(<span class="fstat-no" title="function not covered" >function (order) {</span></span>
+<span class="cstat-no" title="statement not covered" >        var returnObj = {};</span>
+<span class="cstat-no" title="statement not covered" >        returnObj[groupingParameter] = order[groupingParameter];</span>
+<span class="cstat-no" title="statement not covered" >        returnObj['orders'] = order.orders;</span>
+<span class="cstat-no" title="statement not covered" >        return returnObj;</span>
+    });
+};
+&nbsp;
+Bahmni.Clinical.OrdersMapper.prototype.create = function (encounterTransactions, ordersName, filterFunction, groupingParameter, allTestAndPanels) {
+    filterFunction = filterFunction || function () { return true; };
+    var filteredOrders = this.map(encounterTransactions, ordersName, allTestAndPanels).filter(filterFunction);
+    return this.group(filteredOrders, groupingParameter);
+};
+&nbsp;
+Bahmni.Clinical.OrdersMapper.prototype.map = function (encounterTransactions, ordersName, allTestAndPanels) {
+    var allTestsPanelsConcept = new Bahmni.Clinical.ConceptWeightBasedSorter(allTestAndPanels);
+    var orderObservationsMapper = new Bahmni.Clinical.OrderObservationsMapper();
+    var setOrderProvider = function (encounter) {
+        encounter[ordersName].forEach(function (order) {
+            order.provider = encounter.providers[0];
+            order.accessionUuid = encounter.encounterUuid;
+            order.encounterUuid = encounter.encounterUuid;
+            order.visitUuid = encounter.visitUuid;
+        });
+    };
+    encounterTransactions.forEach(setOrderProvider);
+    var flattenedOrders = _(encounterTransactions).map(ordersName).flatten().value();
+    var ordersWithoutVoidedOrders = flattenedOrders.filter(function (order) {
+        return !order.voided;
+    });
+&nbsp;
+    var allObservations = _(encounterTransactions).map('observations').flatten().value();
+&nbsp;
+    orderObservationsMapper.map(allObservations, ordersWithoutVoidedOrders);
+    var sortedOrders = allTestsPanelsConcept.sort(ordersWithoutVoidedOrders, this.nameToSort);
+    sortedOrders.forEach(function (order) {
+        order.observations.forEach(function (obs) {
+            obs.groupMembers = allTestsPanelsConcept.sort(obs.groupMembers);
+        });
+    });
+    return sortedOrders;
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

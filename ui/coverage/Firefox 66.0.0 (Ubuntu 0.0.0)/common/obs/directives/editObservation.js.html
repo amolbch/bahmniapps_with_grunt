@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/obs/directives/editObservation.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">common/obs/directives/editObservation.js</span></h1>
+    <h2>
+        Statements: <span class="metric">90.41% <small>(66 / 73)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">70.37% <small>(19 / 27)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">89.47% <small>(17 / 19)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">90.41% <small>(66 / 73)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/obs/directives/</a> &#187; editObservation.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.obs')
+    .directive('editObservation', ['$q', 'spinner', '$state', '$rootScope', 'ngDialog', 'messagingService',
+        'encounterService', 'configurations', 'contextChangeHandler', 'auditLogService',
+        function ($q, spinner, $state, $rootScope, ngDialog, messagingService, encounterService, configurations,
+                  contextChangeHandler, auditLogService) {
+            var controller = function ($scope) {
+                var ObservationUtil = Bahmni.Common.Obs.ObservationUtil;
+                var findEditableObs = function (observations) {
+                    return _.find(observations, function (obs) {
+                        return obs.uuid === $scope.observation.uuid;
+                    });
+                };
+                var shouldEditSpecificObservation = function () {
+                    return $scope.observation.uuid ? true : false;
+                };
+                var contextChange = function () {
+                    return contextChangeHandler.execute();
+                };
+                var init = function () {
+                    var consultationMapper = new Bahmni.ConsultationMapper(configurations.dosageFrequencyConfig(), configurations.dosageInstructionConfig(),
+                        configurations.consultationNoteConcept(), configurations.labOrderNotesConcept());
+&nbsp;
+                    return encounterService.findByEncounterUuid($scope.observation.encounterUuid).then(function (reponse) {
+                        var encounterTransaction = reponse.data;
+                        $scope.encounter = consultationMapper.map(encounterTransaction);
+                        $scope.editableObservations = [];
+                        if (shouldEditSpecificObservation()) {
+                            var editableObs = findEditableObs(ObservationUtil.flattenObsToArray($scope.encounter.observations));
+                            <span class="missing-if-branch" title="else path not taken" >E</span>if (editableObs) {
+                                $scope.editableObservations.push(editableObs);
+                            } else {
+<span class="cstat-no" title="statement not covered" >                                messagingService.showMessage('error', "{{'CLINICAL_FORM_EDIT_ERROR_MESSAGE_KEY' | translate}}");</span>
+                            }
+                        } else {
+                            $scope.editableObservations = $scope.encounter.observations;
+                        }
+                        $scope.patient = {uuid: $scope.encounter.patientUuid};
+                    });
+                };
+&nbsp;
+                spinner.forPromise(init());
+&nbsp;
+                var isFormValid = function () {
+                    var contxChange = contextChange();
+                    var shouldAllow = contxChange["allow"];
+                    if (!shouldAllow) {
+                        var errorMessage = contxChange["errorMessage"] ? contxChange["errorMessage"] : <span class="branch-1 cbranch-no" title="branch not covered" >"{{'CLINICAL_FORM_ERRORS_MESSAGE_KEY' | translate }}";</span>
+                        messagingService.showMessage('error', errorMessage);
+                    }
+                    return shouldAllow;
+                };
+&nbsp;
+                $scope.$parent.resetContextChangeHandler = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                    contextChangeHandler.reset();</span>
+                };
+&nbsp;
+                $scope.save = function () {
+                    if (!isFormValid()) {
+                        $scope.$parent.$parent.$broadcast("event:errorsOnForm");
+                        return;
+                    }
+                    $scope.$parent.shouldPromptBeforeClose = false;
+                    $scope.$parent.shouldPromptBrowserReload = false;
+                    var updateEditedObservation = function (observations) {
+                        return _.map(observations, function (obs) {
+                            if (obs.uuid == $scope.editableObservations[0].uuid) {
+                                return $scope.editableObservations[0];
+                            } else {
+                                obs.groupMembers = updateEditedObservation(obs.groupMembers);
+                                return obs;
+                            }
+                        });
+                    };
+&nbsp;
+                    var getEditedObservation = function (observations) {
+                        return _.find(observations, function (obs) {
+                            return obs.uuid == $scope.editableObservations[0].uuid || getEditedObservation(obs.groupMembers);
+                        });
+                    };
+&nbsp;
+                    if (shouldEditSpecificObservation()) {
+                        var allObservations = updateEditedObservation($scope.encounter.observations);
+                        $scope.encounter.observations = [getEditedObservation(allObservations)];
+                    }
+                    $scope.encounter.observations = new Bahmni.Common.Domain.ObservationFilter().filter($scope.encounter.observations);
+                    $scope.encounter.orders = addOrdersToEncounter();
+                    $scope.encounter.extensions = {};
+                    var createPromise = encounterService.create($scope.encounter);
+                    spinner.forPromise(createPromise).then(function (savedResponse) {
+                        var messageParams = {
+                            encounterUuid: savedResponse.data.encounterUuid,
+                            encounterType: savedResponse.data.encounterType
+                        };
+                        auditLogService.log($scope.patient.uuid, "EDIT_ENCOUNTER", messageParams, "MODULE_LABEL_CLINICAL_KEY");
+                        $rootScope.hasVisitedConsultation = false;
+                        $state.go($state.current, {}, {reload: true});
+                        ngDialog.close();
+                        messagingService.showMessage('info', "{{'CLINICAL_SAVE_SUCCESS_MESSAGE_KEY' | translate}}");
+                    });
+                };
+&nbsp;
+                var addOrdersToEncounter = function () {
+                    var modifiedOrders = _.filter($scope.encounter.orders, function (order) {
+                        return order.hasBeenModified || order.isDiscontinued || !order.uuid;
+                    });
+                    var tempOrders = modifiedOrders.map(<span class="fstat-no" title="function not covered" >function (order) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (order.hasBeenModified &amp;&amp; !order.isDiscontinued) {</span>
+<span class="cstat-no" title="statement not covered" >                            return Bahmni.Clinical.Order.revise(order);</span>
+                        } else <span class="cstat-no" title="statement not covered" >if (order.isDiscontinued) {</span>
+<span class="cstat-no" title="statement not covered" >                            return Bahmni.Clinical.Order.discontinue(order);</span>
+                        }
+<span class="cstat-no" title="statement not covered" >                        return {</span>
+                            uuid: order.uuid, concept: {name: order.concept.name, uuid: order.concept.uuid},
+                            commentToFulfiller: order.commentToFulfiller
+                        };
+                    });
+                    return tempOrders;
+                };
+            };
+&nbsp;
+            return {
+                restrict: 'E',
+                scope: {
+                    observation: "=",
+                    conceptSetName: "@",
+                    conceptDisplayName: "@"
+                },
+                controller: controller,
+                template: '&lt;ng-include src="\'../common/obs/views/editObservation.html\'" /&gt;'
+            };
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

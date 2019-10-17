@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for registration/initialization.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">registration/initialization.js</span></h1>
+    <h2>
+        Statements: <span class="metric">2.38% <small>(1 / 42)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">2.38% <small>(1 / 42)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">registration/</a> &#187; initialization.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.registration').factory('initialization',
+    ['$rootScope', '$q', 'configurations', 'authenticator', 'appService', 'spinner', 'preferences', 'locationService', 'mergeService',
+<span class="fstat-no" title="function not covered" >        function ($rootScope, $q, configurations, authenticator, appService, spinner, preferences, locationService, mergeService) {</span>
+<span class="cstat-no" title="statement not covered" >            var getConfigs = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                var configNames = ['encounterConfig', 'patientAttributesConfig', 'identifierTypesConfig', 'addressLevels', 'genderMap', 'relationshipTypeConfig', 'relationshipTypeMap', 'loginLocationToVisitTypeMapping'];</span>
+<span class="cstat-no" title="statement not covered" >                return configurations.load(configNames).then(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var mandatoryPersonAttributes = appService.getAppDescriptor().getConfigValue("mandatoryPersonAttributes");</span>
+<span class="cstat-no" title="statement not covered" >                    var patientAttributeTypes = new Bahmni.Common.Domain.AttributeTypeMapper().mapFromOpenmrsAttributeTypes(configurations.patientAttributesConfig(), mandatoryPersonAttributes);</span>
+<span class="cstat-no" title="statement not covered" >                    $rootScope.regEncounterConfiguration = angular.extend(new Bahmni.Registration.RegistrationEncounterConfig(), configurations.encounterConfig());</span>
+<span class="cstat-no" title="statement not covered" >                    $rootScope.encounterConfig = angular.extend(new EncounterConfig(), configurations.encounterConfig());</span>
+<span class="cstat-no" title="statement not covered" >                    $rootScope.patientConfiguration = new Bahmni.Registration.PatientConfig(patientAttributeTypes.attributeTypes,</span>
+                    configurations.identifierTypesConfig(), appService.getAppDescriptor().getConfigValue("patientInformation"));
+<span class="cstat-no" title="statement not covered" >                    $rootScope.regEncounterConfiguration.loginLocationToVisitTypeMap = configurations.loginLocationToVisitTypeMapping();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    $rootScope.addressLevels = configurations.addressLevels();</span>
+<span class="cstat-no" title="statement not covered" >                    $rootScope.fieldValidation = appService.getAppDescriptor().getConfigValue("fieldValidation");</span>
+<span class="cstat-no" title="statement not covered" >                    $rootScope.genderMap = configurations.genderMap();</span>
+<span class="cstat-no" title="statement not covered" >                    $rootScope.relationshipTypeMap = configurations.relationshipTypeMap();</span>
+<span class="cstat-no" title="statement not covered" >                    $rootScope.relationshipTypes = configurations.relationshipTypes();</span>
+                });
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var loadValidators = <span class="fstat-no" title="function not covered" >function (baseUrl, contextPath) {</span></span>
+<span class="cstat-no" title="statement not covered" >                var script = baseUrl + contextPath + '/fieldValidation.js';</span>
+<span class="cstat-no" title="statement not covered" >                Bahmni.Common.Util.DynamicResourceLoader.includeJs(script, false);</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var initApp = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                return appService.initApp('registration', {'app': true, 'extension': true });</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var getIdentifierPrefix = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                preferences.identifierPrefix = appService.getAppDescriptor().getConfigValue("defaultIdentifierPrefix");</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var initAppConfigs = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                $rootScope.registration = $rootScope.registration || {};</span>
+<span class="cstat-no" title="statement not covered" >                getIdentifierPrefix();</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var mapRelationsTypeWithSearch = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                var relationshipTypeMap = $rootScope.relationshipTypeMap || {};</span>
+<span class="cstat-no" title="statement not covered" >                if (!relationshipTypeMap.provider) {</span>
+<span class="cstat-no" title="statement not covered" >                    return "patient";</span>
+                }
+<span class="cstat-no" title="statement not covered" >                $rootScope.relationshipTypes.forEach(<span class="fstat-no" title="function not covered" >function (relationshipType) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    relationshipType.searchType = (relationshipTypeMap.provider.indexOf(relationshipType.aIsToB) &gt; -1) ? "provider" : "patient";</span>
+                });
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var loggedInLocation = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                return locationService.getLoggedInLocation().then(<span class="fstat-no" title="function not covered" >function (location) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    $rootScope.loggedInLocation = location;</span>
+                });
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var mergeFormConditions = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                var formConditions = Bahmni.ConceptSet.FormConditions;</span>
+<span class="cstat-no" title="statement not covered" >                if (formConditions) {</span>
+<span class="cstat-no" title="statement not covered" >                    formConditions.rules = mergeService.merge(formConditions.rules, formConditions.rulesOverride);</span>
+                }
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            var checkPrivilege = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                return appService.checkPrivilege("app:registration");</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                return spinner.forPromise(authenticator.authenticateUser()</span>
+                .then(initApp)
+                .then(checkPrivilege)
+                .then(getConfigs)
+                .then(initAppConfigs)
+                .then(mapRelationsTypeWithSearch)
+                .then(loggedInLocation)
+                .then(loadValidators(appService.configBaseUrl(), "registration"))
+                .then(mergeFormConditions)
+            );
+            };
+        }]
+);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

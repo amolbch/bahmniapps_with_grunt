@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col col1">
+        <div class="fl diagnosis-name">{{ allergy.displayString() }}</div>
+        <div ng-if="allergy.activeSince" class="fr diagnosis-date">
+            {{'ALLERGIES_LIST_ACTIVE_SINCE'|translate}} {{allergy.activeSince | bahmniDate}}
+        </div>
+    </div>
+    <div class="col col2 notes-subscriber">
+        <span class="subscriber-name">
+            <span ng-if="allergy.creator">{{'ALLERGIES_LIST_CREATED_BY'|translate}} {{allergy.creator}}</span>
+        </span>
+        <span class="diagnosis-notes">{{allergy.additionalDetail}}</span>
+    </div>
+    <div class="col col4 diagnosis-actions" ng-if="allergy.isActive()">
+        <a ng-click="allergymarkAs(allergy,'INACTIVE')" class="fr">
+            {{'ALLERGIES_LIST_SET_AS_INACTIVE'|translate}}
+        </a>
+    </div>
+</div>

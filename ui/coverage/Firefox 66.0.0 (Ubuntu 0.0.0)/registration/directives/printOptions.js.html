@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for registration/directives/printOptions.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">registration/directives/printOptions.js</span></h1>
+    <h2>
+        Statements: <span class="metric">4.55% <small>(1 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 6)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">4.55% <small>(1 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">registration/directives/</a> &#187; printOptions.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.registration')
+    .directive('printOptions', ['$rootScope', 'registrationCardPrinter', 'spinner', 'appService', '$filter',
+<span class="fstat-no" title="function not covered" >        function ($rootScope, registrationCardPrinter, spinner, appService, $filter) {</span>
+<span class="cstat-no" title="statement not covered" >            var controller = <span class="fstat-no" title="function not covered" >function ($scope) {</span></span>
+<span class="cstat-no" title="statement not covered" >                $scope.printOptions = appService.getAppDescriptor().getConfigValue("printOptions");</span>
+<span class="cstat-no" title="statement not covered" >                $scope.defaultPrint = $scope.printOptions &amp;&amp; $scope.printOptions[0];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var mapRegistrationObservations = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var obs = {};</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.observations = $scope.observations || [];</span>
+<span class="cstat-no" title="statement not covered" >                    var getValue = <span class="fstat-no" title="function not covered" >function (observation) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        obs[observation.concept.name] = obs[observation.concept.name] || [];</span>
+<span class="cstat-no" title="statement not covered" >                        observation.value &amp;&amp; obs[observation.concept.name].push(observation.value);</span>
+<span class="cstat-no" title="statement not covered" >                        observation.groupMembers.forEach(getValue);</span>
+                    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    $scope.observations.forEach(getValue);</span>
+<span class="cstat-no" title="statement not covered" >                    return obs;</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.print = <span class="fstat-no" title="function not covered" >function (option) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return registrationCardPrinter.print(option.templateUrl, $scope.patient, mapRegistrationObservations(), $scope.encounterDateTime);</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.buttonText = <span class="fstat-no" title="function not covered" >function (option, type) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var printHtml = "";</span>
+<span class="cstat-no" title="statement not covered" >                    var optionValue = option &amp;&amp; $filter('titleTranslate')(option);</span>
+<span class="cstat-no" title="statement not covered" >                    if (type) {</span>
+<span class="cstat-no" title="statement not covered" >                        printHtml = '&lt;i class="fa fa-print"&gt;&lt;/i&gt;';</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    return '&lt;span&gt;' + optionValue + '&lt;/span&gt;' + printHtml;</span>
+                };
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            return {</span>
+                restrict: 'A',
+                templateUrl: 'views/printOptions.html',
+                controller: controller
+            };
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

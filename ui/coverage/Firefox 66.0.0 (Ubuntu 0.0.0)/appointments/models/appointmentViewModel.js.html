@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for appointments/models/appointmentViewModel.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">appointments/models/appointmentViewModel.js</span></h1>
+    <h2>
+        Statements: <span class="metric">91.67% <small>(33 / 36)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(16 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">87.5% <small>(14 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">91.67% <small>(33 / 36)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">appointments/models/</a> &#187; appointmentViewModel.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">128</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">64</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Bahmni.Appointments.AppointmentViewModel = (function () {
+    var Appointment = function (appointmentDetails) {
+        angular.extend(this, appointmentDetails);
+    };
+&nbsp;
+    Appointment.create = function (appointmentDetails, config) {
+        var getDateWithoutTime = function (dateTime) {
+            return dateTime ? new Date(moment(dateTime)) : undefined;
+        };
+&nbsp;
+        var getTimeWithoutDate = function (dateTime) {
+            return dateTime ? moment(dateTime).format('hh:mm a') : undefined;
+        };
+&nbsp;
+        var parsePatient = function (patientInfo) {
+            var patient = {};
+            patient.label = patientInfo.name + " (" + patientInfo.identifier + ")";
+            patient.uuid = patientInfo.uuid;
+            return patient;
+        };
+&nbsp;
+        var getSpecialityFromConfig = function (selectedSpeciality, config) {
+            var specialities = config.specialities;
+            return _.find(specialities, function (speciality) {
+                return selectedSpeciality.uuid === speciality.uuid;
+            });
+        };
+&nbsp;
+        var getProviderFromConfig = <span class="fstat-no" title="function not covered" >function (selectedProvider, config) {</span>
+<span class="cstat-no" title="statement not covered" >            var providers = config.providers;</span>
+<span class="cstat-no" title="statement not covered" >            return _.find(providers, <span class="fstat-no" title="function not covered" >function (provider) {</span></span>
+<span class="cstat-no" title="statement not covered" >                return selectedProvider.uuid === provider.uuid;</span>
+            });
+        };
+&nbsp;
+        var getLocationFromConfig = function (selectedLoc, config) {
+            var locations = config.locations;
+            return _.find(locations, function (location) {
+                return location.uuid === selectedLoc.uuid;
+            });
+        };
+&nbsp;
+        var getServiceFromConfig = function (selectedService, config) {
+            var services = config.services;
+            return _.find(services, function (service) {
+                return selectedService.uuid === service.uuid;
+            });
+        };
+&nbsp;
+        var getServiceTypeFromConfig = function (selectedServiceType, config) {
+            var serviceTypes = config.selectedService.serviceTypes;
+            return _.find(serviceTypes, function (serviceType) {
+                return serviceType.uuid === selectedServiceType.uuid;
+            });
+        };
+&nbsp;
+        var appointment = new Appointment({
+            uuid: appointmentDetails.uuid,
+            patient: appointmentDetails.patient &amp;&amp; parsePatient(appointmentDetails.patient),
+            speciality: appointmentDetails.service &amp;&amp; getSpecialityFromConfig(appointmentDetails.service.speciality, config),
+            service: appointmentDetails.service &amp;&amp; getServiceFromConfig(appointmentDetails.service, config),
+            serviceType: appointmentDetails.serviceType &amp;&amp; getServiceTypeFromConfig(appointmentDetails.serviceType, config),
+            providers: appointmentDetails.providers || [],
+            location: appointmentDetails.location &amp;&amp; getLocationFromConfig(appointmentDetails.location, config),
+            date: getDateWithoutTime(appointmentDetails.startDateTime),
+            startTime: getTimeWithoutDate(appointmentDetails.startDateTime),
+            endTime: getTimeWithoutDate(appointmentDetails.endDateTime),
+            appointmentKind: appointmentDetails.appointmentKind,
+            status: appointmentDetails.status,
+            comments: appointmentDetails.comments
+        });
+        return appointment;
+    };
+&nbsp;
+    return Appointment;
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

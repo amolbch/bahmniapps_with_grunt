@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/displaycontrols/investigationresults/directives/investigationTable.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">clinical/displaycontrols/investigationresults/directives/investigationTable.js</span></h1>
+    <h2>
+        Statements: <span class="metric">3.23% <small>(1 / 31)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">3.33% <small>(1 / 30)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">clinical/displaycontrols/investigationresults/directives/</a> &#187; investigationTable.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.clinical')
+    .directive('investigationTable', <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >        var controller = <span class="fstat-no" title="function not covered" >function ($scope) {</span></span>
+<span class="cstat-no" title="statement not covered" >            var defaultParams = {</span>
+                    noLabOrdersMessage: "NO_LAB_ORDERS_FOR_PATIENT_MESSAGE_KEY",
+                    showNormalLabResults: true,
+                    showAccessionNotes: true,
+                    title: "Lab Investigations",
+                    translationKey: "LAB_INVESTIGATIONS_KEY"
+                },
+                hasAbnormalTests = <span class="fstat-no" title="function not covered" >function (labOrderResult) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (labOrderResult.isPanel) {</span>
+<span class="cstat-no" title="statement not covered" >                        var hasAbnormal = false;</span>
+<span class="cstat-no" title="statement not covered" >                        labOrderResult.tests.forEach(<span class="fstat-no" title="function not covered" >function (test) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            if (test.abnormal) {</span>
+<span class="cstat-no" title="statement not covered" >                                hasAbnormal = true;</span>
+                            }
+                        });
+<span class="cstat-no" title="statement not covered" >                        return hasAbnormal;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    return labOrderResult.abnormal;</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.params = angular.extend(defaultParams, $scope.params);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.hasLabOrders = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                if ($scope.accessions &amp;&amp; $scope.accessions.length &gt; 0) <span class="cstat-no" title="statement not covered" >return true;</span></span>
+<span class="cstat-no" title="statement not covered" >                return $scope.$emit("no-data-present-event") &amp;&amp; false;</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.shouldShowResults = <span class="fstat-no" title="function not covered" >function (labOrderResult) {</span></span>
+<span class="cstat-no" title="statement not covered" >                return $scope.params.showNormalLabResults || hasAbnormalTests(labOrderResult);</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.toggle = <span class="fstat-no" title="function not covered" >function (item) {</span></span>
+<span class="cstat-no" title="statement not covered" >                event.stopPropagation();</span>
+<span class="cstat-no" title="statement not covered" >                item.show = !item.show;</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.getAccessionDetailsFrom = <span class="fstat-no" title="function not covered" >function (labOrderResults) {</span></span>
+<span class="cstat-no" title="statement not covered" >                var labResultLine = labOrderResults[0].isPanel ? labOrderResults[0].tests[0] : labOrderResults[0];</span>
+<span class="cstat-no" title="statement not covered" >                return {</span>
+                    accessionUuid: labResultLine.accessionUuid,
+                    accessionDateTime: labResultLine.accessionDateTime,
+                    accessionNotes: labResultLine.accessionNotes
+                };
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.toggleAccession = <span class="fstat-no" title="function not covered" >function (labOrderResults) {</span></span>
+<span class="cstat-no" title="statement not covered" >                labOrderResults.isOpen = !labOrderResults.isOpen;</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.showAccessionNotes = <span class="fstat-no" title="function not covered" >function (labOrderResults) {</span></span>
+<span class="cstat-no" title="statement not covered" >                return $scope.getAccessionDetailsFrom(labOrderResults).accessionNotes &amp;&amp; $scope.params.showAccessionNotes;</span>
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $scope.$watch('accessions', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                if ($scope.accessions &amp;&amp; $scope.accessions[0]) {</span>
+<span class="cstat-no" title="statement not covered" >                    $scope.accessions[0].isOpen = true;</span>
+                }
+            });
+        };
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            restrict: 'E',
+            controller: controller,
+            scope: {
+                accessions: "=",
+                params: "="
+            },
+            templateUrl: "displaycontrols/investigationresults/views/investigationTable.html"
+        };
+    });
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

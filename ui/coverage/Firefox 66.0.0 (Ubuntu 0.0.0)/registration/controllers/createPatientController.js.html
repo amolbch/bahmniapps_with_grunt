@@ -1,0 +1,609 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for registration/controllers/createPatientController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">registration/controllers/createPatientController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">93.27% <small>(97 / 104)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">85.71% <small>(24 / 28)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">91.18% <small>(31 / 34)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">93.27% <small>(97 / 104)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">registration/controllers/</a> &#187; createPatientController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">34</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">54</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">54</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">19</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.registration')
+    .controller('CreatePatientController', ['$scope', '$rootScope', '$state', 'patientService', 'patient', 'spinner', 'appService', 'messagingService', 'ngDialog', '$q',
+        function ($scope, $rootScope, $state, patientService, patient, spinner, appService, messagingService, ngDialog, $q) {
+            var dateUtil = Bahmni.Common.Util.DateUtil;
+            $scope.actions = {};
+            var errorMessage;
+            var configValueForEnterId = appService.getAppDescriptor().getConfigValue('showEnterID');
+            $scope.addressHierarchyConfigs = appService.getAppDescriptor().getConfigValue("addressHierarchy");
+            $scope.disablePhotoCapture = appService.getAppDescriptor().getConfigValue("disablePhotoCapture");
+            $scope.showEnterID = configValueForEnterId === null ? <span class="branch-0 cbranch-no" title="branch not covered" >true </span>: configValueForEnterId;
+            $scope.today = Bahmni.Common.Util.DateTimeFormatter.getDateWithoutTime(dateUtil.now());
+&nbsp;
+            var getPersonAttributeTypes = function () {
+                return $rootScope.patientConfiguration.attributeTypes;
+            };
+&nbsp;
+            var prepopulateDefaultsInFields = function () {
+                var personAttributeTypes = getPersonAttributeTypes();
+                var patientInformation = appService.getAppDescriptor().getConfigValue("patientInformation");
+                if (!patientInformation || !patientInformation.defaults) {
+                    return;
+                }
+                var defaults = patientInformation.defaults;
+                var defaultVariableNames = _.keys(defaults);
+&nbsp;
+                var hasDefaultAnswer = function (personAttributeType) {
+                    return _.includes(defaultVariableNames, personAttributeType.name);
+                };
+&nbsp;
+                var isConcept = function (personAttributeType) {
+                    return personAttributeType.format === "org.openmrs.Concept";
+                };
+&nbsp;
+                var setDefaultAnswer = function (personAttributeType) {
+                    $scope.patient[personAttributeType.name] = defaults[personAttributeType.name];
+                };
+&nbsp;
+                var setDefaultConcept = function (personAttributeType) {
+                    var defaultAnswer = defaults[personAttributeType.name];
+                    var isDefaultAnswer = function (answer) {
+                        return answer.fullySpecifiedName === defaultAnswer;
+                    };
+&nbsp;
+                    _.chain(personAttributeType.answers).filter(isDefaultAnswer).each(function (answer) {
+                        $scope.patient[personAttributeType.name] = {
+                            conceptUuid: answer.conceptId,
+                            value: answer.fullySpecifiedName
+                        };
+                    }).value();
+                };
+&nbsp;
+                _.chain(personAttributeTypes)
+                    .filter(hasDefaultAnswer)
+                    .each(setDefaultAnswer).filter(isConcept).each(setDefaultConcept).value();
+            };
+&nbsp;
+            var expandSectionsWithDefaultValue = function () {
+                angular.forEach($rootScope.patientConfiguration &amp;&amp; $rootScope.patientConfiguration.getPatientAttributesSections(), function (section) {
+                    var notNullAttribute = _.find(section &amp;&amp; section.attributes, function (attribute) {
+                        return $scope.patient[attribute.name] !== undefined;
+                    });
+                    section.expand = section.expanded || (notNullAttribute ? true : false);
+                });
+            };
+&nbsp;
+            var init = function () {
+                $scope.patient = patient.create();
+                prepopulateDefaultsInFields();
+                expandSectionsWithDefaultValue();
+                $scope.patientLoaded = true;
+            };
+&nbsp;
+            init();
+&nbsp;
+            var prepopulateFields = function () {
+                var fieldsToPopulate = appService.getAppDescriptor().getConfigValue("prepopulateFields");
+                if (fieldsToPopulate) {
+                    _.each(fieldsToPopulate, function (field) {
+                        var addressLevel = _.find($scope.addressLevels, function (level) {
+                            return level.name === field;
+                        });
+                        if (addressLevel) {
+                            $scope.patient.address[addressLevel.addressField] = $rootScope.loggedInLocation[addressLevel.addressField];
+                        }
+                    });
+                }
+            };
+            prepopulateFields();
+&nbsp;
+            var addNewRelationships = function () {
+                var newRelationships = _.filter($scope.patient.newlyAddedRelationships, <span class="fstat-no" title="function not covered" >function (relationship) {</span>
+<span class="cstat-no" title="statement not covered" >                    return relationship.relationshipType &amp;&amp; relationship.relationshipType.uuid;</span>
+                });
+                newRelationships = _.each(newRelationships, <span class="fstat-no" title="function not covered" >function (relationship) {</span>
+<span class="cstat-no" title="statement not covered" >                    delete relationship.patientIdentifier;</span>
+<span class="cstat-no" title="statement not covered" >                    delete relationship.content;</span>
+<span class="cstat-no" title="statement not covered" >                    delete relationship.providerName;</span>
+                });
+                $scope.patient.relationships = newRelationships;
+            };
+&nbsp;
+            var getConfirmationViaNgDialog = function (config) {
+                var ngDialogLocalScope = config.scope.$new();
+                ngDialogLocalScope.yes = function () {
+                    ngDialog.close();
+                    config.yesCallback();
+                };
+                ngDialogLocalScope.no = function () {
+                    ngDialog.close();
+                };
+                ngDialog.open({
+                    template: config.template,
+                    data: config.data,
+                    scope: ngDialogLocalScope
+                });
+            };
+&nbsp;
+            var copyPatientProfileDataToScope = function (response) {
+                var patientProfileData = response.data;
+                $scope.patient.uuid = patientProfileData.patient.uuid;
+                $scope.patient.name = patientProfileData.patient.person.names[0].display;
+                $scope.patient.isNew = true;
+                $scope.patient.registrationDate = dateUtil.now();
+                $scope.patient.newlyAddedRelationships = [{}];
+                $scope.actions.followUpAction(patientProfileData);
+            };
+&nbsp;
+            var createPatient = function (jumpAccepted) {
+                return patientService.create($scope.patient, jumpAccepted).then(function (response) {
+                    copyPatientProfileDataToScope(response);
+                }, function (response) {
+                    if (response.status === 412) {
+                        var data = _.map(response.data, function (data) {
+                            return {
+                                sizeOfTheJump: data.sizeOfJump,
+                                identifierName: _.find($rootScope.patientConfiguration.identifierTypes, {uuid: data.identifierType}).name
+                            };
+                        });
+                        getConfirmationViaNgDialog({
+                            template: 'views/customIdentifierConfirmation.html',
+                            data: data,
+                            scope: $scope,
+                            yesCallback: function () {
+                                return createPatient(true);
+                            }
+                        });
+                    }
+                    if (response.isIdentifierDuplicate) {
+                        errorMessage = response.message;
+                    }
+                });
+            };
+&nbsp;
+            var createPromise = function () {
+                var deferred = $q.defer();
+                createPatient().finally(function () {
+                    return deferred.resolve({});
+                });
+                return deferred.promise;
+            };
+&nbsp;
+            $scope.create = function () {
+                addNewRelationships();
+                var errorMessages = Bahmni.Common.Util.ValidationUtil.validate($scope.patient, $scope.patientConfiguration.attributeTypes);
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (errorMessages.length &gt; 0) {
+<span class="cstat-no" title="statement not covered" >                    errorMessages.forEach(<span class="fstat-no" title="function not covered" >function (errorMessage) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        messagingService.showMessage('error', errorMessage);</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                    return $q.when({});</span>
+                }
+                return spinner.forPromise(createPromise()).then(function (response) {
+                    if (errorMessage) {
+                        messagingService.showMessage("error", errorMessage);
+                        errorMessage = undefined;
+                    }
+                });
+            };
+&nbsp;
+            $scope.afterSave = function () {
+                messagingService.showMessage("info", "REGISTRATION_LABEL_SAVED");
+                $state.go("patient.edit", {
+                    patientUuid: $scope.patient.uuid
+                });
+            };
+        }
+    ]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,1026 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for registration/controllers/visitController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">registration/controllers/visitController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">78.84% <small>(149 / 189)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">43.28% <small>(29 / 67)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">76.47% <small>(39 / 51)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">78.84% <small>(149 / 189)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">registration/controllers/</a> &#187; visitController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.registration')
+    .controller('VisitController', ['$window', '$scope', '$rootScope', '$state', '$bahmniCookieStore', 'patientService', 'encounterService', '$stateParams', 'spinner', '$timeout', '$q', 'appService', 'openmrsPatientMapper', 'contextChangeHandler', 'messagingService', 'sessionService', 'visitService', '$location', '$translate',
+        'auditLogService', 'formService',
+        function ($window, $scope, $rootScope, $state, $bahmniCookieStore, patientService, encounterService, $stateParams, spinner, $timeout, $q, appService, openmrsPatientMapper, contextChangeHandler, messagingService, sessionService, visitService, $location, $translate, auditLogService, formService) {
+            var vm = this;
+            var patientUuid = $stateParams.patientUuid;
+            var extensions = appService.getAppDescriptor().getExtensions("org.bahmni.registration.conceptSetGroup.observations", "config");
+            var formExtensions = appService.getAppDescriptor().getExtensions("org.bahmni.registration.conceptSetGroup.observations", "forms");
+            var locationUuid = sessionService.getLoginLocationUuid();
+            var selectedProvider = $rootScope.currentProvider;
+            var regEncounterTypeUuid = $rootScope.regEncounterConfiguration.encounterTypes[Bahmni.Registration.Constants.registrationEncounterType];
+            var visitLocationUuid = $rootScope.visitLocation;
+&nbsp;
+            var getPatient = function () {
+                var deferred = $q.defer();
+                patientService.get(patientUuid).then(function (openMRSPatient) {
+                    deferred.resolve(openMRSPatient);
+                    $scope.patient = openmrsPatientMapper.map(openMRSPatient);
+                    $scope.patient.name = openMRSPatient.patient.person.names[0].display;
+                    $scope.patient.uuid = openMRSPatient.patient.uuid;
+                });
+                return deferred.promise;
+            };
+&nbsp;
+            var getActiveEncounter = function () {
+                var deferred = $q.defer();
+                encounterService.find({
+                    "patientUuid": patientUuid,
+                    "providerUuids": !_.isEmpty($scope.currentProvider.uuid) ? <span class="branch-0 cbranch-no" title="branch not covered" >[$scope.currentProvider.uuid] </span>: null,
+                    "includeAll": false,
+                    locationUuid: locationUuid,
+                    encounterTypeUuids: [regEncounterTypeUuid]
+                }).then(function (response) {
+                    deferred.resolve(response);
+                    $scope.encounterUuid = response.data.encounterUuid;
+                    $scope.observations = response.data.observations;
+                });
+                return deferred.promise;
+            };
+&nbsp;
+            var getAllForms = function () {
+                var deferred = $q.defer();
+                formService.getFormList($scope.encounterUuid)
+                    .then(function (response) {
+                        $scope.conceptSets = extensions.map(<span class="fstat-no" title="function not covered" >function (extension) {</span>
+<span class="cstat-no" title="statement not covered" >                            return new Bahmni.ConceptSet.ConceptSetSection(extension, $rootScope.currentUser, {}, [], {});</span>
+                        });
+&nbsp;
+                        $scope.observationForms = getObservationForms(formExtensions, response.data);
+                        $scope.conceptSets = $scope.conceptSets.concat($scope.observationForms);
+&nbsp;
+                        $scope.availableConceptSets = $scope.conceptSets.filter(function (conceptSet) {
+                            return conceptSet.isAvailable($scope.context);
+                        });
+                        deferred.resolve(response.data);
+                    });
+                return deferred.promise;
+            };
+&nbsp;
+            $scope.hideFields = appService.getAppDescriptor().getConfigValue("hideFields");
+&nbsp;
+            $scope.back = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                $state.go('patient.edit');</span>
+            };
+&nbsp;
+            $scope.updatePatientImage = function (image) {
+                var updateImagePromise = patientService.updateImage($scope.patient.uuid, image.replace("data:image/jpeg;base64,", ""));
+                spinner.forPromise(updateImagePromise);
+                return updateImagePromise;
+            };
+&nbsp;
+            var save = function () {
+                $scope.encounter = {
+                    patientUuid: $scope.patient.uuid,
+                    locationUuid: locationUuid,
+                    encounterTypeUuid: regEncounterTypeUuid,
+                    orders: [],
+                    drugOrders: [],
+                    extensions: {}
+                };
+&nbsp;
+                $bahmniCookieStore.put(Bahmni.Common.Constants.grantProviderAccessDataCookieName, selectedProvider, {
+                    path: '/',
+                    expires: 1
+                });
+&nbsp;
+                $scope.encounter.observations = $scope.observations;
+                $scope.encounter.observations = new Bahmni.Common.Domain.ObservationFilter().filter($scope.encounter.observations);
+&nbsp;
+                addFormObservations($scope.encounter.observations);
+&nbsp;
+                var createPromise = encounterService.create($scope.encounter);
+                spinner.forPromise(createPromise);
+                return createPromise.then(function (response) {
+                    var messageParams = {encounterUuid: response.data.encounterUuid, encounterType: response.data.encounterType};
+                    auditLogService.log(patientUuid, 'EDIT_ENCOUNTER', messageParams, 'MODULE_LABEL_REGISTRATION_KEY');
+                    var visitType, visitTypeUuid;
+                    visitTypeUuid = response.data.visitTypeUuid;
+                    visitService.getVisitType().then(function (response) {
+                        visitType = _.find(response.data.results, function (type) {
+                            <span class="missing-if-branch" title="else path not taken" >E</span>if (type.uuid === visitTypeUuid) {
+                                return type;
+                            }
+                        });
+                    });
+                });
+            };
+&nbsp;
+            var isUserPrivilegedToCloseVisit = function () {
+                var applicablePrivs = [Bahmni.Common.Constants.closeVisitPrivilege, Bahmni.Common.Constants.deleteVisitsPrivilege];
+                var userPrivs = _.map($rootScope.currentUser.privileges, function (privilege) {
+                    return privilege.name;
+                });
+                return _.some(userPrivs, function (privName) {
+                    return _.includes(applicablePrivs, privName);
+                });
+            };
+&nbsp;
+            var searchActiveVisitsPromise = function () {
+                return visitService.search({
+                    patient: patientUuid, includeInactive: false, v: "custom:(uuid,location:(uuid))"
+                }).then(function (response) {
+                    var results = response.data.results;
+                    var activeVisitForCurrentLoginLocation;
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (results) {
+                        activeVisitForCurrentLoginLocation = _.filter(results, function (result) {
+                            return result.location.uuid === visitLocationUuid;
+                        });
+                    }
+&nbsp;
+                    var hasActiveVisit = activeVisitForCurrentLoginLocation.length &gt; 0;
+                    vm.visitUuid = hasActiveVisit ? activeVisitForCurrentLoginLocation[0].uuid : "";
+                    $scope.canCloseVisit = isUserPrivilegedToCloseVisit() &amp;&amp; hasActiveVisit;
+                });
+            };
+&nbsp;
+            $scope.closeVisitIfDischarged = function () {
+                visitService.getVisitSummary(vm.visitUuid).then(function (response) {
+                    var visitSummary = response.data;
+                    if (visitSummary.admissionDetails &amp;&amp; !visitSummary.dischargeDetails) {
+                        messagingService.showMessage("error", 'REGISTRATION_VISIT_CANNOT_BE_CLOSED');
+                        var messageParams = {visitUuid: vm.visitUuid, visitType: visitSummary.visitType};
+                        auditLogService.log(patientUuid, 'CLOSE_VISIT_FAILED', messageParams, 'MODULE_LABEL_REGISTRATION_KEY');
+                    } else {
+                        closeVisit(visitSummary.visitType);
+                    }
+                });
+            };
+&nbsp;
+            var closeVisit = function (visitType) {
+                var confirmed = $window.confirm($translate.instant("REGISTRATION_CONFIRM_CLOSE_VISIT"));
+                if (confirmed) {
+                    visitService.endVisit(vm.visitUuid).then(function () {
+                        $location.url(Bahmni.Registration.Constants.patientSearchURL);
+                        var messageParams = {visitUuid: vm.visitUuid, visitType: visitType};
+                        auditLogService.log(patientUuid, 'CLOSE_VISIT', messageParams, 'MODULE_LABEL_REGISTRATION_KEY');
+                    });
+                }
+            };
+&nbsp;
+            $scope.getMessage = function () {
+                return $scope.message;
+            };
+&nbsp;
+            var isObservationFormValid = function () {
+                var valid = true;
+                _.each($scope.observationForms, <span class="fstat-no" title="function not covered" >function (observationForm) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (valid &amp;&amp; observationForm.component) {</span>
+<span class="cstat-no" title="statement not covered" >                        var value = observationForm.component.getValue();</span>
+<span class="cstat-no" title="statement not covered" >                        if (value.errors) {</span>
+<span class="cstat-no" title="statement not covered" >                            messagingService.showMessage('error', "{{'REGISTRATION_FORM_ERRORS_MESSAGE_KEY' | translate }}");</span>
+<span class="cstat-no" title="statement not covered" >                            valid = false;</span>
+                        }
+                    }
+                });
+                return valid;
+            };
+&nbsp;
+            var validate = function () {
+                var isFormValidated = mandatoryValidate();
+                var deferred = $q.defer();
+                var contxChange = contextChangeHandler.execute();
+                var allowContextChange = contxChange["allow"];
+                var errorMessage;
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (!isObservationFormValid()) {
+<span class="cstat-no" title="statement not covered" >                    deferred.reject("Some fields are not valid");</span>
+<span class="cstat-no" title="statement not covered" >                    return deferred.promise;</span>
+                }
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (!allowContextChange) {
+<span class="cstat-no" title="statement not covered" >                    errorMessage = contxChange["errorMessage"] ? contxChange["errorMessage"] : 'REGISTRATION_LABEL_CORRECT_ERRORS';</span>
+<span class="cstat-no" title="statement not covered" >                    messagingService.showMessage('error', errorMessage);</span>
+<span class="cstat-no" title="statement not covered" >                    deferred.reject("Some fields are not valid");</span>
+<span class="cstat-no" title="statement not covered" >                    return deferred.promise;</span>
+                } else <span class="missing-if-branch" title="if path not taken" >I</span>if (!isFormValidated) { // This ELSE IF condition is to be deleted later.
+<span class="cstat-no" title="statement not covered" >                    errorMessage = "REGISTRATION_LABEL_ENTER_MANDATORY_FIELDS";</span>
+<span class="cstat-no" title="statement not covered" >                    messagingService.showMessage('error', errorMessage);</span>
+<span class="cstat-no" title="statement not covered" >                    deferred.reject("Some fields are not valid");</span>
+<span class="cstat-no" title="statement not covered" >                    return deferred.promise;</span>
+                } else {
+                    deferred.resolve();
+                    return deferred.promise;
+                }
+            };
+&nbsp;
+            // Start :: Registration Page validation
+            // To be deleted later - Hacky fix only for Registration Page
+            var mandatoryConceptGroup = [];
+            var mandatoryValidate = function () {
+                conceptGroupValidation($scope.observations);
+                return isValid(mandatoryConceptGroup);
+            };
+&nbsp;
+            var conceptGroupValidation = function (observations) {
+                var concepts = _.filter(observations, <span class="fstat-no" title="function not covered" >function (observationNode) {</span>
+<span class="cstat-no" title="statement not covered" >                    return isMandatoryConcept(observationNode);</span>
+                });
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (!_.isEmpty(concepts)) {
+<span class="cstat-no" title="statement not covered" >                    mandatoryConceptGroup = _.union(mandatoryConceptGroup, concepts);</span>
+                }
+            };
+            var isMandatoryConcept = <span class="fstat-no" title="function not covered" >function (observation) {</span>
+<span class="cstat-no" title="statement not covered" >                if (!_.isEmpty(observation.groupMembers)) {</span>
+<span class="cstat-no" title="statement not covered" >                    conceptGroupValidation(observation.groupMembers);</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    return observation.conceptUIConfig &amp;&amp; observation.conceptUIConfig.required;</span>
+                }
+            };
+            var isValid = function (mandatoryConcepts) {
+                var concept = mandatoryConcepts.filter(<span class="fstat-no" title="function not covered" >function (mandatoryConcept) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (mandatoryConcept.hasValue()) {</span>
+<span class="cstat-no" title="statement not covered" >                        return false;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    if (mandatoryConcept instanceof Bahmni.ConceptSet.Observation &amp;&amp;</span>
+                        mandatoryConcept.conceptUIConfig &amp;&amp; mandatoryConcept.conceptUIConfig.multiSelect) {
+<span class="cstat-no" title="statement not covered" >                        return false;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    if (mandatoryConcept.isMultiSelect) {</span>
+<span class="cstat-no" title="statement not covered" >                        return _.isEmpty(mandatoryConcept.getValues());</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    return !mandatoryConcept.value;</span>
+                });
+                return _.isEmpty(concept);
+            };
+            // End :: Registration Page validation
+&nbsp;
+            var afterSave = function () {
+                var forwardUrl = appService.getAppDescriptor().getConfigValue("afterVisitSaveForwardUrl");
+                if (forwardUrl != null) {
+                    $window.location.href = appService.getAppDescriptor().formatUrl(forwardUrl, {'patientUuid': patientUuid});
+                } else {
+                    $state.transitionTo($state.current, $state.params, {
+                        reload: true,
+                        inherit: false,
+                        notify: true
+                    });
+                }
+                messagingService.showMessage('info', 'REGISTRATION_LABEL_SAVED');
+            };
+&nbsp;
+            $scope.submit = function () {
+                return validate().then(save).then(afterSave);
+            };
+&nbsp;
+            $scope.today = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return new Date();</span>
+            };
+&nbsp;
+            $scope.disableFormSubmitOnEnter = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                $('.visit-patient').find('input').keypress(<span class="fstat-no" title="function not covered" >function (e) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if (e.which === 13) { // Enter key = keycode 13</span>
+<span class="cstat-no" title="statement not covered" >                        return false;</span>
+                    }
+                });
+            };
+&nbsp;
+            var getConceptSet = function () {
+                var visitType = $scope.encounterConfig.getVisitTypeByUuid($scope.visitTypeUuid);
+                $scope.context = {visitType: visitType, patient: $scope.patient};
+            };
+&nbsp;
+            var getObservationForms = function (extensions, observationsForms) {
+                var forms = [];
+                var observations = $scope.observations || <span class="branch-1 cbranch-no" title="branch not covered" >[];</span>
+                _.each(extensions, function (ext) {
+                    var options = ext.extensionParams || <span class="branch-1 cbranch-no" title="branch not covered" >{};</span>
+                    var observationForm = _.find(observationsForms, function (form) {
+                        return (form.formName === options.formName || form.name === options.formName);
+                    });
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (observationForm) {
+                        var formUuid = observationForm.formUuid || observationForm.uuid;
+                        var formName = observationForm.name || <span class="branch-1 cbranch-no" title="branch not covered" >observationForm.formName;</span>
+                        var formVersion = observationForm.version || <span class="branch-1 cbranch-no" title="branch not covered" >observationForm.formVersion;</span>
+                        forms.push(new Bahmni.ObservationForm(formUuid, $rootScope.currentUser, formName, formVersion, observations, ext));
+                    }
+                });
+                return forms;
+            };
+&nbsp;
+            $scope.isFormTemplate = function (data) {
+                return data.formUuid;
+            };
+&nbsp;
+            var addFormObservations = function (observations) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if ($scope.observationForms) {
+<span class="cstat-no" title="statement not covered" >                    _.remove(observations, <span class="fstat-no" title="function not covered" >function (observation) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        return observation.formNamespace;</span>
+                    });
+<span class="cstat-no" title="statement not covered" >                    _.each($scope.observationForms, <span class="fstat-no" title="function not covered" >function (observationForm) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        if (observationForm.component) {</span>
+<span class="cstat-no" title="statement not covered" >                            var formObservations = observationForm.component.getValue();</span>
+<span class="cstat-no" title="statement not covered" >                            _.each(formObservations.observations, <span class="fstat-no" title="function not covered" >function (obs) {</span></span>
+<span class="cstat-no" title="statement not covered" >                                observations.push(obs);</span>
+                            });
+                        }
+                    });
+                }
+            };
+&nbsp;
+            spinner.forPromise($q.all([getPatient(), getActiveEncounter(), searchActiveVisitsPromise()])
+                .then(function () {
+                    getAllForms().then(function () {
+                        getConceptSet();
+                    });
+                }));
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

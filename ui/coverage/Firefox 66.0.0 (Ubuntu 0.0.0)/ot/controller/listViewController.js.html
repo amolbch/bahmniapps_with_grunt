@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for ot/controller/listViewController.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">ot/controller/listViewController.js</span></h1>
+    <h2>
+        Statements: <span class="metric">89.16% <small>(74 / 83)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">77.27% <small>(17 / 22)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">90% <small>(18 / 20)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">89.16% <small>(74 / 83)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">ot/controller/</a> &#187; listViewController.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-yes">23</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">63</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">33</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">48</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.ot')
+    .controller('listViewController', ['$scope', '$rootScope', '$q', 'spinner', 'surgicalAppointmentService', 'appService', 'surgicalAppointmentHelper', 'surgicalBlockFilter', 'printer',
+        function ($scope, $rootScope, $q, spinner, surgicalAppointmentService, appService, surgicalAppointmentHelper, surgicalBlockFilter, printer) {
+            var startDatetime = moment($scope.viewDate).toDate();
+            var surgicalBlockMapper = new Bahmni.OT.SurgicalBlockMapper();
+            var endDatetime = moment(startDatetime).endOf('day').toDate();
+            $scope.tableInfo = [
+                {heading: 'Status', sortInfo: 'status'},
+                {heading: 'Day', sortInfo: 'derivedAttributes.expectedStartDate'},
+                {heading: 'Date', sortInfo: 'derivedAttributes.expectedStartDate'},
+                {heading: 'Identifier', sortInfo: 'derivedAttributes.patientIdentifier'},
+                {heading: 'Patient Name', sortInfo: 'derivedAttributes.patientName'},
+                {heading: 'Patient Age', sortInfo: 'derivedAttributes.patientAge'},
+                {heading: 'Start Time', sortInfo: 'derivedAttributes.expectedStartTime'},
+                {heading: 'Est Time', sortInfo: 'derivedAttributes.duration'},
+                {heading: 'Actual Time', sortInfo: 'actualStartDatetime'},
+                {heading: 'OT#', sortInfo: 'surgicalBlock.location.name'},
+                {heading: 'Procedure(s)', sortInfo: 'surgicalAppointmentAttributes.procedure.value'},
+                {heading: 'Notes', sortInfo: 'surgicalAppointmentAttributes.notes.value'},
+                {heading: 'Surgeon', sortInfo: 'surgicalBlock.provider.person.display'},
+                {heading: 'Other Surgeon', sortInfo: 'surgicalAppointmentAttributes.otherSurgeon.value.person.display'},
+                {heading: 'Surgical Assistant', sortInfo: 'surgicalAppointmentAttributes.surgicalAssistant.value'},
+                {heading: 'Anaesthetist', sortInfo: 'surgicalAppointmentAttributes.anaesthetist.value'},
+                {heading: 'Scrub Nurse', sortInfo: 'surgicalAppointmentAttributes.scrubNurse.value'},
+                {heading: 'Circulating Nurse', sortInfo: 'surgicalAppointmentAttributes.circulatingNurse.value'},
+                {heading: 'Status Change Notes', sortInfo: 'notes'},
+                {heading: 'Bed Location', sortInfo: 'bedLocation'},
+                {heading: 'Bed ID', sortInfo: 'bedNumber'}];
+&nbsp;
+            var filterSurgicalBlocksAndMapAppointmentsForDisplay = function (surgicalBlocks) {
+                var clonedSurgicalBlocks = _.cloneDeep(surgicalBlocks);
+                var filteredSurgicalBlocks = surgicalBlockFilter(clonedSurgicalBlocks, $scope.filterParams);
+                var mappedSurgicalBlocks = _.map(filteredSurgicalBlocks, function (surgicalBlock) {
+                    return surgicalBlockMapper.map(surgicalBlock, $rootScope.attributeTypes, $rootScope.surgeons);
+                });
+                mappedSurgicalBlocks = _.map(mappedSurgicalBlocks, function (surgicalBlock) {
+                    var blockStartDatetime = surgicalBlock.startDatetime;
+                    surgicalBlock.surgicalAppointments = _.map(surgicalBlock.surgicalAppointments, function (appointment) {
+                        var mappedAppointment = _.cloneDeep(appointment);
+                        mappedAppointment.surgicalBlock = surgicalBlock;
+                        mappedAppointment.derivedAttributes = {};
+&nbsp;
+                        var estTimeHours = mappedAppointment.surgicalAppointmentAttributes['estTimeHours'] &amp;&amp; mappedAppointment.surgicalAppointmentAttributes['estTimeHours'].value;
+                        var estTimeMinutes = mappedAppointment.surgicalAppointmentAttributes['estTimeMinutes'] &amp;&amp; mappedAppointment.surgicalAppointmentAttributes['estTimeMinutes'].value;
+                        var cleaningTime = mappedAppointment.surgicalAppointmentAttributes['cleaningTime'] &amp;&amp; mappedAppointment.surgicalAppointmentAttributes['cleaningTime'].value;
+&nbsp;
+                        mappedAppointment.derivedAttributes.duration = surgicalAppointmentHelper.getAppointmentDuration(
+                            estTimeHours, estTimeMinutes, cleaningTime
+                        );
+                        mappedAppointment.derivedAttributes.expectedStartDate = moment(blockStartDatetime).startOf('day').toDate();
+                        mappedAppointment.derivedAttributes.patientIdentifier = mappedAppointment.patient.display.split(' - ')[0];
+                        mappedAppointment.derivedAttributes.patientAge = mappedAppointment.patient.person.age;
+                        mappedAppointment.derivedAttributes.patientName = mappedAppointment.patient.display.split(' - ')[1];
+                        if (mappedAppointment.status === Bahmni.OT.Constants.completed || mappedAppointment.status === Bahmni.OT.Constants.scheduled) {
+                            mappedAppointment.derivedAttributes.expectedStartTime = blockStartDatetime;
+                            blockStartDatetime = Bahmni.Common.Util.DateUtil.addMinutes(blockStartDatetime, mappedAppointment.derivedAttributes.duration);
+                        }
+                        return mappedAppointment;
+                    });
+                    return surgicalBlock;
+                });
+&nbsp;
+                var surgicalAppointmentList = _.reduce(mappedSurgicalBlocks, function (surgicalAppointmentList, block) {
+                    return surgicalAppointmentList.concat(block.surgicalAppointments);
+                }, []);
+&nbsp;
+                var filteredSurgicalAppointmentsByStatus = surgicalAppointmentHelper.filterSurgicalAppointmentsByStatus(
+                    surgicalAppointmentList, _.map($scope.filterParams.statusList, <span class="fstat-no" title="function not covered" >function (status) {</span>
+<span class="cstat-no" title="statement not covered" >                        return status.name;</span>
+                    }));
+&nbsp;
+                var filteredSurgicalAppointmentsByPatient = surgicalAppointmentHelper.filterSurgicalAppointmentsByPatient(
+                    filteredSurgicalAppointmentsByStatus, $scope.filterParams.patient);
+                $scope.surgicalAppointmentList = _.sortBy(filteredSurgicalAppointmentsByPatient, ["derivedAttributes.expectedStartDate", "surgicalBlock.location.name", "derivedAttributes.expectedStartDatetime"]);
+            };
+&nbsp;
+            var init = function (startDatetime, endDatetime) {
+                $scope.addActualTimeDisabled = true;
+                $scope.editDisabled = true;
+                $scope.cancelDisabled = true;
+                $scope.reverseSort = false;
+                $scope.sortColumn = "";
+                return $q.all([surgicalAppointmentService.getSurgicalBlocksInDateRange(startDatetime, endDatetime, true)]).then(function (response) {
+                    $scope.surgicalBlocks = response[0].data.results;
+                    filterSurgicalBlocksAndMapAppointmentsForDisplay($scope.surgicalBlocks);
+                });
+            };
+&nbsp;
+            $scope.isCurrentDateinWeekView = <span class="fstat-no" title="function not covered" >function (appointmentDate) {</span>
+<span class="cstat-no" title="statement not covered" >                return _.isEqual(moment().startOf('day').toDate(), appointmentDate) &amp;&amp; $scope.weekOrDay === 'week';</span>
+            };
+            $scope.printPage = function () {
+                var printTemplateUrl = appService.getAppDescriptor().getConfigValue("printListViewTemplateUrl") || 'views/listView.html';
+                printer.print(printTemplateUrl, {
+                    surgicalAppointmentList: $scope.surgicalAppointmentList,
+                    weekStartDate: $scope.weekStartDate,
+                    weekEndDate: $scope.weekEndDate,
+                    viewDate: $scope.viewDate,
+                    weekOrDay: $scope.weekOrDay,
+                    isCurrentDate: $scope.isCurrentDateinWeekView
+                });
+            };
+&nbsp;
+            $scope.sortSurgicalAppointmentsBy = function (sortColumn) {
+                var emptyObjects = _.filter($scope.surgicalAppointmentList, function (appointment) {
+                    return !_.property(sortColumn)(appointment);
+                });
+                var nonEmptyObjects = _.difference($scope.surgicalAppointmentList, emptyObjects);
+                var sortedNonEmptyObjects = _.sortBy(nonEmptyObjects, sortColumn);
+                if ($scope.reverseSort) {
+                    sortedNonEmptyObjects.reverse();
+                }
+                $scope.surgicalAppointmentList = sortedNonEmptyObjects.concat(emptyObjects);
+                $scope.sortColumn = sortColumn;
+                $scope.reverseSort = !$scope.reverseSort;
+            };
+&nbsp;
+            $scope.selectSurgicalAppointment = function ($event, appointment) {
+                $scope.$emit("event:surgicalAppointmentSelect", appointment, appointment.surgicalBlock);
+                $event.stopPropagation();
+            };
+&nbsp;
+            $scope.deselectSurgicalAppointment = function ($event) {
+                $scope.$emit("event:surgicalBlockDeselect");
+                $event.stopPropagation();
+            };
+&nbsp;
+            $scope.$watch("viewDate", function () {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if ($scope.weekOrDay === 'day') {
+<span class="cstat-no" title="statement not covered" >                    startDatetime = moment($scope.viewDate).toDate();</span>
+<span class="cstat-no" title="statement not covered" >                    endDatetime = moment(startDatetime).endOf('day').toDate();</span>
+<span class="cstat-no" title="statement not covered" >                    spinner.forPromise(init(startDatetime, endDatetime));</span>
+                }
+            });
+&nbsp;
+            $scope.$watch("weekStartDate", function () {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if ($scope.weekOrDay === 'week') {
+<span class="cstat-no" title="statement not covered" >                    startDatetime = moment($scope.weekStartDate).toDate();</span>
+<span class="cstat-no" title="statement not covered" >                    endDatetime = moment($scope.weekEndDate).toDate();</span>
+<span class="cstat-no" title="statement not covered" >                    spinner.forPromise(init(startDatetime, endDatetime));</span>
+                }
+            });
+&nbsp;
+            $scope.$watch("filterParams", function (oldValue, newValue) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (oldValue !== newValue) {
+<span class="cstat-no" title="statement not covered" >                    filterSurgicalBlocksAndMapAppointmentsForDisplay($scope.surgicalBlocks);</span>
+                }
+            });
+&nbsp;
+            $scope.isStatusPostponed = function (status) {
+                return status === Bahmni.OT.Constants.postponed;
+            };
+&nbsp;
+            $scope.isStatusCancelled = function (status) {
+                return status === Bahmni.OT.Constants.cancelled;
+            };
+&nbsp;
+            spinner.forPromise(init(startDatetime, endDatetime));
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

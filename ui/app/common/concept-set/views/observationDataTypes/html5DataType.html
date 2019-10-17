@@ -1,0 +1,84 @@
+<input id="weight_observation" ng-if="::(observation.isNumeric() && !observation.isStepperControl()) && observation.concept.name === 'WEIGHT'"
+       obs-constraints obs="::observation"
+       ng-model="observation.value" ng-change="::observation.validateWeight();updateNutritionalValue()"
+       ng-disabled="observation.disabled"
+       ng-class="{'is-abnormal': observation.abnormalObs.value, 'illegalValue': !observation.isValid(atLeastOneValueIsSet,conceptSetRequired), 'computed-field': observation.isComputedAndEditable()}"
+       type="number"
+       focus-me="::observation.isFocused" tabindex="1"/>
+
+<input id="weight_observation" ng-if="::(observation.isNumeric() && !observation.isStepperControl()) && observation.concept.name === 'HEIGHT'"
+       obs-constraints obs="::observation"
+       ng-model="observation.value" ng-change = "updateNutritionalValue()"
+       ng-disabled="observation.disabled"
+       ng-class="{'is-abnormal': observation.abnormalObs.value, 'illegalValue': !observation.isValid(atLeastOneValueIsSet,conceptSetRequired), 'computed-field': observation.isComputedAndEditable()}"
+       type="number"
+       focus-me="::observation.isFocused" tabindex="1"/>
+
+<input id="weight_observation" ng-if="::(observation.isNumeric() && !observation.isStepperControl()) && observation.concept.name === 'Brachial_perimeter_new'"
+       obs-constraints obs="::observation"
+       ng-model="observation.value" ng-change = "updateNutritionalValue()"
+       ng-disabled="observation.disabled"
+       ng-class="{'is-abnormal': observation.abnormalObs.value, 'illegalValue': !observation.isValid(atLeastOneValueIsSet,conceptSetRequired), 'computed-field': observation.isComputedAndEditable()}"
+       type="number"
+       focus-me="::observation.isFocused" tabindex="1"/>
+
+<input id="{{::observation.uniqueId}}" ng-if="::(observation.isNumeric() && !observation.isStepperControl() && observation.concept.name !== 'WEIGHT' && observation.concept.name !== 'HEIGHT' && observation.concept.name !== 'Brachial_perimeter_new')"
+       obs-constraints obs="::observation"
+       ng-model="observation.value" ng-change="handleUpdate();onVitalSignalChange()"
+       ng-disabled="observation.disabled"
+       ng-class="{'is-abnormal': observation.abnormalObs.value, 'illegalValue': !observation.isValid(atLeastOneValueIsSet,conceptSetRequired), 'computed-field': observation.isComputedAndEditable()}"
+       type="number"
+       focus-me="::observation.isFocused" tabindex="1"/>
+
+<input id="{{::observation.uniqueId}}" obs-constraints obs="::observation" max = "{{::today}}"
+       ng-if="!observation.isNumeric() && !observation._isDateTimeDataType() && !observation.conceptUIConfig.displayMonthAndYear && observation.uniqueId !== 'observation_40' && observation.uniqueId !== 'observation_45' && observation.uniqueId !== 'observation_51' && observation.uniqueId !== 'observation_57'"
+       ng-disabled="observation.disabled"
+       ng-model="observation.value" ng-change="handleUpdate();onDateChange()"
+       ng-class="{'is-abnormal': observation.abnormalObs.value, 'illegalValue': !observation.isValid(atLeastOneValueIsSet,conceptSetRequired), 'computed-field': observation.isComputedAndEditable()}"
+       focus-me="::observation.isFocused" tabindex="1"/>
+
+<input id="{{::observation.uniqueId}}" obs-constraints obs="::observation"
+       ng-if="!observation.isNumeric() && !observation._isDateTimeDataType() && !observation.conceptUIConfig.displayMonthAndYear && observation.uniqueId === 'observation_40'" ng-disabled="observation.disabled"
+       ng-model="observation.value" ng-change="handleUpdate();onDateChange()"
+       ng-class="{'is-abnormal': observation.abnormalObs.value, 'illegalValue': !observation.isValid(atLeastOneValueIsSet,conceptSetRequired), 'computed-field': observation.isComputedAndEditable()}"
+       focus-me="::observation.isFocused" tabindex="1"/>
+
+<input id="{{::observation.uniqueId}}" obs-constraints obs="::observation"
+       ng-if="!observation.isNumeric() && !observation._isDateTimeDataType() && !observation.conceptUIConfig.displayMonthAndYear && observation.uniqueId === 'observation_45'" ng-disabled="observation.disabled"
+       ng-model="observation.value" ng-change="handleUpdate();onDateChange()"
+       ng-class="{'is-abnormal': observation.abnormalObs.value, 'illegalValue': !observation.isValid(atLeastOneValueIsSet,conceptSetRequired), 'computed-field': observation.isComputedAndEditable()}"
+       focus-me="::observation.isFocused" tabindex="1"/>
+
+<input id="{{::observation.uniqueId}}" obs-constraints obs="::observation"
+       ng-if="!observation.isNumeric() && !observation._isDateTimeDataType() && !observation.conceptUIConfig.displayMonthAndYear && observation.uniqueId === 'observation_51'" ng-disabled="observation.disabled"
+       ng-model="observation.value" ng-change="handleUpdate();onDateChange()"
+       ng-class="{'is-abnormal': observation.abnormalObs.value, 'illegalValue': !observation.isValid(atLeastOneValueIsSet,conceptSetRequired), 'computed-field': observation.isComputedAndEditable()}"
+       focus-me="::observation.isFocused" tabindex="1"/>
+
+<input id="{{::observation.uniqueId}}" obs-constraints obs="::observation"
+       ng-if="!observation.isNumeric() && !observation._isDateTimeDataType() && !observation.conceptUIConfig.displayMonthAndYear && observation.uniqueId === 'observation_57'" ng-disabled="observation.disabled"
+       ng-model="observation.value" ng-change="handleUpdate();onDateChange()"
+       ng-class="{'is-abnormal': observation.abnormalObs.value, 'illegalValue': !observation.isValid(atLeastOneValueIsSet,conceptSetRequired), 'computed-field': observation.isComputedAndEditable()}"
+       focus-me="::observation.isFocused" tabindex="1"/>
+
+<stepper id="{{::observation.uniqueId}}"
+         ng-model="observation.value" ng-blur="handleUpdate()" obs="observation"
+         ng-class="{'is-abnormal': observation.abnormalObs.value, 'illegalValue': !observation.isValid(atLeastOneValueIsSet, conceptSetRequired)}"
+         focus-me="::observation.isFocused"
+         ng-if="::(observation.isNumeric() && observation.isStepperControl())" tabindex="1"></stepper>
+
+<datetimepicker model="observation.value"
+                observation="::observation"
+                ng-blur="handleUpdate()"
+                allow-future-dates="(observation.conceptUIConfig && observation.conceptUIConfig.allowFutureDates)"
+                show-time="::true" illegal-value="!observation.isValid(atLeastOneValueIsSet, conceptSetRequired)"
+                ng-if="::(observation._isDateTimeDataType())" tabindex="1"></datetimepicker>
+
+<monthyearpicker min-year="::observation.conceptUIConfig.minYear"
+                 max-year="::observation.conceptUIConfig.maxYear"
+                 ng-if="!observation.isNumeric() && !observation._isDateTimeDataType() && observation.conceptUIConfig.displayMonthAndYear"
+                 observation="::observation"
+                 ng-blur="handleUpdate()"
+                 illegal-value="!observation.isValid(atLeastOneValueIsSet, conceptSetRequired)"
+                 model="observation.value" tabindex="1">
+</monthyearpicker>

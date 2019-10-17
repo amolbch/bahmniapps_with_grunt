@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for common/app-framework/services/appService.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../prettify.css">
+    <link rel="stylesheet" href="../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header medium">
+    <h1>Code coverage report for <span class="entity">common/app-framework/services/appService.js</span></h1>
+    <h2>
+        Statements: <span class="metric">57.58% <small>(76 / 132)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">37.5% <small>(21 / 56)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">42.5% <small>(17 / 40)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">57.58% <small>(76 / 132)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">common/app-framework/services/</a> &#187; appService.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">483</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">13</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">7</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.common.appFramework')
+    .config(['$compileProvider', function ($compileProvider) {
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|file):/);
+    }])
+    .service('appService', ['$http', '$q', 'sessionService', '$rootScope', 'mergeService', 'loadConfigService', 'messagingService', '$translate',
+        function ($http, $q, sessionService, $rootScope, mergeService, loadConfigService, messagingService, $translate) {
+            var currentUser = null;
+            var baseUrl = Bahmni.Common.Constants.baseUrl;
+            var customUrl = Bahmni.Common.Constants.customUrl;
+            var appDescriptor = null;
+&nbsp;
+            var loadConfig = function (url) {
+                return loadConfigService.loadConfig(url, appDescriptor.contextPath);
+            };
+&nbsp;
+            var loadTemplate = <span class="fstat-no" title="function not covered" >function (appDescriptor) {</span>
+<span class="cstat-no" title="statement not covered" >                var deferrable = $q.defer();</span>
+<span class="cstat-no" title="statement not covered" >                loadConfig(baseUrl + appDescriptor.contextPath + "/appTemplate.json").then(</span>
+<span class="fstat-no" title="function not covered" >                function (result) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (_.keys(result.data).length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >                        appDescriptor.setTemplate(result.data);</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    deferrable.resolve(appDescriptor);</span>
+                },
+<span class="fstat-no" title="function not covered" >                function (error) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (error.status !== 404) {</span>
+<span class="cstat-no" title="statement not covered" >                        deferrable.reject(error);</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        deferrable.resolve(appDescriptor);</span>
+                    }
+                }
+            );
+<span class="cstat-no" title="statement not covered" >                return deferrable.promise;</span>
+            };
+&nbsp;
+            var setDefinition = function (baseResultData, customResultData) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (customResultData &amp;&amp; (<span class="branch-1 cbranch-no" title="branch not covered" >_.keys(baseResultData).length &gt; 0 </span>|| <span class="branch-2 cbranch-no" title="branch not covered" >_.keys(customResultData.length &gt; 0))</span>) {
+<span class="cstat-no" title="statement not covered" >                    appDescriptor.setDefinition(baseResultData, customResultData);</span>
+                } else <span class="missing-if-branch" title="else path not taken" >E</span>if (_.keys(baseResultData).length &gt; 0) {
+                    appDescriptor.setDefinition(baseResultData);
+                }
+            };
+&nbsp;
+            var loadDefinition = function (appDescriptor) {
+                var deferrable = $q.defer();
+                loadConfig(baseUrl + appDescriptor.contextPath + "/app.json").then(
+                function (baseResult) {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (baseResult.data.shouldOverRideConfig) {
+<span class="cstat-no" title="statement not covered" >                        loadConfig(customUrl + appDescriptor.contextPath + "/app.json").then(<span class="fstat-no" title="function not covered" >function (customResult) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            setDefinition(baseResult.data, customResult.data);</span>
+<span class="cstat-no" title="statement not covered" >                            deferrable.resolve(appDescriptor);</span>
+                        },
+<span class="fstat-no" title="function not covered" >                            function () {</span>
+<span class="cstat-no" title="statement not covered" >                                setDefinition(baseResult.data);</span>
+<span class="cstat-no" title="statement not covered" >                                deferrable.resolve(appDescriptor);</span>
+                            });
+                    } else {
+                        setDefinition(baseResult.data);
+                        deferrable.resolve(appDescriptor);
+                    }
+                }, <span class="fstat-no" title="function not covered" >function (error) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (error.status !== 404) {</span>
+<span class="cstat-no" title="statement not covered" >                        deferrable.reject(error);</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        deferrable.resolve(appDescriptor);</span>
+                    }
+                });
+                return deferrable.promise;
+            };
+&nbsp;
+            var setExtensions = function (baseResultData, customResultData) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (customResultData) {
+<span class="cstat-no" title="statement not covered" >                    appDescriptor.setExtensions(baseResultData, customResultData);</span>
+                } else {
+                    appDescriptor.setExtensions(baseResultData);
+                }
+            };
+            var loadExtensions = function (appDescriptor, extensionFileName) {
+                var deferrable = $q.defer();
+                loadConfig(baseUrl + appDescriptor.extensionPath + extensionFileName).then(function (baseResult) {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (baseResult.data.shouldOverRideConfig) {
+<span class="cstat-no" title="statement not covered" >                        loadConfig(customUrl + appDescriptor.extensionPath + extensionFileName).then(</span>
+<span class="fstat-no" title="function not covered" >                        function (customResult) {</span>
+<span class="cstat-no" title="statement not covered" >                            setExtensions(baseResult.data, customResult.data);</span>
+<span class="cstat-no" title="statement not covered" >                            deferrable.resolve(appDescriptor);</span>
+                        },
+<span class="fstat-no" title="function not covered" >                        function () {</span>
+<span class="cstat-no" title="statement not covered" >                            setExtensions(baseResult.data);</span>
+<span class="cstat-no" title="statement not covered" >                            deferrable.resolve(appDescriptor);</span>
+                        });
+                    } else {
+                        setExtensions(baseResult.data);
+                        deferrable.resolve(appDescriptor);
+                    }
+                }, <span class="fstat-no" title="function not covered" >function (error) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (error.status !== 404) {</span>
+<span class="cstat-no" title="statement not covered" >                        deferrable.reject(error);</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        deferrable.resolve(appDescriptor);</span>
+                    }
+                });
+                return deferrable.promise;
+            };
+&nbsp;
+            var setDefaultPageConfig = function (pageName, baseResultData, customResultData) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (customResultData &amp;&amp; (<span class="branch-1 cbranch-no" title="branch not covered" >_.keys(customResultData).length &gt; 0 </span>|| <span class="branch-2 cbranch-no" title="branch not covered" >_.keys(baseResultData).length &gt; 0)</span>) {
+<span class="cstat-no" title="statement not covered" >                    appDescriptor.addConfigForPage(pageName, baseResultData, customResultData);</span>
+                } else <span class="missing-if-branch" title="else path not taken" >E</span>if (_.keys(baseResultData).length &gt; 0) {
+                    appDescriptor.addConfigForPage(pageName, baseResultData);
+                }
+            };
+&nbsp;
+            var hasPrivilegeOf = <span class="fstat-no" title="function not covered" >function (privilegeName) {</span>
+<span class="cstat-no" title="statement not covered" >                return _.some(currentUser.privileges, {name: privilegeName});</span>
+            };
+&nbsp;
+            var loadPageConfig = function (pageName, appDescriptor) {
+                var deferrable = $q.defer();
+                loadConfig(baseUrl + appDescriptor.contextPath + "/" + pageName + ".json").then(
+                function (baseResult) {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (baseResult.data.shouldOverRideConfig) {
+<span class="cstat-no" title="statement not covered" >                        loadConfig(customUrl + appDescriptor.contextPath + "/" + pageName + ".json").then(</span>
+<span class="fstat-no" title="function not covered" >                            function (customResult) {</span>
+<span class="cstat-no" title="statement not covered" >                                setDefaultPageConfig(pageName, baseResult.data, customResult.data);</span>
+<span class="cstat-no" title="statement not covered" >                                deferrable.resolve(appDescriptor);</span>
+                            },
+<span class="fstat-no" title="function not covered" >                            function () {</span>
+<span class="cstat-no" title="statement not covered" >                                setDefaultPageConfig(pageName, baseResult.data);</span>
+<span class="cstat-no" title="statement not covered" >                                deferrable.resolve(appDescriptor);</span>
+                            });
+                    } else {
+                        setDefaultPageConfig(pageName, baseResult.data);
+                        deferrable.resolve(appDescriptor);
+                    }
+                }, <span class="fstat-no" title="function not covered" >function (error) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (error.status !== 404) {</span>
+<span class="cstat-no" title="statement not covered" >                        messagingService.showMessage('error', "Incorrect Configuration:  " + error.message);</span>
+<span class="cstat-no" title="statement not covered" >                        deferrable.reject(error);</span>
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        deferrable.resolve(appDescriptor);</span>
+                    }
+                });
+                return deferrable.promise;
+            };
+            this.getAppDescriptor = function () {
+                return appDescriptor;
+            };
+&nbsp;
+            this.configBaseUrl = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return baseUrl;</span>
+            };
+&nbsp;
+            this.loadCsvFileFromConfig = <span class="fstat-no" title="function not covered" >function (name) {</span>
+<span class="cstat-no" title="statement not covered" >                return loadConfig(baseUrl + appDescriptor.contextPath + "/" + name);</span>
+            };
+&nbsp;
+            this.loadConfig = <span class="fstat-no" title="function not covered" >function (name, shouldMerge) {</span>
+<span class="cstat-no" title="statement not covered" >                return loadConfig(baseUrl + appDescriptor.contextPath + "/" + name).then(</span>
+<span class="fstat-no" title="function not covered" >                function (baseResponse) {</span>
+<span class="cstat-no" title="statement not covered" >                    if (baseResponse.data.shouldOverRideConfig) {</span>
+<span class="cstat-no" title="statement not covered" >                        return loadConfig(customUrl + appDescriptor.contextPath + "/" + name).then(<span class="fstat-no" title="function not covered" >function (customResponse) {</span></span>
+<span class="cstat-no" title="statement not covered" >                            if (shouldMerge || shouldMerge === undefined) {</span>
+<span class="cstat-no" title="statement not covered" >                                return mergeService.merge(baseResponse.data, customResponse.data);</span>
+                            }
+<span class="cstat-no" title="statement not covered" >                            return [baseResponse.data, customResponse.data];</span>
+                        }, <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                            return baseResponse.data;</span>
+                        });
+                    } else {
+<span class="cstat-no" title="statement not covered" >                        return baseResponse.data;</span>
+                    }
+                }
+            );
+            };
+&nbsp;
+            this.loadMandatoryConfig = <span class="fstat-no" title="function not covered" >function (path) {</span>
+<span class="cstat-no" title="statement not covered" >                return $http.get(path);</span>
+            };
+&nbsp;
+            this.getAppName = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >                return this.appName;</span>
+            };
+&nbsp;
+            this.checkPrivilege = <span class="fstat-no" title="function not covered" >function (privilegeName) {</span>
+<span class="cstat-no" title="statement not covered" >                if (hasPrivilegeOf(privilegeName)) {</span>
+<span class="cstat-no" title="statement not covered" >                    return $q.when(true);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                messagingService.showMessage("error", $translate.instant(Bahmni.Common.Constants.privilegeRequiredErrorMessage) + " [Privileges required: " + privilegeName + "]");</span>
+<span class="cstat-no" title="statement not covered" >                return $q.reject();</span>
+            };
+&nbsp;
+            this.initApp = function (appName, options, extensionFileSuffix, configPages) {
+                this.appName = appName;
+                var appLoader = $q.defer();
+                var extensionFileName = (extensionFileSuffix &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >extensionFileSuffix.toLowerCase() !== 'default')</span> ? <span class="branch-0 cbranch-no" title="branch not covered" >"/extension-" + extensionFileSuffix + ".json" </span>: "/extension.json";
+                var promises = [];
+                var opts = options || <span class="branch-1 cbranch-no" title="branch not covered" >{'app': true, 'extension': true};</span>
+&nbsp;
+                var inheritAppContext = (!opts.inherit) ? true : <span class="branch-1 cbranch-no" title="branch not covered" >opts.inherit;</span>
+&nbsp;
+                appDescriptor = new Bahmni.Common.AppFramework.AppDescriptor(appName, inheritAppContext, function () {
+                    return currentUser;
+                }, mergeService);
+&nbsp;
+                var loadCredentialsPromise = sessionService.loadCredentials();
+                var loadProviderPromise = loadCredentialsPromise.then(sessionService.loadProviders);
+&nbsp;
+                promises.push(loadCredentialsPromise);
+                promises.push(loadProviderPromise);
+                if (opts.extension) {
+                    promises.push(loadExtensions(appDescriptor, extensionFileName));
+                }
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (opts.template) {
+<span class="cstat-no" title="statement not covered" >                    promises.push(loadTemplate(appDescriptor));</span>
+                }
+                if (opts.app) {
+                    promises.push(loadDefinition(appDescriptor));
+                }
+                if (!_.isEmpty(configPages)) {
+                    configPages.forEach(function (configPage) {
+                        promises.push(loadPageConfig(configPage, appDescriptor));
+                    });
+                }
+                $q.all(promises).then(function (results) {
+                    currentUser = results[0];
+                    appLoader.resolve(appDescriptor);
+                    $rootScope.$broadcast('event:appExtensions-loaded');
+                }, <span class="fstat-no" title="function not covered" >function (errors) {</span>
+<span class="cstat-no" title="statement not covered" >                    appLoader.reject(errors);</span>
+                });
+                return appLoader.promise;
+            };
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

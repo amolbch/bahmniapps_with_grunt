@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for registration/mappers/updatePatientRequestMapper.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">registration/mappers/updatePatientRequestMapper.js</span></h1>
+    <h2>
+        Statements: <span class="metric">93.62% <small>(44 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">76.92% <small>(20 / 26)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(11 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">93.62% <small>(44 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">registration/mappers/</a> &#187; updatePatientRequestMapper.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">20</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+Bahmni.Registration.UpdatePatientRequestMapper = (function () {
+    var UpdatePatientRequestMapper = function (currentDate) {
+        this.currentDate = currentDate;
+    };
+&nbsp;
+    UpdatePatientRequestMapper.prototype.currentDate = undefined;
+&nbsp;
+    UpdatePatientRequestMapper.prototype.mapFromPatient = function (patientAttributeTypes, openMRSPatient, patient) {
+        var openMRSPatientProfile = {
+            patient: {
+                person: {
+                    names: [
+                        {
+                            uuid: openMRSPatient.person.names[0].uuid,
+                            givenName: patient.givenName,
+                            middleName: patient.middleName,
+                            familyName: patient.familyName,
+                            display: patient.givenName + (patient.familyName ? " " + patient.familyName : <span class="branch-1 cbranch-no" title="branch not covered" >"")</span>,
+                            "preferred": true
+                        }
+                    ],
+                    addresses: [_.pick(patient.address, Bahmni.Registration.Constants.allAddressFileds)],
+                    birthdate: this.getBirthdate(patient.birthdate, patient.age),
+                    birthdateEstimated: patient.birthdateEstimated,
+                    birthtime: Bahmni.Common.Util.DateUtil.parseLongDateToServerFormat(patient.birthtime),
+                    gender: patient.gender,
+                    attributes: this.getMrsAttributes(openMRSPatient, patient, patientAttributeTypes),
+                    dead: patient.dead,
+                    deathDate: Bahmni.Common.Util.DateUtil.getDateWithoutTime(patient.deathDate),
+                    causeOfDeath: patient.causeOfDeath ? <span class="branch-0 cbranch-no" title="branch not covered" >patient.causeOfDeath.uuid </span>: ''
+                }
+            }
+        };
+&nbsp;
+        var allIdentifiers = _.concat(patient.extraIdentifiers, patient.primaryIdentifier);
+        var nonEmptyIdentifiers = _.filter(allIdentifiers, function (identifier) {
+            return identifier.uuid || identifier.identifier;
+        });
+&nbsp;
+        openMRSPatientProfile.patient.identifiers = _.map(nonEmptyIdentifiers, function (identifier) {
+            return {
+                uuid: identifier.uuid,
+                identifier: identifier.identifier,
+                identifierType: identifier.identifierType.uuid,
+                preferred: identifier.preferred,
+                voided: identifier.voided
+            };
+        });
+&nbsp;
+        this.setImage(patient, openMRSPatientProfile);
+&nbsp;
+        if (patient.relationships) {
+            openMRSPatientProfile.relationships = patient.relationships;
+        }
+&nbsp;
+        return openMRSPatientProfile;
+    };
+&nbsp;
+    UpdatePatientRequestMapper.prototype.setImage = function (patient, openMRSPatient) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (patient.getImageData()) {
+<span class="cstat-no" title="statement not covered" >            openMRSPatient.image = patient.getImageData();</span>
+        }
+    };
+&nbsp;
+    UpdatePatientRequestMapper.prototype.getMrsAttributes = function (openMRSPatient, patient, patientAttributeTypes) {
+        var attributes = [];
+        patientAttributeTypes.forEach(function (attributeType) {
+            var attr = {
+                attributeType: {
+                    uuid: attributeType.uuid
+                }
+            };
+            var savedAttribute = openMRSPatient.person.attributes.filter(function (attribute) {
+                return attributeType.uuid === attribute.attributeType.uuid;
+            })[0];
+&nbsp;
+            if (savedAttribute) {
+                attr.uuid = savedAttribute.uuid;
+                setAttributeValue(attributeType, attr, patient[savedAttribute.attributeType.display]);
+            } else {
+                setAttributeValue(attributeType, attr, patient[attributeType.name]);
+            }
+            attributes.push(attr);
+        });
+        return attributes;
+    };
+&nbsp;
+    var setAttributeValue = function (attributeType, attr, value) {
+        if (value === "" || value === null || value === undefined || value.conceptUuid === null) {
+            attr.voided = true;
+        } else if (attributeType.format === "org.openmrs.Concept") {
+            attr.hydratedObject = value.conceptUuid;
+        } else if (attributeType.format === "org.openmrs.util.AttributableDate") {
+            var mnt = moment(value);
+            attr.value = mnt.format('YYYY-MM-DDTHH:mm:ss.SSSZZ');
+        } else {
+            attr.value = value.toString();
+        }
+    };
+&nbsp;
+    UpdatePatientRequestMapper.prototype.getBirthdate = function (birthdate, age) {
+        var mnt;
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (birthdate) {
+            mnt = moment(birthdate);
+        } else <span class="cstat-no" title="statement not covered" >if (age !== undefined) {</span>
+<span class="cstat-no" title="statement not covered" >            mnt = moment(this.currentDate).subtract('days', age.days).subtract('months', age.months).subtract('years', age.years);</span>
+        }
+        return mnt.format('YYYY-MM-DDTHH:mm:ss.SSSZZ');
+    };
+&nbsp;
+    return UpdatePatientRequestMapper;
+})();
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

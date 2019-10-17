@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for clinical/displaycontrols/allvisits/directives/visitsTable.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../../../prettify.css">
+    <link rel="stylesheet" href="../../../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">clinical/displaycontrols/allvisits/directives/visitsTable.js</span></h1>
+    <h2>
+        Statements: <span class="metric">7.55% <small>(4 / 53)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">7.14% <small>(1 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">7.69% <small>(4 / 52)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">clinical/displaycontrols/allvisits/directives/</a> &#187; visitsTable.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.clinical')
+    .directive('visitsTable', ['patientVisitHistoryService', 'conceptSetService', 'spinner', '$state', '$q',
+        function (patientVisitHistoryService, conceptSetService, spinner, $state, $q) {
+            var controller = <span class="fstat-no" title="function not covered" >function ($scope) {</span>
+<span class="cstat-no" title="statement not covered" >                var emitNoDataPresentEvent = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    $scope.$emit("no-data-present-event");</span>
+                };
+<span class="cstat-no" title="statement not covered" >                $scope.openVisit = <span class="fstat-no" title="function not covered" >function (visit) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    if ($scope.$parent.closeThisDialog) {</span>
+<span class="cstat-no" title="statement not covered" >                        $scope.$parent.closeThisDialog("closing modal");</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    $state.go('patient.dashboard.visit', {visitUuid: visit.uuid});</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.hasVisits = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return $scope.visits &amp;&amp; $scope.visits.length &gt; 0;</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.params = angular.extend(</span>
+                    {
+                        maximumNoOfVisits: 4,
+                        title: "Visits"
+                    }, $scope.params);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.noVisitsMessage = "No Visits for this patient.";</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.toggle = <span class="fstat-no" title="function not covered" >function (visit) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    visit.isOpen = !visit.isOpen;</span>
+<span class="cstat-no" title="statement not covered" >                    visit.cacheOpenedHtml = true;</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.filteredObservations = <span class="fstat-no" title="function not covered" >function (observation, observationTemplates) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var observationTemplateArray = [];</span>
+<span class="cstat-no" title="statement not covered" >                    for (var observationTemplateIndex in observationTemplates) {</span>
+<span class="cstat-no" title="statement not covered" >                        observationTemplateArray.push(observationTemplates[observationTemplateIndex].display);</span>
+                    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    var obsArrayFiltered = [];</span>
+<span class="cstat-no" title="statement not covered" >                    for (var ob in observation) {</span>
+<span class="cstat-no" title="statement not covered" >                        if (_.includes(observationTemplateArray, observation[ob].concept.display)) {</span>
+<span class="cstat-no" title="statement not covered" >                            obsArrayFiltered.push(observation[ob]);</span>
+                        }
+                    }
+<span class="cstat-no" title="statement not covered" >                    return obsArrayFiltered;</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.editConsultation = <span class="fstat-no" title="function not covered" >function (encounter) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    showNotApplicablePopup();</span>
+<span class="cstat-no" title="statement not covered" >                    if ($scope.$parent.closeThisDialog) {</span>
+<span class="cstat-no" title="statement not covered" >                        $scope.$parent.closeThisDialog("closing modal");</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    $state.go('patient.dashboard.show.observations', {</span>
+                        conceptSetGroupName: "observations",
+                        encounterUuid: encounter.uuid
+                    });
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.getDisplayName = <span class="fstat-no" title="function not covered" >function (data) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    var concept = data.concept;</span>
+<span class="cstat-no" title="statement not covered" >                    var displayName = data.concept.displayString;</span>
+<span class="cstat-no" title="statement not covered" >                    if (concept.names &amp;&amp; concept.names.length === 1 &amp;&amp; concept.names[0].name !== "") {</span>
+<span class="cstat-no" title="statement not covered" >                        displayName = concept.names[0].name;</span>
+                    } else <span class="cstat-no" title="statement not covered" >if (concept.names &amp;&amp; concept.names.length === 2) {</span>
+<span class="cstat-no" title="statement not covered" >                        displayName = _.find(concept.names, {conceptNameType: "SHORT"}).name;</span>
+                    }
+<span class="cstat-no" title="statement not covered" >                    return displayName;</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.getProviderDisplayName = <span class="fstat-no" title="function not covered" >function (encounter) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return encounter.encounterProviders.length &gt; 0 ? encounter.encounterProviders[0].provider.display : null;</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var getVisits = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return patientVisitHistoryService.getVisitHistory($scope.patientUuid);</span>
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                var init = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                    return $q.all([getVisits()]).then(<span class="fstat-no" title="function not covered" >function (results) {</span></span>
+<span class="cstat-no" title="statement not covered" >                        $scope.visits = results[0].visits;</span>
+<span class="cstat-no" title="statement not covered" >                        $scope.patient = {uuid: $scope.patientUuid};</span>
+<span class="cstat-no" title="statement not covered" >                        if (!$scope.hasVisits()) <span class="cstat-no" title="statement not covered" >emitNoDataPresentEvent();</span></span>
+                    });
+                };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.initialization = init();</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.params = angular.extend(</span>
+                    {
+                        maximumNoOfVisits: 4,
+                        title: "Visits"
+                    }, $scope.params);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                $scope.noVisitsMessage = "No Visits for this patient.";</span>
+            };
+            var link = <span class="fstat-no" title="function not covered" >function ($scope, element) {</span>
+<span class="cstat-no" title="statement not covered" >                spinner.forPromise($scope.initialization, element);</span>
+            };
+&nbsp;
+            return {
+                restrict: 'E',
+                link: link,
+                controller: controller,
+                templateUrl: "displaycontrols/allvisits/views/visitsTable.html",
+                scope: {
+                    params: "=",
+                    patientUuid: "="
+                }
+            };
+        }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

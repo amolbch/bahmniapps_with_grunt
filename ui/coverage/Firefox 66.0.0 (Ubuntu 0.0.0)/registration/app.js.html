@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for registration/app.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">registration/app.js</span></h1>
+    <h2>
+        Statements: <span class="metric">3.33% <small>(1 / 30)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 11)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">3.33% <small>(1 / 30)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">registration/</a> &#187; app.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular
+    .module('registration', ['ui.router', 'bahmni.registration', 'authentication', 'bahmni.common.config',
+        'bahmni.common.appFramework', 'httpErrorInterceptor', 'bahmni.common.photoCapture', 'bahmni.common.obs',
+        'bahmni.common.displaycontrol.observation', 'bahmni.common.i18n', 'bahmni.common.displaycontrol.custom',
+        'bahmni.common.routeErrorHandler', 'bahmni.common.displaycontrol.pivottable', 'RecursionHelper', 'ngSanitize',
+        'bahmni.common.uiHelper', 'bahmni.common.domain', 'ngDialog', 'pascalprecht.translate', 'ngCookies',
+        'monospaced.elastic', 'bahmni.common.displaycontrol.hint', 'bahmni.common.attributeTypes',
+        'bahmni.common.models', 'bahmni.common.uicontrols',
+        'bahmni.common.displaycontrol.diagnosis', 'naturalSorting'])
+    .config(['$urlRouterProvider', '$stateProvider', '$httpProvider', '$bahmniTranslateProvider', '$compileProvider', <span class="fstat-no" title="function not covered" >function ($urlRouterProvider, $stateProvider, $httpProvider, $bahmniTranslateProvider, $compileProvider) {</span>
+<span class="cstat-no" title="statement not covered" >        $httpProvider.defaults.headers.common['Disable-WWW-Authenticate'] = true;</span>
+<span class="cstat-no" title="statement not covered" >        $urlRouterProvider.otherwise('/search');</span>
+&nbsp;
+        // @if DEBUG='production'
+<span class="cstat-no" title="statement not covered" >        $compileProvider.debugInfoEnabled(false);</span>
+        // @endif
+&nbsp;
+        // @if DEBUG='development'
+<span class="cstat-no" title="statement not covered" >        $compileProvider.debugInfoEnabled(true);</span>
+        // @endif
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        $stateProvider</span>
+            .state('search', {
+                url: '/search',
+                reloadOnSearch: false,
+                views: {
+                    'layout': {templateUrl: 'views/layout.html', controller: 'SearchPatientController'},
+                    'content@search': {templateUrl: 'views/search.html'}
+                },
+                resolve: {
+                    initialize: <span class="fstat-no" title="function not covered" >function (initialization) {</span>
+<span class="cstat-no" title="statement not covered" >                        return initialization();</span>
+                    }
+                }
+            })
+            .state('newpatient', {
+                url: '/patient/new',
+                views: {
+                    'layout': {templateUrl: 'views/layout.html', controller: 'CreatePatientController'},
+                    'content@newpatient': {templateUrl: 'views/newpatient.html'}
+                },
+                resolve: {
+                    initialize: <span class="fstat-no" title="function not covered" >function (initialization) {</span>
+<span class="cstat-no" title="statement not covered" >                        return initialization();</span>
+                    }
+                }
+            })
+            .state('patient', {
+                url: '/patient/:patientUuid',
+                abstract: true,
+                views: {
+                    'layout': {template: '&lt;div ui-view="layout"&gt;&lt;/div&gt;'}
+                },
+                resolve: {
+                    initialize: <span class="fstat-no" title="function not covered" >function (initialization) {</span>
+<span class="cstat-no" title="statement not covered" >                        return initialization();</span>
+                    }
+                }
+            })
+            .state('patient.edit', {
+                url: '?serverError',
+                views: {
+                    'layout': {templateUrl: 'views/layout.html', controller: 'EditPatientController'},
+                    'content@patient.edit': {templateUrl: 'views/editpatient.html'},
+                    'headerExtension@patient.edit': {template: '&lt;div print-options&gt;&lt;/div&gt;'}
+                }
+            })
+            .state('patient.visit', {
+                url: '/visit',
+                views: {
+                    'layout': {templateUrl: 'views/layout.html', controller: 'VisitController'},
+                    'content@patient.visit': {templateUrl: 'views/visit.html'},
+                    'headerExtension@patient.visit': {template: '&lt;div print-options&gt;&lt;/div&gt;'}
+                }
+            })
+            .state('patient.printSticker', {
+                url: '/printSticker',
+                views: {
+                    'layout': {templateUrl: 'views/layout.html'},
+                    'content@patient.printSticker': {templateUrl: 'views/notimplemented.html'}
+                }
+            });
+<span class="cstat-no" title="statement not covered" >        $bahmniTranslateProvider.init({app: 'registration', shouldMerge: true});</span>
+    }]).run(['$rootScope', '$templateCache', '$bahmniCookieStore', 'locationService', 'messagingService', 'auditLogService',
+        '$window', <span class="fstat-no" title="function not covered" >function ($rootScope, $templateCache, $bahmniCookieStore, locationService,</span>
+              messagingService, auditLogService, $window) {
+<span class="cstat-no" title="statement not covered" >            var getStates = <span class="fstat-no" title="function not covered" >function (toState, fromState) {</span></span>
+<span class="cstat-no" title="statement not covered" >                var states = [];</span>
+<span class="cstat-no" title="statement not covered" >                if (fromState === "newpatient" &amp;&amp; (toState === "patient.edit" || toState === "patient.visit")) {</span>
+<span class="cstat-no" title="statement not covered" >                    states.push("newpatient.save");</span>
+                }
+<span class="cstat-no" title="statement not covered" >                if (toState === 'patient.edit') {</span>
+<span class="cstat-no" title="statement not covered" >                    states.push("patient.view");</span>
+                } else {
+<span class="cstat-no" title="statement not covered" >                    states.push(toState);</span>
+                }
+<span class="cstat-no" title="statement not covered" >                return states;</span>
+            };
+<span class="cstat-no" title="statement not covered" >            moment.locale($window.localStorage["NG_TRANSLATE_LANG_KEY"] || "en");</span>
+<span class="cstat-no" title="statement not covered" >            var loginLocationUuid = $bahmniCookieStore.get(Bahmni.Common.Constants.locationCookieName).uuid;</span>
+<span class="cstat-no" title="statement not covered" >            locationService.getVisitLocation(loginLocationUuid).then(<span class="fstat-no" title="function not covered" >function (response) {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (response.data) {</span>
+<span class="cstat-no" title="statement not covered" >                    $rootScope.visitLocation = response.data.uuid;</span>
+                }
+            });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $rootScope.$on('$stateChangeStart', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >                messagingService.hideMessages("error");</span>
+            });
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $rootScope.createAuditLog = <span class="fstat-no" title="function not covered" >function (event, toState, toParams, fromState) {</span></span>
+<span class="cstat-no" title="statement not covered" >                var states = getStates(toState.name, fromState.name);</span>
+<span class="cstat-no" title="statement not covered" >                states.forEach(<span class="fstat-no" title="function not covered" >function (state) {</span></span>
+<span class="cstat-no" title="statement not covered" >                    auditLogService.log(toParams.patientUuid, Bahmni.Registration.StateNameEvenTypeMap[state], undefined, "MODULE_LABEL_REGISTRATION_KEY");</span>
+                });
+            };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            $rootScope.$on('$stateChangeSuccess', $rootScope.createAuditLog);</span>
+        }
+    ]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

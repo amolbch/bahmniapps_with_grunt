@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for reports/services/reportService.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../prettify.css">
+    <link rel="stylesheet" href="../../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header low">
+    <h1>Code coverage report for <span class="entity">reports/services/reportService.js</span></h1>
+    <h2>
+        Statements: <span class="metric">2.86% <small>(1 / 35)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">0% <small>(0 / 12)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">0% <small>(0 / 10)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">2.86% <small>(1 / 35)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../../index.html">All files</a> &#187; <a href="index.html">reports/services/</a> &#187; reportService.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72</td><td class="line-coverage"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">'use strict';
+&nbsp;
+angular.module('bahmni.reports')
+    .service('reportService', ['appService', '$bahmniCookieStore', '$http', <span class="fstat-no" title="function not covered" >function (appService, $bahmniCookieStore, $http) {</span>
+<span class="cstat-no" title="statement not covered" >        var paperSize = appService.getAppDescriptor().getConfigValue("paperSize");</span>
+<span class="cstat-no" title="statement not covered" >        var appName = appService.getAppName() ? appService.getAppName() : "reports";</span>
+<span class="cstat-no" title="statement not covered" >        var availableFormats = {</span>
+            "CSV": "text/csv",
+            "HTML": "text/html",
+            "EXCEL": "application/vnd.ms-excel",
+            "PDF": "application/pdf",
+            "CUSTOM EXCEL": "application/vnd.ms-excel-custom",
+            "ODS": "application/vnd.oasis.opendocument.spreadsheet"
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var scheduleReport = <span class="fstat-no" title="function not covered" >function (report) {</span></span>
+<span class="cstat-no" title="statement not covered" >            var url = Bahmni.Common.Constants.reportsUrl + "/schedule";</span>
+<span class="cstat-no" title="statement not covered" >            url = (url + "?name={0}&amp;startDate={1}&amp;endDate={2}&amp;responseType={3}&amp;paperSize={4}&amp;appName={5}&amp;userName={6}").format(report.name, report.startDate, report.stopDate, report.responseType, paperSize, appName, currentUser());</span>
+<span class="cstat-no" title="statement not covered" >            if (report.reportTemplateLocation &amp;&amp; report.responseType == 'application/vnd.ms-excel-custom') {</span>
+<span class="cstat-no" title="statement not covered" >                url = (url + "&amp;macroTemplateLocation=" + report.reportTemplateLocation);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            return $http.get(url);</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var currentUser = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            return $bahmniCookieStore.get(Bahmni.Common.Constants.currentUser);</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var getScheduledReports = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            var url = Bahmni.Common.Constants.reportsUrl + "/getReports?user={0}";</span>
+<span class="cstat-no" title="statement not covered" >            url = url.format(currentUser());</span>
+<span class="cstat-no" title="statement not covered" >            return $http.get(url);</span>
+        };
+<span class="cstat-no" title="statement not covered" >        var getAvailableFormats = <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >            return availableFormats;</span>
+        };
+<span class="cstat-no" title="statement not covered" >        var getMimeTypeForFormat = <span class="fstat-no" title="function not covered" >function (format) {</span></span>
+<span class="cstat-no" title="statement not covered" >            return availableFormats[format];</span>
+        };
+<span class="cstat-no" title="statement not covered" >        var getFormatForMimeType = <span class="fstat-no" title="function not covered" >function (mimeType) {</span></span>
+<span class="cstat-no" title="statement not covered" >            return _.findKey(availableFormats, <span class="fstat-no" title="function not covered" >function (value) {</span></span>
+<span class="cstat-no" title="statement not covered" >                if (value === mimeType) {</span>
+<span class="cstat-no" title="statement not covered" >                    return true;</span>
+                }
+            });
+        };
+<span class="cstat-no" title="statement not covered" >        var deleteReport = <span class="fstat-no" title="function not covered" >function (id) {</span></span>
+<span class="cstat-no" title="statement not covered" >            var url = Bahmni.Common.Constants.reportsUrl + "/delete/{0}";</span>
+<span class="cstat-no" title="statement not covered" >            url = url.format(id);</span>
+<span class="cstat-no" title="statement not covered" >            return $http.get(url);</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        var generateReport = <span class="fstat-no" title="function not covered" >function (report) {</span></span>
+<span class="cstat-no" title="statement not covered" >            var url = Bahmni.Common.Constants.reportsUrl + "/report";</span>
+<span class="cstat-no" title="statement not covered" >            url = (url + "?name={0}&amp;startDate={1}&amp;endDate={2}&amp;responseType={3}&amp;paperSize={4}&amp;appName={5}").format(report.name, report.startDate, report.stopDate, report.responseType, paperSize, appName);</span>
+<span class="cstat-no" title="statement not covered" >            if (report.reportTemplateLocation &amp;&amp; report.responseType == 'application/vnd.ms-excel-custom') {</span>
+<span class="cstat-no" title="statement not covered" >                url = (url + "&amp;macroTemplateLocation=" + report.reportTemplateLocation);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            window.open(url);</span>
+        };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            getFormatForMimeType: getFormatForMimeType,
+            getMimeTypeForFormat: getMimeTypeForFormat,
+            getAvailableFormats: getAvailableFormats,
+            scheduleReport: scheduleReport,
+            getScheduledReports: getScheduledReports,
+            deleteReport: deleteReport,
+            generateReport: generateReport
+        };
+    }]);
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue May 14 2019 13:02:29 GMT+0530 (IST)</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>
